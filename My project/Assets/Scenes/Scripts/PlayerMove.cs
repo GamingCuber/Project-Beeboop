@@ -2,18 +2,20 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    public PlayerData data;
+
     public Rigidbody2D rb;
 
     void Update()
     {
         if (Input.GetKey(PlayerInputs.Instance.right)){
-            rb.AddForceX(10, ForceMode2D.Force);
+            rb.AddForceX(data.playerAcc, ForceMode2D.Force);
 
         }
         
         else if (Input.GetKey(PlayerInputs.Instance.left))
         {
-            rb.AddForceX(-10, ForceMode2D.Force);
+            rb.AddForceX(-data.playerAcc, ForceMode2D.Force);
 
         }
         else
