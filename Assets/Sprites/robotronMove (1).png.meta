@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 49bb739ef1cc145438c2f859e0a74061
+guid: b1e9d5a885156453da8b15766e396a3e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1803309746743664177
-    second: tempTilemap_0
+      213: -9136725913224538065
+    second: robotronMove (1)_0
+  - first:
+      213: 7080153427843255903
+    second: robotronMove (1)_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 160
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -96,17 +99,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tempTilemap_0
+      name: robotronMove (1)_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 160
-        height: 160
+        y: 200
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,30 +131,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 13ed7aa09a4a60910800000000000000
-      internalID: 1803309746743664177
+      spriteID: f28152cb034d33180800000000000000
+      internalID: -9136725913224538065
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tempTilemap_1
+      name: robotronMove (1)_1
       rect:
         serializedVersion: 2
-        x: 160
+        x: 0
         y: 0
-        width: 160
-        height: 160
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 76d21bf918e174019ae42ea30b414728
-      internalID: -890747217
+      spriteID: f5e8cd5c702c14260800000000000000
+      internalID: 7080153427843255903
       vertices: []
       indices: 
       edges: []
@@ -147,7 +163,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5f7bbe3a305684595bde8c903039755a
+    spriteID: d7df167061afd4cc68984e187f19d8f6
     internalID: 0
     vertices: []
     indices: 
@@ -157,8 +173,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      tempTilemap_0: 1803309746743664177
-      tempTilemap_1: -890747217
+      robotronMove (1)_0: -9136725913224538065
+      robotronMove (1)_1: 7080153427843255903
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
