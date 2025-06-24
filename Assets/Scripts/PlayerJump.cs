@@ -9,9 +9,13 @@ public class PlayerJump : MonoBehaviour
 
     private bool canJump = true;
 
+    private bool isJumping = false;
+
     private int jumpsLeft;
 
     private Coroutine jumpCo;
+
+    private Coroutine preJumpCo;
 
     private Coroutine coyoteCo;
 
@@ -40,7 +44,7 @@ public class PlayerJump : MonoBehaviour
             coyoteCo = StartCoroutine(coyoteTimer());
         }
 
-        if (Input.GetKeyDown(PlayerInputs.Instance.jump) && jumpsLeft > 0 && canJump)
+        if (Input.GetKeyDown(PlayerInputs.Instance.jump) && jumpsLeft > 0 && (canJump || isJumping))
         {
             jump();
         }
@@ -48,6 +52,7 @@ public class PlayerJump : MonoBehaviour
 
     private void jump() //do a jump, cuz this functions gonna get called in more than one places
     {
+        isJumping = true;
         jumpsLeft--;
         cancelJump();
         jumpCo = StartCoroutine(doJump());
@@ -75,11 +80,18 @@ public class PlayerJump : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
+        if (preJumpCo != null)
+        {
+            StopCoroutine(preJumpCo);
+        }
+        preJumpCo = StartCoroutine(checkForPreInput());
+
         while (!grounded) //just stall till the player hits the ground to reset grav
         {
             yield return new WaitForEndOfFrame();
         }
 
+        isJumping = false;
         PlayerGravManager.Instance.resetGrav();
         resetJumps();
         yield break;
@@ -98,6 +110,33 @@ public class PlayerJump : MonoBehaviour
         canJump = false;
         coyoteCo = null;
         yield break;
+    }
+
+    private IEnumerator checkForPreInput()
+    {
+        bool wantsJump = false; //if they preinput
+
+        while (isJumping)
+        {
+            if (Input.GetKey(PlayerInputs.Instance.jump) && Physics2D.Raycast(this.transform.position,Vector2.down,1.5f,platformLayer))
+            {
+                wantsJump = true;
+                break;
+            }
+            yield return new WaitForEndOfFrame();
+        }
+
+        while (!grounded) //wait for player to hit the ground
+        {
+            yield return new WaitForEndOfFrame();
+        }
+
+        yield return new WaitForEndOfFrame();
+
+        if (wantsJump)
+        { 
+            jump();
+        }
     }
 
     private void resetJumps() //gives jumpsleft back
