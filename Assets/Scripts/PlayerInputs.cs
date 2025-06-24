@@ -8,6 +8,7 @@ public class PlayerInputs : MonoBehaviour
     
     public KeyCode left { get; set; }
     public KeyCode right { get; set; }
+    public KeyCode jump { get; set; }
 
     void Start()
     {
@@ -18,5 +19,6 @@ public class PlayerInputs : MonoBehaviour
 
         left = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("left", "A"));
         right = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("right", "D"));
+        jump = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("jump", "Space"));
     }
 }

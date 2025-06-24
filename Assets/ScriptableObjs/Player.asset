@@ -14,5 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAcc: 10
   playerMaxSpd: 0
-  jumpStr: 0
-  jumpAmt: 0
+  coyoteFrames: 40
+  jumpStr: 7
+  jumpAmt: 1
+  jumpFloatGrav: 0.75
+  jumpFallGrav: 2.5
