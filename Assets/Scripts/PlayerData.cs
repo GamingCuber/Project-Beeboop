@@ -11,4 +11,6 @@ public class PlayerData : ScriptableObject
     public int jumpAmt; //max jumps consecutively (so like double jump would be 2)
     public float jumpFloatGrav; //grav at the apex of the jump
     public float jumpFallGrav; //grav when falling
+
+    public bool isHooked = false;
 }

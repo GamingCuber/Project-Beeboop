@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerInputs : MonoBehaviour
 {
     public static PlayerInputs Instance;
-    
+
     public KeyCode left { get; set; }
     public KeyCode right { get; set; }
     public KeyCode jump { get; set; }
+    public KeyCode hook { get; set; }
 
     void Start()
     {
@@ -20,5 +22,6 @@ public class PlayerInputs : MonoBehaviour
         left = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("left", "A"));
         right = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("right", "D"));
         jump = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("jump", "Space"));
+        hook = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("hook", "F"));
     }
 }
