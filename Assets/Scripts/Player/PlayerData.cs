@@ -12,5 +12,4 @@ public class PlayerData : ScriptableObject
     public float jumpFloatGrav; //grav at the apex of the jump
     public float jumpFallGrav; //grav when falling
 
-    public bool isHooked = false;
 }
