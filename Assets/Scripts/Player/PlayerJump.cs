@@ -118,7 +118,7 @@ public class PlayerJump : MonoBehaviour
 
         while (isJumping)
         {
-            if (Input.GetKey(PlayerInputs.Instance.jump) && Physics2D.Raycast(this.transform.position,Vector2.down,1.5f,platformLayer))
+            if (Input.GetKey(PlayerInputs.Instance.jump) && Physics2D.Raycast(this.transform.position, Vector2.down, 1.5f, platformLayer))
             {
                 wantsJump = true;
                 break;
@@ -134,7 +134,7 @@ public class PlayerJump : MonoBehaviour
         yield return new WaitForEndOfFrame();
 
         if (wantsJump)
-        { 
+        {
             jump();
         }
     }

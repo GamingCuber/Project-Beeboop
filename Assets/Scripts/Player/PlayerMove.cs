@@ -10,19 +10,28 @@ public class PlayerMove : MonoBehaviour
         {
             if (Input.GetKey(PlayerInputs.Instance.right))
             {
+                PlayerDataManager.Instance.getData().playerdirection = "right";
                 rb.AddForceX(PlayerDataManager.Instance.getData().playerAcc, ForceMode2D.Force);
 
             }
 
             else if (Input.GetKey(PlayerInputs.Instance.left))
             {
+                PlayerDataManager.Instance.getData().playerdirection = "left";
                 rb.AddForceX(-PlayerDataManager.Instance.getData().playerAcc, ForceMode2D.Force);
 
             }
             else
             {
                 Vector2 velo = rb.linearVelocity; // G
-                velo.x = 0;
+                if (PlayerStateManager.Instance.getState().isDashing == false)
+                {
+
+                    velo.x = 0;
+                }
+
+
+
                 rb.linearVelocity = velo;
             }
         }
