@@ -19,3 +19,5 @@ MonoBehaviour:
   jumpAmt: 1
   jumpFloatGrav: 0.75
   jumpFallGrav: 2.5
+  dashStr: 25
+  playerdirection: left
