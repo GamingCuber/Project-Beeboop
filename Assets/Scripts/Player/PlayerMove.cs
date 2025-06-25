@@ -6,7 +6,7 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
-        if (!PlayerDataManager.Instance.getData().isHooked)
+        if (!PlayerStateManager.Instance.getState().isHooked)
         {
             if (Input.GetKey(PlayerInputs.Instance.right))
             {

@@ -9,13 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df1cfc8610cad45bd9b50d33af477a02, type: 3}
-  m_Name: Player
+  m_Script: {fileID: 11500000, guid: 44f517166f069b5ca85b2a6f145c4910, type: 3}
+  m_Name: PlayerState
   m_EditorClassIdentifier: 
-  playerAcc: 10
-  playerMaxSpd: 0
-  coyoteFrames: 40
-  jumpStr: 7
-  jumpAmt: 1
-  jumpFloatGrav: 0.75
-  jumpFallGrav: 2.5
+  isGrounded: 0
+  isDashing: 0
+  isHooked: 0

@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 158954685}
   - component: {fileID: 158954687}
   - component: {fileID: 158954686}
+  - component: {fileID: 158954688}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -465,7 +466,20 @@ MonoBehaviour:
   rb: {fileID: 158954680}
   hookLineRenderer: {fileID: 158954686}
   hookDistanceLimit: 15
-  hookSpeed: 100
+  hookSpeed: 250
+--- !u!114 &158954688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158954675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0548eeb6dc8365b16956c6904ec71397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: {fileID: 11400000, guid: cc0bfaeca2054cc6fa2b0c64544e21de, type: 2}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

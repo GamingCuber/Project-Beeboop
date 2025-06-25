@@ -16,13 +16,13 @@ public class PlayerHook : MonoBehaviour
     {
         if (Input.GetKeyDown(PlayerInputs.Instance.hook))
         {
-            if (!PlayerDataManager.Instance.getData().isHooked)
+            if (!PlayerStateManager.Instance.getState().isHooked)
             {
                 rb.linearVelocity = UnityEngine.Vector2.zero;
                 rb.angularVelocity = 0f;
             }
 
-            PlayerDataManager.Instance.getData().isHooked = true;
+            PlayerStateManager.Instance.getState().isHooked = true;
             GameObject hook = getClosestHook();
             hookLineRenderer.enabled = true;
 
@@ -36,7 +36,7 @@ public class PlayerHook : MonoBehaviour
         }
         if (Input.GetKeyUp(PlayerInputs.Instance.hook))
         {
-            PlayerDataManager.Instance.getData().isHooked = false;
+            PlayerStateManager.Instance.getState().isHooked = false;
             hookLineRenderer.enabled = false;
         }
     }
