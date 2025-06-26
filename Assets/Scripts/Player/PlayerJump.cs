@@ -33,6 +33,7 @@ public class PlayerJump : MonoBehaviour
         {
             canJump = true;
             grounded = true;
+            
         }
         else
         {
@@ -92,6 +93,7 @@ public class PlayerJump : MonoBehaviour
         }
 
         isJumping = false;
+        SoundManager.Instance.playsound("fall");
         PlayerGravManager.Instance.resetGrav();
         resetJumps();
         yield break;
