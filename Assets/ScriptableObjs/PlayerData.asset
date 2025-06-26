@@ -16,6 +16,8 @@ MonoBehaviour:
   playerMaxSpd: 0
   coyoteFrames: 40
   jumpStr: 7
-  jumpAmt: 1
+  jumpAmt: 2
   jumpFloatGrav: 0.75
   jumpFallGrav: 2.5
+  dashStr: 15
+  playerdirection: left
