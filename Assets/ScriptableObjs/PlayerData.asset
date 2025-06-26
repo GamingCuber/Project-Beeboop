@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   playerAcc: 10
-  playerMaxSpd: 0
+  playerMaxSpd: 10
   coyoteFrames: 40
   jumpStr: 7
   jumpAmt: 2
   jumpFloatGrav: 0.75
   jumpFallGrav: 2.5
   dashStr: 15
-  playerdirection: left
+  playerdirection: right
+  upgradescollected: 2
