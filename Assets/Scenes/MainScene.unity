@@ -327,7 +327,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 0
+  m_LinearDamping: 0.1
   m_AngularDamping: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -553,8 +553,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 158954680}
   hookLineRenderer: {fileID: 158954686}
-  hookDistanceLimit: 15
-  hookSpeed: 250
+  hookDistanceLimit: 25
+  hookSpeed: 150
+  dampeningPostHook: 3
 --- !u!114 &158954688
 MonoBehaviour:
   m_ObjectHideFlags: 0

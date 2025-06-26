@@ -15,4 +15,7 @@ public class PlayerData : ScriptableObject
     public string playerdirection;
 
     public int upgradescollected = 0;
+    public float hookDistanceLimit;
+    public float hookSpeed;
+    public float dampeningPostHook;
 }

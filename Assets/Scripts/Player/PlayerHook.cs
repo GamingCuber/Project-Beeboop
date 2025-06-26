@@ -1,43 +1,63 @@
 using System.Numerics;
 using Mono.Cecil.Cil;
 using UnityEngine;
+using Vector2 = UnityEngine.Vector2;
 
 public class PlayerHook : MonoBehaviour
 {
     public Rigidbody2D rb;
     public LineRenderer hookLineRenderer;
-    [SerializeField]
-    private float hookDistanceLimit;
-    [SerializeField]
-    private float hookSpeed;
+
 
 
     void Update()
     {
+        GameObject hook = getClosestHook();
         if (Input.GetKeyDown(PlayerInputs.Instance.hook))
         {
-            if (!PlayerStateManager.Instance.getState().isHooked)
+            if (hook != null)
             {
-                rb.linearVelocity = UnityEngine.Vector2.zero;
-                rb.angularVelocity = 0f;
+                if (Vector2.Distance(hook.transform.position, transform.position) < PlayerDataManager.Instance.getData().hookDistanceLimit)
+                {
+                    rb.linearDamping = 0;
+                    if (!PlayerStateManager.Instance.getState().isHooked)
+                    {
+                        // Resets player force for a frame, then continues movement in the next line
+                        rb.constraints = RigidbodyConstraints2D.FreezeAll;
+                    }
+                    rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+                    PlayerStateManager.Instance.getState().isHooked = true;
+
+                    hookLineRenderer.enabled = true;
+
+                    // Calculates Vector between player and HookPoint for applying Force
+                    Vector2 hookVector = (hook.transform.position - transform.position) * Time.fixedDeltaTime;
+                    rb.AddForce(hookVector * PlayerDataManager.Instance.getData().hookSpeed, ForceMode2D.Impulse);
+                }
+
             }
+        }
 
-            PlayerStateManager.Instance.getState().isHooked = true;
-            GameObject hook = getClosestHook();
-            hookLineRenderer.enabled = true;
-
+        if (Input.GetKey(PlayerInputs.Instance.hook) && PlayerStateManager.Instance.getState().isHooked)
+        {
             // Draws line between Player and Hook Point
             hookLineRenderer.SetPosition(0, transform.position);
             hookLineRenderer.SetPosition(1, hook.transform.position);
-
-            // Calculates Vector between player and HookPoint for applying Force
-            UnityEngine.Vector2 hookVector = (hook.transform.position - transform.position) * Time.fixedDeltaTime;
-            rb.AddForce(hookVector * hookSpeed, ForceMode2D.Impulse);
         }
+
         if (Input.GetKeyUp(PlayerInputs.Instance.hook))
         {
+            // Makes you slower when you let go of the hook
+            rb.linearDamping = PlayerDataManager.Instance.getData().dampeningPostHook;
+            rb.constraints = RigidbodyConstraints2D.FreezePositionY;
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             PlayerStateManager.Instance.getState().isHooked = false;
             hookLineRenderer.enabled = false;
+            // Resets drag on the player
+            if (PlayerStateManager.Instance.getState().isGrounded)
+            {
+                rb.linearDamping = 0;
+            }
         }
     }
 
@@ -51,8 +71,8 @@ public class PlayerHook : MonoBehaviour
             closestHook = hookObjects[0];
             foreach (var hookObject in hookObjects)
             {
-                var currentHookDistanceFromPlayer = Mathf.Abs(UnityEngine.Vector2.Distance(transform.position, hookObject.transform.position));
-                var closestHookDistanceFromPlayer = Mathf.Abs(UnityEngine.Vector2.Distance(transform.position, closestHook.transform.position));
+                var currentHookDistanceFromPlayer = Mathf.Abs(Vector2.Distance(transform.position, hookObject.transform.position));
+                var closestHookDistanceFromPlayer = Mathf.Abs(Vector2.Distance(transform.position, closestHook.transform.position));
 
                 if (currentHookDistanceFromPlayer <= closestHookDistanceFromPlayer)
                 {
