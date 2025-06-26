@@ -18,10 +18,10 @@ public class PlayerHook : MonoBehaviour
         {
             if (!PlayerStateManager.Instance.getState().isHooked)
             {
-                rb.linearVelocity = UnityEngine.Vector2.zero;
-                rb.angularVelocity = 0f;
+                // Resets player force for a frame, then continues movement in the next line
+                rb.constraints = RigidbodyConstraints2D.FreezeAll;
             }
-
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             PlayerStateManager.Instance.getState().isHooked = true;
             GameObject hook = getClosestHook();
             hookLineRenderer.enabled = true;
@@ -36,6 +36,8 @@ public class PlayerHook : MonoBehaviour
         }
         if (Input.GetKeyUp(PlayerInputs.Instance.hook))
         {
+            rb.constraints = RigidbodyConstraints2D.FreezePositionY;
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             PlayerStateManager.Instance.getState().isHooked = false;
             hookLineRenderer.enabled = false;
         }
