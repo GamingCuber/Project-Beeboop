@@ -18,7 +18,7 @@ public class PlayerMove : MonoBehaviour
 
                 float AFMult = 1; //add force mult, so i can make it close to 0 if the player is close to max speed
 
-                if (Mathf.Abs(xVelo) > maxSpd - maxSpd/4) //so if the player is approaching their max speed
+                if (Mathf.Abs(xVelo) > maxSpd - maxSpd / 4) //so if the player is approaching their max speed
                 {
                     AFMult = 1 - (Mathf.Abs(xVelo) / maxSpd);
                 }
@@ -46,7 +46,7 @@ public class PlayerMove : MonoBehaviour
 
                 rb.AddForceX(PlayerDataManager.Instance.getData().playerAcc * AFMult * dir, ForceMode2D.Force);
             }
-            else
+            else if (PlayerStateManager.Instance.getState().isGrounded)
             {
                 rb.linearVelocityX = 0;
             }

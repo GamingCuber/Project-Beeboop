@@ -5,7 +5,6 @@ public class PlayerJump : MonoBehaviour
 {
     public Rigidbody2D rb;
 
-    private bool grounded = false;
 
     private bool canJump = true;
 
@@ -29,18 +28,19 @@ public class PlayerJump : MonoBehaviour
 
     void Update()
     {
-        if (Physics2D.Raycast(this.transform.position, Vector2.down, 1.05f, platformLayer)) //if player is close to ground theyre grounded!
+        if (Physics2D.Raycast(this.transform.position, Vector2.down, 1.05f, platformLayer)) //if player is close to ground theyre PlayerStateManager.Instance.getState().isGrounded!
         {
             canJump = true;
-            grounded = true;
-            
+            PlayerStateManager.Instance.getState().isGrounded = true;
+            rb.linearDamping = 0;
+
         }
         else
         {
-            grounded = false;
+            PlayerStateManager.Instance.getState().isGrounded = false;
         }
 
-        if (!grounded && canJump && coyoteCo == null && jumpsLeft == PlayerDataManager.Instance.getData().jumpAmt) //gives coyote time if they were recently on the ground, they isn't already a co running and if theyre on their first jump
+        if (!PlayerStateManager.Instance.getState().isGrounded && canJump && coyoteCo == null && jumpsLeft == PlayerDataManager.Instance.getData().jumpAmt) //gives coyote time if they were recently on the ground, they isn't already a co running and if theyre on their first jump
         {
             coyoteCo = StartCoroutine(coyoteTimer());
         }
@@ -87,7 +87,7 @@ public class PlayerJump : MonoBehaviour
         }
         preJumpCo = StartCoroutine(checkForPreInput());
 
-        while (!grounded) //just stall till the player hits the ground to reset grav
+        while (!PlayerStateManager.Instance.getState().isGrounded) //just stall till the player hits the ground to reset grav
         {
             yield return new WaitForEndOfFrame();
         }
@@ -99,7 +99,7 @@ public class PlayerJump : MonoBehaviour
         yield break;
     }
 
-    private IEnumerator coyoteTimer() //counts frames for when the player can jump off whilst not grounded
+    private IEnumerator coyoteTimer() //counts frames for when the player can jump off whilst not PlayerStateManager.Instance.getState().isGrounded
     {
         int count = 0;
 
@@ -128,7 +128,7 @@ public class PlayerJump : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
-        while (!grounded) //wait for player to hit the ground
+        while (!PlayerStateManager.Instance.getState().isGrounded) //wait for player to hit the ground
         {
             yield return new WaitForEndOfFrame();
         }
