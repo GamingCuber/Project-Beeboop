@@ -13,4 +13,6 @@ public class PlayerData : ScriptableObject
     public float jumpFallGrav; //grav when falling
     public float dashStr = 15;
     public string playerdirection;
+
+    public int upgradescollected = 0;
 }
