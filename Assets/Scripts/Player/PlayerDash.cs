@@ -39,11 +39,14 @@ public class PlayerDash : MonoBehaviour
         if (PlayerDataManager.Instance.getData().playerdirection == "right")
         {
             PlayerStateManager.Instance.getState().isDashing = true;
+            SoundManager.Instance.playsound("dash");
+
             //rb.linearVelocityX = 0;
             rb.AddForceX(PlayerDataManager.Instance.getData().dashStr, ForceMode2D.Impulse);
         }
         else
         {
+             SoundManager.Instance.playsound("dash");
             PlayerStateManager.Instance.getState().isDashing = true;
             //rb.linearVelocityX = 0;
             rb.AddForceX(-1 * PlayerDataManager.Instance.getData().dashStr, ForceMode2D.Impulse);
