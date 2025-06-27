@@ -9,6 +9,8 @@ public class PlayerInputs : MonoBehaviour
 
     public KeyCode left { get; set; }
     public KeyCode right { get; set; }
+    public KeyCode up { get; set; }
+    public KeyCode down { get; set; }
     public KeyCode jump { get; set; }
     public KeyCode hook { get; set; }
     public KeyCode dash { get; set; }
@@ -22,6 +24,8 @@ public class PlayerInputs : MonoBehaviour
 
         left = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("left", "A"));
         right = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("right", "D"));
+        up = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("left", "S"));
+        down = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("right", "W"));
         jump = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("jump", "Space"));
         hook = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("hook", "F"));
         dash = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("dash", "E"));
