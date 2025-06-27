@@ -3,8 +3,9 @@ using System.Collections;
 
 public class PlayerJump : MonoBehaviour
 {
-    public Rigidbody2D rb;
+    public static PlayerJump Instance;
 
+    public Rigidbody2D rb;
 
     private bool canJump = true;
 
@@ -22,38 +23,53 @@ public class PlayerJump : MonoBehaviour
 
     private void Start()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+
         platformLayer = LayerMask.GetMask("Platform");
         StartCoroutine(waitForData());
     }
 
     void Update()
     {
-        if (Physics2D.Raycast(this.transform.position, Vector2.down, 1.05f, platformLayer)) //if player is close to ground theyre PlayerStateManager.Instance.getState().isGrounded!
+        if (Physics2D.Raycast(this.transform.position, Vector2.down, 1.01f, platformLayer)) //if player is close to ground theyre PlayerStateManager.Instance.getState().isGrounded!
         {
             canJump = true;
             PlayerStateManager.Instance.getState().isGrounded = true;
             rb.linearDamping = 0;
 
+            if (jumpsLeft < PlayerDataManager.Instance.getData().jumpAmt && !isJumping)
+            {
+                resetJumps();
+            }
+
+            if (PlayerStateManager.Instance.getState().keepMomentum && Mathf.Abs(rb.linearVelocityY) < 0.05)
+            {
+                PlayerStateManager.Instance.getState().keepMomentum = false;
+            }
         }
         else
         {
             PlayerStateManager.Instance.getState().isGrounded = false;
         }
 
-        if (!PlayerStateManager.Instance.getState().isGrounded && canJump && coyoteCo == null && jumpsLeft == PlayerDataManager.Instance.getData().jumpAmt) //gives coyote time if they were recently on the ground, they isn't already a co running and if theyre on their first jump
-        {
-            coyoteCo = StartCoroutine(coyoteTimer());
-        }
-
         if (Input.GetKeyDown(PlayerInputs.Instance.jump) && jumpsLeft > 0 && (canJump || isJumping))
         {
             jump();
+        }
+
+        if (!PlayerStateManager.Instance.getState().isGrounded && canJump && coyoteCo == null && jumpsLeft == PlayerDataManager.Instance.getData().jumpAmt) //gives coyote time if they were recently on the ground, they isn't already a co running and if theyre on their first jump
+        {
+            coyoteCo = StartCoroutine(coyoteTimer());
         }
     }
 
     private void jump() //do a jump, cuz this functions gonna get called in more than one places
     {
         isJumping = true;
+        PlayerStateManager.Instance.getState().isJumping = true;
         jumpsLeft--;
         cancelJump();
         jumpCo = StartCoroutine(doJump());
@@ -93,9 +109,9 @@ public class PlayerJump : MonoBehaviour
         }
 
         isJumping = false;
+        PlayerStateManager.Instance.getState().isJumping = false;
         SoundManager.Instance.playsound("fall");
         PlayerGravManager.Instance.resetGrav();
-        resetJumps();
         yield break;
     }
 
@@ -146,7 +162,7 @@ public class PlayerJump : MonoBehaviour
         jumpsLeft = PlayerDataManager.Instance.getData().jumpAmt;
     }
 
-    private void cancelJump() //resets grav, player y velo, redoes the jump coroutine
+    public void cancelJump() //resets grav, player y velo, redoes the jump coroutine
     {
         if (jumpCo != null)
         {

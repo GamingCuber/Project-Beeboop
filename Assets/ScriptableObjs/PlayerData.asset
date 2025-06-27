@@ -20,8 +20,9 @@ MonoBehaviour:
   jumpFloatGrav: 0.75
   jumpFallGrav: 2.5
   dashStr: 15
-  playerdirection: left
-  upgradescollected: 5
+  dashTime: 0.25
+  playerdirection: right
+  upgradescollected: 68
   hookDistanceLimit: 25
   hookSpeed: 150
   dampeningPostHook: 3

@@ -7,56 +7,70 @@ public class PlayerDash : MonoBehaviour
     public Rigidbody2D rb;
 
     public bool debounce = false;
-    //public bool DashingVar = PlayerStateManager.Instance.getState().isDashing;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
 
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(PlayerInputs.Instance.dash) && debounce == false)
         {
             StartCoroutine(DashCoroutine());
-
         }
 
-
-
+        if (debounce && PlayerStateManager.Instance.getState().isGrounded)
+        {
+            debounce = false;
+            PlayerGravManager.Instance.resetGrav();
+        }
     }
 
 
     public IEnumerator DashCoroutine()
     {
-
-
-
+        float timer = 0; 
 
         debounce = true;
-        if (PlayerDataManager.Instance.getData().playerdirection == "right")
-        {
-            PlayerStateManager.Instance.getState().isDashing = true;
-            SoundManager.Instance.playsound("dash");
+        PlayerStateManager.Instance.getState().isDashing = true;
+        PlayerGravManager.Instance.setGrav(0);
 
-            //rb.linearVelocityX = 0;
-            rb.AddForceX(PlayerDataManager.Instance.getData().dashStr, ForceMode2D.Impulse);
-        }
-        else
+        Vector2 dashDir = Vector2.zero;
+
+        if (Input.GetKey(PlayerInputs.Instance.up))
         {
-             SoundManager.Instance.playsound("dash");
-            PlayerStateManager.Instance.getState().isDashing = true;
-            //rb.linearVelocityX = 0;
-            rb.AddForceX(-1 * PlayerDataManager.Instance.getData().dashStr, ForceMode2D.Impulse);
+            dashDir.y = -1;
         }
-        yield return new WaitForSeconds(CoolDown);
+        else if (Input.GetKey(PlayerInputs.Instance.down))
+        {
+            dashDir.y = 1;
+        }
+
+        if (Input.GetKey(PlayerInputs.Instance.left))
+        {
+            dashDir.x = -1;
+        }
+        else if (Input.GetKey(PlayerInputs.Instance.right))
+        {
+            dashDir.x = 1;
+        }
+
+        dashDir.Normalize();
+
+        rb.constraints = RigidbodyConstraints2D.FreezePositionY;
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+        rb.AddForce(dashDir * PlayerDataManager.Instance.getData().dashStr, ForceMode2D.Impulse);
+
+        while (timer < PlayerDataManager.Instance.getData().dashTime)
+        {
+            timer += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+
+        rb.constraints = RigidbodyConstraints2D.FreezePositionY;
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+        PlayerMove.Instance.startMovement();
+        PlayerGravManager.Instance.setGrav(PlayerDataManager.Instance.getData().jumpFallGrav);
         PlayerStateManager.Instance.getState().isDashing = false;
-        debounce = false;
 
-
-
-
+        yield break;
     }
 }
