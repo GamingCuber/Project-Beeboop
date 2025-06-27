@@ -19,4 +19,6 @@ public class PlayerData : ScriptableObject
     public float hookDistanceLimit;
     public float hookSpeed;
     public float dampeningPostHook;
+
+    public GameObject current_checkpoint;
 }
