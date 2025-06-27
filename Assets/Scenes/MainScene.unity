@@ -553,9 +553,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 158954680}
   hookLineRenderer: {fileID: 158954686}
-  hookDistanceLimit: 25
-  hookSpeed: 150
-  dampeningPostHook: 3
 --- !u!114 &158954688
 MonoBehaviour:
   m_ObjectHideFlags: 0

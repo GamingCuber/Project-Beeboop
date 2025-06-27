@@ -12,6 +12,7 @@ public class PlayerData : ScriptableObject
     public float jumpFloatGrav; //grav at the apex of the jump
     public float jumpFallGrav; //grav when falling
     public float dashStr = 15;
+    public float dashTime; //how long the speed of the dash is kept until its reset
     public string playerdirection;
 
     public int upgradescollected = 0;

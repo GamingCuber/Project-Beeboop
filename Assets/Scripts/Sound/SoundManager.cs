@@ -12,6 +12,7 @@ public class SoundManager: MonoBehaviour
     public AudioClip fall;
     public AudioClip jump;
     public AudioClip Walk;
+    public AudioClip test;
 
 
 
@@ -26,6 +27,7 @@ public class SoundManager: MonoBehaviour
         sfx_dictionary.Add("dash", dash);
         sfx_dictionary.Add("fall", fall);
         sfx_dictionary.Add("Jump", jump);
+        sfx_dictionary.Add("Test", test);
     
     }
 
