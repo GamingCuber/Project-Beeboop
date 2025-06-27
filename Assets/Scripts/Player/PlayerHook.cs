@@ -34,7 +34,7 @@ public class PlayerHook : MonoBehaviour
                     Vector2 hookVector = (hook.transform.position - transform.position) * Time.fixedDeltaTime;
                     rb.AddForce(hookVector * PlayerDataManager.Instance.getData().hookSpeed, ForceMode2D.Impulse);
                 }
-
+                PlayerStateManager.Instance.getState().keepMomentum = true;
             }
         }
 

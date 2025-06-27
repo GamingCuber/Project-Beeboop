@@ -2,13 +2,25 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    public static PlayerMove Instance;
+
     public Rigidbody2D rb;
+
+    private bool isPaused = false; //used in dash, to stop movement so it doesn't influence the dash
 
     private int dir; //left or right, -1 left, 1 right
 
+    private void Start()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
+
     void Update()
     {
-        if (!PlayerStateManager.Instance.getState().isHooked && !PlayerStateManager.Instance.getState().isDashing)
+        if (!PlayerStateManager.Instance.getState().isHooked && !PlayerStateManager.Instance.getState().isDashing && !isPaused)
         {
             if (Input.GetKey(PlayerInputs.Instance.left) || Input.GetKey(PlayerInputs.Instance.right))
             {
@@ -27,7 +39,14 @@ public class PlayerMove : MonoBehaviour
                 {
                     if (PlayerDataManager.Instance.getData().playerdirection == "right")
                     {
-                        rb.linearVelocityX *= -1;
+                        if (PlayerStateManager.Instance.getState().isGrounded)
+                        {
+                            rb.linearVelocityX *= -1;
+                        }
+                        else if (PlayerStateManager.Instance.getState().isJumping)
+                        {
+                            rb.linearVelocityX /= 1.2f;
+                        }
                     }
 
                     dir = -1;
@@ -37,7 +56,14 @@ public class PlayerMove : MonoBehaviour
                 {
                     if (PlayerDataManager.Instance.getData().playerdirection == "left")
                     {
-                        rb.linearVelocityX *= -1;
+                        if (PlayerStateManager.Instance.getState().isGrounded)
+                        {
+                            rb.linearVelocityX *= -1;
+                        }
+                        else if (PlayerStateManager.Instance.getState().isJumping)
+                        {
+                            rb.linearVelocityX /= 1.2f;
+                        }
                     }
 
                     dir = 1;
@@ -46,10 +72,20 @@ public class PlayerMove : MonoBehaviour
 
                 rb.AddForceX(PlayerDataManager.Instance.getData().playerAcc * AFMult * dir, ForceMode2D.Force);
             }
-            else if (PlayerStateManager.Instance.getState().isGrounded)
+            else if (!PlayerStateManager.Instance.getState().keepMomentum)
             {
                 rb.linearVelocityX = 0;
             }
         }
+    }
+
+    public void stopMovement()
+    {
+        isPaused = true;
+    }
+
+    public void startMovement()
+    {
+        isPaused = false;
     }
 }

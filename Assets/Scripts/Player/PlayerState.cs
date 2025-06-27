@@ -8,5 +8,6 @@ public class PlayerState : ScriptableObject
     public bool isGrounded = false;
     public bool isDashing = false;
     public bool isHooked = false;
-
+    public bool isJumping = false;
+    public bool keepMomentum = false;
 }
