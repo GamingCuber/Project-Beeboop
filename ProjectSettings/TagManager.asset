@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Hook
   - Collectable
+  - Checkpoint
+  - PlatformJump
   layers:
   - Default
   - TransparentFX
