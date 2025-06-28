@@ -8,7 +8,7 @@ public class CameraFollow : MonoBehaviour
     public float maxSpeed;
     public float yOffset;
 
-    void Update()
+    void FixedUpdate()
     {
         float speed = minSpeed;
 
