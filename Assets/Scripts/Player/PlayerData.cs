@@ -16,6 +16,7 @@ public class PlayerData : ScriptableObject
     public float jumpFallGrav; //grav when falling
     public float dashStr = 15;
     public float dashTime; //how long the speed of the dash is kept until its reset
+    public float dashCDFrames; //how many frames dash is on cd
     public string playerdirection;
     public float hookDistanceLimit;
     public float hookSpeed;

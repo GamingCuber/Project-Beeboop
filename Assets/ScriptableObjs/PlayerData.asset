@@ -22,8 +22,9 @@ MonoBehaviour:
   percentApex: 0.1
   apexDampening: 7
   jumpFallGrav: 4.5
-  dashStr: 15
+  dashStr: 20
   dashTime: 0.25
+  dashCDFrames: 20
   playerdirection: left
   hookDistanceLimit: 25
   hookSpeed: 150
