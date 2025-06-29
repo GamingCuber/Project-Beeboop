@@ -10,7 +10,7 @@ public class PlayerDash : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(PlayerInputs.Instance.dash) && debounce == false)
+        if (Input.GetKeyDown(PlayerInputs.Instance.dash) && debounce == false && PlayerStateManager.Instance.getState().canDash)
         {
             StartCoroutine(DashCoroutine());
         }
@@ -25,7 +25,7 @@ public class PlayerDash : MonoBehaviour
 
     public IEnumerator DashCoroutine()
     {
-        float timer = 0; 
+        float timer = 0;
 
         debounce = true;
         PlayerStateManager.Instance.getState().isDashing = true;
