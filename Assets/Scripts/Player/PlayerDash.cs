@@ -67,6 +67,7 @@ public class PlayerDash : MonoBehaviour
         rb.constraints = RigidbodyConstraints2D.FreezePositionY;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
+        SoundManager.Instance.playsound("dash");
         PlayerMove.Instance.startMovement();
         PlayerGravManager.Instance.setGrav(PlayerDataManager.Instance.getData().jumpFallGrav);
         PlayerStateManager.Instance.getState().isDashing = false;

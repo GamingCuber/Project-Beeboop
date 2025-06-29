@@ -84,6 +84,7 @@ public class PlayerJump : MonoBehaviour
             if (!Input.GetKey(PlayerInputs.Instance.jump) || rb.linearVelocityY < -0.5) //if they let go or player starts falling, increase grav so they fall faster
             {
                 PlayerGravManager.Instance.setGrav(PlayerDataManager.Instance.getData().jumpFallGrav);
+                PlayerStateManager.Instance.getState().isFalling = true;
                 break;
             }
             else if (Mathf.Abs(rb.linearVelocityY) < 1.5) //if player is at the peak of their jump, so when the abs velo is low
@@ -111,7 +112,6 @@ public class PlayerJump : MonoBehaviour
         isJumping = false;
         PlayerStateManager.Instance.getState().isJumping = false;
         SoundManager.Instance.playsound("fall");
-        PlayerGravManager.Instance.resetGrav();
         yield break;
     }
 

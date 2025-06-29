@@ -12,17 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df1cfc8610cad45bd9b50d33af477a02, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  playerAcc: 10
-  playerMaxSpd: 10
+  playerAcc: 30
+  playerMaxSpd: 13
   coyoteFrames: 40
-  jumpStr: 7
+  jumpStr: 10
   jumpAmt: 2
-  jumpFloatGrav: 0.75
-  jumpFallGrav: 2.5
+  jumpFloatGrav: 3.94
+  jumpFallGrav: 5
   dashStr: 15
   dashTime: 0.25
-  playerdirection: right
-  upgradescollected: 68
+  playerdirection: left
+  upgradescollected: 111
   hookDistanceLimit: 25
   hookSpeed: 150
-  dampeningPostHook: 3
+  dampeningPostHook: 0
+  current_checkpoint: {fileID: 0}

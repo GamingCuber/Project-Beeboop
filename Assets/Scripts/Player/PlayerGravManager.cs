@@ -14,6 +14,18 @@ public class PlayerGravManager : MonoBehaviour //central script to mess with pla
         }
     }
 
+    private void Update()
+    {
+        if (PlayerStateManager.Instance.getState().isFalling)
+        {
+            setGrav(PlayerDataManager.Instance.getData().jumpFallGrav);
+        }
+        else
+        {
+            resetGrav();
+        }
+    }
+
     public void setGrav(float g)
     {
         rb.gravityScale = g;
