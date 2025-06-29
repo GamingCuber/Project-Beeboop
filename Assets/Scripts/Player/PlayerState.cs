@@ -9,6 +9,7 @@ public class PlayerState : ScriptableObject
     public bool isDashing = false;
     public bool isHooked = false;
     public bool isJumping = false;
+    public bool isFalling = false;
     public bool keepMomentum = false;
     public bool canDash = false;
     public bool canDoubleJump = false;
