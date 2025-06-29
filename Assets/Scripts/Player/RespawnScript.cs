@@ -3,7 +3,6 @@ using UnityEngine;
 public class RespawnScript : MonoBehaviour
 {
     public static RespawnScript Instance;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         if (Instance == null)
@@ -11,12 +10,6 @@ public class RespawnScript : MonoBehaviour
 
             Instance = this;
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void respawntocheckpoint()
