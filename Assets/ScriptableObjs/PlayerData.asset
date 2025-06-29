@@ -15,9 +15,12 @@ MonoBehaviour:
   playerAcc: 30
   playerMaxSpd: 13
   coyoteFrames: 40
-  jumpStr: 10
   jumpAmt: 2
-  jumpFloatGrav: 3.94
+  jumpHeight: 3
+  jumpTime: 0.15
+  jumpApexTime: 0.15
+  percentApex: 0.1
+  apexDampening: 7
   jumpFallGrav: 4.5
   dashStr: 15
   dashTime: 0.25

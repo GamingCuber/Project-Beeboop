@@ -46696,7 +46696,7 @@ Transform:
   m_GameObject: {fileID: 809690807}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.485921, y: 30.640001, z: -10}
+  m_LocalPosition: {x: -5.7, y: 3.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -59295,9 +59295,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1484014644}
-  jumpHeight: 3
-  jumpTime: 0.15
-  jumpApexTime: 0.1
 --- !u!114 &1484014641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59414,7 +59411,7 @@ Transform:
   m_GameObject: {fileID: 1484014631}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.3, y: 25.7, z: 0}
+  m_LocalPosition: {x: 16.8, y: 26.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

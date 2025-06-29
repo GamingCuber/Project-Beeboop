@@ -21,12 +21,6 @@ public class PlayerJump : MonoBehaviour
 
     private LayerMask platformLayer;
 
-    public float jumpHeight;
-
-    public float jumpTime;
-
-    public float jumpApexTime;
-
     private void Start()
     {
         if (Instance == null)
@@ -87,10 +81,9 @@ public class PlayerJump : MonoBehaviour
 
         Vector3 initPos = this.gameObject.transform.position;
 
-        Debug.Log("Init:" +initPos);
-        Debug.Log("Target:"+(initPos + Vector3.up * jumpHeight));
+        PlayerData data = PlayerDataManager.Instance.getData();
 
-        while (time < jumpTime + jumpApexTime)
+        while (time < PlayerDataManager.Instance.getData().jumpTime + data.jumpApexTime)
         {
             PlayerGravManager.Instance.setGrav(0);
 
@@ -103,21 +96,26 @@ public class PlayerJump : MonoBehaviour
 
             Vector3 pos = this.gameObject.transform.position;
 
-            if (time < jumpTime)
+            if (time < data.jumpTime)
             {
-                pos.y = Mathf.Lerp(initPos.y, (9f / 10) * initPos.y + jumpHeight, time / jumpTime);
+                pos.y = Mathf.Lerp(initPos.y, initPos.y + (data.jumpHeight * (1f - data.percentApex)), time / data.jumpTime);
+            }
+            else if (time - data.jumpTime < data.jumpApexTime /2)
+            {
+                rb.linearDamping = data.apexDampening;
+                pos.y = Mathf.Lerp(initPos.y + (data.jumpHeight * (1f - data.percentApex)), initPos.y + data.jumpHeight, (time - data.jumpTime) / (data.jumpApexTime / 2f));
             }
             else
             {
-                pos.y = Mathf.Lerp((9f / 10) * initPos.y + jumpHeight, initPos.y + jumpHeight, time - jumpTime / jumpApexTime);
+                pos.y = Mathf.Lerp(initPos.y + data.jumpHeight, initPos.y + (data.jumpHeight * (1f - data.percentApex)), (time - data.jumpTime - data.jumpApexTime / 2f) / (data.jumpApexTime / 2f));
             }
 
-            Debug.Log(pos);
             this.gameObject.transform.position = pos;
 
             yield return new WaitForEndOfFrame();
         }
 
+        rb.linearDamping = 0;
         PlayerStateManager.Instance.getState().isFalling = true;
 
         if (preJumpCo != null)
@@ -216,6 +214,7 @@ public class PlayerJump : MonoBehaviour
             isJumping = false;
         }
 
+        rb.linearDamping = 0;
         rb.linearVelocityY = 0;
         PlayerGravManager.Instance.resetGrav();
     }
