@@ -16,11 +16,11 @@ public class PlayerGravManager : MonoBehaviour //central script to mess with pla
 
     private void Update()
     {
-        if (PlayerStateManager.Instance.getState().isFalling)
+        if (PlayerStateManager.Instance.getState().isFalling && !PlayerStateManager.Instance.getState().isGrounded)
         {
             setGrav(PlayerDataManager.Instance.getData().jumpFallGrav);
         }
-        else
+        else if (PlayerStateManager.Instance.getState().isGrounded)
         {
             resetGrav();
         }

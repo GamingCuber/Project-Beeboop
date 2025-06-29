@@ -12,6 +12,7 @@ public class PlayerDash : MonoBehaviour
     {
         if (Input.GetKeyDown(PlayerInputs.Instance.dash) && debounce == false && PlayerStateManager.Instance.getState().canDash)
         {
+            PlayerJump.Instance.cancelJump(false);
             StartCoroutine(DashCoroutine());
         }
 
@@ -29,6 +30,7 @@ public class PlayerDash : MonoBehaviour
 
         debounce = true;
         PlayerStateManager.Instance.getState().isDashing = true;
+        PlayerStateManager.Instance.getState().isFalling = false;
         PlayerGravManager.Instance.setGrav(0);
 
         Vector2 dashDir = Vector2.zero;
@@ -69,9 +71,8 @@ public class PlayerDash : MonoBehaviour
 
         SoundManager.Instance.playsound("dash");
         PlayerMove.Instance.startMovement();
-        PlayerGravManager.Instance.setGrav(PlayerDataManager.Instance.getData().jumpFallGrav);
         PlayerStateManager.Instance.getState().isDashing = false;
-
+        PlayerStateManager.Instance.getState().isFalling = true;
         yield break;
     }
 }

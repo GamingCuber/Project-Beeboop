@@ -45,7 +45,7 @@ public class PlayerMove : MonoBehaviour
                         }
                         else if (PlayerStateManager.Instance.getState().isJumping)
                         {
-                            rb.linearVelocityX /= 2f;
+                            rb.linearVelocityX /= 3.5f;
                         }
                     }
 
@@ -62,7 +62,7 @@ public class PlayerMove : MonoBehaviour
                         }
                         else if (PlayerStateManager.Instance.getState().isJumping)
                         {
-                            rb.linearVelocityX /= 2f;
+                            rb.linearVelocityX /= 3.5f;
                         }
                     }
 

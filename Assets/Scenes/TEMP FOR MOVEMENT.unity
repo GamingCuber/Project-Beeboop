@@ -1832,6 +1832,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1814115160}
+  jumpHeight: 3
+  jumpTime: 0.15
+  jumpApexTime: 0.1
 --- !u!114 &1814115157
 MonoBehaviour:
   m_ObjectHideFlags: 0
