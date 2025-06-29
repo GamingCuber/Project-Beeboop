@@ -53,6 +53,10 @@ public class PlayerHook : MonoBehaviour
                 rb.linearDamping = PlayerDataManager.Instance.getData().dampeningPostHook;
                 rb.constraints = RigidbodyConstraints2D.FreezePositionY;
                 rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+                // Increases grav so you fall faster    
+                PlayerStateManager.Instance.getState().isFalling = true;
+
                 PlayerStateManager.Instance.getState().isHooked = false;
                 hookLineRenderer.enabled = false;
                 // Resets drag on the player
