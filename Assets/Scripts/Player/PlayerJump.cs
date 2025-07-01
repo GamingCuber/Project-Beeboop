@@ -83,10 +83,10 @@ public class PlayerJump : MonoBehaviour
 
         PlayerData data = PlayerDataManager.Instance.getData();
 
-        while (time < PlayerDataManager.Instance.getData().jumpTime + data.jumpApexTime)
-        {
-            PlayerGravManager.Instance.setGrav(0);
+        PlayerGravManager.Instance.setGrav(0);
 
+        while (time < PlayerDataManager.Instance.getData().jumpTime)
+        {
             time += Time.deltaTime;
 
             if (!Input.GetKey(PlayerInputs.Instance.jump)) //if they let go or player starts falling, increase grav so they fall faster
@@ -98,16 +98,13 @@ public class PlayerJump : MonoBehaviour
 
             if (time < data.jumpTime)
             {
-                pos.y = Mathf.Lerp(initPos.y, initPos.y + (data.jumpHeight * (1f - data.percentApex)), time / data.jumpTime);
-            }
-            else if (time - data.jumpTime < data.jumpApexTime /2)
-            {
-                rb.linearDamping = data.apexDampening;
-                pos.y = Mathf.Lerp(initPos.y + (data.jumpHeight * (1f - data.percentApex)), initPos.y + data.jumpHeight, (time - data.jumpTime) / (data.jumpApexTime / 2f));
-            }
-            else
-            {
-                pos.y = Mathf.Lerp(initPos.y + data.jumpHeight, initPos.y + (data.jumpHeight * (1f - data.percentApex)), (time - data.jumpTime - data.jumpApexTime / 2f) / (data.jumpApexTime / 2f));
+                pos.y = Mathf.Lerp(initPos.y, initPos.y + (data.jumpHeight * (1f - data.percentApex)), (Mathf.Sin(Mathf.PI/2f * (time / data.jumpTime))));
+
+                if (time > data.jumpTime/2)
+                {
+                    Debug.Log(time - data.jumpTime/2);
+                    PlayerGravManager.Instance.setGrav(PlayerDataManager.Instance.getData().jumpFallGrav * Mathf.Lerp(0, 1, (time - data.jumpTime / 2f) / (data.jumpTime / 2f)));
+                }
             }
 
             this.gameObject.transform.position = pos;

@@ -45,11 +45,11 @@ public class PlayerMove : MonoBehaviour
                     {
                         if (PlayerStateManager.Instance.getState().isGrounded)
                         {
-                            rb.linearVelocityX /= 3;
+                            rb.linearVelocityX /= 4;
                         }
                         else if (PlayerStateManager.Instance.getState().isJumping)
                         {
-                            rb.linearVelocityX /= 3.5f;
+                            rb.linearVelocityX /= 4.5f;
                         }
                     }
 
