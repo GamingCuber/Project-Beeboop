@@ -1,20 +1,20 @@
 using System.Numerics;
 using Mono.Cecil.Cil;
 using UnityEngine;
+using UnityEngine.U2D;
 using Vector2 = UnityEngine.Vector2;
 
 public class PlayerHook : MonoBehaviour
 {
     public Rigidbody2D rb;
     public LineRenderer hookLineRenderer;
-
-
-
     void Update()
     {
+
         if (PlayerStateManager.Instance.getState().canHook)
         {
             GameObject hook = getClosestHook();
+            hookReaction(hook, Vector2.Distance(hook.transform.position, transform.position));
             if (Input.GetKeyDown(PlayerInputs.Instance.hook))
             {
                 if (hook != null)
@@ -90,5 +90,17 @@ public class PlayerHook : MonoBehaviour
         }
 
         return closestHook;
+    }
+
+    private void hookReaction(GameObject hook, float distanceBetweenHook)
+    {
+        if (distanceBetweenHook <= PlayerDataManager.Instance.getData().hookDistanceLimit)
+        {
+            hook.GetComponent<SpriteRenderer>().color = Color.green;
+        }
+        else
+        {
+            hook.GetComponent<SpriteRenderer>().color = Color.white;
+        }
     }
 }
