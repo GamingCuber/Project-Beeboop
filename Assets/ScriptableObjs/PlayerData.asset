@@ -15,14 +15,19 @@ MonoBehaviour:
   playerAcc: 30
   playerMaxSpd: 13
   coyoteFrames: 40
-  jumpStr: 10
   jumpAmt: 2
   jumpFloatGrav: 3.94
-  jumpFallGrav: 5
-  dashStr: 15
-  dashTime: 0.25
-  playerdirection: left
   hookDistanceLimit: 5
+  jumpHeight: 4
+  jumpTime: 0.25
+  jumpApexTime: 0.15
+  percentApex: 0
+  apexDampening: 2
+  jumpFallGrav: 4
+  dashStr: 20
+  dashTime: 0.1
+  dashCDFrames: 20
+  playerdirection: right
   hookSpeed: 150
   dampeningPostHook: 0
   current_checkpoint: {fileID: 0}

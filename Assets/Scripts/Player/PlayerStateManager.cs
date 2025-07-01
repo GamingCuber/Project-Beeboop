@@ -25,7 +25,7 @@ public class PlayerStateManager : MonoBehaviour
 
     private void Update()
     {
-        if (rb.linearVelocityY < 0 && !state.isFalling && !state.isGrounded && !state.isDashing && !state.isHooked)
+        if (rb.linearVelocityY < 0 && !state.isFalling && !state.isGrounded && !state.isDashing && !state.isHooked && !state.isJumping)
         {
             state.isFalling = true;
         }
