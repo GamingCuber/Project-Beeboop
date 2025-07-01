@@ -12,22 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df1cfc8610cad45bd9b50d33af477a02, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  playerAcc: 30
+  playerAcc: 35
   playerMaxSpd: 13
   coyoteFrames: 40
   jumpAmt: 2
   jumpFloatGrav: 3.94
   hookDistanceLimit: 5
   jumpHeight: 4
-  jumpTime: 0.25
+  jumpTime: 0.35
   jumpApexTime: 0.15
   percentApex: 0
-  apexDampening: 2
-  jumpFallGrav: 4
+  apexDampening: 25
+  jumpFallGrav: 3.5
   dashStr: 20
   dashTime: 0.1
   dashCDFrames: 20
-  playerdirection: right
+  playerdirection: left
+  hookDistanceLimit: 251
   hookSpeed: 150
   dampeningPostHook: 0
   current_checkpoint: {fileID: 0}
