@@ -22,8 +22,7 @@ MonoBehaviour:
   dashStr: 15
   dashTime: 0.25
   playerdirection: left
-  upgradescollected: 111
-  hookDistanceLimit: 25
+  hookDistanceLimit: 5
   hookSpeed: 150
   dampeningPostHook: 0
   current_checkpoint: {fileID: 0}
