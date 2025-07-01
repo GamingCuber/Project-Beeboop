@@ -16,16 +16,16 @@ MonoBehaviour:
   playerMaxSpd: 13
   coyoteFrames: 40
   jumpAmt: 2
-  jumpHeight: 3
-  jumpTime: 0.2
+  jumpHeight: 4
+  jumpTime: 0.25
   jumpApexTime: 0.15
-  percentApex: 0.1
+  percentApex: 0
   apexDampening: 2
   jumpFallGrav: 4
   dashStr: 20
   dashTime: 0.1
   dashCDFrames: 20
-  playerdirection: left
+  playerdirection: right
   hookDistanceLimit: 25
   hookSpeed: 150
   dampeningPostHook: 0
