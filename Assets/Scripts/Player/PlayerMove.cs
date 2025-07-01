@@ -10,6 +10,8 @@ public class PlayerMove : MonoBehaviour
 
     private int dir; //left or right, -1 left, 1 right
 
+    float AFMult = 1; //add force mult, so i can make it close to 0 if the player is close to max speed
+
     private void Start()
     {
         if (Instance == null)
@@ -28,11 +30,13 @@ public class PlayerMove : MonoBehaviour
 
                 float maxSpd = PlayerDataManager.Instance.getData().playerMaxSpd;
 
-                float AFMult = 1; //add force mult, so i can make it close to 0 if the player is close to max speed
-
                 if (Mathf.Abs(xVelo) > maxSpd - maxSpd / 4) //so if the player is approaching their max speed
                 {
                     AFMult = 1 - (Mathf.Abs(xVelo) / maxSpd);
+                }
+                else
+                {
+                    AFMult = 1;
                 }
 
                 if (Input.GetKey(PlayerInputs.Instance.left))
@@ -45,7 +49,7 @@ public class PlayerMove : MonoBehaviour
                         }
                         else if (PlayerStateManager.Instance.getState().isJumping)
                         {
-                            rb.linearVelocityX /= 2f;
+                            rb.linearVelocityX /= 3.5f;
                         }
                     }
 
@@ -62,7 +66,7 @@ public class PlayerMove : MonoBehaviour
                         }
                         else if (PlayerStateManager.Instance.getState().isJumping)
                         {
-                            rb.linearVelocityX /= 2f;
+                            rb.linearVelocityX /= 3.5f;
                         }
                     }
 

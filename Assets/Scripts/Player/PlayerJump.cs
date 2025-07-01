@@ -71,32 +71,52 @@ public class PlayerJump : MonoBehaviour
         isJumping = true;
         PlayerStateManager.Instance.getState().isJumping = true;
         jumpsLeft--;
-        cancelJump();
+        cancelJump(true);
         jumpCo = StartCoroutine(doJump());
     }
 
     private IEnumerator doJump() //itll addforce and watch for conditions to mess with the gravity
     {
-        rb.AddForceY(PlayerDataManager.Instance.getData().jumpStr, ForceMode2D.Impulse);
+        float time = 0;
 
-        while (true)
+        Vector3 initPos = this.gameObject.transform.position;
+
+        PlayerData data = PlayerDataManager.Instance.getData();
+
+        while (time < PlayerDataManager.Instance.getData().jumpTime + data.jumpApexTime)
         {
-            if (!Input.GetKey(PlayerInputs.Instance.jump) || rb.linearVelocityY < -0.5) //if they let go or player starts falling, increase grav so they fall faster
+            PlayerGravManager.Instance.setGrav(0);
+
+            time += Time.deltaTime;
+
+            if (!Input.GetKey(PlayerInputs.Instance.jump)) //if they let go or player starts falling, increase grav so they fall faster
             {
-                PlayerGravManager.Instance.setGrav(PlayerDataManager.Instance.getData().jumpFallGrav);
-                PlayerStateManager.Instance.getState().isFalling = true;
                 break;
             }
-            else if (Mathf.Abs(rb.linearVelocityY) < 1.5) //if player is at the peak of their jump, so when the abs velo is low
+
+            Vector3 pos = this.gameObject.transform.position;
+
+            if (time < data.jumpTime)
             {
-                PlayerGravManager.Instance.setGrav(PlayerDataManager.Instance.getData().jumpFloatGrav);
+                pos.y = Mathf.Lerp(initPos.y, initPos.y + (data.jumpHeight * (1f - data.percentApex)), time / data.jumpTime);
+            }
+            else if (time - data.jumpTime < data.jumpApexTime /2)
+            {
+                rb.linearDamping = data.apexDampening;
+                pos.y = Mathf.Lerp(initPos.y + (data.jumpHeight * (1f - data.percentApex)), initPos.y + data.jumpHeight, (time - data.jumpTime) / (data.jumpApexTime / 2f));
             }
             else
             {
-                PlayerGravManager.Instance.resetGrav();
+                pos.y = Mathf.Lerp(initPos.y + data.jumpHeight, initPos.y + (data.jumpHeight * (1f - data.percentApex)), (time - data.jumpTime - data.jumpApexTime / 2f) / (data.jumpApexTime / 2f));
             }
+
+            this.gameObject.transform.position = pos;
+
             yield return new WaitForEndOfFrame();
         }
+
+        rb.linearDamping = 0;
+        PlayerStateManager.Instance.getState().isFalling = true;
 
         if (preJumpCo != null)
         {
@@ -134,11 +154,31 @@ public class PlayerJump : MonoBehaviour
     {
         bool wantsJump = false; //if they preinput
 
+        bool alreadyPressing = (Input.GetKey(PlayerInputs.Instance.jump));
+
         while (isJumping)
         {
-            if (Input.GetKey(PlayerInputs.Instance.jump) && Physics2D.Raycast(this.transform.position, Vector2.down, 1.5f, platformLayer))
+            if (alreadyPressing)
             {
-                wantsJump = true;
+                if (!Input.GetKey(PlayerInputs.Instance.jump))
+                {
+                    alreadyPressing = false;
+                }
+            }
+            else
+            {
+                if (Input.GetKey(PlayerInputs.Instance.jump))
+                {
+                    wantsJump = true;
+                }
+                else
+                {
+                    wantsJump = false;
+                }
+            }
+
+            if (Physics2D.Raycast(this.transform.position, Vector2.down, 2f, platformLayer) && wantsJump)
+            {
                 break;
             }
             yield return new WaitForEndOfFrame();
@@ -162,13 +202,19 @@ public class PlayerJump : MonoBehaviour
         jumpsLeft = PlayerDataManager.Instance.getData().jumpAmt;
     }
 
-    public void cancelJump() //resets grav, player y velo, redoes the jump coroutine
+    public void cancelJump(bool doubleJumping) //param is IF you want the player to be able to still doublejump after you cancel
     {
         if (jumpCo != null)
         {
             StopCoroutine(jumpCo);
         }
 
+        if (!doubleJumping)
+        {
+            isJumping = false;
+        }
+
+        rb.linearDamping = 0;
         rb.linearVelocityY = 0;
         PlayerGravManager.Instance.resetGrav();
     }

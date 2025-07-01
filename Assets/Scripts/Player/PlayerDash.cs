@@ -3,15 +3,17 @@ using UnityEngine;
 
 public class PlayerDash : MonoBehaviour
 {
-    public int CoolDown = 1;
     public Rigidbody2D rb;
 
     public bool debounce = false;
 
+    private bool onCooldown;
+
     void Update()
     {
-        if (Input.GetKeyDown(PlayerInputs.Instance.dash) && debounce == false && PlayerStateManager.Instance.getState().canDash)
+        if (Input.GetKeyDown(PlayerInputs.Instance.dash) && debounce == false && PlayerStateManager.Instance.getState().canDash && !onCooldown)
         {
+            PlayerJump.Instance.cancelJump(false);
             StartCoroutine(DashCoroutine());
         }
 
@@ -28,7 +30,10 @@ public class PlayerDash : MonoBehaviour
         float timer = 0;
 
         debounce = true;
+        onCooldown = true;
+
         PlayerStateManager.Instance.getState().isDashing = true;
+        PlayerStateManager.Instance.getState().isFalling = false;
         PlayerGravManager.Instance.setGrav(0);
 
         Vector2 dashDir = Vector2.zero;
@@ -69,9 +74,25 @@ public class PlayerDash : MonoBehaviour
 
         SoundManager.Instance.playsound("dash");
         PlayerMove.Instance.startMovement();
-        PlayerGravManager.Instance.setGrav(PlayerDataManager.Instance.getData().jumpFallGrav);
         PlayerStateManager.Instance.getState().isDashing = false;
+        PlayerStateManager.Instance.getState().isFalling = true;
 
+        StartCoroutine(cooldownTimer());
+
+        yield break;
+    }
+
+    private IEnumerator cooldownTimer()
+    {
+        int frames = 0;
+
+        while (frames < PlayerDataManager.Instance.getData().dashCDFrames)
+        {
+            frames++;
+            yield return new WaitForEndOfFrame();
+        }
+
+        onCooldown = false;
         yield break;
     }
 }

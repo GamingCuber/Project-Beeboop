@@ -218,6 +218,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Semisolid
       objectReference: {fileID: 0}
+    - target: {fileID: 5362601989705389446, guid: dcb0e34de9022c647ab58efd2325114e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7104562888643692845, guid: dcb0e34de9022c647ab58efd2325114e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.41
@@ -18355,6 +18359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: {fileID: 11400000, guid: cc0bfaeca2054cc6fa2b0c64544e21de, type: 2}
+  rb: {fileID: 1484014644}
 --- !u!120 &1484014635
 LineRenderer:
   serializedVersion: 2
@@ -18552,6 +18557,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1484014644}
+  jumpHeight: 3
+  jumpTime: 0.15
+  jumpApexTime: 0.1
 --- !u!114 &1484014641
 MonoBehaviour:
   m_ObjectHideFlags: 0
