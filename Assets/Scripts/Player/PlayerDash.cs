@@ -31,12 +31,10 @@ public class PlayerDash : MonoBehaviour
 
         debounce = true;
         onCooldown = true;
+        Vector2 dashDir = Vector2.zero;
 
         PlayerStateManager.Instance.getState().isDashing = true;
         PlayerStateManager.Instance.getState().isFalling = false;
-        PlayerGravManager.Instance.setGrav(0);
-
-        Vector2 dashDir = Vector2.zero;
 
         if (Input.GetKey(PlayerInputs.Instance.up))
         {
@@ -57,6 +55,17 @@ public class PlayerDash : MonoBehaviour
         }
 
         dashDir.Normalize();
+
+        if (dashDir == Vector2.zero)
+        {
+            PlayerMove.Instance.startMovement();
+            PlayerStateManager.Instance.getState().isDashing = false;
+            PlayerStateManager.Instance.getState().isFalling = true;
+            StartCoroutine(cooldownTimer());
+            yield break;
+        }
+
+        PlayerGravManager.Instance.setGrav(0);
 
         rb.constraints = RigidbodyConstraints2D.FreezePositionY;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;

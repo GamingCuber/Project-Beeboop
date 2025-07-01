@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44f517166f069b5ca85b2a6f145c4910, type: 3}
   m_Name: PlayerState
   m_EditorClassIdentifier: 
-  isGrounded: 1
-  isDashing: 0
+  isGrounded: 0
+  isDashing: 1
   isHooked: 0
-  isJumping: 0
+  isJumping: 1
   isFalling: 0
   keepMomentum: 0
   canDash: 1

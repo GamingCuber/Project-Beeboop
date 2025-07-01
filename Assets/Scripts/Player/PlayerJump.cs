@@ -102,7 +102,6 @@ public class PlayerJump : MonoBehaviour
 
                 if (time > data.jumpTime/2)
                 {
-                    Debug.Log(time - data.jumpTime/2);
                     PlayerGravManager.Instance.setGrav(PlayerDataManager.Instance.getData().jumpFallGrav * Mathf.Lerp(0, 1, (time - data.jumpTime / 2f) / (data.jumpTime / 2f)));
                 }
             }
