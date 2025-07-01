@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameTimer : MonoBehaviour
 {
@@ -33,7 +34,8 @@ public class GameTimer : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
-        Debug.Log("you died");
+        gameLost();
+
         yield break;
     }
 
@@ -56,5 +58,10 @@ public class GameTimer : MonoBehaviour
         }
 
         timerText.text = time;
+    }
+
+    private void gameLost()
+    {
+        SceneManager.LoadScene("LoseScreen");
     }
 }
