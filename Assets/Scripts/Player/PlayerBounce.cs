@@ -1,3 +1,4 @@
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class PlayerBounce : MonoBehaviour
@@ -14,10 +15,8 @@ public class PlayerBounce : MonoBehaviour
         if (Physics2D.Raycast(transform.position, Vector2.down, 1.01f, platformLayer))
         {
             GameObject bottomPlatform = Physics2D.Raycast(transform.position, Vector2.down, 1.01f, platformLayer).collider.gameObject;
-
             if (bottomPlatform != null && bottomPlatform.CompareTag("BouncePlatform"))
             {
-                Debug.Log("bouncing");
                 rb.AddForce(Vector2.up * PlayerDataManager.Instance.getData().bounceForce);
             }
         }
