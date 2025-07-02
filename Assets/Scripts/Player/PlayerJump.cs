@@ -77,6 +77,7 @@ public class PlayerJump : MonoBehaviour
 
     private IEnumerator doJump() //itll addforce and watch for conditions to mess with the gravity
     {
+        Debug.Log("dojump");
         float time = 0;
 
         Vector3 initPos = this.gameObject.transform.position;
@@ -105,7 +106,7 @@ public class PlayerJump : MonoBehaviour
                     PlayerGravManager.Instance.setGrav(PlayerDataManager.Instance.getData().jumpFallGrav * Mathf.Lerp(0, 1, (time - data.jumpTime / 2f) / (data.jumpTime / 2f)));
                 }
             }
-
+            
             this.gameObject.transform.position = pos;
 
             yield return new WaitForEndOfFrame();
@@ -173,10 +174,11 @@ public class PlayerJump : MonoBehaviour
                 }
             }
 
-            if (Physics2D.Raycast(this.transform.position, Vector2.down, 2f, platformLayer) && wantsJump)
+            if (Physics2D.Raycast(this.transform.position, Vector2.down, 2f, platformLayer))
             {
                 break;
             }
+
             yield return new WaitForEndOfFrame();
         }
 
