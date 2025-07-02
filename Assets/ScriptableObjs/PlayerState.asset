@@ -15,9 +15,9 @@ MonoBehaviour:
   isGrounded: 0
   isDashing: 0
   isHooked: 0
-  isJumping: 1
+  isJumping: 0
   isFalling: 0
   keepMomentum: 0
-  canDash: 1
+  canDash: 0
   canDoubleJump: 0
   canHook: 0
