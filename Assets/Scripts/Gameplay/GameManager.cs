@@ -20,7 +20,5 @@ public class GameManager : MonoBehaviour
         PlayerStateManager.Instance.getState().canDash = false;
         PlayerStateManager.Instance.getState().canDoubleJump = false;
         PlayerStateManager.Instance.getState().canHook = false;
-
-
     }
 }

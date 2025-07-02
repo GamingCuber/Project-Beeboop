@@ -32,4 +32,5 @@ MonoBehaviour:
   maxHorizontalSpeed: 15
   maxNegativeVerticalSpeed: 15
   maxPositiveVerticalSpeed: 15
+  bounceForce: 15
   current_checkpoint: {fileID: 0}
