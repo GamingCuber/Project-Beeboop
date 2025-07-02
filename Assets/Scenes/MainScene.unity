@@ -231,6 +231,7 @@ GameObject:
   - component: {fileID: 158954689}
   - component: {fileID: 158954690}
   - component: {fileID: 158954691}
+  - component: {fileID: 158954692}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -570,6 +571,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: {fileID: 11400000, guid: cc0bfaeca2054cc6fa2b0c64544e21de, type: 2}
+  rb: {fileID: 158954680}
 --- !u!114 &158954689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -582,7 +584,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4038b36f76af711cb1519f3d02660e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CoolDown: 1
   rb: {fileID: 158954680}
   debounce: 0
 --- !u!114 &158954690
@@ -615,6 +616,19 @@ MonoBehaviour:
   jump: {fileID: 8300000, guid: 4adbfc8ce45e13443acaf9c4b92077da, type: 3}
   Walk: {fileID: 8300000, guid: 1955e821dec18734c975b6d7c51126d8, type: 3}
   test: {fileID: 0}
+--- !u!114 &158954692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158954675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e874f5a9f9808961bac0a12b92085842, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 158954680}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,7 +9,7 @@ public class PlayerData : ScriptableObject
     public int coyoteFrames; //frames of coyote time
     public int jumpAmt; //max jumps consecutively (so like double jump would be 2)
     public float jumpHeight;
-    public float jumpTime; 
+    public float jumpTime;
     public float jumpApexTime;
     public float percentApex; //percentage of the jumpheight that is slowed for apex floaty time
     public float apexDampening; //linear dampening at apex to lower speed
@@ -21,6 +21,9 @@ public class PlayerData : ScriptableObject
     public float hookDistanceLimit;
     public float hookSpeed;
     public float dampeningPostHook;
+    public float maxHorizontalSpeed;
+    public float maxNegativeVerticalSpeed;
+    public float maxPositiveVerticalSpeed;
 
     public GameObject current_checkpoint;
 }
