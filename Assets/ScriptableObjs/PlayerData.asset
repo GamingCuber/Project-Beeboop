@@ -29,4 +29,7 @@ MonoBehaviour:
   hookDistanceLimit: 251
   hookSpeed: 150
   dampeningPostHook: 0
+  maxHorizontalSpeed: 50
+  maxNegativeVerticalSpeed: 50
+  maxPositiveVerticalSpeed: 50
   current_checkpoint: {fileID: 0}
