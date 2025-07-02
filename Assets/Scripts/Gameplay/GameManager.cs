@@ -22,14 +22,4 @@ public class GameManager : MonoBehaviour
         PlayerStateManager.Instance.getState().canDoubleJump = false;
         PlayerStateManager.Instance.getState().canHook = false;
     }
-
-    private IEnumerator waitForState()
-    {
-        while (PlayerStateManager.Instance == null)
-        {
-            yield return new WaitForEndOfFrame();
-        }
-
-        resetState();
-    }
 }

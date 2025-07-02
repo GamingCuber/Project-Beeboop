@@ -29,6 +29,7 @@ MonoBehaviour:
   hookDistanceLimit: 251
   hookSpeed: 150
   dampeningPostHook: 0
+  bounceForce: 1000
   maxHorizontalSpeed: 30
   maxNegativeVerticalSpeed: 30
   maxPositiveVerticalSpeed: 30
