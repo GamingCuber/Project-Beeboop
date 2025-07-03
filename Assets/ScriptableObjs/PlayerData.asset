@@ -15,7 +15,7 @@ MonoBehaviour:
   playerAcc: 35
   playerMaxSpd: 13
   coyoteFrames: 40
-  jumpAmt: 1
+  jumpAmt: 2
   jumpHeight: 4
   jumpTime: 0.35
   jumpApexTime: 0.15
@@ -29,8 +29,8 @@ MonoBehaviour:
   hookDistanceLimit: 251
   hookSpeed: 150
   dampeningPostHook: 0
-  bounceForce: 1000
   maxHorizontalSpeed: 30
   maxNegativeVerticalSpeed: 30
   maxPositiveVerticalSpeed: 30
+  bounceForce: 1000
   current_checkpoint: {fileID: 0}
