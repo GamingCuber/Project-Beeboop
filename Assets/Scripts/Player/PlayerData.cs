@@ -24,6 +24,7 @@ public class PlayerData : ScriptableObject
     public float maxHorizontalSpeed;
     public float maxNegativeVerticalSpeed;
     public float maxPositiveVerticalSpeed;
+    public float bounceForce;
 
     public GameObject current_checkpoint;
 }

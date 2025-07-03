@@ -25,11 +25,12 @@ MonoBehaviour:
   dashStr: 20
   dashTime: 0.15
   dashCDFrames: 20
-  playerdirection: right
+  playerdirection: left
   hookDistanceLimit: 251
   hookSpeed: 150
   dampeningPostHook: 0
-  maxHorizontalSpeed: 15
-  maxNegativeVerticalSpeed: 15
-  maxPositiveVerticalSpeed: 15
+  bounceForce: 1000
+  maxHorizontalSpeed: 30
+  maxNegativeVerticalSpeed: 30
+  maxPositiveVerticalSpeed: 30
   current_checkpoint: {fileID: 0}

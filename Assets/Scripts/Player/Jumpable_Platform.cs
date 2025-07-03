@@ -9,8 +9,6 @@ public class Jumpable_Platform : MonoBehaviour
         {
             Debug.Log("Enter");
             collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
-
-
         }
     }
     void OnTriggerExit2D(Collider2D collision)
