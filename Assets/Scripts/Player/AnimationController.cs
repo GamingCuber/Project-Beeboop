@@ -8,7 +8,7 @@ public class AnimationController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(PlayerInputs.Instance.left) && !sr.flipX)
+        if (Input.GetKey(PlayerInputs.Instance.left) && !sr.flipX) //if they goin left, flip sprite, otherwise don't
         {
             sr.flipX = true;
         }
@@ -17,7 +17,7 @@ public class AnimationController : MonoBehaviour
             sr.flipX = false;
         }
 
-        if (PlayerStateManager.Instance.getState().isGrounded && !anim.GetBool("isGrounded"))
+        if (PlayerStateManager.Instance.getState().isGrounded && !anim.GetBool("isGrounded")) //self explanatory
         {
             anim.SetBool("isGrounded", true);
         }
@@ -26,7 +26,7 @@ public class AnimationController : MonoBehaviour
             anim.SetBool("isGrounded", false);
         }
 
-        if (PlayerStateManager.Instance.getState().isGrounded && PlayerStateManager.Instance.getState().isMoving)
+        if (PlayerStateManager.Instance.getState().isGrounded && PlayerStateManager.Instance.getState().isMoving) //if theyre on the floor and moving
         {
             anim.SetBool("isMoving", true);
         }
@@ -35,16 +35,16 @@ public class AnimationController : MonoBehaviour
             anim.SetBool("isMoving", false);
         }
 
-        if (PlayerStateManager.Instance.getState().isJumping && !PlayerStateManager.Instance.getState().isFalling)
+        if (PlayerStateManager.Instance.getState().isJumping && !PlayerStateManager.Instance.getState().isFalling) //if they jumping and not falling
         {
             anim.SetBool("isJumping", true);
         }
-        else if (PlayerStateManager.Instance.getState().isJumping && PlayerStateManager.Instance.getState().isFalling)
+        else if (PlayerStateManager.Instance.getState().isJumping && PlayerStateManager.Instance.getState().isFalling) //jumping but falling
         {
             anim.SetBool("isJumping", false);
         }
 
-        if (PlayerStateManager.Instance.getState().isDashing && !anim.GetBool("isDashing"))
+        if (PlayerStateManager.Instance.getState().isDashing && !anim.GetBool("isDashing")) //self explanatory
         {
             anim.SetBool("isDashing", true);
         }
@@ -53,7 +53,7 @@ public class AnimationController : MonoBehaviour
             anim.SetBool("isDashing", false);
         }
 
-        if (PlayerStateManager.Instance.getState().isFalling)
+        if (PlayerStateManager.Instance.getState().isFalling) //self explanatory
         {
             anim.SetBool("isFalling", true);
         }
