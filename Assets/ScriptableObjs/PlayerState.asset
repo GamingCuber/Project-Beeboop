@@ -18,6 +18,6 @@ MonoBehaviour:
   isJumping: 0
   isFalling: 0
   keepMomentum: 0
-  canDash: 0
-  canDoubleJump: 0
-  canHook: 0
+  canDash: 1
+  canDoubleJump: 1
+  canHook: 1
