@@ -77,7 +77,6 @@ public class PlayerJump : MonoBehaviour
 
     private IEnumerator doJump() //itll addforce and watch for conditions to mess with the gravity
     {
-        Debug.Log("dojump");
         float time = 0;
 
         Vector3 initPos = this.gameObject.transform.position;
