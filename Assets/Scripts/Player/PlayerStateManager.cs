@@ -35,6 +35,17 @@ public class PlayerStateManager : MonoBehaviour
         {
             state.isFalling = false;
         }
+
+        if (Input.GetKey(PlayerInputs.Instance.left) || Input.GetKey(PlayerInputs.Instance.right)) //even dumber way to check if the player is moving
+        {
+            state.isMoving = true;
+        }
+        else
+        {
+
+            Debug.Log("stopped moving");
+            state.isMoving = false;
+        }
     }
 
     private void resetUpgrades()

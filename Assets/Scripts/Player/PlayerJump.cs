@@ -34,7 +34,7 @@ public class PlayerJump : MonoBehaviour
 
     void Update()
     {
-        if (Physics2D.Raycast(this.transform.position, Vector2.down, 1.01f, platformLayer)) //if player is close to ground theyre PlayerStateManager.Instance.getState().isGrounded!
+        if (Physics2D.Raycast(this.transform.position, Vector2.down, 1.1f, platformLayer)) //if player is close to ground theyre PlayerStateManager.Instance.getState().isGrounded!
         {
             canJump = true;
             PlayerStateManager.Instance.getState().isGrounded = true;
@@ -215,6 +215,7 @@ public class PlayerJump : MonoBehaviour
         rb.linearDamping = 0;
         rb.linearVelocityY = 0;
         PlayerGravManager.Instance.resetGrav();
+        PlayerStateManager.Instance.getState().isFalling = false;
     }
 
     private IEnumerator waitForData() //wait for the data manager singleton to be initialized
@@ -227,3 +228,4 @@ public class PlayerJump : MonoBehaviour
         resetJumps();
     }
 }
+//getting dash
