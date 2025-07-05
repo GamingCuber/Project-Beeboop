@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: PlayerState
   m_EditorClassIdentifier: 
   isGrounded: 1
+  isMoving: 0
   isDashing: 0
   isHooked: 0
   isJumping: 0

@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerState : ScriptableObject
 {
     public bool isGrounded = false;
+    public bool isMoving = false;
     public bool isDashing = false;
     public bool isHooked = false;
     public bool isJumping = false;
