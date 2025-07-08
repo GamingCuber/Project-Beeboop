@@ -40,7 +40,7 @@ public class PlayerStateManager : MonoBehaviour
         {
             state.isMoving = true;
         }
-        else if (state.isMoving)
+        else if (!Input.GetKey(PlayerInputs.Instance.left) && !Input.GetKey(PlayerInputs.Instance.right) && state.isMoving)
         {
             state.isMoving = false;
         }
