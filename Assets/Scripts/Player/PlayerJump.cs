@@ -108,6 +108,13 @@ public class PlayerJump : MonoBehaviour
             
             this.gameObject.transform.position = pos;
 
+            RaycastHit2D coll = Physics2D.Raycast(this.transform.position, Vector2.up, 1.1f, platformLayer);
+
+            if (coll.collider != null && !coll.collider.CompareTag("PlatformJump"))
+            {
+                break;
+            }
+
             yield return new WaitForEndOfFrame();
         }
 
@@ -208,7 +215,9 @@ public class PlayerJump : MonoBehaviour
 
         if (!doubleJumping)
         {
+            Debug.Log("isjumping flase");
             isJumping = false;
+            PlayerStateManager.Instance.getState().isJumping = false;
         }
 
         rb.linearDamping = 0;
