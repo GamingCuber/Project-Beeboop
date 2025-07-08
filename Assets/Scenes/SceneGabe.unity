@@ -58157,7 +58157,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4038b36f76af711cb1519f3d02660e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CoolDown: 1
   rb: {fileID: 1484014644}
   debounce: 0
 --- !u!114 &1484014634
