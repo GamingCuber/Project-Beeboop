@@ -72,6 +72,8 @@ public class PlayerDash : MonoBehaviour
 
         rb.AddForce(dashDir * PlayerDataManager.Instance.getData().dashStr, ForceMode2D.Impulse);
 
+        DashAfterimage.Instance.doAfterimage();
+
         while (timer < PlayerDataManager.Instance.getData().dashTime)
         {
             timer += Time.deltaTime;
@@ -81,7 +83,7 @@ public class PlayerDash : MonoBehaviour
         rb.constraints = RigidbodyConstraints2D.FreezePositionY;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
-        SoundManager.Instance.playsound("dash");
+        //SoundManager.Instance.playsound("dash");
         PlayerMove.Instance.startMovement();
         PlayerStateManager.Instance.getState().isDashing = false;
         PlayerStateManager.Instance.getState().isFalling = true;
