@@ -25,7 +25,7 @@ MonoBehaviour:
   dashStr: 20
   dashTime: 0.15
   dashCDFrames: 20
-  playerdirection: left
+  playerdirection: right
   hookDistanceLimit: 251
   hookSpeed: 150
   dampeningPostHook: 0

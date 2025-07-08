@@ -1,0 +1,5968 @@
+fileFormatVersion: 2
+guid: 3df7a9c3200b6a841b7289f5b8e869d9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2748779920330499785
+    second: tilemapweek3lights_0
+  - first:
+      213: -6185425088391937360
+    second: tilemapweek3lights_1
+  - first:
+      213: 339769597734909399
+    second: tilemapweek3lights_2
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 30
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tilemapweek3lights_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 454
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c6a60d16c0a52620800000000000000
+      internalID: 2748779920330499785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_1
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 454
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b20c9567a4f82aa0800000000000000
+      internalID: -6185425088391937360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_2
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 454
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d5777226aa17b400800000000000000
+      internalID: 339769597734909399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_3
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 454
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5acc37ea533ec5342a51f668640c1b49
+      internalID: 656379752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_4
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 454
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f22ab22e58125c4c931f7867fd6bcb7
+      internalID: 1594119070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_5
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 454
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa87b678842ebbe4f846729c4166400f
+      internalID: -413875683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_6
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 454
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f74ccc9e2314774eb381014365bea2d
+      internalID: -724285380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_7
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 454
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b467a2236849631429afe72726b332b2
+      internalID: -1072860135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_8
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 454
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1309303ecab5c934d973694c5e3be57b
+      internalID: 95367653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_9
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 454
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dc755c89c9bfc34cac9e84ad9e247f9
+      internalID: -447156989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_10
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 454
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7e3dfbff822c6248a95edaf4585139b
+      internalID: 816153516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_11
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 454
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dbe233d96f6c5249962151b17deb214
+      internalID: 2058409680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_12
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 454
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 265930b1a552e9b408137757ca7aa436
+      internalID: 675737484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_13
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 454
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e141894b0bff7b34f90c97c5d8b5a9ba
+      internalID: 1557898400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_14
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 454
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3b7d696596baf749b156d890f17512c
+      internalID: -606552772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_15
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 454
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fdcbc83ce5abc341b7ed39204beaa4c
+      internalID: -1165284298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_16
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 454
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2f7436f3e3091a4f863dcfbe49c20e5
+      internalID: 355575188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_17
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 454
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c337e2a2f89dd1543af80790c2c127de
+      internalID: 1899886488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_18
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 454
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b286992ec3baa1440b22ad2e4f3aab2e
+      internalID: 1826970607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_19
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 454
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ba04b4a4011a0440a9eeb944361a442
+      internalID: -603536960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 424
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70e3f785e40dc7946bde21ff4342a2fa
+      internalID: -855932721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_21
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 424
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 474b78a8d103dd24eaa42f175840653f
+      internalID: -670964214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_22
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 424
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8584cfcc77a9e284080681a0f67c61d6
+      internalID: 1521513480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_23
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 424
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd2876dd8442ec64da69c8e2ccb57f85
+      internalID: -781501562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_24
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 424
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c89678de8683a043af4e7346c3a2a09
+      internalID: -1827051336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_25
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 424
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ee34d1213b2f754c95849186c7bccfe
+      internalID: 542114870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_26
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 424
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06b161e117cc12d4f804a0ab851851b2
+      internalID: -873416846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_27
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 424
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01ba91c933a0ab5499d7af42de86c989
+      internalID: 1478128107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_28
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 424
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb5ebfe540e874a46892df8744acf3bd
+      internalID: -1345019192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_29
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 424
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc4c9d1d62402b24b8d9cc61fb16a25d
+      internalID: 1670810458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_30
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 424
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c44fde9aa7ee42443bcef9661dd2d8ca
+      internalID: -2057151640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_31
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 424
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5d8c0b77f2b16049a8009cfdc9ff193
+      internalID: 2144794761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_32
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 424
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 752d17ce3e4b9b24195fedd79edae171
+      internalID: -1456660788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_33
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 424
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22472324c1e061748931a292b6c4d932
+      internalID: 171726101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_34
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 424
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f761b4c5eca772f4cb1edebe7f4039f6
+      internalID: 837370006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_35
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 424
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88f4e4b930b870b42ba85424ad3bd1c5
+      internalID: -111174301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 394
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0a64dc6c1f5ec243a22cd3bffed62f0
+      internalID: 1097914683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_37
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 394
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f7131cf7700fef49bf035069a71ba5c
+      internalID: 1458861206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_38
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 394
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84333b81ec6c2ad47b2c34bce87f2412
+      internalID: 1056091851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_39
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 394
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d51b38c4425c702438301b709a32ef30
+      internalID: 1377012635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_40
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 394
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0b5b506e538e254bba7253817b1367f
+      internalID: -135118554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_41
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 394
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa1b148db9cb4644b9701f48f32cfa16
+      internalID: -1012459815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_42
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 394
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3496fa8a268470479c785bc2dc3f313
+      internalID: -1128469412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_43
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 394
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1abc1a658e2d16741bbb563755ca38db
+      internalID: -1188957531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_44
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 394
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d33fed61711e3a429299c11c4de8ae7
+      internalID: -699017844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_45
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 394
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7d21efb247c20c469db83dd8ea1c3f9
+      internalID: -192435989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_46
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 394
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7847e7e25006cbe4a864423bd1bf3e02
+      internalID: -1022807359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_47
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 394
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd48931b3cfb58045bcda1e9f2f9cc61
+      internalID: -180223695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_48
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 394
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48bb6b79511e35743afe49301db45695
+      internalID: 1258697319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_49
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 394
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 312efa2ddf7325140a5b6f95939753cb
+      internalID: -451372285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_50
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 394
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbc70c762768ea24eb312b1ec5370d74
+      internalID: -187316489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_51
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 364
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0d8a50bbe0101e41ae6be0e7f57573c
+      internalID: -1935060461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_52
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 364
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9b54db7f5f793942b2dc5678d214670
+      internalID: 1340552455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_53
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 364
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7187b0611c0211443ae7cdc4a87b31c6
+      internalID: 964441031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_54
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 364
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0eb5866e6e6128d46816ecc02a57252e
+      internalID: 1722409994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_55
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 364
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 329eff34a2503944a810787334765acf
+      internalID: -235637148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_56
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 364
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f72c86a194c7740429fc9d346b150196
+      internalID: 786791894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_57
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 364
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02342e3100eb9fa408cbe3febb05eb3b
+      internalID: 915954331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_58
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 364
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 115773e45490f0840923b12ce45446fd
+      internalID: -2048726842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_59
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 364
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07cb9c9b00c5c0d4490afc0554a5a860
+      internalID: -1278369199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_60
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 364
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 308cbd3ab5ab35141a80f8e30f3b6e95
+      internalID: 1483298553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_61
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 364
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1c57631e501d8248866f98270617674
+      internalID: 2130548816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_62
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 364
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00ea943ec8af3a746b86bc396d7083d3
+      internalID: 1876944756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_63
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 364
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2224d20e6483114fa5a8abe41250660
+      internalID: 431194197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_64
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 364
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b5f38ef4a15c3749879c3d67dab7a9e
+      internalID: 1099184291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_65
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 364
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7444f60fcfa9d79498fa8efb480b0a39
+      internalID: 724926862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_66
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 364
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a79a74656c157724d9525864f529f8b0
+      internalID: 1488888954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_67
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 364
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2d3ef92113f3194093c6a1e814a52df
+      internalID: -416766435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_68
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 364
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05fd57589509a4146bce887a5f30950c
+      internalID: 1408323794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_69
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 364
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9738baba9c98c94448dfa3b449aa1eb5
+      internalID: 1163707660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_70
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 364
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 017cacd471843f246a5859197fef32df
+      internalID: -1266408850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_71
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 334
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6167fabdb81252479cfa3abd6b4d0c1
+      internalID: 621582975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_72
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 334
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ff2838afd84acf428256b061719517e
+      internalID: 414888104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_73
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 334
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58fa1c123f6fe8e4daf85d10fe88364d
+      internalID: -1116460524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_74
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 334
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e581314a52c92f44cbb55746cc2c0c07
+      internalID: 1945846067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_75
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 334
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22d48664fc1d921439fff3aa4eaa0031
+      internalID: -2024120674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_76
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 334
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0397a443c21466d4a93554f885c96998
+      internalID: -1840577818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_77
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 334
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7114f410f9afcd546bba66f367fde71b
+      internalID: -604168292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_78
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 334
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f15f49ac54c9afd448543e8763976a4e
+      internalID: 1432258596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_79
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 334
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dda19baf55cbdb4f90d6e116c9e54d5
+      internalID: 1111502777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_80
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 334
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddc45a3c9dcc74042ba23100922ceb88
+      internalID: 269241603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_81
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 334
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15b07f2cf3ab93f43bfa5f1c84998a0a
+      internalID: -1580569795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_82
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 334
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5753a6ee81430fb4e847e912a5bef6be
+      internalID: 1833209413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_83
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 334
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1069eadd3ee61314eb075ae83c0c0ac6
+      internalID: 1437542859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_84
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 334
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 914588c7eaa82b540a2e12c762a6b829
+      internalID: 777838501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_85
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 334
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7abfcbdbc0b7075489414a159cf63c3d
+      internalID: 395963198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_86
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 334
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4a1586bf9c7ff046b9467ea2ffeb156
+      internalID: 1248280949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_87
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 334
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0400c73e9ad50d41ab35263094891c6
+      internalID: -1791562532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_88
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 334
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7c309f3507c12a4c90480f9e321177a
+      internalID: -1897863967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_89
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 334
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a72dc6008e9481478788c82026a65aa
+      internalID: 609827025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_90
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 334
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d3351cc841811642a3de33358c4596d
+      internalID: -1713355089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_91
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 334
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5438c724bbbe3444cac13a7956c18d5d
+      internalID: 515948835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_92
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 334
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50889740bd1a7cb4badff519d5e5e8bf
+      internalID: -1718495368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_93
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 334
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1783bb4089fd99b4cac67f081d2ece87
+      internalID: 1208333496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_94
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 334
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27713d6ac70963f46801314022987f6b
+      internalID: -1231434886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_95
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 334
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fab0c04998348c45abb918d383e521f
+      internalID: 502190102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_96
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 304
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1d7c3ede40a40545bc38492677a8d76
+      internalID: 85179151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_97
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 304
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ceed751e1ed5b54baa34502a3bd12cc
+      internalID: -1475789940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_98
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 304
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a63a7d56a6e205c4ebb41c0e67ab6430
+      internalID: -1287560280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_99
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 304
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0c62c3edb076f6458769ca62821dec7
+      internalID: -509015680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_100
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 304
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cf0efa0d1cd905458810c3606bcb5a8
+      internalID: 1701818086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_101
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 304
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 868393978d6a0db4ba3f9ae0712465f9
+      internalID: 302977064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_102
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 304
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4284e5aa57eddd44aa1fc4e5fbb6af2f
+      internalID: -142803356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_103
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 304
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d4c46e73ee85ba48823108ccbc823ec
+      internalID: 1035741138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_104
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 304
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ae85c1f9a43c664687bd6694e8b1d61
+      internalID: -1409684173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_105
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 304
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0db32a99698391746ae27c542103d760
+      internalID: 988174298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_106
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 304
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dad88ecd12773f346bb7d927763c4f9e
+      internalID: 601180801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_107
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 304
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1783d32caddce6d4aa46a4db6ccdf7dd
+      internalID: 882466843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_108
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 304
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 832f7cee107973d4194531a47c65b238
+      internalID: -1732348733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_109
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 304
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c9ea6557a66a154fbca525435974c60
+      internalID: -756188385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_110
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 304
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b3d80f98b74f064baad94736b33adb7
+      internalID: -1935855140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_111
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 304
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2acec83f668ab874daf325e99e24d4cc
+      internalID: -194050716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_112
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 304
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5595b2d8333113c48bf7db45a568e952
+      internalID: 576487552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_113
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 304
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86116aa0446393641bc8ab4997bb3667
+      internalID: 2037135536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_114
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 304
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7093bf6aa967ed04f8a38e504b8d7005
+      internalID: 273024494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_115
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 304
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 754b57464fde61540b44587fba44e041
+      internalID: -321160340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_116
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 304
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44ff912147b67994797ff17887e9ed3a
+      internalID: -1632868269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_117
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 304
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bc8e25375ac9544095855fb95922a67
+      internalID: -947639223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_118
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 304
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8fc66ab45fc0194aa7463ec43022f0e
+      internalID: -233467858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_119
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 304
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32460bcb517e1a843a9cebcc9695f3d4
+      internalID: 2137864220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_120
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 274
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8f91d39ea871614f950abc542707329
+      internalID: 1210379194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_121
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 274
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac7bb80d2f8c40246b3c788a552b160d
+      internalID: -100106789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_122
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 274
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e84dd47bb181d824696c360c5df41c8c
+      internalID: 837156230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_123
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 274
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ac9a7e1fdb6b6e43a02b228ce431057
+      internalID: -585726919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_124
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 274
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e2081e783bfa8345b0d748604abc091
+      internalID: 1508971220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_125
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 274
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 684e6104c50e9154584e16cf2adcd0d8
+      internalID: -1037224447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_126
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 274
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7640199b877888740a38d2a6606d24ba
+      internalID: 495658909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_127
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 274
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc261df9a58e60645862676687e33f62
+      internalID: -172445806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_128
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 274
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c27d46191f041e4a83bedda4f16b177
+      internalID: -512484425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_129
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 274
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06caf229f2687be4086adeb30a747be5
+      internalID: -1561987193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_130
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 274
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 955e23232bbacfe40a7beb2e074e2781
+      internalID: -166099553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_131
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 274
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4244024efa92664a9cfa839d8fcb4e7
+      internalID: -743585866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_132
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 274
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e4c5a7fd49a3844e8fb82a4a7f4f686
+      internalID: -357403783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_133
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 274
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf660db228b15e745a28dfabf192e7d0
+      internalID: -1329451117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_134
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 274
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 204458fd6fe12354cb5ec873216a8152
+      internalID: 730593362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_135
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 274
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec9d81f1b4b631f45811f192b96d25ae
+      internalID: -1787138569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_136
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 274
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a358315d8f689f24c876419ad4d2ba28
+      internalID: 2136583419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_137
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 274
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 628ad81559d2acf4aac65caa41d48aa6
+      internalID: -1876228987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_138
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 274
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 223b0498f9574c748a05f0ad1edbaaec
+      internalID: 1406158676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_139
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 274
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e32ff42c9dc0114a8243857e8e84781
+      internalID: -1774457970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_140
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 274
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5dd9cfc0a9a4b44cabf70def51c8f24
+      internalID: -146119158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_141
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 274
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd3788aefd033a54f9a1c81bbbb25b66
+      internalID: 1248591379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_142
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 274
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7db359485473a9444a5d45b11bd180e7
+      internalID: -1501678597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_143
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 274
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df1522948a9fb354586793d24c132761
+      internalID: -1561268196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_144
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 244
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7690e56e9ddea7e409c8ffbf6fdb0a83
+      internalID: -1564857964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_145
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 244
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93a5511b2c9a07248bb1cd62595a1a7c
+      internalID: -1896999822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_146
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 244
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 380a0a7176b925943bb0aab3351609d2
+      internalID: -1062678140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_147
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 244
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9301a4be874e8d84f95f579c4c863e2c
+      internalID: -494723094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_148
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 244
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f68b900530b27f4eb21a7b9ae6adfe6
+      internalID: -812276184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_149
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 244
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b684e1229a4a504a9f2f1c63b3f8ec9
+      internalID: 635048713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_150
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 244
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 098bb63ee3b1f964e92935be2282b3fb
+      internalID: -382216118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_151
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 244
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35f77b86d006aac498a2b208749fd9e9
+      internalID: 1211656056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_152
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 244
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff496efa4d58f2a4aa53c8ec62291891
+      internalID: -1152587589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_153
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 244
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8930b80df53f62d4fb6510b9b94219f5
+      internalID: 511584559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_154
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 244
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdc86d4ad3ce47d4eb5be4654a380a49
+      internalID: -982921821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_155
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 244
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b4bcaa055428464e83d9feeccbe7c63
+      internalID: 1678148001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_156
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 244
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adf203812442bb64b9372df7983af363
+      internalID: -1907959290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_157
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 244
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21e6f32706de82c41af5fc47ac1f762a
+      internalID: 507331597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_158
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 244
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fb93940797d0d34abff855c8e269604
+      internalID: 1453598902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_159
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 244
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 945ffe253a8b2554f8db8663779d3795
+      internalID: 769059882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_160
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 244
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 557cd7b8c70fc5449ae34ff29d5b8eee
+      internalID: -258182471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_161
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 244
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8af950ee1edefee4e8575922dab15591
+      internalID: 163979698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_162
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 244
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c59c322c42f07640be7a67bcae33b84
+      internalID: -18787740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_163
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 244
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ba07cdc85a682b418ed42ccc3aab303
+      internalID: -1261326317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_164
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 244
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fe05f6e278659a428ee993e3a474f3b
+      internalID: -1677286738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_165
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 244
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2452040c118fc9b4585185e487d9d913
+      internalID: 1164992058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_166
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 244
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b81cd0017d49c54cb33432b96a3e2b1
+      internalID: -340370511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_167
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 244
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f163c8b9d4961f40ac4ad1ecf1a341e
+      internalID: 745523672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_168
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 214
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c940bc9336af3a14986f55b089fc8f0a
+      internalID: -1601450150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_169
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 214
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53d476d918ac42f40ab16851122e3b76
+      internalID: -425838543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_170
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 214
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12fff515d8dccfd43b668225484b3e77
+      internalID: -795655053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_171
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 214
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22d76bdba88a82c46a7375e71e8f47b1
+      internalID: 856379199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_172
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 214
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afcae727d971f8148bb1308cfb5cbe61
+      internalID: -636282464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_173
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 214
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c434208e0a69f794b97536b201247d49
+      internalID: 1214405755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_174
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 214
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db3c46d69074d444e94dbff38add2f49
+      internalID: -1985195426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_175
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 214
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c2cf04eede3cb640b4a3f0c97a43f3c
+      internalID: 1431112318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_176
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 214
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19b97230e669a834a8d8bded95b2536b
+      internalID: -408154976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_177
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 214
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e1f04bebfd966a4dae8974081d33a83
+      internalID: -1334136689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_178
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 214
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93b4724e0ece4654cbeb1bcd628ed0c7
+      internalID: 916629375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_179
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 214
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7f09391ca043f94e97376d72e9555d4
+      internalID: -149183740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_180
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 214
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e03fb80c71d06e40a69ee5021250842
+      internalID: -2060584626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_181
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 214
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c338f7ac8961c6b4e83dcf05182e0151
+      internalID: 1866340611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_182
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 214
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2853ebbe3619e14180ebae8e55c45fb
+      internalID: -1384243214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_183
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 214
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2563aac5b3e0e084ab3b47909bed57db
+      internalID: -1615339902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_184
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 214
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b9d63dbcdacd1c46a5bb8ab06af4b8c
+      internalID: 593665077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_185
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 214
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 043805f434a5efe41a7cf477d410ba86
+      internalID: 1188544771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_186
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 214
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: badd15c0e0ebff74cafeaeb8492e198b
+      internalID: 1070660249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_187
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 214
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b87390177039bf44c96c942073cdfdce
+      internalID: -1303841581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_188
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 214
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94da76cdda610214289a120397f43f03
+      internalID: 253902987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_189
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 184
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed75eb398c877734393db0f07476807f
+      internalID: -163741530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_190
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 184
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21a352b0f70ef3244ac8a8965825a5d6
+      internalID: 419935796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_191
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 184
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bac5ee5cdc22114eb3add5e7fd5a072
+      internalID: -1501587382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_192
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 184
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 267dfdce539ef6a4c8a37f5732335d1f
+      internalID: -980423456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_193
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 184
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4aaec7a696618f144b3d336a947d44f4
+      internalID: -1872076928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_194
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 184
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0127664ecf4a6a4786020f6795d966e
+      internalID: 910783710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_195
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 184
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23270289f79b1cc4fa9c8ef9450ecb87
+      internalID: 1091283346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_196
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 184
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f93a4f98b188e047860d8ea446bfdcd
+      internalID: 2080675135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_197
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 184
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd02ca9c2fbe85c4388154d36c527890
+      internalID: -1846026556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_198
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 184
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb66355213c4acd469169d12b1db8cd9
+      internalID: -1074610169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_199
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 184
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8e90c2150ae6ce4288aac794eb0c29d
+      internalID: 358179297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_200
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 184
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb445a85d44b866448c6b1166eafd576
+      internalID: 416200841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_201
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 184
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df3ba6f5828e79243952aabd2301d016
+      internalID: 1957146852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_202
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 184
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06bc4678b5235e840932cbc41d41ee06
+      internalID: 487469554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_203
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 184
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9926b683333bdc442997fd3716e59158
+      internalID: -1976332259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_204
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 184
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 771e2e2ba769eae4794bad87fd0db754
+      internalID: 2051131901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_205
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 184
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4f1e735a7d00ef46933b63753b9edb1
+      internalID: 1175924952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_206
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 184
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a9d453912cecc649b1030b67be4da4c
+      internalID: -1379091303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_207
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 184
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46f47367758155a49aa596a4b0f1b6ec
+      internalID: 1696793853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_208
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 184
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fe758e797e4a2f41ab6b8b083273c4e
+      internalID: -1905703667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_209
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 184
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c13e484a5d0ed3e40868215888c0634d
+      internalID: 1226350121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_210
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 154
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 137fde7b063f2c4469e4d9d650f89d0a
+      internalID: -1390752858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_211
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 154
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f11e41fabea0ae46b7878727be0a132
+      internalID: -1632843586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_212
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 154
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e7c4eac8658a4e4e8f7118d97342adb
+      internalID: 1904403484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_213
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 154
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e8c634c79147804ebf1d266db5fd2ab
+      internalID: -2020388084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_214
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 154
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30f68f38667de104894c0488b1b0b91e
+      internalID: -913713590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_215
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 154
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a58fd2eb685eca43a365401322d6cbb
+      internalID: -1962092045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_216
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 154
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eeabda21f38f2c041ad58cc1c52263d7
+      internalID: -1985210888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_217
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 154
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae016fb59f676d642bd366f136287ecb
+      internalID: 792593258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_218
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 154
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09b7476f19179ab44b9cc307ac22be60
+      internalID: -1104510993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_219
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 154
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4f57d832df05f946b9e967aebea50c2
+      internalID: 932110148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_220
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 154
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ddf9d32d6ce14e4b91215481d086cf6
+      internalID: -838060533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_221
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 154
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0903699e183a2b9469f9c06c1faca14f
+      internalID: 451829886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_222
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 154
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a58d6e630c13461489d5a168cec2e7b2
+      internalID: -733023002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_223
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 154
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 623cac645a848a54b8ca18fdb6f3a188
+      internalID: -1041764449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_224
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 154
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c79b654a09a85e4bad7665dd47631f4
+      internalID: -598464393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_225
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 154
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b061c330a436f414697b8a706132710d
+      internalID: 366164285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_226
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 154
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fc8c3832ac3a144895b7731c0cdcb8f
+      internalID: -1778479783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_227
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 154
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9be9355340cfe749bf537a3ae913f9a
+      internalID: 438104318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_228
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 154
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7871a372336caa641bf671e14bbfaa74
+      internalID: -1516685935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_229
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 154
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7fd675f6d790a8439cd2c26d1dba68b
+      internalID: 1688278419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_230
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 154
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bc5b46b30dd112429b7aab23aa9ab7f
+      internalID: 270724551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_231
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 154
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af6794addfe22d04ba191c60d18c6a74
+      internalID: 1337709077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_232
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 124
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2750ef2dc0f09342a43c7d91f0a259c
+      internalID: -1275948433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_233
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 124
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8879c9db437e5274dbf2848e6d954f55
+      internalID: -594570997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_234
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 124
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f41b622a052fc74092ce2a36b7224d4
+      internalID: 901696260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_235
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 124
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11b50646a0e5f704ba11a7b40ac2c9c3
+      internalID: 1513119712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_236
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 124
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eb4d631eec72da4c8b05a5e7cc53eae
+      internalID: 1736531375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_237
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 124
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a5e2d076f2f2154085cb0e9b424c12f
+      internalID: 1014220429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_238
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 124
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61ced8a703525614cbbf19222053ef02
+      internalID: 360330976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_239
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 124
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52db58f9fd6dc2c4883f6dfac743c8aa
+      internalID: 315156522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_240
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 124
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caa5938bbeba4d14a81643600ed04a9c
+      internalID: 856656781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_241
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 124
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d35fd443f6b7a104e936834ba0a8d8bb
+      internalID: 340606826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_242
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 124
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa93625c17880b44eaebe3160c8efced
+      internalID: -124033403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_243
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 124
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6010af4fd8fbb3f4ebcb88238a2bc816
+      internalID: -1402277587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_244
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 124
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb25ab0c81bbfff4c9c7d95d53ce7224
+      internalID: 596136482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_245
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 124
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cef0d7f382efda4380f1e90d34df540
+      internalID: 584474306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_246
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 124
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 266838eac8a70d449b50a52d07a025bf
+      internalID: -1028931477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_247
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 124
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b09feeca37769c4cb646aebc4aebebc
+      internalID: -1701303894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_248
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 124
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62ed7234dd3fe4f49832fce2983f38e5
+      internalID: 367052175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_249
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 124
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1666c8165021684c82fced2d5493daa
+      internalID: 1567148859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_250
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 124
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f6c692d34746534eb52eff2d83e8a7a
+      internalID: 1223910616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_251
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 124
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d31e839f77d3a545b5609123a643a03
+      internalID: 443723742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_252
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 124
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e84580bdb48a264a803b49c621d9506
+      internalID: -179532495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilemapweek3lights_253
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 124
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f42f30c949b9e9e4485871f51b04d49e
+      internalID: 1256218450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 865dfb32f45058b44a9859966f12d6f7
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      tilemapweek3lights_0: 2748779920330499785
+      tilemapweek3lights_1: -6185425088391937360
+      tilemapweek3lights_10: 816153516
+      tilemapweek3lights_100: 1701818086
+      tilemapweek3lights_101: 302977064
+      tilemapweek3lights_102: -142803356
+      tilemapweek3lights_103: 1035741138
+      tilemapweek3lights_104: -1409684173
+      tilemapweek3lights_105: 988174298
+      tilemapweek3lights_106: 601180801
+      tilemapweek3lights_107: 882466843
+      tilemapweek3lights_108: -1732348733
+      tilemapweek3lights_109: -756188385
+      tilemapweek3lights_11: 2058409680
+      tilemapweek3lights_110: -1935855140
+      tilemapweek3lights_111: -194050716
+      tilemapweek3lights_112: 576487552
+      tilemapweek3lights_113: 2037135536
+      tilemapweek3lights_114: 273024494
+      tilemapweek3lights_115: -321160340
+      tilemapweek3lights_116: -1632868269
+      tilemapweek3lights_117: -947639223
+      tilemapweek3lights_118: -233467858
+      tilemapweek3lights_119: 2137864220
+      tilemapweek3lights_12: 675737484
+      tilemapweek3lights_120: 1210379194
+      tilemapweek3lights_121: -100106789
+      tilemapweek3lights_122: 837156230
+      tilemapweek3lights_123: -585726919
+      tilemapweek3lights_124: 1508971220
+      tilemapweek3lights_125: -1037224447
+      tilemapweek3lights_126: 495658909
+      tilemapweek3lights_127: -172445806
+      tilemapweek3lights_128: -512484425
+      tilemapweek3lights_129: -1561987193
+      tilemapweek3lights_13: 1557898400
+      tilemapweek3lights_130: -166099553
+      tilemapweek3lights_131: -743585866
+      tilemapweek3lights_132: -357403783
+      tilemapweek3lights_133: -1329451117
+      tilemapweek3lights_134: 730593362
+      tilemapweek3lights_135: -1787138569
+      tilemapweek3lights_136: 2136583419
+      tilemapweek3lights_137: -1876228987
+      tilemapweek3lights_138: 1406158676
+      tilemapweek3lights_139: -1774457970
+      tilemapweek3lights_14: -606552772
+      tilemapweek3lights_140: -146119158
+      tilemapweek3lights_141: 1248591379
+      tilemapweek3lights_142: -1501678597
+      tilemapweek3lights_143: -1561268196
+      tilemapweek3lights_144: -1564857964
+      tilemapweek3lights_145: -1896999822
+      tilemapweek3lights_146: -1062678140
+      tilemapweek3lights_147: -494723094
+      tilemapweek3lights_148: -812276184
+      tilemapweek3lights_149: 635048713
+      tilemapweek3lights_15: -1165284298
+      tilemapweek3lights_150: -382216118
+      tilemapweek3lights_151: 1211656056
+      tilemapweek3lights_152: -1152587589
+      tilemapweek3lights_153: 511584559
+      tilemapweek3lights_154: -982921821
+      tilemapweek3lights_155: 1678148001
+      tilemapweek3lights_156: -1907959290
+      tilemapweek3lights_157: 507331597
+      tilemapweek3lights_158: 1453598902
+      tilemapweek3lights_159: 769059882
+      tilemapweek3lights_16: 355575188
+      tilemapweek3lights_160: -258182471
+      tilemapweek3lights_161: 163979698
+      tilemapweek3lights_162: -18787740
+      tilemapweek3lights_163: -1261326317
+      tilemapweek3lights_164: -1677286738
+      tilemapweek3lights_165: 1164992058
+      tilemapweek3lights_166: -340370511
+      tilemapweek3lights_167: 745523672
+      tilemapweek3lights_168: -1601450150
+      tilemapweek3lights_169: -425838543
+      tilemapweek3lights_17: 1899886488
+      tilemapweek3lights_170: -795655053
+      tilemapweek3lights_171: 856379199
+      tilemapweek3lights_172: -636282464
+      tilemapweek3lights_173: 1214405755
+      tilemapweek3lights_174: -1985195426
+      tilemapweek3lights_175: 1431112318
+      tilemapweek3lights_176: -408154976
+      tilemapweek3lights_177: -1334136689
+      tilemapweek3lights_178: 916629375
+      tilemapweek3lights_179: -149183740
+      tilemapweek3lights_18: 1826970607
+      tilemapweek3lights_180: -2060584626
+      tilemapweek3lights_181: 1866340611
+      tilemapweek3lights_182: -1384243214
+      tilemapweek3lights_183: -1615339902
+      tilemapweek3lights_184: 593665077
+      tilemapweek3lights_185: 1188544771
+      tilemapweek3lights_186: 1070660249
+      tilemapweek3lights_187: -1303841581
+      tilemapweek3lights_188: 253902987
+      tilemapweek3lights_189: -163741530
+      tilemapweek3lights_19: -603536960
+      tilemapweek3lights_190: 419935796
+      tilemapweek3lights_191: -1501587382
+      tilemapweek3lights_192: -980423456
+      tilemapweek3lights_193: -1872076928
+      tilemapweek3lights_194: 910783710
+      tilemapweek3lights_195: 1091283346
+      tilemapweek3lights_196: 2080675135
+      tilemapweek3lights_197: -1846026556
+      tilemapweek3lights_198: -1074610169
+      tilemapweek3lights_199: 358179297
+      tilemapweek3lights_2: 339769597734909399
+      tilemapweek3lights_20: -855932721
+      tilemapweek3lights_200: 416200841
+      tilemapweek3lights_201: 1957146852
+      tilemapweek3lights_202: 487469554
+      tilemapweek3lights_203: -1976332259
+      tilemapweek3lights_204: 2051131901
+      tilemapweek3lights_205: 1175924952
+      tilemapweek3lights_206: -1379091303
+      tilemapweek3lights_207: 1696793853
+      tilemapweek3lights_208: -1905703667
+      tilemapweek3lights_209: 1226350121
+      tilemapweek3lights_21: -670964214
+      tilemapweek3lights_210: -1390752858
+      tilemapweek3lights_211: -1632843586
+      tilemapweek3lights_212: 1904403484
+      tilemapweek3lights_213: -2020388084
+      tilemapweek3lights_214: -913713590
+      tilemapweek3lights_215: -1962092045
+      tilemapweek3lights_216: -1985210888
+      tilemapweek3lights_217: 792593258
+      tilemapweek3lights_218: -1104510993
+      tilemapweek3lights_219: 932110148
+      tilemapweek3lights_22: 1521513480
+      tilemapweek3lights_220: -838060533
+      tilemapweek3lights_221: 451829886
+      tilemapweek3lights_222: -733023002
+      tilemapweek3lights_223: -1041764449
+      tilemapweek3lights_224: -598464393
+      tilemapweek3lights_225: 366164285
+      tilemapweek3lights_226: -1778479783
+      tilemapweek3lights_227: 438104318
+      tilemapweek3lights_228: -1516685935
+      tilemapweek3lights_229: 1688278419
+      tilemapweek3lights_23: -781501562
+      tilemapweek3lights_230: 270724551
+      tilemapweek3lights_231: 1337709077
+      tilemapweek3lights_232: -1275948433
+      tilemapweek3lights_233: -594570997
+      tilemapweek3lights_234: 901696260
+      tilemapweek3lights_235: 1513119712
+      tilemapweek3lights_236: 1736531375
+      tilemapweek3lights_237: 1014220429
+      tilemapweek3lights_238: 360330976
+      tilemapweek3lights_239: 315156522
+      tilemapweek3lights_24: -1827051336
+      tilemapweek3lights_240: 856656781
+      tilemapweek3lights_241: 340606826
+      tilemapweek3lights_242: -124033403
+      tilemapweek3lights_243: -1402277587
+      tilemapweek3lights_244: 596136482
+      tilemapweek3lights_245: 584474306
+      tilemapweek3lights_246: -1028931477
+      tilemapweek3lights_247: -1701303894
+      tilemapweek3lights_248: 367052175
+      tilemapweek3lights_249: 1567148859
+      tilemapweek3lights_25: 542114870
+      tilemapweek3lights_250: 1223910616
+      tilemapweek3lights_251: 443723742
+      tilemapweek3lights_252: -179532495
+      tilemapweek3lights_253: 1256218450
+      tilemapweek3lights_26: -873416846
+      tilemapweek3lights_27: 1478128107
+      tilemapweek3lights_28: -1345019192
+      tilemapweek3lights_29: 1670810458
+      tilemapweek3lights_3: 656379752
+      tilemapweek3lights_30: -2057151640
+      tilemapweek3lights_31: 2144794761
+      tilemapweek3lights_32: -1456660788
+      tilemapweek3lights_33: 171726101
+      tilemapweek3lights_34: 837370006
+      tilemapweek3lights_35: -111174301
+      tilemapweek3lights_36: 1097914683
+      tilemapweek3lights_37: 1458861206
+      tilemapweek3lights_38: 1056091851
+      tilemapweek3lights_39: 1377012635
+      tilemapweek3lights_4: 1594119070
+      tilemapweek3lights_40: -135118554
+      tilemapweek3lights_41: -1012459815
+      tilemapweek3lights_42: -1128469412
+      tilemapweek3lights_43: -1188957531
+      tilemapweek3lights_44: -699017844
+      tilemapweek3lights_45: -192435989
+      tilemapweek3lights_46: -1022807359
+      tilemapweek3lights_47: -180223695
+      tilemapweek3lights_48: 1258697319
+      tilemapweek3lights_49: -451372285
+      tilemapweek3lights_5: -413875683
+      tilemapweek3lights_50: -187316489
+      tilemapweek3lights_51: -1935060461
+      tilemapweek3lights_52: 1340552455
+      tilemapweek3lights_53: 964441031
+      tilemapweek3lights_54: 1722409994
+      tilemapweek3lights_55: -235637148
+      tilemapweek3lights_56: 786791894
+      tilemapweek3lights_57: 915954331
+      tilemapweek3lights_58: -2048726842
+      tilemapweek3lights_59: -1278369199
+      tilemapweek3lights_6: -724285380
+      tilemapweek3lights_60: 1483298553
+      tilemapweek3lights_61: 2130548816
+      tilemapweek3lights_62: 1876944756
+      tilemapweek3lights_63: 431194197
+      tilemapweek3lights_64: 1099184291
+      tilemapweek3lights_65: 724926862
+      tilemapweek3lights_66: 1488888954
+      tilemapweek3lights_67: -416766435
+      tilemapweek3lights_68: 1408323794
+      tilemapweek3lights_69: 1163707660
+      tilemapweek3lights_7: -1072860135
+      tilemapweek3lights_70: -1266408850
+      tilemapweek3lights_71: 621582975
+      tilemapweek3lights_72: 414888104
+      tilemapweek3lights_73: -1116460524
+      tilemapweek3lights_74: 1945846067
+      tilemapweek3lights_75: -2024120674
+      tilemapweek3lights_76: -1840577818
+      tilemapweek3lights_77: -604168292
+      tilemapweek3lights_78: 1432258596
+      tilemapweek3lights_79: 1111502777
+      tilemapweek3lights_8: 95367653
+      tilemapweek3lights_80: 269241603
+      tilemapweek3lights_81: -1580569795
+      tilemapweek3lights_82: 1833209413
+      tilemapweek3lights_83: 1437542859
+      tilemapweek3lights_84: 777838501
+      tilemapweek3lights_85: 395963198
+      tilemapweek3lights_86: 1248280949
+      tilemapweek3lights_87: -1791562532
+      tilemapweek3lights_88: -1897863967
+      tilemapweek3lights_89: 609827025
+      tilemapweek3lights_9: -447156989
+      tilemapweek3lights_90: -1713355089
+      tilemapweek3lights_91: 515948835
+      tilemapweek3lights_92: -1718495368
+      tilemapweek3lights_93: 1208333496
+      tilemapweek3lights_94: -1231434886
+      tilemapweek3lights_95: 502190102
+      tilemapweek3lights_96: 85179151
+      tilemapweek3lights_97: -1475789940
+      tilemapweek3lights_98: -1287560280
+      tilemapweek3lights_99: -509015680
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
