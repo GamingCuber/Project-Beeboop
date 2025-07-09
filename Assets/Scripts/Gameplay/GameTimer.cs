@@ -18,7 +18,7 @@ public class GameTimer : MonoBehaviour
             Instance = this;
         }
 
-        StartCoroutine(startTimer());
+        StartCoroutine(waitForGears());
     }
 
     private IEnumerator startTimer()
@@ -63,5 +63,15 @@ public class GameTimer : MonoBehaviour
     private void gameLost()
     {
         SceneManager.LoadScene("LoseScreen");
+    }
+
+    private IEnumerator waitForGears()
+    {
+        while (TimerGearManager.Instance == null)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+
+        StartCoroutine(startTimer());
     }
 }

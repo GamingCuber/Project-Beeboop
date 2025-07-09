@@ -32,7 +32,7 @@ public class PlayerSpeedCheck : MonoBehaviour
         {
             if (rb.linearVelocityY <= -PlayerDataManager.Instance.getData().maxNegativeVerticalSpeed)
             {
-                rb.linearVelocityY = PlayerDataManager.Instance.getData().maxNegativeVerticalSpeed;
+                rb.linearVelocityY = -PlayerDataManager.Instance.getData().maxNegativeVerticalSpeed;
             }
         }
 
