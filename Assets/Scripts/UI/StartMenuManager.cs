@@ -5,6 +5,6 @@ public class StartMenuManager : MonoBehaviour
 {
     public void startGame()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("Movement Playtest");
     }
 }
