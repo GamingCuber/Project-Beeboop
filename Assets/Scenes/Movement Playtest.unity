@@ -10768,7 +10768,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5071936695907298249, guid: ed946dcb47eaa4654ba8425b3146e51b, type: 3}
       propertyPath: timeWhenStop
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5482224050019829228, guid: ed946dcb47eaa4654ba8425b3146e51b, type: 3}
       propertyPath: maxSpeed

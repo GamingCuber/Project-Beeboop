@@ -7,7 +7,7 @@ public class TimerGearManager : MonoBehaviour
 
     public List<GameObject> gears;
 
-    public float timeWhenStop;
+    public float timeWhenStop; //in seconds
 
     private void Start()
     {
@@ -19,13 +19,19 @@ public class TimerGearManager : MonoBehaviour
 
     public void setGearSpeed(float curTime, float totalTime)
     {
-        float percentTime = (totalTime - curTime - timeWhenStop) / (totalTime - timeWhenStop);
+        float offsetTime = totalTime - timeWhenStop;
+        float offsetCur = curTime - timeWhenStop;
 
-        foreach (GameObject g in gears)
+        float percentTime = (offsetTime - offsetCur) / (offsetTime);
+
+        if (percentTime <= 1)
         {
-            TimerGear tg = g.GetComponent<TimerGear>();
+            foreach (GameObject g in gears)
+            {
+                TimerGear tg = g.GetComponent<TimerGear>();
 
-            tg.setSpeed(Mathf.Lerp(tg.maxSpeed, tg.minSpeed, percentTime));
+                tg.setSpeed(Mathf.Lerp(tg.maxSpeed, tg.minSpeed, percentTime));
+            }
         }
     }
 }
