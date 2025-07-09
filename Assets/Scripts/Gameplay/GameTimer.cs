@@ -31,6 +31,8 @@ public class GameTimer : MonoBehaviour
 
             setText(Mathf.RoundToInt(timeLeft));
 
+            TimerGearManager.Instance.setGearSpeed(timeLeft, time);
+
             yield return new WaitForEndOfFrame();
         }
 
