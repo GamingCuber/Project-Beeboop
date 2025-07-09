@@ -134,7 +134,7 @@ public class PlayerJump : MonoBehaviour
 
         isJumping = false;
         PlayerStateManager.Instance.getState().isJumping = false;
-        SoundManager.Instance.playsound("fall");
+        SoundManager.Instance.playPlayerSound("fall");
         yield break;
     }
 
