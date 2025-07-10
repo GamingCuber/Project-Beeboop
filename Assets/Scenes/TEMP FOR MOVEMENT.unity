@@ -1275,8 +1275,8 @@ MonoBehaviour:
   maxSpeed: 100
   paused: 0
   dir: 1
-  maxWiggle: 0
-  wiggleAmt: 0
+  maxWiggle: 4
+  wiggleAmt: 4
 --- !u!1 &1129681872
 GameObject:
   m_ObjectHideFlags: 0
@@ -3074,8 +3074,8 @@ MonoBehaviour:
   maxSpeed: 250
   paused: 0
   dir: -1
-  maxWiggle: 0
-  wiggleAmt: 0
+  maxWiggle: 1.5
+  wiggleAmt: 3
 --- !u!114 &1431436716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4007,8 +4007,8 @@ MonoBehaviour:
   maxSpeed: 150
   paused: 0
   dir: 1
-  maxWiggle: 0
-  wiggleAmt: 0
+  maxWiggle: 2.5
+  wiggleAmt: 4
 --- !u!114 &1831529574
 MonoBehaviour:
   m_ObjectHideFlags: 0

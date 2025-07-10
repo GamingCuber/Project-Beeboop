@@ -22,6 +22,8 @@ public class TimerGearManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.V))
         {
             gears[0].GetComponent<TimerGear>().vibrateGear();
+            gears[1].GetComponent<TimerGear>().vibrateGear();
+            gears[2].GetComponent<TimerGear>().vibrateGear();
         }
     }
 

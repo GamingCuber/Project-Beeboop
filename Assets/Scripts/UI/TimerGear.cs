@@ -43,7 +43,7 @@ public class TimerGear : MonoBehaviour
 
         float timer = 0;
 
-        float timeToMove = 0.1f;
+        float timeToMove = Random.Range(0.05f,0.15f);
 
         RectTransform rect = this.gameObject.GetComponent<RectTransform>();
 
@@ -65,7 +65,7 @@ public class TimerGear : MonoBehaviour
             if (timer >= timeToMove)
             {
                 timer = 0;
-                timeToMove = 0.1f;
+                timeToMove = Random.Range(0.03f, 0.15f);
                 curPos = newPos;
                 newPos = randomizePos(ogPos);
                 timesMoved++;
@@ -74,6 +74,7 @@ public class TimerGear : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
+        rect.localPosition = ogPos;
         paused = false;
         yield break;
     }
