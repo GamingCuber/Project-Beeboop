@@ -21,9 +21,9 @@ public class UpgradePopupManager : MonoBehaviour
             Instance = this;
         }
 
-        popups = new GameObject[2];
+        popups = new GameObject[3];
 
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < popups.Length; i++)
         {
             GameObject newPU = Instantiate(popupPre, this.transform);
             newPU.SetActive(false);

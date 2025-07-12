@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     private void resetState()
     {
         PlayerStateManager.Instance.getState().keepMomentum = false;
+        PlayerStateManager.Instance.getState().isDead = false;
         PlayerStateManager.Instance.getState().isGrounded = false;
         PlayerStateManager.Instance.getState().isDashing = false;
         PlayerStateManager.Instance.getState().isHooked = false;
