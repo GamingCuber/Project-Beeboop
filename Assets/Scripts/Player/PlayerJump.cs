@@ -110,7 +110,7 @@ public class PlayerJump : MonoBehaviour
 
             RaycastHit2D coll = Physics2D.Raycast(this.transform.position, Vector2.up, 1.1f, platformLayer);
 
-            if (coll.collider != null && !coll.collider.CompareTag("PlatformJump"))
+            if (coll.collider != null && !coll.collider.gameObject.TryGetComponent<PlatformEffector2D>(out PlatformEffector2D PE))
             {
                 break;
             }
@@ -236,4 +236,3 @@ public class PlayerJump : MonoBehaviour
         resetJumps();
     }
 }
-//getting dash

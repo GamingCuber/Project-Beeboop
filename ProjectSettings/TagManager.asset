@@ -9,6 +9,7 @@ TagManager:
   - Checkpoint
   - PlatformJump
   - BouncePlatform
+  - MovingPlatform
   layers:
   - Default
   - TransparentFX
