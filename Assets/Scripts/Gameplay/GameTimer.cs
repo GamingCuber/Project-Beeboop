@@ -11,6 +11,10 @@ public class GameTimer : MonoBehaviour
 
     public TMP_Text timerText;
 
+    public RectTransform chargeBar;
+    public float chargeMaxX;
+    public float chargeMinX;
+
     private void Start()
     {
         if (Instance == null)
@@ -29,7 +33,11 @@ public class GameTimer : MonoBehaviour
         {
             timeLeft -= Time.deltaTime;
 
-            setText(Mathf.RoundToInt(timeLeft));
+            //setText(Mathf.RoundToInt(timeLeft));
+
+            timerText.text = ((int)(100 * timeLeft / time)).ToString() + "%";
+
+            moveBar(timeLeft);
 
             TimerGearManager.Instance.setGearSpeed(timeLeft, time);
 
@@ -41,7 +49,7 @@ public class GameTimer : MonoBehaviour
         yield break;
     }
 
-    private void setText(float secs)
+    private void setText(float secs) //for like actual time, keeping just in case we pivot back
     {
         string time = "";
 
@@ -60,6 +68,13 @@ public class GameTimer : MonoBehaviour
         }
 
         timerText.text = time;
+    }
+
+    private void moveBar(float timeLeft)
+    {
+        Vector3 barPos = chargeBar.localPosition;
+        barPos.x = Mathf.Lerp(chargeMaxX, chargeMinX, timeLeft / time);
+        chargeBar.localPosition = barPos;
     }
 
     private void gameLost()

@@ -17,20 +17,36 @@ public class TimerGearManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            gears[0].GetComponent<TimerGear>().vibrateGear();
+            gears[1].GetComponent<TimerGear>().vibrateGear();
+            gears[2].GetComponent<TimerGear>().vibrateGear();
+        }
+    }
+
     public void setGearSpeed(float curTime, float totalTime)
     {
         float offsetTime = totalTime - timeWhenStop;
         float offsetCur = curTime - timeWhenStop;
 
+
         float percentTime = (offsetTime - offsetCur) / (offsetTime);
+
 
         if (percentTime <= 1)
         {
             foreach (GameObject g in gears)
             {
                 TimerGear tg = g.GetComponent<TimerGear>();
+                
+                if (!tg.paused)
+                {
+                    tg.setSpeed(Mathf.Lerp(tg.maxSpeed, tg.minSpeed, percentTime));
+                }
 
-                tg.setSpeed(Mathf.Lerp(tg.maxSpeed, tg.minSpeed, percentTime));
             }
         }
     }
