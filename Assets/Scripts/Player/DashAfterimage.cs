@@ -65,7 +65,6 @@ public class DashAfterimage : MonoBehaviour
                 sr.flipX = player.GetComponent<SpriteRenderer>().flipX;
                 sr.sprite = player.GetComponent<SpriteRenderer>().sprite;
                 img.transform.position = player.transform.position;
-                Debug.Log(img.transform.position);
                 StartCoroutine(fadeImage(img));
             }
 

@@ -32,18 +32,21 @@ public class TimerGearManager : MonoBehaviour
         float offsetTime = totalTime - timeWhenStop;
         float offsetCur = curTime - timeWhenStop;
 
+
         float percentTime = (offsetTime - offsetCur) / (offsetTime);
+
 
         if (percentTime <= 1)
         {
             foreach (GameObject g in gears)
             {
                 TimerGear tg = g.GetComponent<TimerGear>();
-
+                
                 if (!tg.paused)
                 {
                     tg.setSpeed(Mathf.Lerp(tg.maxSpeed, tg.minSpeed, percentTime));
                 }
+
             }
         }
     }

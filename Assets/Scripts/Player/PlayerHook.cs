@@ -1,78 +1,44 @@
-using System.Numerics;
-using Mono.Cecil.Cil;
 using UnityEngine;
-using UnityEngine.U2D;
-using Vector2 = UnityEngine.Vector2;
+using System.Collections.Generic;
+using System.Collections;
 
 public class PlayerHook : MonoBehaviour
 {
     public Rigidbody2D rb;
     public LineRenderer hookLineRenderer;
+
+    private GameObject[] hookObjects; 
+
+    private Dictionary<GameObject, bool> hookCooldowns = new Dictionary<GameObject, bool>(); //will assign each hook an individual cooldown, so u cant spam
+
+    private void Start()
+    {
+        hookObjects = GameObject.FindGameObjectsWithTag("Hook");
+
+        foreach (GameObject hook in hookObjects)
+        {
+            hookCooldowns[hook] = false;
+        }
+    }
+
     void Update()
     {
-
         if (PlayerStateManager.Instance.getState().canHook)
         {
-            GameObject hook = getClosestHook();
-            hookReaction(hook, Vector2.Distance(hook.transform.position, transform.position));
-            if (Input.GetKeyDown(PlayerInputs.Instance.hook))
+            hookReaction();
+
+            if (getClosestAvailHook() != null && Input.GetKeyDown(PlayerInputs.Instance.hook))
             {
-                if (hook != null)
-                {
-                    if (Vector2.Distance(hook.transform.position, transform.position) < PlayerDataManager.Instance.getData().hookDistanceLimit)
-                    {
-                        rb.linearDamping = 0;
-                        if (!PlayerStateManager.Instance.getState().isHooked)
-                        {
-                            // Resets player force for a frame, then continues movement in the next line
-                            rb.constraints = RigidbodyConstraints2D.FreezeAll;
-                        }
-                        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-                        PlayerStateManager.Instance.getState().isHooked = true;
-
-                        hookLineRenderer.enabled = true;
-
-                        // Calculates Vector between player and HookPoint for applying Force
-                        Vector2 hookVector = (hook.transform.position - transform.position) * Time.fixedDeltaTime;
-                        rb.AddForce(hookVector * PlayerDataManager.Instance.getData().hookSpeed, ForceMode2D.Impulse);
-                    }
-                    PlayerStateManager.Instance.getState().keepMomentum = true;
-                }
-            }
-
-            if (Input.GetKey(PlayerInputs.Instance.hook) && PlayerStateManager.Instance.getState().isHooked)
-            {
-                // Draws line between Player and Hook Point
-                hookLineRenderer.SetPosition(0, transform.position);
-                hookLineRenderer.SetPosition(1, hook.transform.position);
-            }
-
-            if (Input.GetKeyUp(PlayerInputs.Instance.hook))
-            {
-                // Makes you slower when you let go of the hook
-                rb.linearDamping = PlayerDataManager.Instance.getData().dampeningPostHook;
-                rb.constraints = RigidbodyConstraints2D.FreezePositionY;
-                rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-
-                // Increases grav so you fall faster    
-                PlayerStateManager.Instance.getState().isFalling = true;
-
-                PlayerStateManager.Instance.getState().isHooked = false;
-                hookLineRenderer.enabled = false;
-                // Resets drag on the player
-                if (PlayerStateManager.Instance.getState().isGrounded)
-                {
-                    rb.linearDamping = 0;
-                }
+                doHook();
             }
         }
     }
 
 
-    private GameObject getClosestHook()
+    private GameObject getClosestAvailHook() //so its both in range and not on cooldown
     {
-        var hookObjects = GameObject.FindGameObjectsWithTag("Hook");
         GameObject closestHook = null;
+
         if (hookObjects != null)
         {
             closestHook = hookObjects[0];
@@ -81,26 +47,153 @@ public class PlayerHook : MonoBehaviour
                 var currentHookDistanceFromPlayer = Mathf.Abs(Vector2.Distance(transform.position, hookObject.transform.position));
                 var closestHookDistanceFromPlayer = Mathf.Abs(Vector2.Distance(transform.position, closestHook.transform.position));
 
-                if (currentHookDistanceFromPlayer <= closestHookDistanceFromPlayer)
+                if (currentHookDistanceFromPlayer <= closestHookDistanceFromPlayer && !checkForCD(hookObject))
                 {
                     closestHook = hookObject;
                 }
-
             }
         }
 
-        return closestHook;
-    }
-
-    private void hookReaction(GameObject hook, float distanceBetweenHook)
-    {
-        if (distanceBetweenHook <= PlayerDataManager.Instance.getData().hookDistanceLimit)
+        //if closest hook is within the hook range then return the hook AND is off cd (just b/c we initally set closest to hookobject[0] and it could be on cd), otherwise null
+        if (Mathf.Abs(Vector2.Distance(transform.position, closestHook.transform.position)) < PlayerDataManager.Instance.getData().hookDistanceLimit && !checkForCD(closestHook))
         {
-            hook.GetComponent<SpriteRenderer>().color = Color.green;
+            return closestHook;
         }
         else
         {
-            hook.GetComponent<SpriteRenderer>().color = Color.white;
+            return null;
         }
+    }
+
+    private bool checkForCD(GameObject hook)
+    {
+        foreach(KeyValuePair<GameObject, bool> kv in hookCooldowns)
+        {
+            if (kv.Key == hook && kv.Value)
+            {
+                return true;
+            }
+            else if (kv.Key == hook && !kv.Value)
+            {
+                return false;
+            }
+        }
+        return false;
+    }
+
+    private void hookReaction()
+    {
+        foreach (GameObject hook in hookObjects)
+        {
+            float dist = Vector2.Distance(transform.position, hook.transform.position);
+
+            // if hook within range, then it can be red or green, otherwise white
+            if (dist < PlayerDataManager.Instance.getData().hookDistanceLimit)
+            {
+                //if individual hook is on cd, red, else green
+                if (checkForCD(hook))
+                {
+                    hook.GetComponent<SpriteRenderer>().color = Color.red;
+                }
+                else
+                {
+                    hook.GetComponent<SpriteRenderer>().color = Color.green;
+                }
+            }
+            else
+            {
+                hook.GetComponent<SpriteRenderer>().color = Color.white;
+            }
+        }
+    }
+
+    private void putOnCooldown(GameObject hook)
+    {
+        StartCoroutine(hookCooldownCo(hook));
+    }
+
+    private IEnumerator hookCooldownCo(GameObject hook)
+    {
+        float timer = 0;
+        float totalTime = PlayerDataManager.Instance.getData().hookPointCD;
+
+        hookCooldowns[hook] = true;
+
+        while (timer < totalTime)
+        {
+            timer += Time.deltaTime;
+
+            yield return new WaitForEndOfFrame();
+        }
+
+        hookCooldowns[hook] = false;
+        yield break;
+    }
+
+    private void doHook()
+    {
+        StartCoroutine(hookCo());
+    }
+
+    private IEnumerator hookCo()
+    {
+        GameObject hook = getClosestAvailHook();
+
+        putOnCooldown(hook);
+
+        PlayerStateManager.Instance.getState().isHooked = true;
+        PlayerStateManager.Instance.getState().keepMomentum = true;
+
+        rb.linearDamping = 0;
+
+        // Resets player force for a frame, then continues movement in the next line
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+        hookLineRenderer.enabled = true;
+        //hookReaction(hook, Vector2.Distance(hook.transform.position, transform.position));
+
+        while (PlayerStateManager.Instance.getState().isHooked)
+        {
+            // Calculates Vector between player and HookPoint for applying Force
+            Vector2 hookVector = (hook.transform.position - transform.position).normalized;
+            rb.AddForce(hookVector * PlayerDataManager.Instance.getData().hookSpeed, ForceMode2D.Force);
+
+            // Draws line between Player and Hook Point
+            hookLineRenderer.SetPosition(0, transform.position);
+            hookLineRenderer.SetPosition(1, hook.transform.position);
+
+            // if player is too close to hook or lets go of hook, they detach
+            float playerHookDist = Mathf.Abs(Vector2.Distance(transform.position, hook.transform.position));
+            if (!Input.GetKey(PlayerInputs.Instance.hook) || playerHookDist < PlayerDataManager.Instance.getData().hookCancelDistance)
+            {
+                break;
+            }
+            yield return new WaitForEndOfFrame();
+        }
+
+        // Makes you slower when you let go of the hook
+        rb.linearDamping = PlayerDataManager.Instance.getData().dampeningPostHook;
+        rb.constraints = RigidbodyConstraints2D.FreezePositionY;
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+        yield return new WaitForSecondsRealtime(0.1f);
+
+        // Increases grav so you fall faster
+        PlayerStateManager.Instance.getState().isFalling = true;
+
+        //wait till player hits ground
+        while (!PlayerStateManager.Instance.getState().isGrounded)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+
+        PlayerStateManager.Instance.getState().isHooked = false;
+
+        hookLineRenderer.enabled = false;
+
+        rb.linearDamping = 0;
+        
+        yield break;
     }
 }
