@@ -19,7 +19,9 @@ public class PlayerData : ScriptableObject
     public float dashCDFrames; //how many frames dash is on cd
     public string playerdirection;
     public float hookDistanceLimit;
+    public float hookCancelDistance; //how close player has to be to hook for their hook to be cancelled
     public float hookSpeed;
+    public float hookPointCD; //seconds in which each point is on cd after used
     public float dampeningPostHook;
     public float maxHorizontalSpeed;
     public float maxNegativeVerticalSpeed;
