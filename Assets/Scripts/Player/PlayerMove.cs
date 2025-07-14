@@ -51,6 +51,11 @@ public class PlayerMove : MonoBehaviour
                         {
                             rb.linearVelocityX /= 4.5f;
                         }
+
+                        if (PlayerParticles.Instance != null)
+                        {
+                            PlayerParticles.Instance.playParticles();
+                        }
                     }
 
                     dir = -1;
@@ -67,6 +72,11 @@ public class PlayerMove : MonoBehaviour
                         else if (PlayerStateManager.Instance.getState().isJumping)
                         {
                             rb.linearVelocityX /= 3.5f;
+                        }
+
+                        if (PlayerParticles.Instance != null)
+                        {
+                            PlayerParticles.Instance.playParticles();
                         }
                     }
 

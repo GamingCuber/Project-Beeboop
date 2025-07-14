@@ -58,6 +58,11 @@ public class PlayerJump : MonoBehaviour
         if (Input.GetKeyDown(PlayerInputs.Instance.jump) && jumpsLeft > 0 && (canJump || isJumping))
         {
             jump();
+
+            if (PlayerParticles.Instance != null)
+            {
+                PlayerParticles.Instance.playParticles();
+            }
         }
 
         if (!PlayerStateManager.Instance.getState().isGrounded && canJump && coyoteCo == null && jumpsLeft == PlayerDataManager.Instance.getData().jumpAmt) //gives coyote time if they were recently on the ground, they isn't already a co running and if theyre on their first jump

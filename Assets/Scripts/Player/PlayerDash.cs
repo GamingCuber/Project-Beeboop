@@ -15,6 +15,11 @@ public class PlayerDash : MonoBehaviour
         {
             PlayerJump.Instance.cancelJump(false);
             StartCoroutine(DashCoroutine());
+
+            if (PlayerParticles.Instance != null)
+            {
+                PlayerParticles.Instance.playParticles();
+            }
         }
 
         if (debounce && PlayerStateManager.Instance.getState().isGrounded)
