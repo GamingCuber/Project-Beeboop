@@ -5,7 +5,10 @@ using System.Collections;
 public class PlayerHook : MonoBehaviour
 {
     public Rigidbody2D rb;
+
     public LineRenderer hookLineRenderer;
+
+    public GameObject hookTarget;
 
     private GameObject[] hookObjects; 
 
@@ -57,10 +60,12 @@ public class PlayerHook : MonoBehaviour
         //if closest hook is within the hook range then return the hook AND is off cd (just b/c we initally set closest to hookobject[0] and it could be on cd), otherwise null
         if (Mathf.Abs(Vector2.Distance(transform.position, closestHook.transform.position)) < PlayerDataManager.Instance.getData().hookDistanceLimit && !checkForCD(closestHook))
         {
+            spawnTarget(closestHook);
             return closestHook;
         }
         else
         {
+            hideTarget();
             return null;
         }
     }
@@ -195,5 +200,24 @@ public class PlayerHook : MonoBehaviour
         rb.linearDamping = 0;
         
         yield break;
+    }
+
+    //just qol, for the little indicator to show what hook ur locked on to
+    private void spawnTarget(GameObject hook)
+    {
+        if (hookTarget != null)
+        {
+            hookTarget.SetActive(true);
+
+            hookTarget.transform.position = hook.transform.position;
+        }
+    }
+
+    private void hideTarget()
+    {
+        if (hookTarget != null)
+        {
+            hookTarget.SetActive(false);
+        }
     }
 }
