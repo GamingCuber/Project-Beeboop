@@ -19,13 +19,21 @@ public class PauseMenu : MonoBehaviour
 
     private Vector3[] optionPos = //this is a bad way to do this but
     {
-        new Vector3(-1245, 380, 0),
-        new Vector3(-858, 380, 0),
-        new Vector3(-470, 380, 0),
-        new Vector3(0, 350, 0),
-        new Vector3(470, 380, 0),
-        new Vector3(858, 380, 0),
-        new Vector3(1245, 380, 0)
+        //new Vector3(-1245, 380, 0),
+        //new Vector3(-858, 380, 0),
+        //new Vector3(-470, 380, 0),
+        //new Vector3(0, 350, 0),
+        //new Vector3(470, 380, 0),
+        //new Vector3(858, 380, 0),
+        //new Vector3(1245, 380, 0)
+
+        new Vector3(-1024, 470, 0),
+        new Vector3(-760, 416, 0),
+        new Vector3(-620, 240, 0),
+        new Vector3(-513, 0, 0),
+        new Vector3(-620, -240, 0),
+        new Vector3(-760, -416, 0),
+        new Vector3(-1024, -470, 0)
     };
         
     public GameObject transitionImg;
@@ -61,20 +69,6 @@ public class PauseMenu : MonoBehaviour
             //to move the selected thing
             if (Input.GetKeyDown(PlayerInputs.Instance.down) || Input.GetKeyDown(PlayerInputs.Instance.left))
             {
-                if (curOption != optionData.Length - 1)
-                {
-                    curOption++;
-                }
-                else
-                {
-                    curOption = 0;
-                }
-                pushList();
-                updateMenu();
-                shiftOptions(1);
-            }
-            else if (Input.GetKeyDown(PlayerInputs.Instance.up) || Input.GetKeyDown(PlayerInputs.Instance.right))
-            {
                 if (curOption != 0)
                 {
                     curOption--;
@@ -82,6 +76,21 @@ public class PauseMenu : MonoBehaviour
                 else
                 {
                     curOption = optionData.Length - 1;
+                }
+
+                pushList();
+                updateMenu();
+                shiftOptions(1);
+            }
+            else if (Input.GetKeyDown(PlayerInputs.Instance.up) || Input.GetKeyDown(PlayerInputs.Instance.right))
+            {
+                if (curOption != optionData.Length - 1)
+                {
+                    curOption++;
+                }
+                else
+                {
+                    curOption = 0;
                 }
 
                 pullList();
@@ -105,6 +114,7 @@ public class PauseMenu : MonoBehaviour
 
     private void showMenu()
     {
+        initializeOptions();
         updateMenu();
         GameManager.Instance.pauseGame();
         menuObject.SetActive(true);
@@ -121,33 +131,34 @@ public class PauseMenu : MonoBehaviour
 
     private void resetMenu()
     {
-        curOption = 3;
+        curOption = 0;
         updateMenu();
     }
 
     private void updateMenu()
     {
-        GameObject curGO = optionGameObjects[curOption];
+        Image menuBG = menuObject.transform.GetChild(0).GetComponent<Image>();
 
-        foreach(GameObject g in optionGameObjects)
+        Color32 color;
+
+        int i = 0;
+
+        foreach (GameObject g in optionGameObjects)
         {
-            Image curOptionBG = g.transform.GetChild(3).GetComponent<Image>();
-
-            if (g != curGO)
+            if (i != 3)
             {
-                Color32 unselectedColor = new Color32(140, 140, 140, 100);
-
-                curOptionBG.color = unselectedColor;
+                color = new Color32(140, 140, 140, 100);
             }
             else
             {
-                Color32 selectedColor = new Color32(255, 255, 255, 100);
-
-                curOptionBG.color = selectedColor;
+                color = new Color32(255, 255, 255, 100);
             }
-        }
 
-        Image menuBG = menuObject.transform.GetChild(0).GetComponent<Image>();
+            g.transform.GetChild(3).GetComponent<Image>().color = color;
+
+            i++;
+        }
+        
 
         menuBG.sprite = optionData[curOption].backgroundImg;
     }
@@ -194,6 +205,8 @@ public class PauseMenu : MonoBehaviour
             }
         }
 
+        updateNewOption(dir);
+
         while (true)
         {
             timeChanged = Time.realtimeSinceStartup - startTime;
@@ -211,12 +224,21 @@ public class PauseMenu : MonoBehaviour
                 {
                     float newScale = Mathf.Lerp(.7f, 1f, timeChanged / moveTime);
                     optionGameObjects[e].transform.localScale = new Vector3(newScale, newScale, newScale);
-
-                    optionGameObjects[e].transform.GetChild(3).GetComponent<Image>().color = new Color32(0, 0, 0, 255);
                 }
                 else if (e == 2 && dir == -1 || e == 4 && dir == 1)
                 {
-                    float newScale = Mathf.Lerp(1f, .7f, timeChanged / moveTime);
+                    //optionGameObjects[e].transform.GetChild(3).GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+                    float newScale = Mathf.Lerp(1f, .75f, timeChanged / moveTime);
+                    optionGameObjects[e].transform.localScale = new Vector3(newScale, newScale, newScale);
+                }
+                else if (e == 1 && dir == -1 || e == 5 && dir == 1)
+                {
+                    float newScale = Mathf.Lerp(.75f, .4f, timeChanged / moveTime);
+                    optionGameObjects[e].transform.localScale = new Vector3(newScale, newScale, newScale);
+                }
+                else if (e == 2 && dir == 1 || e == 4 && dir == -1)
+                {
+                    float newScale = Mathf.Lerp(.4f, .75f, timeChanged / moveTime);
                     optionGameObjects[e].transform.localScale = new Vector3(newScale, newScale, newScale);
                 }
             }
@@ -231,7 +253,7 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    void pushList() //pushes the list to the right, last index -> first
+    private void pushList() //pushes the list to the right, last index -> first
     {
         GameObject lastCover = optionGameObjects[optionGameObjects.Length - 1];
 
@@ -243,7 +265,7 @@ public class PauseMenu : MonoBehaviour
         optionGameObjects[0] = lastCover;
     }
 
-    void pullList() //pulls list to the left, first index -> last 
+    private void pullList() //pulls list to the left, first index -> last 
     {
         GameObject firstCover = optionGameObjects[0];
 
@@ -256,13 +278,75 @@ public class PauseMenu : MonoBehaviour
 
     }
 
-    void updateOptions()
+    //change the option coming in
+    private void updateNewOption(int dir)
     {
-
+        if (dir == 1)
+        {
+            updateOptionData(optionGameObjects[1], optionData[wrapNum(dir)]);
+        }
+        else
+        {
+            updateOptionData(optionGameObjects[optionGameObjects.Length-2], optionData[wrapNum(dir)]);
+        }
     }
 
+    //this is buns but it works so
+    private void initializeOptions()
+    {
+        shiftOptions(1);
+        shiftOptions(-1);
+
+        updateOptionData(optionGameObjects[3], optionData[0]);
+        updateOptionData(optionGameObjects[4], optionData[1]);
+        updateOptionData(optionGameObjects[5], optionData[2]);
+        updateOptionData(optionGameObjects[2], optionData[4]);
+        updateOptionData(optionGameObjects[1], optionData[3]);
+    }
+
+    private void updateOptionData(GameObject option, PauseOption data)
+    {
+        Transform trans = option.transform;
+
+        trans.GetChild(0).GetComponent<TMP_Text>().text = data.optionName;
+        trans.GetChild(1).GetComponent<TMP_Text>().text = data.description;
+        trans.GetChild(2).GetComponent<TMP_Text>().text = data.channelNumber;
+    }
+
+    private int wrapNum(int dir)
+    {
+        if (dir == 1)
+        {
+            int num = curOption - 2;
+
+            if (num < 0)
+            {
+                Debug.Log(5 + num);
+                return 5 + num;
+            }
+            else
+            {
+                Debug.Log(num);
+                return num;
+            }
+        }
+        else
+        {
+            int num = curOption + 2;
 
 
+            if (num >= optionData.Length)
+            {
+                Debug.Log(num % 5);
+                return num % 5;
+            }
+            else
+            {
+                Debug.Log(num);
+                return num;
+            }
+        }
+    } 
 
     private void transition()
     {
