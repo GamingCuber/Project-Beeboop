@@ -229,8 +229,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84d38d80e3d16824f99f57828e090db5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upTime: 5
-  downTime: 5
+  upTime: 1
+  downTime: 1
   isDown: 0
   isStopped: 0
 --- !u!61 &574826215

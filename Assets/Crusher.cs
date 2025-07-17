@@ -31,6 +31,7 @@ public class Crusher : MonoBehaviour
         while (true)
         {
             timer += Time.deltaTime;
+
             if (!isDown && isStopped == false)
             {
                 float newy = Mathf.Lerp(currentposy.y, goalpos.y, timer / downTime);
@@ -44,46 +45,34 @@ public class Crusher : MonoBehaviour
                 {
                     timer = 0;
                     isDown = true;
-                    yield return new WaitForSecondsRealtime(stoptime);
-
-
-
+                    isStopped = true;   
                 }
 
-                else if(isDown && isStopped == false)
+            }
+            else if (isDown && isStopped == false)
+            {
+
+                float originy = Mathf.Lerp(goalpos.y, currentposy.y, timer / upTime);
+                Vector3 rar = this.gameObject.transform.position;
+                rar.y = originy;
+
+                transform.position = rar;
+
+                if (timer > upTime)
                 {
-
-                    float originy = Mathf.Lerp(goalpos.y, currentposy.y, timer / upTime);
-                    Vector3 rar = this.gameObject.transform.position;
-                    rar.y = originy;
-
-                    transform.position = rar;
-
-                    if (timer > upTime)
-                    {
-                        isDown = false;
-                        timer = 0;
-                        isStopped = true;
-                       
-
-                    }
-
-                    if (isStopped)
-                    {
-                        if (timer > stoptime)
-                        {
-                            isStopped = false;
-                            timer = 0;
-
-
-                         }
-
-
-                    }
-
+                    isDown = false;
+                    timer = 0;
+                    isStopped = true;
                 }
             }
-
+            if (isStopped)
+            {
+                if (timer > stoptime)
+                {
+                    isStopped = false;
+                    timer = 0;
+                }
+            }
 
 
 
