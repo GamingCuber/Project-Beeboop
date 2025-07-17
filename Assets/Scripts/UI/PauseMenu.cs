@@ -17,40 +17,36 @@ public class PauseMenu : MonoBehaviour
 
     private int curOption = 0;
 
+    private Vector3[] optionPos = //this is a bad way to do this but
+    {
+        new Vector3(-1245, 380, 0),
+        new Vector3(-858, 380, 0),
+        new Vector3(-470, 380, 0),
+        new Vector3(0, 350, 0),
+        new Vector3(470, 380, 0),
+        new Vector3(858, 380, 0),
+        new Vector3(1245, 380, 0)
+    };
+        
     public GameObject transitionImg;
 
     public float transitionTime;
 
     private void Start()
     {
-        optionGameObjects = new GameObject[optionData.Length];
+        optionGameObjects = new GameObject[7];
 
-        for (int i = 0; i < optionData.Length; i++)
+        for (int i = 0; i < 7; i++)
         {
             GameObject newOption = Instantiate(optionPre, menuObject.transform.GetChild(1)); //put option as a child of the menu object in pause menu
-            newOption.transform.localPosition = new Vector3(-800, 400 - (200 * i), 0); //magic numbers = position on canvas that i found already
             optionGameObjects[i] = newOption;
-
-            Transform t = newOption.transform;
-
-            //name tmp
-            t.GetChild(0).GetComponent<TMP_Text>().text = optionData[i].optionName;
-
-            //description tmp
-            t.GetChild(1).GetComponent<TMP_Text>().text = optionData[i].description;
-
-            //channel number
-            t.GetChild(2).GetComponent<TMP_Text>().text = optionData[i].channelNumber;
+            optionGameObjects[i].transform.localPosition = optionPos[i];
+            optionGameObjects[i].transform.localScale = new Vector3(0.7f, 0.7f, 1f);
         }
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            transition();
-        }
-
         if (Input.GetKeyDown(KeyCode.Escape) && !menuActive)
         {
             showMenu();
@@ -65,19 +61,32 @@ public class PauseMenu : MonoBehaviour
             //to move the selected thing
             if (Input.GetKeyDown(PlayerInputs.Instance.down) || Input.GetKeyDown(PlayerInputs.Instance.left))
             {
+                if (curOption != optionData.Length - 1)
+                {
+                    curOption++;
+                }
+                else
+                {
+                    curOption = 0;
+                }
+                pushList();
+                updateMenu();
+                shiftOptions(1);
+            }
+            else if (Input.GetKeyDown(PlayerInputs.Instance.up) || Input.GetKeyDown(PlayerInputs.Instance.right))
+            {
                 if (curOption != 0)
                 {
                     curOption--;
                 }
-                updateMenu();
-            }
-            else if (Input.GetKeyDown(PlayerInputs.Instance.up) || Input.GetKeyDown(PlayerInputs.Instance.right))
-            {
-                if (curOption != optionData.Length-1)
+                else
                 {
-                    curOption++;
+                    curOption = optionData.Length - 1;
                 }
+
+                pullList();
                 updateMenu();
+                shiftOptions(-1);
             }
 
             //to select an option
@@ -112,7 +121,7 @@ public class PauseMenu : MonoBehaviour
 
     private void resetMenu()
     {
-        curOption = 0;
+        curOption = 3;
         updateMenu();
     }
 
@@ -142,6 +151,118 @@ public class PauseMenu : MonoBehaviour
 
         menuBG.sprite = optionData[curOption].backgroundImg;
     }
+
+    private void shiftOptions(int dir)
+    {
+        StartCoroutine(shiftOptionsCo(dir));
+    }
+
+    IEnumerator shiftOptionsCo(int dir) //-1 up, 1 down
+    {
+        float startTime = Time.realtimeSinceStartup;
+
+        float timeChanged = 0;
+
+        float moveTime = 0.2f;
+
+        Vector3[] initPos = new Vector3[7];
+
+        int i = 0;
+        foreach (GameObject option in optionGameObjects)
+        {
+            initPos[i] = option.transform.localPosition;
+            i++;
+        }
+
+        int exclude = 0;
+        if (dir == -1)
+        {
+            exclude = optionGameObjects.Length-1;
+            optionGameObjects[optionGameObjects.Length-1].SetActive(false);
+        }
+        else if (dir == 1)
+        {
+            exclude = 0;
+            optionGameObjects[0].SetActive(false);
+        }
+
+        for (int ii = 0; ii < optionGameObjects.Length; ii++)
+        {
+            if (ii != exclude)
+            {
+                optionGameObjects[ii].SetActive(true);
+            }
+        }
+
+        while (true)
+        {
+            timeChanged = Time.realtimeSinceStartup - startTime;
+            for (int e = 0; e < optionGameObjects.Length; e++)
+            {
+                float newX = Mathf.Lerp(initPos[e].x, optionPos[e].x, timeChanged / moveTime);
+                float newY = Mathf.Lerp(initPos[e].y, optionPos[e].y, timeChanged / moveTime);
+                Vector3 newPos = optionGameObjects[e].transform.localPosition;
+                newPos.y = newY;
+                newPos.x = newX;
+
+                optionGameObjects[e].transform.localPosition = newPos;
+
+                if (e == 3)
+                {
+                    float newScale = Mathf.Lerp(.7f, 1f, timeChanged / moveTime);
+                    optionGameObjects[e].transform.localScale = new Vector3(newScale, newScale, newScale);
+
+                    optionGameObjects[e].transform.GetChild(3).GetComponent<Image>().color = new Color32(0, 0, 0, 255);
+                }
+                else if (e == 2 && dir == -1 || e == 4 && dir == 1)
+                {
+                    float newScale = Mathf.Lerp(1f, .7f, timeChanged / moveTime);
+                    optionGameObjects[e].transform.localScale = new Vector3(newScale, newScale, newScale);
+                }
+            }
+
+            if (timeChanged >= moveTime)
+            {
+                yield break;
+            }
+
+            yield return null;
+
+        }
+    }
+
+    void pushList() //pushes the list to the right, last index -> first
+    {
+        GameObject lastCover = optionGameObjects[optionGameObjects.Length - 1];
+
+        for (int i = optionGameObjects.Length - 1; i > 0; i--)
+        {
+            optionGameObjects[i] = optionGameObjects[i - 1];
+        }
+
+        optionGameObjects[0] = lastCover;
+    }
+
+    void pullList() //pulls list to the left, first index -> last 
+    {
+        GameObject firstCover = optionGameObjects[0];
+
+        for (int i = 0; i < optionGameObjects.Length - 1; i++)
+        {
+            optionGameObjects[i] = optionGameObjects[i + 1];
+        }
+
+        optionGameObjects[optionGameObjects.Length - 1] = firstCover;
+
+    }
+
+    void updateOptions()
+    {
+
+    }
+
+
+
 
     private void transition()
     {
