@@ -7,7 +7,13 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject menuObject;
 
+    private GameObject optionsOject;
+
+    private GameObject settingsObject;
+
     private bool menuActive = false;
+
+    private bool settingsActive = false;
 
     public PauseOption[] optionData;
 
@@ -51,6 +57,9 @@ public class PauseMenu : MonoBehaviour
             optionGameObjects[i].transform.localPosition = optionPos[i];
             optionGameObjects[i].transform.localScale = new Vector3(0.7f, 0.7f, 1f);
         }
+
+        optionsOject = menuObject.transform.GetChild(1).gameObject;
+        settingsObject = menuObject.transform.GetChild(2).gameObject;
     }
 
     private void Update()
@@ -107,6 +116,11 @@ public class PauseMenu : MonoBehaviour
                         resetMenu();
                         hideMenu();
                         break;
+                    case 1:
+                        showSettings();
+                        hideOptions();
+                        break;
+
                 }
             }
         }
@@ -132,6 +146,8 @@ public class PauseMenu : MonoBehaviour
     private void resetMenu()
     {
         curOption = 0;
+        hideSettings();
+        showOptions();
         updateMenu();
     }
 
@@ -346,7 +362,31 @@ public class PauseMenu : MonoBehaviour
                 return num;
             }
         }
-    } 
+    }
+
+    private void showSettings()
+    {
+        settingsActive = true;
+        settingsObject.SetActive(true);
+        settingsObject.GetComponent<SettingsMenu>().updateAllSettings();
+    }
+
+    public void hideSettings()
+    {
+        settingsActive = false;
+        settingsObject.SetActive(false);
+    }
+
+    public void showOptions()
+    {
+        optionsOject.SetActive(true);
+    }
+
+    public void hideOptions()
+    {
+        optionsOject.SetActive(false);
+    }
+
 
     private void transition()
     {
