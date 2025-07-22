@@ -292,7 +292,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1470451518}
+  - {fileID: 1061183895}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -10867,6 +10867,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed946dcb47eaa4654ba8425b3146e51b, type: 3}
+--- !u!224 &1061183895 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6524595551305927169, guid: ed946dcb47eaa4654ba8425b3146e51b, type: 3}
+  m_PrefabInstance: {fileID: 1018393296}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1113042998
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10984,6 +10989,7 @@ GameObject:
   - component: {fileID: 1245971656}
   - component: {fileID: 1245971655}
   - component: {fileID: 1245971658}
+  - component: {fileID: 1245971659}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -11064,6 +11070,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ourAudioSource: {fileID: 1245971654}
+  sourcePre: {fileID: 0}
+  soundPoolAmt: 0
   dash: {fileID: 8300000, guid: ff7ae22e311b2244a8750de0e199ee19, type: 3}
   fall: {fileID: 8300000, guid: acb74b34ee160d747b13b3d13d116f30, type: 3}
   jump: {fileID: 0}
@@ -11230,6 +11238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1245971652}
   hookLineRenderer: {fileID: 1245971643}
+  hookTarget: {fileID: 0}
 --- !u!70 &1245971645
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -11574,6 +11583,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1245971652}
+--- !u!114 &1245971659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245971634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: 
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &1250009806
 GameObject:
   m_ObjectHideFlags: 0
@@ -11720,11 +11759,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!224 &1470451518 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 5502429109180509360, guid: ed946dcb47eaa4654ba8425b3146e51b, type: 3}
-  m_PrefabInstance: {fileID: 1018393296}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1655512568
 PrefabInstance:
   m_ObjectHideFlags: 0
