@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class AnimationController : MonoBehaviour
 {
@@ -8,11 +9,12 @@ public class AnimationController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(PlayerInputs.Instance.left) && !sr.flipX) //if they goin left, flip sprite, otherwise don't
+
+        if ((Input.GetKey(PlayerInputs.Instance.left) && !sr.flipX) || (Input.GetAxis("Horizontal") < 0 && !sr.flipX)) //if they goin left, flip sprite, otherwise don't
         {
             sr.flipX = true;
         }
-        else if (Input.GetKey(PlayerInputs.Instance.right) && sr.flipX)
+        else if ((Input.GetKey(PlayerInputs.Instance.right) && sr.flipX) || (Input.GetAxis("Horizontal") > 0 && sr.flipX))
         {
             sr.flipX = false;
         }
