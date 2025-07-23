@@ -15,7 +15,6 @@ public class PlayerDash : MonoBehaviour
         {
             PlayerJump.Instance.cancelJump(false);
             StartCoroutine(DashCoroutine());
-            UnityEngine.InputSystem.Gamepad.current.SetMotorSpeeds(0.25f, 0.75f);
         }
 
         if (debounce && PlayerStateManager.Instance.getState().isGrounded)

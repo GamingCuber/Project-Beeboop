@@ -41,17 +41,17 @@ public class PlayerInputs : MonoBehaviour
         playerController.Player.Dash.performed += ctx => setDash(ctx);
         playerController.Player.Dash.canceled += ctx => cancelDash(ctx);
 
-        playerController.Player.MoveLeft.performed += ctx => isMovingLeft(ctx);
-        playerController.Player.MoveLeft.canceled += ctx => isMovingLeft(ctx);
+        playerController.Player.MoveLeft.performed += ctx => setMovingLeft(ctx);
+        playerController.Player.MoveLeft.canceled += ctx => cancelMovingLeft(ctx);
 
-        playerController.Player.MoveRight.performed += ctx => isMovingRight(ctx);
-        playerController.Player.MoveRight.canceled += ctx => isMovingRight(ctx);
+        playerController.Player.MoveRight.performed += ctx => setMovingRight(ctx);
+        playerController.Player.MoveRight.canceled += ctx => cancelMovingRight(ctx);
 
-        playerController.Player.Up1.performed += ctx => isLookingUp(ctx);
-        playerController.Player.Up1.canceled += ctx => isLookingUp(ctx);
+        playerController.Player.Up1.performed += ctx => setLookingUp(ctx);
+        playerController.Player.Up1.canceled += ctx => cancelLookingDown(ctx);
 
-        playerController.Player.Down.performed += ctx => isLookingDown(ctx);
-        playerController.Player.Down.canceled += ctx => isLookingDown(ctx);
+        playerController.Player.Down.performed += ctx => setLookingDown(ctx);
+        playerController.Player.Down.canceled += ctx => cancelLookingDown(ctx);
 
     }
 
@@ -93,26 +93,45 @@ public class PlayerInputs : MonoBehaviour
     }
 
 
-    private void isMovingLeft(InputAction.CallbackContext context)
+    private void setMovingLeft(InputAction.CallbackContext context)
     {
-        pressingLeftButton = Input.GetKeyDown(KeyCode.A) || context.performed;
+        pressingLeftButton = true;
+    }
+    private void cancelMovingLeft(InputAction.CallbackContext context)
+    {
+        pressingLeftButton = false;
     }
 
-    private void isMovingRight(InputAction.CallbackContext context)
+    private void setMovingRight(InputAction.CallbackContext context)
     {
-        pressingRightButton = Input.GetKeyDown(KeyCode.D) || context.performed;
+        pressingRightButton = true;
+
+    }
+    private void cancelMovingRight(InputAction.CallbackContext context)
+    {
+        pressingRightButton = false;
+
+    }
+    private void setLookingUp(InputAction.CallbackContext context)
+    {
+        pressingUpButton = true;
 
     }
 
-    private void isLookingUp(InputAction.CallbackContext context)
+    private void cancelLookingUp(InputAction.CallbackContext context)
     {
-        pressingUpButton = Input.GetKeyDown(KeyCode.W) || context.performed;
+        pressingUpButton = false;
 
     }
 
-    private void isLookingDown(InputAction.CallbackContext context)
+    private void setLookingDown(InputAction.CallbackContext context)
     {
-        pressingDownButton = Input.GetKeyDown(KeyCode.S) || context.performed;
+        pressingDownButton = true;
+
+    }
+    private void cancelLookingDown(InputAction.CallbackContext context)
+    {
+        pressingDownButton = false;
 
     }
 
