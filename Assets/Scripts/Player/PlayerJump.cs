@@ -45,7 +45,7 @@ public class PlayerJump : MonoBehaviour
                 resetJumps();
             }
 
-            if (PlayerStateManager.Instance.getState().keepMomentum && Mathf.Abs(rb.linearVelocityY) < 0.05)
+            if (PlayerStateManager.Instance.getState().keepMomentum && !PlayerStateManager.Instance.getState().isHooked && PlayerStateManager.Instance.getState().isGrounded)
             {
                 PlayerStateManager.Instance.getState().keepMomentum = false;
             }

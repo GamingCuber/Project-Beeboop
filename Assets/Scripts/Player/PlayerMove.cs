@@ -24,7 +24,15 @@ public class PlayerMove : MonoBehaviour
     {
         if (!PlayerStateManager.Instance.getState().isHooked && !PlayerStateManager.Instance.getState().isDashing && !isPaused)
         {
-            if (Input.GetKey(PlayerInputs.Instance.left) || Input.GetKey(PlayerInputs.Instance.right))
+
+            //to STOP player
+            if (!PlayerStateManager.Instance.getState().isMoving || //if theyre not choosing a direction to move
+               ((rb.linearVelocityX > 0 && Input.GetKey(PlayerInputs.Instance.left) || //for the ice skating, if players going right but holding left
+               rb.linearVelocityX < 0 && Input.GetKey(PlayerInputs.Instance.right)))) //for ice skating, if players going left but holding right
+            {
+                rb.linearVelocityX = 0;
+            }
+            else if (Input.GetKey(PlayerInputs.Instance.left) || Input.GetKey(PlayerInputs.Instance.right))
             {
                 float xVelo = rb.linearVelocityX;
 
@@ -75,10 +83,6 @@ public class PlayerMove : MonoBehaviour
                 }
 
                 rb.AddForceX(PlayerDataManager.Instance.getData().playerAcc * AFMult * dir, ForceMode2D.Force);
-            }
-            else if (!PlayerStateManager.Instance.getState().keepMomentum)
-            {
-                rb.linearVelocityX = 0;
             }
         }
     }
