@@ -32,14 +32,27 @@ public class PlayerInputs : MonoBehaviour
 
         playerController = new PlayerController();
 
-        playerController.Player.Jump.performed += ctx => isJumping(ctx);
-        playerController.Player.Hook.performed += ctx => isHooking(ctx);
-        playerController.Player.Dash.performed += ctx => isDashing(ctx);
+        playerController.Player.Jump.performed += ctx => setJump(ctx);
+        playerController.Player.Jump.canceled += ctx => cancelJump(ctx);
+
+        playerController.Player.Hook.performed += ctx => setHook(ctx);
+        playerController.Player.Hook.canceled += ctx => cancelHook(ctx);
+
+        playerController.Player.Dash.performed += ctx => setDash(ctx);
+        playerController.Player.Dash.canceled += ctx => cancelDash(ctx);
 
         playerController.Player.MoveLeft.performed += ctx => isMovingLeft(ctx);
+        playerController.Player.MoveLeft.canceled += ctx => isMovingLeft(ctx);
+
         playerController.Player.MoveRight.performed += ctx => isMovingRight(ctx);
+        playerController.Player.MoveRight.canceled += ctx => isMovingRight(ctx);
+
         playerController.Player.Up1.performed += ctx => isLookingUp(ctx);
+        playerController.Player.Up1.canceled += ctx => isLookingUp(ctx);
+
         playerController.Player.Down.performed += ctx => isLookingDown(ctx);
+        playerController.Player.Down.canceled += ctx => isLookingDown(ctx);
+
     }
 
     private void OnEnable()
@@ -47,30 +60,39 @@ public class PlayerInputs : MonoBehaviour
         playerController.Player.Enable();
     }
 
-    private void isJumping(InputAction.CallbackContext context)
+    private void setJump(InputAction.CallbackContext context)
     {
-        if (Input.GetKeyDown(KeyCode.Space) || context.performed)
-        {
-            pressingJumpButton = true;
-        }
-        if (context.canceled)
-        {
-            pressingJumpButton = false;
-        }
+        pressingJumpButton = true;
+    }
+
+    private void cancelJump(InputAction.CallbackContext context)
+    {
+        pressingJumpButton = false;
+    }
+
+    private void setHook(InputAction.CallbackContext context)
+    {
+        pressingHookButton = true;
+
+    }
+    private void cancelHook(InputAction.CallbackContext context)
+    {
+        pressingHookButton = false;
 
     }
 
-    private void isHooking(InputAction.CallbackContext context)
+    private void setDash(InputAction.CallbackContext context)
     {
-        pressingHookButton = Input.GetKeyDown(KeyCode.F) || context.performed;
+        pressingDashButton = true;
+
+    }
+    private void cancelDash(InputAction.CallbackContext context)
+    {
+        pressingDashButton = false;
 
     }
 
-    private void isDashing(InputAction.CallbackContext context)
-    {
-        pressingDashButton = Input.GetKeyDown(KeyCode.E) || context.performed;
 
-    }
     private void isMovingLeft(InputAction.CallbackContext context)
     {
         pressingLeftButton = Input.GetKeyDown(KeyCode.A) || context.performed;
