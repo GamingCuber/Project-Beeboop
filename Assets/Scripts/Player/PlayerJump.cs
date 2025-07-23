@@ -55,7 +55,7 @@ public class PlayerJump : MonoBehaviour
             PlayerStateManager.Instance.getState().isGrounded = false;
         }
 
-        if (PlayerInputs.Instance.playerController.Player.Jump.IsPressed() && jumpsLeft > 0 && (canJump || isJumping))
+        if (PlayerInputs.Instance.playerController.Player.Jump.WasPressedThisFrame() && jumpsLeft > 0 && (canJump || isJumping))
         {
             jump();
         }
