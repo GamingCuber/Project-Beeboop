@@ -23,6 +23,10 @@ public class PauseMenu : MonoBehaviour
 
     private int curOption = 0;
 
+    private GameObject player;
+
+    private int loopedInt; //for turning off the looped ambience sound effect
+
     private Vector3[] optionPos = //this is a bad way to do this but
     {
         //new Vector3(-1245, 380, 0),
@@ -42,24 +46,28 @@ public class PauseMenu : MonoBehaviour
         new Vector3(-1024, -470, 0)
     };
         
-    public GameObject transitionImg;
+    public GameObject switchImg;
 
-    public float transitionTime;
+    public float switchFrames;
+
+    public int maxSwitchOpacity;
 
     private void Start()
     {
         optionGameObjects = new GameObject[7];
 
+        optionsOject = menuObject.transform.GetChild(2).gameObject;
+        settingsObject = menuObject.transform.GetChild(3).gameObject;
+
         for (int i = 0; i < 7; i++)
         {
-            GameObject newOption = Instantiate(optionPre, menuObject.transform.GetChild(1)); //put option as a child of the menu object in pause menu
+            GameObject newOption = Instantiate(optionPre, optionsOject.transform); //put option as a child of the menu object in pause menu
             optionGameObjects[i] = newOption;
             optionGameObjects[i].transform.localPosition = optionPos[i];
             optionGameObjects[i].transform.localScale = new Vector3(0.7f, 0.7f, 1f);
         }
 
-        optionsOject = menuObject.transform.GetChild(1).gameObject;
-        settingsObject = menuObject.transform.GetChild(2).gameObject;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void Update()
@@ -75,54 +83,66 @@ public class PauseMenu : MonoBehaviour
 
         if (menuActive)
         {
-            //to move the selected thing
-            if (Input.GetKeyDown(PlayerInputs.Instance.down) || Input.GetKeyDown(PlayerInputs.Instance.left))
+            if (!settingsActive)
             {
-                if (curOption != 0)
+                //to move the selected thing
+                if (Input.GetKeyDown(PlayerInputs.Instance.down) || Input.GetKeyDown(PlayerInputs.Instance.left))
                 {
-                    curOption--;
+                    if (curOption != 0)
+                    {
+                        curOption--;
+                    }
+                    else
+                    {
+                        curOption = optionData.Length - 1;
+                    }
+
+                    pushList();
+                    updateMenu();
+                    shiftOptions(1);
+                    switchEffect();
+                    SoundManager.Instance.playSoundFX("crtClick", player.transform.position, 0, 10, 1);
                 }
-                else
+                else if (Input.GetKeyDown(PlayerInputs.Instance.up) || Input.GetKeyDown(PlayerInputs.Instance.right))
                 {
-                    curOption = optionData.Length - 1;
+                    if (curOption != optionData.Length - 1)
+                    {
+                        curOption++;
+                    }
+                    else
+                    {
+                        curOption = 0;
+                    }
+
+                    pullList();
+                    updateMenu();
+                    shiftOptions(-1);
+                    switchEffect();
+                    SoundManager.Instance.playSoundFX("crtClick", player.transform.position, 0, 10, 1);
                 }
 
-                pushList();
-                updateMenu();
-                shiftOptions(1);
+                //to select an option
+                if (Input.GetKeyDown(PlayerInputs.Instance.jump))
+                {
+                    switch (curOption)
+                    {
+                        case 0: //resume
+                            resetMenu();
+                            hideMenu();
+                            break;
+                        case 1:
+                            showSettings();
+                            hideOptions();
+                            break;
+
+                    }
+                }
             }
-            else if (Input.GetKeyDown(PlayerInputs.Instance.up) || Input.GetKeyDown(PlayerInputs.Instance.right))
+            else if (settingsActive)
             {
-                if (curOption != optionData.Length - 1)
-                {
-                    curOption++;
-                }
-                else
-                {
-                    curOption = 0;
-                }
-
-                pullList();
-                updateMenu();
-                shiftOptions(-1);
+                // settings stuff
             }
 
-            //to select an option
-            if (Input.GetKeyDown(PlayerInputs.Instance.jump))
-            {
-                switch (curOption)
-                {
-                    case 0: //resume
-                        resetMenu();
-                        hideMenu();
-                        break;
-                    case 1:
-                        showSettings();
-                        hideOptions();
-                        break;
-
-                }
-            }
         }
     }
 
@@ -133,6 +153,9 @@ public class PauseMenu : MonoBehaviour
         GameManager.Instance.pauseGame();
         menuObject.SetActive(true);
         menuActive = true;
+        SoundManager.Instance.playSoundFX("crtOn", player.transform.position, 0, 10, 1);
+        SoundManager.Instance.playLoopedSound("crtAmbience", player.transform.position, 0, 10, 1f, out int index);
+        loopedInt = index;
     }
 
     private void hideMenu()
@@ -141,6 +164,8 @@ public class PauseMenu : MonoBehaviour
         menuObject.SetActive(false);
         GameManager.Instance.resumeGame();
         menuActive = false;
+        SoundManager.Instance.playSoundFX("crtOff", player.transform.position, 0, 10, 1);
+        SoundManager.Instance.stopLoopSound(loopedInt);
     }
 
     private void resetMenu()
@@ -243,7 +268,6 @@ public class PauseMenu : MonoBehaviour
                 }
                 else if (e == 2 && dir == -1 || e == 4 && dir == 1)
                 {
-                    //optionGameObjects[e].transform.GetChild(3).GetComponent<Image>().color = new Color32(255, 255, 255, 255);
                     float newScale = Mathf.Lerp(1f, .75f, timeChanged / moveTime);
                     optionGameObjects[e].transform.localScale = new Vector3(newScale, newScale, newScale);
                 }
@@ -337,12 +361,10 @@ public class PauseMenu : MonoBehaviour
 
             if (num < 0)
             {
-                Debug.Log(5 + num);
                 return 5 + num;
             }
             else
             {
-                Debug.Log(num);
                 return num;
             }
         }
@@ -353,12 +375,10 @@ public class PauseMenu : MonoBehaviour
 
             if (num >= optionData.Length)
             {
-                Debug.Log(num % 5);
                 return num % 5;
             }
             else
             {
-                Debug.Log(num);
                 return num;
             }
         }
@@ -388,40 +408,65 @@ public class PauseMenu : MonoBehaviour
     }
 
 
-    private void transition()
+    private void switchEffect()
     {
-        StartCoroutine(zoomInTransition());
+        StartCoroutine(switchEffectCo());
     }
-    private IEnumerator zoomInTransition()
+
+    private IEnumerator switchEffectCo()
     {
-        transitionImg.SetActive(true);
+        float moveYDist = 200;
 
-        RectTransform rect = transitionImg.GetComponent<RectTransform>();
+        float minX = 950;
+        float maxX = -950;
+        
+        float minY = -518;
+        float maxY = 518 - moveYDist;
 
-        Vector2 minVector = Vector2.zero;
-        Vector2 maxVector = Vector2.zero;
+        float Y = 0;
 
-        float timer = 0;
+        float startingY = Random.Range(minY, maxY);
 
-        while (timer < transitionTime)
+        float targetY = startingY + moveYDist;
+
+        float curFrames = 0;
+
+        float a = 255;
+
+        RectTransform rect = switchImg.GetComponent<RectTransform>();
+
+        RawImage img = switchImg.GetComponent<RawImage>();
+
+        Vector3 newPos = rect.position;
+
+        newPos.x = Random.Range(minX, maxX);
+
+        Color32 startColor = img.color;
+        startColor.a = (byte)255;
+        img.color = startColor;
+
+        switchImg.SetActive(true);
+
+        while (curFrames != switchFrames)
         {
-            timer += Time.deltaTime;
+            curFrames++;
 
-            float x = Mathf.Lerp(0, 1920/2, timer / transitionTime);
-            float y = Mathf.Lerp(0, 1080 / 2, timer / transitionTime);
+            Y = Mathf.Lerp(startingY, targetY, curFrames / switchFrames);
+            newPos.y = Y;
+            rect.transform.localPosition = newPos;
 
-            minVector.x = x;
-            maxVector.x = -x;
-            minVector.y = y;
-            maxVector.y = -y;
+            if (curFrames > switchFrames/2)
+            {
+                a = Mathf.Lerp(maxSwitchOpacity, 0, (curFrames - (switchFrames / 2)) / (switchFrames / 2));
+                Color32 c = img.color;
+                c.a = (byte)a;
+                img.color = c;
+            }
 
-            rect.offsetMin = minVector;
-            rect.offsetMax = maxVector;
 
             yield return new WaitForEndOfFrame();
         }
 
-        transitionImg.SetActive(false);
-        yield break;
+        switchImg.SetActive(false);
     }
 }
