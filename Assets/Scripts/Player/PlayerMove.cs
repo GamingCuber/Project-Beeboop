@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -11,20 +12,32 @@ public class PlayerMove : MonoBehaviour
     private int dir; //left or right, -1 left, 1 right
 
     float AFMult = 1; //add force mult, so i can make it close to 0 if the player is close to max speed
-
+    private Gamepad gamePad;
     private void Start()
     {
         if (Instance == null)
         {
             Instance = this;
         }
+
     }
 
     void Update()
     {
+        if (gamePad != null)
+        {
+            gamePad = Gamepad.current;
+        }
+        else
+        {
+            gamePad = null;
+        }
+
+
+
         if (!PlayerStateManager.Instance.getState().isHooked && !PlayerStateManager.Instance.getState().isDashing && !isPaused)
         {
-            if (Input.GetKey(PlayerInputs.Instance.left) || Input.GetKey(PlayerInputs.Instance.right))
+            if (PlayerInputs.Instance.pressingLeftButton || PlayerInputs.Instance.pressingRightButton)
             {
                 float xVelo = rb.linearVelocityX;
 
@@ -39,9 +52,9 @@ public class PlayerMove : MonoBehaviour
                     AFMult = 1;
                 }
 
-                if (Input.GetKey(PlayerInputs.Instance.left))
+                if (PlayerInputs.Instance.pressingLeftButton)
                 {
-                    if (PlayerDataManager.Instance.getData().playerdirection == "right")
+                    if (PlayerDataManager.Instance.getData().playerDirection == "right")
                     {
                         if (PlayerStateManager.Instance.getState().isGrounded)
                         {
@@ -54,11 +67,11 @@ public class PlayerMove : MonoBehaviour
                     }
 
                     dir = -1;
-                    PlayerDataManager.Instance.getData().playerdirection = "left";
+                    PlayerDataManager.Instance.getData().playerDirection = "left";
                 }
                 else
                 {
-                    if (PlayerDataManager.Instance.getData().playerdirection == "left")
+                    if (PlayerDataManager.Instance.getData().playerDirection == "left")
                     {
                         if (PlayerStateManager.Instance.getState().isGrounded)
                         {
@@ -71,7 +84,7 @@ public class PlayerMove : MonoBehaviour
                     }
 
                     dir = 1;
-                    PlayerDataManager.Instance.getData().playerdirection = "right";
+                    PlayerDataManager.Instance.getData().playerDirection = "right";
                 }
 
                 rb.AddForceX(PlayerDataManager.Instance.getData().playerAcc * AFMult * dir, ForceMode2D.Force);
