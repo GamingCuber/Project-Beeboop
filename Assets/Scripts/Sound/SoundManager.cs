@@ -103,7 +103,6 @@ public class SoundManager: MonoBehaviour
 
         while (timer < time)
         {
-            Debug.Log(timer);
             timer = Time.realtimeSinceStartup - startTime;
             yield return new WaitForEndOfFrame();
         }

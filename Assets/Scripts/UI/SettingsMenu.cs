@@ -36,7 +36,6 @@ public class SettingsMenu : MonoBehaviour
         if (!loading)
         {
             string inputType = typeAndPref.Substring(0, 5);
-            Debug.Log(inputType);
             string prefName = typeAndPref.Substring(5, typeAndPref.Length-5);
 
             GameObject changed = null;
@@ -61,14 +60,11 @@ public class SettingsMenu : MonoBehaviour
 
             if (inputType == "slide")
             {
-                Debug.Log("slider changed");
                 newVal = Mathf.RoundToInt(slider.value);
                 PlayerPrefs.SetInt(prefName, newVal);
-                Debug.Log(PlayerPrefs.GetInt(prefName));
             }
             else if (inputType == "input")
             {
-                Debug.Log("input changed");
                 newVal = int.Parse(input.text);
                 PlayerPrefs.SetInt(prefName, newVal);
             }
@@ -79,7 +75,6 @@ public class SettingsMenu : MonoBehaviour
 
     public void updateVolumeUI(Slider slider, TMP_InputField input, string prefName)
     {
-        Debug.Log(PlayerPrefs.GetInt(prefName, 100));
         slider.value = PlayerPrefs.GetInt(prefName,100);
         input.text = PlayerPrefs.GetInt(prefName, 100).ToString();
     }
