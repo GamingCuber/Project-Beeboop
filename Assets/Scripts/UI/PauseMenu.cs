@@ -101,7 +101,7 @@ public class PauseMenu : MonoBehaviour
                     updateMenu();
                     shiftOptions(1);
                     switchEffect();
-                    SoundManager.Instance.playSoundFX("crtClick", player.transform.position, 0, 10, 1);
+                    SoundManager.Instance.playSoundFX("crtClick", player.transform.position, 0, 10, 1, true);
                 }
                 else if (Input.GetKeyDown(PlayerInputs.Instance.up) || Input.GetKeyDown(PlayerInputs.Instance.right))
                 {
@@ -118,7 +118,7 @@ public class PauseMenu : MonoBehaviour
                     updateMenu();
                     shiftOptions(-1);
                     switchEffect();
-                    SoundManager.Instance.playSoundFX("crtClick", player.transform.position, 0, 10, 1);
+                    SoundManager.Instance.playSoundFX("crtClick", player.transform.position, 0, 10, 1, true);
                 }
 
                 //to select an option
@@ -153,7 +153,7 @@ public class PauseMenu : MonoBehaviour
         GameManager.Instance.pauseGame();
         menuObject.SetActive(true);
         menuActive = true;
-        SoundManager.Instance.playSoundFX("crtOn", player.transform.position, 0, 10, 1);
+        SoundManager.Instance.playSoundFX("crtOn", player.transform.position, 0, 10, 1, true);
         SoundManager.Instance.playLoopedSound("crtAmbience", player.transform.position, 0, 10, 1f, out int index);
         loopedInt = index;
     }
@@ -164,7 +164,7 @@ public class PauseMenu : MonoBehaviour
         menuObject.SetActive(false);
         GameManager.Instance.resumeGame();
         menuActive = false;
-        SoundManager.Instance.playSoundFX("crtOff", player.transform.position, 0, 10, 1);
+        SoundManager.Instance.playSoundFX("crtOff", player.transform.position, 0, 10, 1, true);
         SoundManager.Instance.stopLoopSound(loopedInt);
     }
 

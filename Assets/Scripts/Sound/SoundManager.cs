@@ -57,7 +57,7 @@ public class SoundManager: MonoBehaviour
         ourAudioSource.PlayOneShot(sfx_dictionary[key]);
     }
 
-    public void playSoundFX(string key, Vector3 soundPos, float minDist, float maxDist, float volume)
+    public void playSoundFX(string key, Vector3 soundPos, float minDist, float maxDist, float volume, bool mono)
     {
         GameObject curSound = getAvailSound();
         curSound.SetActive(true);
@@ -67,6 +67,16 @@ public class SoundManager: MonoBehaviour
         source.minDistance = minDist;
         source.maxDistance = maxDist;
         source.volume = volume;
+
+        if (mono)
+        {
+            source.spatialBlend = 0;
+        }
+        else
+        {
+            source.spatialBlend = 1;
+        }
+
         source.Play();
         StartCoroutine(turnOffSound(curSound, source.clip.length));
     }
