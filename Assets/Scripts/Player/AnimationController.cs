@@ -40,7 +40,7 @@ public class AnimationController : MonoBehaviour
             Debug.Log("turning on jump");
             anim.SetBool("isJumping", true);
         }
-        else if (PlayerStateManager.Instance.getState().isJumping && PlayerStateManager.Instance.getState().isFalling || anim.GetBool("isDashing")) //jumping but falling
+        else if (PlayerStateManager.Instance.getState().isJumping && PlayerStateManager.Instance.getState().isFalling || anim.GetBool("isDashing") || PlayerStateManager.Instance.getState().isGrounded) //jumping but falling
         {
             anim.SetBool("isJumping", false);
         }
