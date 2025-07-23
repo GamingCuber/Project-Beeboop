@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
-using UnityEngine.InputSystem;
 
 public class PlayerHook : MonoBehaviour
 {
@@ -25,13 +24,13 @@ public class PlayerHook : MonoBehaviour
         }
     }
 
-    void getHook()
+    void Update()
     {
         if (PlayerStateManager.Instance.getState().canHook)
         {
             hookReaction();
 
-            if (getClosestAvailHook() != null)
+            if (getClosestAvailHook() != null && PlayerInputs.Instance.playerController.Player.Hook.WasPressedThisFrame())
             {
                 doHook();
             }
@@ -171,7 +170,7 @@ public class PlayerHook : MonoBehaviour
 
             // if player is too close to hook or lets go of hook, they detach
             float playerHookDist = Mathf.Abs(Vector2.Distance(transform.position, hook.transform.position));
-            if (Gamepad.current.rightShoulder.isPressed || Gamepad.current.leftShoulder.isPressed || Gamepad.current.buttonNorth.isPressed || Input.GetKeyDown(KeyCode.F) || playerHookDist < PlayerDataManager.Instance.getData().hookCancelDistance)
+            if (!PlayerInputs.Instance.playerController.Player.Hook.IsPressed() || playerHookDist < PlayerDataManager.Instance.getData().hookCancelDistance)
             {
                 break;
             }
