@@ -8,11 +8,11 @@ public class AnimationController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(PlayerInputs.Instance.left) && !sr.flipX) //if they goin left, flip sprite, otherwise don't
+        if (Input.GetKey(PlayerInputs.Instance.left) && !sr.flipX && !Input.GetKey(PlayerInputs.Instance.right)) //if they goin left, flip sprite, otherwise don't
         {
             sr.flipX = true;
         }
-        else if (Input.GetKey(PlayerInputs.Instance.right) && sr.flipX)
+        else if (Input.GetKey(PlayerInputs.Instance.right) && sr.flipX && !Input.GetKey(PlayerInputs.Instance.left))
         {
             sr.flipX = false;
         }
@@ -37,7 +37,6 @@ public class AnimationController : MonoBehaviour
 
         if (PlayerStateManager.Instance.getState().isJumping && !PlayerStateManager.Instance.getState().isFalling) //if they jumping and not falling
         {
-            Debug.Log("turning on jump");
             anim.SetBool("isJumping", true);
         }
         else if (PlayerStateManager.Instance.getState().isJumping && PlayerStateManager.Instance.getState().isFalling || anim.GetBool("isDashing") || PlayerStateManager.Instance.getState().isGrounded) //jumping but falling

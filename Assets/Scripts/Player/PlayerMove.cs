@@ -32,8 +32,9 @@ public class PlayerMove : MonoBehaviour
             {
                 rb.linearVelocityX = 0;
             }
-            else if (Input.GetKey(PlayerInputs.Instance.left) || Input.GetKey(PlayerInputs.Instance.right))
+            else if ((Input.GetKey(PlayerInputs.Instance.left) || Input.GetKey(PlayerInputs.Instance.right)))
             {
+                Debug.Log(PlayerDataManager.Instance.getData().playerdirection);
                 float xVelo = rb.linearVelocityX;
 
                 float maxSpd = PlayerDataManager.Instance.getData().playerMaxSpd;
@@ -64,7 +65,7 @@ public class PlayerMove : MonoBehaviour
                     dir = -1;
                     PlayerDataManager.Instance.getData().playerdirection = "left";
                 }
-                else
+                else if (Input.GetKey(PlayerInputs.Instance.right))
                 {
                     if (PlayerDataManager.Instance.getData().playerdirection == "left")
                     {
