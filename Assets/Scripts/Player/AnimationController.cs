@@ -37,6 +37,7 @@ public class AnimationController : MonoBehaviour
 
         if (PlayerStateManager.Instance.getState().isJumping && !PlayerStateManager.Instance.getState().isFalling) //if they jumping and not falling
         {
+            Debug.Log("turning on jump");
             anim.SetBool("isJumping", true);
         }
         else if (PlayerStateManager.Instance.getState().isJumping && PlayerStateManager.Instance.getState().isFalling || anim.GetBool("isDashing")) //jumping but falling
