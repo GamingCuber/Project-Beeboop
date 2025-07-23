@@ -36,20 +36,20 @@ public class PlayerDash : MonoBehaviour
         PlayerStateManager.Instance.getState().isDashing = true;
         PlayerStateManager.Instance.getState().isFalling = false;
 
-        if (PlayerInputs.Instance.pressingUpButton || Input.GetAxis("Vertical") > 0)
-        {
-            dashDir.y = -1;
-        }
-        else if (PlayerInputs.Instance.pressingDownButton || Input.GetAxis("Vertical") < 0)
+        if (PlayerInputs.Instance.pressingUpButton)
         {
             dashDir.y = 1;
         }
+        else if (PlayerInputs.Instance.pressingDownButton)
+        {
+            dashDir.y = -1;
+        }
 
-        if (PlayerInputs.Instance.pressingLeftButton || Input.GetAxis("Horizontal") < 0)
+        if (PlayerInputs.Instance.pressingLeftButton)
         {
             dashDir.x = -1;
         }
-        else if (PlayerInputs.Instance.pressingRightButton || Input.GetAxis("Horizontal") > 0)
+        else if (PlayerInputs.Instance.pressingRightButton)
         {
             dashDir.x = 1;
         }
