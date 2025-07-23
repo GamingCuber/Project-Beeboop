@@ -10,11 +10,11 @@ public class AnimationController : MonoBehaviour
     void Update()
     {
 
-        if ((Input.GetKey(PlayerInputs.Instance.left) && !sr.flipX) || (Input.GetAxis("Horizontal") < 0 && !sr.flipX)) //if they goin left, flip sprite, otherwise don't
+        if ((PlayerInputs.Instance.pressingLeftButton && !sr.flipX) || (Input.GetAxis("Horizontal") < 0 && !sr.flipX)) //if they goin left, flip sprite, otherwise don't
         {
             sr.flipX = true;
         }
-        else if ((Input.GetKey(PlayerInputs.Instance.right) && sr.flipX) || (Input.GetAxis("Horizontal") > 0 && sr.flipX))
+        else if ((PlayerInputs.Instance.pressingLeftButton && sr.flipX) || (Input.GetAxis("Horizontal") > 0 && sr.flipX))
         {
             sr.flipX = false;
         }

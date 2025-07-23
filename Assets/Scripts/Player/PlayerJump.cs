@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.LowLevel;
 
 public class PlayerJump : MonoBehaviour
 {
@@ -55,7 +57,7 @@ public class PlayerJump : MonoBehaviour
             PlayerStateManager.Instance.getState().isGrounded = false;
         }
 
-        if (Input.GetKeyDown(PlayerInputs.Instance.jump) && jumpsLeft > 0 && (canJump || isJumping))
+        if (PlayerInputs.Instance.pressingJumpButton && jumpsLeft > 0 && (canJump || isJumping))
         {
             jump();
         }
@@ -89,7 +91,7 @@ public class PlayerJump : MonoBehaviour
         {
             time += Time.deltaTime;
 
-            if (!Input.GetKey(PlayerInputs.Instance.jump)) //if they let go or player starts falling, increase grav so they fall faster
+            if (!PlayerInputs.Instance.pressingJumpButton) //if they let go or player starts falling, increase grav so they fall faster
             {
                 break;
             }
@@ -98,14 +100,14 @@ public class PlayerJump : MonoBehaviour
 
             if (time < data.jumpTime)
             {
-                pos.y = Mathf.Lerp(initPos.y, initPos.y + (data.jumpHeight * (1f - data.percentApex)), (Mathf.Sin(Mathf.PI/2f * (time / data.jumpTime))));
+                pos.y = Mathf.Lerp(initPos.y, initPos.y + (data.jumpHeight * (1f - data.percentApex)), (Mathf.Sin(Mathf.PI / 2f * (time / data.jumpTime))));
 
-                if (time > data.jumpTime/2)
+                if (time > data.jumpTime / 2)
                 {
                     PlayerGravManager.Instance.setGrav(PlayerDataManager.Instance.getData().jumpFallGrav * Mathf.Lerp(0, 1, (time - data.jumpTime / 2f) / (data.jumpTime / 2f)));
                 }
             }
-            
+
             this.gameObject.transform.position = pos;
 
             RaycastHit2D coll = Physics2D.Raycast(this.transform.position, Vector2.up, 1.1f, platformLayer);
@@ -157,20 +159,20 @@ public class PlayerJump : MonoBehaviour
     {
         bool wantsJump = false; //if they preinput
 
-        bool alreadyPressing = (Input.GetKey(PlayerInputs.Instance.jump));
+        bool alreadyPressing = PlayerInputs.Instance.pressingJumpButton;
 
         while (isJumping)
         {
             if (alreadyPressing)
             {
-                if (!Input.GetKey(PlayerInputs.Instance.jump))
+                if (!PlayerInputs.Instance.pressingJumpButton)
                 {
                     alreadyPressing = false;
                 }
             }
             else
             {
-                if (Input.GetKey(PlayerInputs.Instance.jump))
+                if (PlayerInputs.Instance.pressingJumpButton)
                 {
                     wantsJump = true;
                 }

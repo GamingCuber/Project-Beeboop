@@ -11,7 +11,7 @@ public class PlayerDash : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(PlayerInputs.Instance.dash) && debounce == false && PlayerStateManager.Instance.getState().canDash && !onCooldown)
+        if (PlayerInputs.Instance.pressingDashButton && debounce == false && PlayerStateManager.Instance.getState().canDash && !onCooldown)
         {
             PlayerJump.Instance.cancelJump(false);
             StartCoroutine(DashCoroutine());
@@ -37,20 +37,20 @@ public class PlayerDash : MonoBehaviour
         PlayerStateManager.Instance.getState().isDashing = true;
         PlayerStateManager.Instance.getState().isFalling = false;
 
-        if (Input.GetKey(PlayerInputs.Instance.up))
+        if (PlayerInputs.Instance.pressingUpButton || Input.GetAxis("Vertical") > 0)
         {
             dashDir.y = -1;
         }
-        else if (Input.GetKey(PlayerInputs.Instance.down))
+        else if (PlayerInputs.Instance.pressingDownButton || Input.GetAxis("Vertical") < 0)
         {
             dashDir.y = 1;
         }
 
-        if (Input.GetKey(PlayerInputs.Instance.left))
+        if (PlayerInputs.Instance.pressingLeftButton || Input.GetAxis("Horizontal") < 0)
         {
             dashDir.x = -1;
         }
-        else if (Input.GetKey(PlayerInputs.Instance.right))
+        else if (PlayerInputs.Instance.pressingRightButton || Input.GetAxis("Horizontal") > 0)
         {
             dashDir.x = 1;
         }

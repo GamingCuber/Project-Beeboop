@@ -10,9 +10,24 @@ public class PlayerHook : MonoBehaviour
 
     public GameObject hookTarget;
 
-    private GameObject[] hookObjects; 
+    private GameObject[] hookObjects;
 
     private Dictionary<GameObject, bool> hookCooldowns = new Dictionary<GameObject, bool>(); //will assign each hook an individual cooldown, so u cant spam
+    private PlayerController playerController;
+    private void Awake()
+    {
+        playerController = new PlayerController();
+    }
+
+    private void OnEnable()
+    {
+        playerController.Player.Enable();
+    }
+
+    private void OnDisable()
+    {
+        playerController.Player.Disable();
+    }
 
     private void Start()
     {
@@ -24,13 +39,13 @@ public class PlayerHook : MonoBehaviour
         }
     }
 
-    void Update()
+    void getHook()
     {
         if (PlayerStateManager.Instance.getState().canHook)
         {
             hookReaction();
 
-            if (getClosestAvailHook() != null && Input.GetKeyDown(PlayerInputs.Instance.hook))
+            if (getClosestAvailHook() != null)
             {
                 doHook();
             }
@@ -72,7 +87,7 @@ public class PlayerHook : MonoBehaviour
 
     private bool checkForCD(GameObject hook)
     {
-        foreach(KeyValuePair<GameObject, bool> kv in hookCooldowns)
+        foreach (KeyValuePair<GameObject, bool> kv in hookCooldowns)
         {
             if (kv.Key == hook && kv.Value)
             {
@@ -170,7 +185,7 @@ public class PlayerHook : MonoBehaviour
 
             // if player is too close to hook or lets go of hook, they detach
             float playerHookDist = Mathf.Abs(Vector2.Distance(transform.position, hook.transform.position));
-            if (!Input.GetKey(PlayerInputs.Instance.hook) || playerHookDist < PlayerDataManager.Instance.getData().hookCancelDistance)
+            if (PlayerInputs.Instance.pressingHookButton || playerHookDist < PlayerDataManager.Instance.getData().hookCancelDistance)
             {
                 break;
             }
@@ -198,7 +213,7 @@ public class PlayerHook : MonoBehaviour
         hookLineRenderer.enabled = false;
 
         rb.linearDamping = 0;
-        
+
         yield break;
     }
 

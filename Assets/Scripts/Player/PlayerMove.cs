@@ -37,7 +37,7 @@ public class PlayerMove : MonoBehaviour
 
         if (!PlayerStateManager.Instance.getState().isHooked && !PlayerStateManager.Instance.getState().isDashing && !isPaused)
         {
-            if (Input.GetKey(PlayerInputs.Instance.left) || Input.GetKey(PlayerInputs.Instance.right) || Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+            if (PlayerInputs.Instance.pressingLeftButton || PlayerInputs.Instance.pressingRightButton || Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
             {
                 float xVelo = rb.linearVelocityX;
 
@@ -52,7 +52,7 @@ public class PlayerMove : MonoBehaviour
                     AFMult = 1;
                 }
 
-                if (Input.GetKey(PlayerInputs.Instance.left) || Input.GetAxis("Horizontal") < 0)
+                if (PlayerInputs.Instance.pressingLeftButton || Input.GetAxis("Horizontal") < 0)
                 {
                     if (PlayerDataManager.Instance.getData().playerDirection == "right")
                     {

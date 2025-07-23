@@ -11327,8 +11327,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1245971652}
-  leftInput: {fileID: -8202505190210526195, guid: e9e11a1204130478d96d48adcba6f683, type: 3}
-  rightInput: {fileID: -8202505190210526195, guid: e9e11a1204130478d96d48adcba6f683, type: 3}
 --- !u!114 &1245971650
 MonoBehaviour:
   m_ObjectHideFlags: 0
