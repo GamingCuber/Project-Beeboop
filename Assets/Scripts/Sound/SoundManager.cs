@@ -21,6 +21,10 @@ public class SoundManager: MonoBehaviour
     public AudioClip jump;
     public AudioClip Walk;
     public AudioClip test;
+    public AudioClip crtOn;
+    public AudioClip crtAmbience;
+    public AudioClip crtOff;
+    public AudioClip crtClick;
 
     void Start()
     {
@@ -33,6 +37,10 @@ public class SoundManager: MonoBehaviour
         sfx_dictionary.Add("fall", fall);
         sfx_dictionary.Add("Jump", jump);
         sfx_dictionary.Add("Test", test);
+        sfx_dictionary.Add("crtOn", crtOn);
+        sfx_dictionary.Add("crtAmbience", crtAmbience);
+        sfx_dictionary.Add("crtOff", crtOff);
+        sfx_dictionary.Add("crtClick", crtClick);
 
         audioSources = new GameObject[soundPoolAmt];
 
@@ -63,13 +71,39 @@ public class SoundManager: MonoBehaviour
         StartCoroutine(turnOffSound(curSound, source.clip.length));
     }
 
+    public void playLoopedSound(string key, Vector3 soundPos, float minDist, float maxDist, float volume, out int index)
+    {
+        GameObject curSound = getAvailSound(out int i);
+        index = i;
+        curSound.SetActive(true);
+        AudioSource source = curSound.GetComponent<AudioSource>();
+        source.clip = sfx_dictionary[key];
+        curSound.transform.position = soundPos;
+        source.minDistance = minDist;
+        source.maxDistance = maxDist;
+        source.volume = volume;
+        source.loop = true;
+        source.Play();
+    }
+
+    public void stopLoopSound(int i)
+    {
+        GameObject sound = audioSources[i];
+        AudioSource source = sound.GetComponent<AudioSource>();
+
+        source.loop = false;
+        sound.SetActive(false);
+    }
+
     private IEnumerator turnOffSound(GameObject obj, float time)
     {
         float timer = 0;
 
+        float startTime = Time.realtimeSinceStartup;
+
         while (timer < time)
         {
-            timer += Time.deltaTime;
+            timer = Time.realtimeSinceStartup - startTime;
             yield return new WaitForEndOfFrame();
         }
 
@@ -86,6 +120,22 @@ public class SoundManager: MonoBehaviour
                 return g;
             }
         }
+        return null;
+    }
+
+    private GameObject getAvailSound(out int index)
+    {
+        int i = 0;
+        foreach (GameObject g in audioSources)
+        {
+            if (!g.activeInHierarchy)
+            {
+                index = i;
+                return g;
+            }
+            i++;
+        }
+        index = -1;
         return null;
     }
 }
