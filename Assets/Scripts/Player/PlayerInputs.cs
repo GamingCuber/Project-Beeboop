@@ -10,10 +10,12 @@ public class PlayerInputs : MonoBehaviour
 {
     public static PlayerInputs Instance;
 
-    private PlayerController playerController;
+    public PlayerController playerController;
     public bool pressingDashButton;
     public bool pressingJumpButton;
     public bool pressingHookButton;
+
+    public bool jumpButtonDown;
     public bool pressingLeftButton;
     public bool pressingRightButton;
     public bool pressingUpButton;
@@ -32,9 +34,6 @@ public class PlayerInputs : MonoBehaviour
 
         playerController = new PlayerController();
 
-        playerController.Player.Jump.performed += ctx => setJump(ctx);
-        playerController.Player.Jump.canceled += ctx => cancelJump(ctx);
-
         playerController.Player.Hook.performed += ctx => setHook(ctx);
         playerController.Player.Hook.canceled += ctx => cancelHook(ctx);
 
@@ -47,27 +46,16 @@ public class PlayerInputs : MonoBehaviour
         playerController.Player.MoveRight.performed += ctx => setMovingRight(ctx);
         playerController.Player.MoveRight.canceled += ctx => cancelMovingRight(ctx);
 
-        playerController.Player.Up1.performed += ctx => setLookingUp(ctx);
-        playerController.Player.Up1.canceled += ctx => cancelLookingDown(ctx);
+        playerController.Player.Up.performed += ctx => setLookingUp(ctx);
+        playerController.Player.Up.canceled += ctx => cancelLookingUp(ctx);
 
         playerController.Player.Down.performed += ctx => setLookingDown(ctx);
         playerController.Player.Down.canceled += ctx => cancelLookingDown(ctx);
-
     }
 
     private void OnEnable()
     {
         playerController.Player.Enable();
-    }
-
-    private void setJump(InputAction.CallbackContext context)
-    {
-        pressingJumpButton = true;
-    }
-
-    private void cancelJump(InputAction.CallbackContext context)
-    {
-        pressingJumpButton = false;
     }
 
     private void setHook(InputAction.CallbackContext context)
@@ -134,5 +122,4 @@ public class PlayerInputs : MonoBehaviour
         pressingDownButton = false;
 
     }
-
 }

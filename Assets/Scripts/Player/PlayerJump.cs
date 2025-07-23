@@ -1,7 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.LowLevel;
 
 public class PlayerJump : MonoBehaviour
 {
@@ -57,7 +55,7 @@ public class PlayerJump : MonoBehaviour
             PlayerStateManager.Instance.getState().isGrounded = false;
         }
 
-        if (PlayerInputs.Instance.pressingJumpButton && jumpsLeft > 0 && (canJump || isJumping))
+        if (PlayerInputs.Instance.playerController.Player.Jump.IsPressed() && jumpsLeft > 0 && (canJump || isJumping))
         {
             jump();
         }
@@ -75,6 +73,7 @@ public class PlayerJump : MonoBehaviour
         jumpsLeft--;
         cancelJump(true);
         jumpCo = StartCoroutine(doJump());
+        Debug.Log(jumpsLeft);
     }
 
     private IEnumerator doJump() //itll addforce and watch for conditions to mess with the gravity
@@ -91,7 +90,7 @@ public class PlayerJump : MonoBehaviour
         {
             time += Time.deltaTime;
 
-            if (!PlayerInputs.Instance.pressingJumpButton) //if they let go or player starts falling, increase grav so they fall faster
+            if (!PlayerInputs.Instance.playerController.Player.Jump.IsPressed()) //if they let go or player starts falling, increase grav so they fall faster
             {
                 break;
             }
@@ -159,20 +158,20 @@ public class PlayerJump : MonoBehaviour
     {
         bool wantsJump = false; //if they preinput
 
-        bool alreadyPressing = PlayerInputs.Instance.pressingJumpButton;
+        bool alreadyPressing = PlayerInputs.Instance.playerController.Player.Jump.IsPressed();
 
         while (isJumping)
         {
             if (alreadyPressing)
             {
-                if (!PlayerInputs.Instance.pressingJumpButton)
+                if (!PlayerInputs.Instance.playerController.Player.Jump.IsPressed())
                 {
                     alreadyPressing = false;
                 }
             }
             else
             {
-                if (PlayerInputs.Instance.pressingJumpButton)
+                if (PlayerInputs.Instance.playerController.Player.Jump.IsPressed())
                 {
                     wantsJump = true;
                 }

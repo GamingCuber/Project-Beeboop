@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using UnityEngine.InputSystem;
 
 public class PlayerHook : MonoBehaviour
 {
@@ -13,21 +14,6 @@ public class PlayerHook : MonoBehaviour
     private GameObject[] hookObjects;
 
     private Dictionary<GameObject, bool> hookCooldowns = new Dictionary<GameObject, bool>(); //will assign each hook an individual cooldown, so u cant spam
-    private PlayerController playerController;
-    private void Awake()
-    {
-        playerController = new PlayerController();
-    }
-
-    private void OnEnable()
-    {
-        playerController.Player.Enable();
-    }
-
-    private void OnDisable()
-    {
-        playerController.Player.Disable();
-    }
 
     private void Start()
     {
@@ -185,7 +171,7 @@ public class PlayerHook : MonoBehaviour
 
             // if player is too close to hook or lets go of hook, they detach
             float playerHookDist = Mathf.Abs(Vector2.Distance(transform.position, hook.transform.position));
-            if (PlayerInputs.Instance.pressingHookButton || playerHookDist < PlayerDataManager.Instance.getData().hookCancelDistance)
+            if (Gamepad.current.rightShoulder.isPressed || Gamepad.current.leftShoulder.isPressed || Gamepad.current.buttonNorth.isPressed || Input.GetKeyDown(KeyCode.F) || playerHookDist < PlayerDataManager.Instance.getData().hookCancelDistance)
             {
                 break;
             }
