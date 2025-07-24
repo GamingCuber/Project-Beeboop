@@ -86,7 +86,7 @@ public class PauseMenu : MonoBehaviour
             if (!settingsActive)
             {
                 //to move the selected thing
-                if (PlayerInputs.Instance.playerController.Player.Down.WasPressedThisFrame() || PlayerInputs.Instance.playerController.Player.MoveRight.WasPressedThisFrame()) //down right buttondown
+                if (PlayerInputs.Instance.playerController.Player.Up.WasPressedThisFrame() || PlayerInputs.Instance.playerController.Player.MoveLeft.WasPressedThisFrame()) //down right buttondown
                 {
                     if (curOption != 0)
                     {
@@ -103,7 +103,7 @@ public class PauseMenu : MonoBehaviour
                     switchEffect();
                     SoundManager.Instance.playSoundFX("crtClick", player.transform.position, 0, 10, 1, true);
                 }
-                else if (PlayerInputs.Instance.playerController.Player.Up.WasPressedThisFrame() || PlayerInputs.Instance.playerController.Player.MoveLeft.WasPressedThisFrame()) //up left buttondown
+                else if (PlayerInputs.Instance.playerController.Player.Down.WasPressedThisFrame() || PlayerInputs.Instance.playerController.Player.MoveRight.WasPressedThisFrame()) //up left buttondown
                 {
                     if (curOption != optionData.Length - 1)
                     {
