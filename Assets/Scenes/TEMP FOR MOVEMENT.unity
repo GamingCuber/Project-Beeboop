@@ -451,7 +451,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1930780933}
+  m_Father: {fileID: 407478995}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4594,7 +4594,6 @@ RectTransform:
   m_Children:
   - {fileID: 1581575194}
   - {fileID: 160304641}
-  - {fileID: 310279558}
   - {fileID: 407478995}
   - {fileID: 2135257075}
   m_Father: {fileID: 0}
@@ -4625,6 +4624,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 291a9a4032aaf432b90f9369e6971875, type: 2}
   optionPre: {fileID: 3005552269053860544, guid: bf99d76e902a34c4cb8ed2f713e372a3, type: 3}
   URPVOlume: {fileID: 2135257074}
+  optionLogo: {fileID: 310279557}
   switchImg: {fileID: 457131639}
   switchFrames: 15
   maxSwitchOpacity: 255
@@ -5144,7 +5144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4487762700819075061, guid: 221fa24a235824db895d3e9f466da7a9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5435905097114518833, guid: 221fa24a235824db895d3e9f466da7a9, type: 3}
       propertyPath: m_Sprite
@@ -5280,7 +5280,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5461940555540999824, guid: 221fa24a235824db895d3e9f466da7a9, type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 310279558}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7494198864747165805, guid: 221fa24a235824db895d3e9f466da7a9, type: 3}
       insertIndex: -1

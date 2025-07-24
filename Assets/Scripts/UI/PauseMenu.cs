@@ -30,6 +30,8 @@ public class PauseMenu : MonoBehaviour
 
     public Volume URPVOlume;
 
+    public GameObject optionLogo;
+
     private Vector3[] optionPos = //this is a bad way to do this but
     {
         //new Vector3(-1245, 380, 0),
@@ -59,8 +61,8 @@ public class PauseMenu : MonoBehaviour
     {
         optionGameObjects = new GameObject[7];
 
-        optionsOject = menuObject.transform.GetChild(2).gameObject;
-        settingsObject = menuObject.transform.GetChild(3).gameObject;
+        optionsOject = menuObject.transform.GetChild(3).gameObject;
+        settingsObject = menuObject.transform.GetChild(4).gameObject;
 
         for (int i = 0; i < 7; i++)
         {
@@ -208,6 +210,7 @@ public class PauseMenu : MonoBehaviour
 
 
         menuBG.sprite = optionData[curOption].backgroundImg;
+        optionLogo.GetComponent<Image>().sprite = optionData[curOption].channelLogo;
     }
 
     private void shiftOptions(int dir)
