@@ -3978,6 +3978,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce3c96dfd8b14c43b3f06bb30309124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pressingDashButton: 0
+  pressingJumpButton: 0
+  pressingHookButton: 0
+  jumpButtonDown: 0
+  pressingLeftButton: 0
+  pressingRightButton: 0
+  pressingUpButton: 0
+  pressingDownButton: 0
 --- !u!212 &1814115159
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4898,6 +4906,14 @@ PrefabInstance:
     - target: {fileID: 4487762700819075061, guid: 221fa24a235824db895d3e9f466da7a9, type: 3}
       propertyPath: m_Name
       value: PauseMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5435905097114518833, guid: 221fa24a235824db895d3e9f466da7a9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -7727679585812335486, guid: 64f1ea29601d74991b42ef5c8202b60a, type: 3}
+    - target: {fileID: 5435905097114518833, guid: 221fa24a235824db895d3e9f466da7a9, type: 3}
+      propertyPath: m_Color.a
+      value: 0.6156863
       objectReference: {fileID: 0}
     - target: {fileID: 5461940555540999824, guid: 221fa24a235824db895d3e9f466da7a9, type: 3}
       propertyPath: m_Pivot.x
