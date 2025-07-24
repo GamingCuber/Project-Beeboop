@@ -8,4 +8,5 @@ public class PauseOption : ScriptableObject
     public string description;
     public string channelNumber;
     public Sprite backgroundImg;
+    public Sprite channelLogo;
 }
