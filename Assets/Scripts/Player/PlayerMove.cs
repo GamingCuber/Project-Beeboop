@@ -12,7 +12,11 @@ public class PlayerMove : MonoBehaviour
     private int dir; //left or right, -1 left, 1 right
 
     float AFMult = 1; //add force mult, so i can make it close to 0 if the player is close to max speed
+
+    private bool dirSwitched = false; //used for when they are pressing both left n right for latest input
+
     private Gamepad gamePad;
+
     private void Start()
     {
         if (Instance == null)
@@ -52,10 +56,14 @@ public class PlayerMove : MonoBehaviour
                     AFMult = 1;
                 }
 
-                if (PlayerInputs.Instance.pressingLeftButton)
+                string latestDir = PlayerDataManager.Instance.getData().playerDirection;
+
+                if (!dirSwitched)
                 {
-                    if (PlayerDataManager.Instance.getData().playerDirection == "right")
+                    if (PlayerInputs.Instance.pressingLeftButton && PlayerInputs.Instance.pressingRightButton)
                     {
+                        dirSwitched = true;
+
                         if (PlayerStateManager.Instance.getState().isGrounded)
                         {
                             rb.linearVelocityX /= 4;
@@ -64,28 +72,29 @@ public class PlayerMove : MonoBehaviour
                         {
                             rb.linearVelocityX /= 4.5f;
                         }
-                    }
 
-                    dir = -1;
-                    PlayerDataManager.Instance.getData().playerDirection = "left";
+                        dir = -dirStringtoInt(latestDir);
+                        PlayerDataManager.Instance.getData().playerDirection = dirInttoString(dir);
+                    }
+                    else if (PlayerInputs.Instance.pressingLeftButton)
+                    {
+                        dir = -1;
+                        PlayerDataManager.Instance.getData().playerDirection = "left";
+                    }
+                    else if (PlayerInputs.Instance.pressingRightButton)
+                    {
+                        dir = 1;
+                        PlayerDataManager.Instance.getData().playerDirection = "right";
+                    }
                 }
                 else
                 {
-                    if (PlayerDataManager.Instance.getData().playerDirection == "left")
+                    if (!PlayerInputs.Instance.pressingLeftButton || !PlayerInputs.Instance.pressingRightButton)
                     {
-                        if (PlayerStateManager.Instance.getState().isGrounded)
-                        {
-                            rb.linearVelocityX /= 3;
-                        }
-                        else if (PlayerStateManager.Instance.getState().isJumping)
-                        {
-                            rb.linearVelocityX /= 3.5f;
-                        }
+                        dirSwitched = false;
                     }
-
-                    dir = 1;
-                    PlayerDataManager.Instance.getData().playerDirection = "right";
                 }
+               
 
                 rb.AddForceX(PlayerDataManager.Instance.getData().playerAcc * AFMult * dir, ForceMode2D.Force);
             }
@@ -104,5 +113,29 @@ public class PlayerMove : MonoBehaviour
     public void startMovement()
     {
         isPaused = false;
+    }
+
+    private int dirStringtoInt(string s)
+    {
+        if (s == "left")
+        {
+            return -1;
+        }
+        else
+        {
+            return 1;
+        }
+    }
+
+    private string dirInttoString(int i)
+    {
+        if (i < 0)
+        {
+            return "left";
+        }
+        else
+        {
+            return "right";
+        }
     }
 }
