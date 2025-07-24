@@ -41,8 +41,16 @@ public class PlayerMove : MonoBehaviour
 
         if (!PlayerStateManager.Instance.getState().isHooked && !PlayerStateManager.Instance.getState().isDashing && !isPaused)
         {
-            if (PlayerInputs.Instance.pressingLeftButton || PlayerInputs.Instance.pressingRightButton)
+            //to STOP player
+            if (!PlayerStateManager.Instance.getState().isMoving || //if theyre not choosing a direction to move
+               ((rb.linearVelocityX > 0 && Input.GetKey(PlayerInputs.Instance.left) || //for the ice skating, if players going right but holding left
+               rb.linearVelocityX < 0 && Input.GetKey(PlayerInputs.Instance.right)))) //for ice skating, if players going left but holding right
             {
+                rb.linearVelocityX = 0;
+            }
+            else if ((Input.GetKey(PlayerInputs.Instance.left) || Input.GetKey(PlayerInputs.Instance.right)))
+            {
+                Debug.Log(PlayerDataManager.Instance.getData().playerdirection);
                 float xVelo = rb.linearVelocityX;
 
                 float maxSpd = PlayerDataManager.Instance.getData().playerMaxSpd;
@@ -87,7 +95,7 @@ public class PlayerMove : MonoBehaviour
                         PlayerDataManager.Instance.getData().playerDirection = "right";
                     }
                 }
-                else
+                else if (Input.GetKey(PlayerInputs.Instance.right))
                 {
                     if (!PlayerInputs.Instance.pressingLeftButton || !PlayerInputs.Instance.pressingRightButton)
                     {
@@ -97,10 +105,6 @@ public class PlayerMove : MonoBehaviour
                
 
                 rb.AddForceX(PlayerDataManager.Instance.getData().playerAcc * AFMult * dir, ForceMode2D.Force);
-            }
-            else if (!PlayerStateManager.Instance.getState().keepMomentum)
-            {
-                rb.linearVelocityX = 0;
             }
         }
     }
