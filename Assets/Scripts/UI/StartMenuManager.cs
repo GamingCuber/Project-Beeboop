@@ -7,4 +7,14 @@ public class StartMenuManager : MonoBehaviour
     {
         SceneManager.LoadScene("MainScene");
     }
+
+    public void quitGame()
+    {
+        Application.Quit();
+    }
+
+    public void openOptions()
+    {
+        // TODO: Put Options Menu Stuff in Here
+    }
 }

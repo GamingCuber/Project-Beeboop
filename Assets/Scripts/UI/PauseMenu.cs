@@ -72,11 +72,11 @@ public class PauseMenu : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !menuActive)
+        if (PlayerInputs.Instance.playerController.Player.Escape.WasPressedThisFrame() && !menuActive)
         {
             showMenu();
         }
-        else if (Input.GetKeyDown(KeyCode.Escape) && menuActive)
+        else if (PlayerInputs.Instance.playerController.Player.Escape.WasPressedThisFrame() && menuActive)
         {
             hideMenu();
         }
@@ -271,6 +271,7 @@ public class PauseMenu : MonoBehaviour
                     float newScale = Mathf.Lerp(1f, .75f, timeChanged / moveTime);
                     optionGameObjects[e].transform.localScale = new Vector3(newScale, newScale, newScale);
                 }
+
                 else if (e == 1 && dir == -1 || e == 5 && dir == 1)
                 {
                     float newScale = Mathf.Lerp(.75f, .4f, timeChanged / moveTime);
@@ -305,7 +306,7 @@ public class PauseMenu : MonoBehaviour
         optionGameObjects[0] = lastCover;
     }
 
-    private void pullList() //pulls list to the left, first index -> last 
+    private void pullList() //pulls list to the left, first index -> last
     {
         GameObject firstCover = optionGameObjects[0];
 

@@ -122,4 +122,5 @@ public class PlayerInputs : MonoBehaviour
         pressingDownButton = false;
 
     }
+
 }
