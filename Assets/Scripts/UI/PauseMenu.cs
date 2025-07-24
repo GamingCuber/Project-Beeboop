@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -52,6 +53,7 @@ public class PauseMenu : MonoBehaviour
     public float switchFrames;
 
     public int maxSwitchOpacity;
+    private EventSystem eventSystem;
 
     private void Start()
     {
@@ -69,6 +71,8 @@ public class PauseMenu : MonoBehaviour
         }
 
         player = GameObject.FindGameObjectWithTag("Player");
+
+
     }
 
     private void Update()

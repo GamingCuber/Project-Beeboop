@@ -712,7 +712,7 @@ GameObject:
   - component: {fileID: 4030025134676620160}
   - component: {fileID: 2426207280926793600}
   m_Layer: 5
-  m_Name: Slider (1)
+  m_Name: MusicVolSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -753,12 +753,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnUp: {fileID: 6941330056602186550}
+    m_SelectOnDown: {fileID: 2910258599754572468}
+    m_SelectOnLeft: {fileID: 9060004550181637928}
+    m_SelectOnRight: {fileID: 9060004550181637928}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -915,7 +915,7 @@ GameObject:
   - component: {fileID: 126878854518495449}
   - component: {fileID: 3003533288983232777}
   m_Layer: 5
-  m_Name: Input
+  m_Name: MasterInput
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -992,12 +992,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnUp: {fileID: 5114724455376107906}
+    m_SelectOnDown: {fileID: 9060004550181637928}
+    m_SelectOnLeft: {fileID: 6941330056602186550}
+    m_SelectOnRight: {fileID: 6941330056602186550}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -2389,7 +2389,7 @@ GameObject:
   - component: {fileID: 2161259171555293843}
   - component: {fileID: 5114724455376107906}
   m_Layer: 5
-  m_Name: Button
+  m_Name: BackButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2466,10 +2466,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 2910258599754572468}
+    m_SelectOnDown: {fileID: 6941330056602186550}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -2685,7 +2685,7 @@ GameObject:
   - component: {fileID: 2763705392001634436}
   - component: {fileID: 2910258599754572468}
   m_Layer: 5
-  m_Name: Slider (2)
+  m_Name: SFXVolSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2726,12 +2726,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnUp: {fileID: 2426207280926793600}
+    m_SelectOnDown: {fileID: 5114724455376107906}
+    m_SelectOnLeft: {fileID: 1705537988105352299}
+    m_SelectOnRight: {fileID: 1705537988105352299}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -3183,7 +3183,7 @@ GameObject:
   - component: {fileID: 2089516645323839378}
   - component: {fileID: 6941330056602186550}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: MasterVolSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3224,16 +3224,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnUp: {fileID: 5114724455376107906}
+    m_SelectOnDown: {fileID: 2426207280926793600}
+    m_SelectOnLeft: {fileID: 3003533288983232777}
+    m_SelectOnRight: {fileID: 3003533288983232777}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 1, g: 0, b: 0, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -3287,7 +3287,7 @@ GameObject:
   - component: {fileID: 5877545050602458087}
   - component: {fileID: 1705537988105352299}
   m_Layer: 5
-  m_Name: Input (2)
+  m_Name: SFXInput
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3364,12 +3364,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnUp: {fileID: 9060004550181637928}
+    m_SelectOnDown: {fileID: 5114724455376107906}
+    m_SelectOnLeft: {fileID: 2910258599754572468}
+    m_SelectOnRight: {fileID: 2910258599754572468}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -3465,7 +3465,7 @@ GameObject:
   - component: {fileID: 6592170275294918573}
   - component: {fileID: 9060004550181637928}
   m_Layer: 5
-  m_Name: Input (1)
+  m_Name: MusicInput
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3542,12 +3542,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnUp: {fileID: 3003533288983232777}
+    m_SelectOnDown: {fileID: 1705537988105352299}
+    m_SelectOnLeft: {fileID: 2426207280926793600}
+    m_SelectOnRight: {fileID: 2426207280926793600}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}

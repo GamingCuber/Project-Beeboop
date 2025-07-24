@@ -467,6 +467,11 @@ Transform:
   - {fileID: 567446036}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &381044492 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1317286683882868560, guid: 221fa24a235824db895d3e9f466da7a9, type: 3}
+  m_PrefabInstance: {fileID: 7882030251757785828}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &407478994 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4487762700819075061, guid: 221fa24a235824db895d3e9f466da7a9, type: 3}
@@ -1110,6 +1115,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &779004795 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8335288796920976118, guid: 221fa24a235824db895d3e9f466da7a9, type: 3}
+  m_PrefabInstance: {fileID: 7882030251757785828}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1037670582
 GameObject:
   m_ObjectHideFlags: 0
@@ -2987,7 +2997,7 @@ GameObject:
   - component: {fileID: 1398542038}
   m_Layer: 0
   m_Name: EventSystem
-  m_TagString: Untagged
+  m_TagString: EventSystem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3274,6 +3284,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1431436713}
   m_CullTransparentMesh: 1
+--- !u!1 &1450348082 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6766638778301700941, guid: 221fa24a235824db895d3e9f466da7a9, type: 3}
+  m_PrefabInstance: {fileID: 7882030251757785828}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1574961081
 GameObject:
   m_ObjectHideFlags: 0
@@ -5167,6 +5182,18 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7721267288504309834, guid: 221fa24a235824db895d3e9f466da7a9, type: 3}
+      propertyPath: SFXVolObj
+      value: 
+      objectReference: {fileID: 1450348082}
+    - target: {fileID: 7721267288504309834, guid: 221fa24a235824db895d3e9f466da7a9, type: 3}
+      propertyPath: MusicVolObj
+      value: 
+      objectReference: {fileID: 381044492}
+    - target: {fileID: 7721267288504309834, guid: 221fa24a235824db895d3e9f466da7a9, type: 3}
+      propertyPath: MasterVolObj
+      value: 
+      objectReference: {fileID: 779004795}
     - target: {fileID: 9060004550181637928, guid: 221fa24a235824db895d3e9f466da7a9, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
       value: 1
