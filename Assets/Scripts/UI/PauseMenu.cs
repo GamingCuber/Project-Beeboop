@@ -45,7 +45,7 @@ public class PauseMenu : MonoBehaviour
         new Vector3(-760, -416, 0),
         new Vector3(-1024, -470, 0)
     };
-        
+
     public GameObject switchImg;
 
     public float switchFrames;
@@ -86,7 +86,7 @@ public class PauseMenu : MonoBehaviour
             if (!settingsActive)
             {
                 //to move the selected thing
-                if (Input.GetKeyDown(PlayerInputs.Instance.down) || Input.GetKeyDown(PlayerInputs.Instance.left))
+                if (PlayerInputs.Instance.playerController.Player.Down.WasPressedThisFrame() || PlayerInputs.Instance.playerController.Player.MoveRight.WasPressedThisFrame()) //down right buttondown
                 {
                     if (curOption != 0)
                     {
@@ -103,7 +103,7 @@ public class PauseMenu : MonoBehaviour
                     switchEffect();
                     SoundManager.Instance.playSoundFX("crtClick", player.transform.position, 0, 10, 1, true);
                 }
-                else if (Input.GetKeyDown(PlayerInputs.Instance.up) || Input.GetKeyDown(PlayerInputs.Instance.right))
+                else if (PlayerInputs.Instance.playerController.Player.Up.WasPressedThisFrame() || PlayerInputs.Instance.playerController.Player.MoveLeft.WasPressedThisFrame()) //up left buttondown
                 {
                     if (curOption != optionData.Length - 1)
                     {
@@ -122,7 +122,7 @@ public class PauseMenu : MonoBehaviour
                 }
 
                 //to select an option
-                if (Input.GetKeyDown(PlayerInputs.Instance.jump))
+                if (PlayerInputs.Instance.playerController.Player.Jump.WasPressedThisFrame()) //jump buttond own
                 {
                     switch (curOption)
                     {
@@ -199,7 +199,7 @@ public class PauseMenu : MonoBehaviour
 
             i++;
         }
-        
+
 
         menuBG.sprite = optionData[curOption].backgroundImg;
     }
@@ -229,8 +229,8 @@ public class PauseMenu : MonoBehaviour
         int exclude = 0;
         if (dir == -1)
         {
-            exclude = optionGameObjects.Length-1;
-            optionGameObjects[optionGameObjects.Length-1].SetActive(false);
+            exclude = optionGameObjects.Length - 1;
+            optionGameObjects[optionGameObjects.Length - 1].SetActive(false);
         }
         else if (dir == 1)
         {
@@ -327,7 +327,7 @@ public class PauseMenu : MonoBehaviour
         }
         else
         {
-            updateOptionData(optionGameObjects[optionGameObjects.Length-2], optionData[wrapNum(dir)]);
+            updateOptionData(optionGameObjects[optionGameObjects.Length - 2], optionData[wrapNum(dir)]);
         }
     }
 
@@ -419,7 +419,7 @@ public class PauseMenu : MonoBehaviour
 
         float minX = 950;
         float maxX = -950;
-        
+
         float minY = -518;
         float maxY = 518 - moveYDist;
 
@@ -455,7 +455,7 @@ public class PauseMenu : MonoBehaviour
             newPos.y = Y;
             rect.transform.localPosition = newPos;
 
-            if (curFrames > switchFrames/2)
+            if (curFrames > switchFrames / 2)
             {
                 a = Mathf.Lerp(maxSwitchOpacity, 0, (curFrames - (switchFrames / 2)) / (switchFrames / 2));
                 Color32 c = img.color;
