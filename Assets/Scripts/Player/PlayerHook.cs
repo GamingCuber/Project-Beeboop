@@ -14,6 +14,10 @@ public class PlayerHook : MonoBehaviour
 
     private Dictionary<GameObject, bool> hookCooldowns = new Dictionary<GameObject, bool>(); //will assign each hook an individual cooldown, so u cant spam
 
+    public float hookReturnSpeed;
+
+    private Coroutine returnCo;
+
     private void Start()
     {
         hookObjects = GameObject.FindGameObjectsWithTag("Hook");
@@ -155,8 +159,14 @@ public class PlayerHook : MonoBehaviour
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
+        if (returnCo != null)
+        {
+            Debug.Log("stopped co");
+            StopCoroutine(returnCo);
+            returnCo = null;
+        }
+
         hookLineRenderer.enabled = true;
-        //hookReaction(hook, Vector2.Distance(hook.transform.position, transform.position));
 
         while (PlayerStateManager.Instance.getState().isHooked)
         {
@@ -174,6 +184,12 @@ public class PlayerHook : MonoBehaviour
             {
                 break;
             }
+            
+            if (!hookLineRenderer.enabled)
+            {
+                hookLineRenderer.enabled = true;
+            }
+
             yield return new WaitForEndOfFrame();
         }
 
@@ -183,6 +199,8 @@ public class PlayerHook : MonoBehaviour
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
         yield return new WaitForSecondsRealtime(0.1f);
+
+        returnCo = StartCoroutine(hookReturn(hook));
 
         // Increases grav so you fall faster
         PlayerStateManager.Instance.getState().isFalling = true;
@@ -194,8 +212,6 @@ public class PlayerHook : MonoBehaviour
         }
 
         PlayerStateManager.Instance.getState().isHooked = false;
-
-        hookLineRenderer.enabled = false;
 
         rb.linearDamping = 0;
 
@@ -219,5 +235,29 @@ public class PlayerHook : MonoBehaviour
         {
             hookTarget.SetActive(false);
         }
+    }
+
+    private IEnumerator hookReturn(GameObject hook)
+    {
+        Vector3 initHookPos = hook.transform.position;
+
+        Vector3 hookReturnPos = initHookPos;
+
+        float returnTime = 0;
+
+        while (Vector3.Distance(transform.position, hookReturnPos) > 0.5)
+        {
+            returnTime += Time.deltaTime;
+            
+            hookReturnPos = Vector3.MoveTowards(hookReturnPos, transform.position, hookReturnSpeed * (returnTime * 10) * Time.deltaTime);
+            hookLineRenderer.SetPosition(0, transform.position);
+            hookLineRenderer.SetPosition(1, hookReturnPos);
+
+            yield return new WaitForEndOfFrame();
+        }
+
+        hookLineRenderer.enabled = false;
+
+        yield break;
     }
 }
