@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.Rendering;
 using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
@@ -28,6 +29,10 @@ public class PauseMenu : MonoBehaviour
     private GameObject player;
 
     private int loopedInt; //for turning off the looped ambience sound effect
+
+    public Volume URPVOlume;
+
+    public GameObject optionLogo;
 
     private Vector3[] optionPos = //this is a bad way to do this but
     {
@@ -59,8 +64,8 @@ public class PauseMenu : MonoBehaviour
     {
         optionGameObjects = new GameObject[7];
 
-        optionsOject = menuObject.transform.GetChild(2).gameObject;
-        settingsObject = menuObject.transform.GetChild(3).gameObject;
+        optionsOject = menuObject.transform.GetChild(3).gameObject;
+        settingsObject = menuObject.transform.GetChild(4).gameObject;
 
         for (int i = 0; i < 7; i++)
         {
@@ -170,6 +175,8 @@ public class PauseMenu : MonoBehaviour
         SoundManager.Instance.playSoundFX("crtOn", player.transform.position, 0, 10, 1, true);
         SoundManager.Instance.playLoopedSound("crtAmbience", player.transform.position, 0, 10, 1f, out int index);
         loopedInt = index;
+        URPVOlume.enabled = true;
+
     }
 
     private void hideMenu()
@@ -180,6 +187,7 @@ public class PauseMenu : MonoBehaviour
         menuActive = false;
         SoundManager.Instance.playSoundFX("crtOff", player.transform.position, 0, 10, 1, true);
         SoundManager.Instance.stopLoopSound(loopedInt);
+        URPVOlume.enabled = false;
     }
 
     private void resetMenu()
@@ -194,28 +202,29 @@ public class PauseMenu : MonoBehaviour
     {
         Image menuBG = menuObject.transform.GetChild(0).GetComponent<Image>();
 
-        Color32 color;
+        //Color32 color;
 
-        int i = 0;
+        //int i = 0;
 
-        foreach (GameObject g in optionGameObjects)
-        {
-            if (i != 3)
-            {
-                color = new Color32(140, 140, 140, 100);
-            }
-            else
-            {
-                color = new Color32(255, 255, 255, 100);
-            }
+        //foreach (GameObject g in optionGameObjects)
+        //{
+        //    if (i != 3)
+        //    {
+        //        color = new Color32(140, 140, 140, 100);
+        //    }
+        //    else
+        //    {
+        //        color = new Color32(255, 255, 255, 100);
+        //    }
 
-            g.transform.GetChild(3).GetComponent<Image>().color = color;
+        //    g.transform.GetChild(3).GetComponent<Image>().color = color;
 
-            i++;
-        }
+        //    i++;
+        //}
 
 
         menuBG.sprite = optionData[curOption].backgroundImg;
+        optionLogo.GetComponent<Image>().sprite = optionData[curOption].channelLogo;
     }
 
     private void shiftOptions(int dir)
