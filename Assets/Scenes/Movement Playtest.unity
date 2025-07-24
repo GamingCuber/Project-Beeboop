@@ -11076,6 +11076,10 @@ MonoBehaviour:
   jump: {fileID: 0}
   Walk: {fileID: 0}
   test: {fileID: 0}
+  crtOn: {fileID: 0}
+  crtAmbience: {fileID: 0}
+  crtOff: {fileID: 0}
+  crtClick: {fileID: 0}
 --- !u!114 &1245971640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11238,6 +11242,7 @@ MonoBehaviour:
   rb: {fileID: 1245971652}
   hookLineRenderer: {fileID: 1245971643}
   hookTarget: {fileID: 0}
+  hookReturnSpeed: 10
 --- !u!70 &1245971645
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -11339,6 +11344,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce3c96dfd8b14c43b3f06bb30309124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pressingDashButton: 0
+  pressingJumpButton: 0
+  pressingHookButton: 0
+  jumpButtonDown: 0
+  pressingLeftButton: 0
+  pressingRightButton: 0
+  pressingUpButton: 0
+  pressingDownButton: 0
 --- !u!212 &1245971651
 SpriteRenderer:
   m_ObjectHideFlags: 0
