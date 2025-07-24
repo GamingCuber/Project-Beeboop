@@ -33,6 +33,7 @@ public class SettingsMenu : MonoBehaviour
     //THIS IS ACTUALLY BUNS OK BUT IT SHOULD WORK!
     public void settingChanged(string typeAndPref)
     {
+        Debug.Log("yo");
         if (!loading)
         {
             string inputType = typeAndPref.Substring(0, 5);
