@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using TMPro;
+using UnityEngine.EventSystems;
 
 //INPUTS N STUFF HAVE SENSITIVE STRINGS!!! CUZ IM TOO LAZY TO MAKE IT WORK BETTER
 
@@ -20,6 +21,8 @@ public class SettingsMenu : MonoBehaviour
     public GameObject SFXVolObj;
 
     private bool loading = false;
+    private EventSystem eventSystem;
+
 
     private void Awake()
     {
@@ -29,6 +32,11 @@ public class SettingsMenu : MonoBehaviour
         MusicVolObj = setting.GetChild(2).gameObject;
         SFXVolObj = setting.GetChild(3).gameObject;
     }
+    private void Start()
+    {
+        eventSystem = GameObject.FindGameObjectWithTag("EventSystem").GetComponent<EventSystem>();
+        eventSystem.firstSelectedGameObject = MasterVolObj;
+    }
 
     //THIS IS ACTUALLY BUNS OK BUT IT SHOULD WORK!
     public void settingChanged(string typeAndPref)
@@ -37,7 +45,7 @@ public class SettingsMenu : MonoBehaviour
         if (!loading)
         {
             string inputType = typeAndPref.Substring(0, 5);
-            string prefName = typeAndPref.Substring(5, typeAndPref.Length-5);
+            string prefName = typeAndPref.Substring(5, typeAndPref.Length - 5);
 
             GameObject changed = null;
 
@@ -76,7 +84,7 @@ public class SettingsMenu : MonoBehaviour
 
     public void updateVolumeUI(Slider slider, TMP_InputField input, string prefName)
     {
-        slider.value = PlayerPrefs.GetInt(prefName,100);
+        slider.value = PlayerPrefs.GetInt(prefName, 100);
         input.text = PlayerPrefs.GetInt(prefName, 100).ToString();
     }
 
