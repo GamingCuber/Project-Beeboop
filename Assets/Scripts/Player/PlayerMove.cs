@@ -43,14 +43,13 @@ public class PlayerMove : MonoBehaviour
         {
             //to STOP player
             if (!PlayerStateManager.Instance.getState().isMoving || //if theyre not choosing a direction to move
-               ((rb.linearVelocityX > 0 && Input.GetKey(PlayerInputs.Instance.left) || //for the ice skating, if players going right but holding left
-               rb.linearVelocityX < 0 && Input.GetKey(PlayerInputs.Instance.right)))) //for ice skating, if players going left but holding right
+               ((rb.linearVelocityX > 0 && PlayerInputs.Instance.pressingLeftButton || //for the ice skating, if players going right but holding left
+               rb.linearVelocityX < 0 && PlayerInputs.Instance.pressingRightButton))) //for ice skating, if players going left but holding right
             {
                 rb.linearVelocityX = 0;
             }
-            else if ((Input.GetKey(PlayerInputs.Instance.left) || Input.GetKey(PlayerInputs.Instance.right)))
+            else if ((PlayerInputs.Instance.pressingLeftButton || PlayerInputs.Instance.pressingRightButton))
             {
-                Debug.Log(PlayerDataManager.Instance.getData().playerdirection);
                 float xVelo = rb.linearVelocityX;
 
                 float maxSpd = PlayerDataManager.Instance.getData().playerMaxSpd;
@@ -95,7 +94,7 @@ public class PlayerMove : MonoBehaviour
                         PlayerDataManager.Instance.getData().playerDirection = "right";
                     }
                 }
-                else if (Input.GetKey(PlayerInputs.Instance.right))
+                else
                 {
                     if (!PlayerInputs.Instance.pressingLeftButton || !PlayerInputs.Instance.pressingRightButton)
                     {
