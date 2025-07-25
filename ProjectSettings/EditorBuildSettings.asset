@@ -17,10 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Another Scene.unity
     guid: 62df98bec57f78a458ea5cc4170e4a96
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/WinScreen.unity
     guid: 62ee84d5ec2c24773a1f77a0d91d6a01
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LoseScreen.unity
     guid: 1d228f9c2558648d9a95561001a2b243
   - enabled: 1
