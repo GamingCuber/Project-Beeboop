@@ -215,7 +215,11 @@ public class PauseMenu : MonoBehaviour
 
 
         menuBG.sprite = optionData[curOption].backgroundImg;
-        optionLogo.GetComponent<Image>().sprite = optionData[curOption].channelLogo;
+
+        if (optionLogo != null)
+        {
+            optionLogo.GetComponent<Image>().sprite = optionData[curOption].channelLogo;
+        }
     }
 
     private void shiftOptions(int dir)
