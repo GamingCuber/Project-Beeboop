@@ -41,7 +41,6 @@ public class SettingsMenu : MonoBehaviour
     //THIS IS ACTUALLY BUNS OK BUT IT SHOULD WORK!
     public void settingChanged(string typeAndPref)
     {
-        Debug.Log("yo");
         if (!loading)
         {
             string inputType = typeAndPref.Substring(0, 5);
@@ -80,6 +79,41 @@ public class SettingsMenu : MonoBehaviour
 
             updateVolumeUI(slider, input, prefName);
         }
+    }
+
+    public void changeMasterVolume(int amount)
+    {
+        GameObject changed = null;
+        Slider slider = changed.transform.GetChild(0).GetComponent<Slider>();
+        TMP_InputField input = changed.transform.GetChild(1).GetComponent<TMP_InputField>();
+
+        PlayerPrefs.SetInt("MasterVolume", PlayerPrefs.GetInt("MasterVolume") + amount);
+
+        updateVolumeUI(slider, input, "MasterVolume");
+
+    }
+    public void changeMusicVolume(int amount)
+    {
+        GameObject changed = null;
+        Slider slider = changed.transform.GetChild(0).GetComponent<Slider>();
+        TMP_InputField input = changed.transform.GetChild(1).GetComponent<TMP_InputField>();
+
+        PlayerPrefs.SetInt("MusicVolume", PlayerPrefs.GetInt("MusicVolume") + amount);
+
+        updateVolumeUI(slider, input, "MusicVolume");
+
+    }
+
+    public void changeSFXVolume(int amount)
+    {
+        GameObject changed = null;
+        Slider slider = changed.transform.GetChild(0).GetComponent<Slider>();
+        TMP_InputField input = changed.transform.GetChild(1).GetComponent<TMP_InputField>();
+
+        PlayerPrefs.SetInt("SFXVolume", PlayerPrefs.GetInt("SFXVolume") + amount);
+
+        updateVolumeUI(slider, input, "SFXVolume");
+
     }
 
     public void updateVolumeUI(Slider slider, TMP_InputField input, string prefName)
