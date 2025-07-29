@@ -22,4 +22,4 @@ MonoBehaviour:
   keepMomentum: 0
   canDash: 0
   canDoubleJump: 1
-  canHook: 1
+  canHook: 0
