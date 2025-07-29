@@ -73,7 +73,6 @@ public class PlayerJump : MonoBehaviour
         jumpsLeft--;
         cancelJump(true);
         jumpCo = StartCoroutine(doJump());
-        Debug.Log(jumpsLeft);
     }
 
     private IEnumerator doJump() //itll addforce and watch for conditions to mess with the gravity
