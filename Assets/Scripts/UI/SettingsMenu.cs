@@ -31,15 +31,17 @@ public class SettingsMenu : MonoBehaviour
         MasterVolObj = setting.GetChild(1).gameObject;
         MusicVolObj = setting.GetChild(2).gameObject;
         SFXVolObj = setting.GetChild(3).gameObject;
-
+    }
+    private void Start()
+    {
         eventSystem = GameObject.FindGameObjectWithTag("EventSystem").GetComponent<EventSystem>();
-        eventSystem.SetSelectedGameObject(MasterVolObj.transform.GetChild(2).gameObject);
-        Debug.Log(eventSystem);
+        eventSystem.firstSelectedGameObject = MasterVolObj;
     }
 
     //THIS IS ACTUALLY BUNS OK BUT IT SHOULD WORK!
     public void settingChanged(string typeAndPref)
     {
+        Debug.Log("yo");
         if (!loading)
         {
             string inputType = typeAndPref.Substring(0, 5);
@@ -78,69 +80,6 @@ public class SettingsMenu : MonoBehaviour
 
             updateVolumeUI(slider, input, prefName);
         }
-    }
-
-    public void changeMasterVolume(int amount)
-    {
-        GameObject changed = MasterVolObj;
-        Slider slider = changed.transform.GetChild(0).GetComponent<Slider>();
-        TMP_InputField input = changed.transform.GetChild(1).GetComponent<TMP_InputField>();
-        var newAmount = PlayerPrefs.GetInt("MasterVolume") + amount;
-        if (newAmount >= 100)
-        {
-            newAmount = 100;
-        }
-        else if (newAmount <= 0)
-        {
-            newAmount = 0;
-        }
-
-        PlayerPrefs.SetInt("MasterVolume", newAmount);
-
-        updateVolumeUI(slider, input, "MasterVolume");
-
-    }
-    public void changeMusicVolume(int amount)
-    {
-        GameObject changed = MusicVolObj;
-        Slider slider = changed.transform.GetChild(0).GetComponent<Slider>();
-        TMP_InputField input = changed.transform.GetChild(1).GetComponent<TMP_InputField>();
-
-        var newAmount = PlayerPrefs.GetInt("MusicVolume") + amount;
-        if (newAmount >= 100)
-        {
-            newAmount = 100;
-        }
-        else if (newAmount <= 0)
-        {
-            newAmount = 0;
-        }
-
-        PlayerPrefs.SetInt("MusicVolume", newAmount);
-
-        updateVolumeUI(slider, input, "MusicVolume");
-
-    }
-
-    public void changeSFXVolume(int amount)
-    {
-        GameObject changed = SFXVolObj;
-        Slider slider = changed.transform.GetChild(0).GetComponent<Slider>();
-        TMP_InputField input = changed.transform.GetChild(1).GetComponent<TMP_InputField>();
-
-        var newAmount = PlayerPrefs.GetInt("SFXVolume") + amount;
-        if (newAmount >= 100)
-        {
-            newAmount = 100;
-        }
-        else if (newAmount <= 0)
-        {
-            newAmount = 0;
-        }
-
-        PlayerPrefs.SetInt("SFXVolume", newAmount);
-
-        updateVolumeUI(slider, input, "SFXVolume");
     }
 
     public void updateVolumeUI(Slider slider, TMP_InputField input, string prefName)
