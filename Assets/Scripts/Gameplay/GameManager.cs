@@ -3,9 +3,15 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public static GameManager Instance;
+
     void Start()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+
         StartCoroutine(waitForState());
     }
 
@@ -32,5 +38,15 @@ public class GameManager : MonoBehaviour
         }
 
         resetState();
+    }
+
+    public void pauseGame()
+    {
+        Time.timeScale = 0;
+    }
+
+    public void resumeGame()
+    {
+        Time.timeScale = 1; 
     }
 }

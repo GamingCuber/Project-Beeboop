@@ -10,9 +10,13 @@ public class PlayerHook : MonoBehaviour
 
     public GameObject hookTarget;
 
-    private GameObject[] hookObjects; 
+    private GameObject[] hookObjects;
 
     private Dictionary<GameObject, bool> hookCooldowns = new Dictionary<GameObject, bool>(); //will assign each hook an individual cooldown, so u cant spam
+
+    public float hookReturnSpeed;
+
+    private Coroutine returnCo;
 
     private void Start()
     {
@@ -30,7 +34,7 @@ public class PlayerHook : MonoBehaviour
         {
             hookReaction();
 
-            if (getClosestAvailHook() != null && Input.GetKeyDown(PlayerInputs.Instance.hook))
+            if (getClosestAvailHook() != null && PlayerInputs.Instance.playerController.Player.Hook.WasPressedThisFrame())
             {
                 doHook();
             }
@@ -72,7 +76,7 @@ public class PlayerHook : MonoBehaviour
 
     private bool checkForCD(GameObject hook)
     {
-        foreach(KeyValuePair<GameObject, bool> kv in hookCooldowns)
+        foreach (KeyValuePair<GameObject, bool> kv in hookCooldowns)
         {
             if (kv.Key == hook && kv.Value)
             {
@@ -155,8 +159,14 @@ public class PlayerHook : MonoBehaviour
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
+        if (returnCo != null)
+        {
+            Debug.Log("stopped co");
+            StopCoroutine(returnCo);
+            returnCo = null;
+        }
+
         hookLineRenderer.enabled = true;
-        //hookReaction(hook, Vector2.Distance(hook.transform.position, transform.position));
 
         while (PlayerStateManager.Instance.getState().isHooked)
         {
@@ -170,10 +180,16 @@ public class PlayerHook : MonoBehaviour
 
             // if player is too close to hook or lets go of hook, they detach
             float playerHookDist = Mathf.Abs(Vector2.Distance(transform.position, hook.transform.position));
-            if (!Input.GetKey(PlayerInputs.Instance.hook) || playerHookDist < PlayerDataManager.Instance.getData().hookCancelDistance)
+            if (!PlayerInputs.Instance.playerController.Player.Hook.IsPressed() || playerHookDist < PlayerDataManager.Instance.getData().hookCancelDistance)
             {
                 break;
             }
+            
+            if (!hookLineRenderer.enabled)
+            {
+                hookLineRenderer.enabled = true;
+            }
+
             yield return new WaitForEndOfFrame();
         }
 
@@ -183,6 +199,8 @@ public class PlayerHook : MonoBehaviour
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
         yield return new WaitForSecondsRealtime(0.1f);
+
+        returnCo = StartCoroutine(hookReturn(hook));
 
         // Increases grav so you fall faster
         PlayerStateManager.Instance.getState().isFalling = true;
@@ -195,10 +213,8 @@ public class PlayerHook : MonoBehaviour
 
         PlayerStateManager.Instance.getState().isHooked = false;
 
-        hookLineRenderer.enabled = false;
-
         rb.linearDamping = 0;
-        
+
         yield break;
     }
 
@@ -219,5 +235,29 @@ public class PlayerHook : MonoBehaviour
         {
             hookTarget.SetActive(false);
         }
+    }
+
+    private IEnumerator hookReturn(GameObject hook)
+    {
+        Vector3 initHookPos = hook.transform.position;
+
+        Vector3 hookReturnPos = initHookPos;
+
+        float returnTime = 0;
+
+        while (Vector3.Distance(transform.position, hookReturnPos) > 0.5)
+        {
+            returnTime += Time.deltaTime;
+            
+            hookReturnPos = Vector3.MoveTowards(hookReturnPos, transform.position, hookReturnSpeed * (returnTime * 10) * Time.deltaTime);
+            hookLineRenderer.SetPosition(0, transform.position);
+            hookLineRenderer.SetPosition(1, hookReturnPos);
+
+            yield return new WaitForEndOfFrame();
+        }
+
+        hookLineRenderer.enabled = false;
+
+        yield break;
     }
 }

@@ -21,9 +21,7 @@ public class SpikesCollided : MonoBehaviour
         {
             Debug.Log("Respawn");
             RespawnScript.Instance.respawntocheckpoint();
-
-
-
+            PlayerJump.Instance.cancelJump(false);
         }  
     }
 }

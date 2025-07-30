@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAcc: 35
   playerMaxSpd: 13
-  coyoteFrames: 40
+  coyoteFrames: 9
   jumpAmt: 1
   jumpHeight: 4
   jumpTime: 0.35
@@ -25,7 +25,7 @@ MonoBehaviour:
   dashStr: 20
   dashTime: 0.15
   dashCDFrames: 20
-  playerdirection: right
+  playerDirection: right
   hookDistanceLimit: 16
   hookCancelDistance: 1.5
   hookSpeed: 60

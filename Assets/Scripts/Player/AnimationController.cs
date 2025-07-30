@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class AnimationController : MonoBehaviour
 {
@@ -8,11 +9,11 @@ public class AnimationController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(PlayerInputs.Instance.left) && !sr.flipX) //if they goin left, flip sprite, otherwise don't
+        if (PlayerDataManager.Instance.getData().playerDirection == "left" && !sr.flipX) //if they goin left, flip sprite, otherwise don't
         {
             sr.flipX = true;
         }
-        else if (Input.GetKey(PlayerInputs.Instance.right) && sr.flipX)
+        else if (PlayerDataManager.Instance.getData().playerDirection == "right" && sr.flipX)
         {
             sr.flipX = false;
         }
@@ -39,7 +40,7 @@ public class AnimationController : MonoBehaviour
         {
             anim.SetBool("isJumping", true);
         }
-        else if (PlayerStateManager.Instance.getState().isJumping && PlayerStateManager.Instance.getState().isFalling || anim.GetBool("isDashing")) //jumping but falling
+        else if (PlayerStateManager.Instance.getState().isJumping && PlayerStateManager.Instance.getState().isFalling || anim.GetBool("isDashing") || PlayerStateManager.Instance.getState().isGrounded) //jumping but falling
         {
             anim.SetBool("isJumping", false);
         }
