@@ -62,14 +62,5 @@ public class AnimationController : MonoBehaviour
         {
             anim.SetBool("isFalling", false);
         }
-
-        if (PlayerStateManager.Instance.getState().isHooked && PlayerInputs.Instance.pressingHookButton && !PlayerStateManager.Instance.getState().isGrounded)
-        {
-            anim.SetBool("isHooking", true);
-        }
-        else if (PlayerStateManager.Instance.getState().isHooked && anim.GetBool("isFalling") || anim.GetBool("isDashing"))
-        {
-            anim.SetBool("isHooking", false);
-        }
     }
 }
