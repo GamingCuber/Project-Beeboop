@@ -5,19 +5,18 @@ using Unity.Mathematics;
 
 public class Crusher : MonoBehaviour
 {
-    int increaseamount = 1;
+    public GameObject crusherPart;
     Vector3 currentposy;
     Vector3 goalpos;
-    public float range = 10;
     public float upTime = 5;
     public float downTime = 5;
    public bool isDown = false;
      public   bool isStopped = false;
-    float stoptime = 1;
+    public float stoptime = 1;
     void Start()
     {
-        currentposy = this.gameObject.transform.position;
-        goalpos = currentposy - new Vector3(0f, -range, 0f);
+        currentposy = crusherPart.transform.localPosition;
+        goalpos = currentposy + new Vector3(0f, 0.75f, 0f);
         StartCoroutine(moveCrusher());
     }
 
@@ -36,10 +35,10 @@ public class Crusher : MonoBehaviour
             {
                 float newy = Mathf.Lerp(currentposy.y, goalpos.y, timer / upTime);
 
-                Vector3 newPosition = this.gameObject.transform.position;
+                Vector3 newPosition = crusherPart.transform.localPosition;
                 newPosition.y = newy;
 
-                transform.position = newPosition;
+                crusherPart.transform.localPosition = newPosition;
 
                 if (timer > upTime)
                 {
@@ -53,10 +52,10 @@ public class Crusher : MonoBehaviour
             {
 
                 float originy = Mathf.Lerp(goalpos.y, currentposy.y, timer / downTime);
-                Vector3 rar = this.gameObject.transform.position;
+                Vector3 rar = crusherPart.transform.localPosition;
                 rar.y = originy;
 
-                transform.position = rar;
+                crusherPart.transform.localPosition = rar;
 
                 if (timer > downTime)
                 {
