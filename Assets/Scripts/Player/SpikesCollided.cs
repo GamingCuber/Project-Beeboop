@@ -2,19 +2,6 @@ using UnityEngine;
 
 public class SpikesCollided : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Respawn"))
@@ -22,6 +9,7 @@ public class SpikesCollided : MonoBehaviour
             Debug.Log("Respawn");
             RespawnScript.Instance.respawntocheckpoint();
             PlayerJump.Instance.cancelJump(false);
+            DashAfterimage.Instance.cancelAfterImage();
         }  
     }
 }
