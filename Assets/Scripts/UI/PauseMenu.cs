@@ -64,8 +64,8 @@ public class PauseMenu : MonoBehaviour
     {
         optionGameObjects = new GameObject[7];
 
-        optionsOject = menuObject.transform.GetChild(3).gameObject;
-        settingsObject = menuObject.transform.GetChild(4).gameObject;
+        optionsOject = menuObject.transform.GetChild(2).gameObject;
+        settingsObject = menuObject.transform.GetChild(3).gameObject;
 
         for (int i = 0; i < 7; i++)
         {
