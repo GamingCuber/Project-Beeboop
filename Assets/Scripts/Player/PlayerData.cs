@@ -6,7 +6,7 @@ public class PlayerData : ScriptableObject
 {
     public float playerAcc; //player acceleration (probably for addForce)
     public float playerMaxSpd; //self explanatory
-    public int coyoteFrames; //frames of coyote time
+    public float coyoteTime; //coyote time in real seconds
     public int jumpAmt; //max jumps consecutively (so like double jump would be 2)
     public float jumpHeight;
     public float jumpTime;
@@ -16,7 +16,7 @@ public class PlayerData : ScriptableObject
     public float jumpFallGrav; //grav when falling
     public float dashStr = 15;
     public float dashTime; //how long the speed of the dash is kept until its reset
-    public float dashCDFrames; //how many frames dash is on cd
+    public float dashCDTime; //how much real time is dash cd
     public string playerDirection;
     public float hookDistanceLimit;
     public float hookCancelDistance; //how close player has to be to hook for their hook to be cancelled

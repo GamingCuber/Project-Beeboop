@@ -59,6 +59,11 @@ public class PlayerJump : MonoBehaviour
         {
             jump();
         }
+        else if (PlayerInputs.Instance.playerController.Player.Jump.WasPressedThisFrame() && !canJump && jumpsLeft == 2)
+        {
+            jumpsLeft--;
+            jump();
+        }
 
         if (!PlayerStateManager.Instance.getState().isGrounded && canJump && coyoteCo == null && jumpsLeft == PlayerDataManager.Instance.getData().jumpAmt) //gives coyote time if they were recently on the ground, they isn't already a co running and if theyre on their first jump
         {
@@ -141,11 +146,13 @@ public class PlayerJump : MonoBehaviour
 
     private IEnumerator coyoteTimer() //counts frames for when the player can jump off whilst not PlayerStateManager.Instance.getState().isGrounded
     {
-        int count = 0;
+        float timer = 0;
 
-        while (count < PlayerDataManager.Instance.getData().coyoteFrames)
+        float totalTime = PlayerDataManager.Instance.getData().coyoteTime;
+
+        while (timer <= totalTime)
         {
-            count++;
+            timer += Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
 

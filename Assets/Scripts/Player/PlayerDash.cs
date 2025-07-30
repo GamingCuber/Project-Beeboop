@@ -95,11 +95,13 @@ public class PlayerDash : MonoBehaviour
 
     private IEnumerator cooldownTimer()
     {
-        int frames = 0;
+        float timer = 0;
 
-        while (frames < PlayerDataManager.Instance.getData().dashCDFrames)
+        float totalTime = PlayerDataManager.Instance.getData().dashCDTime;
+
+        while (timer <= totalTime)
         {
-            frames++;
+            timer += Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
 
