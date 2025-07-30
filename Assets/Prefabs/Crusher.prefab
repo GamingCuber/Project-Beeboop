@@ -148,8 +148,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84d38d80e3d16824f99f57828e090db5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upTime: 1
-  downTime: 1
+  range: 5
+  upTime: 2
+  downTime: 0.2
   isDown: 0
   isStopped: 0
 --- !u!1 &6838476781418178851

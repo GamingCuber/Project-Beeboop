@@ -79,7 +79,8 @@ public class GameTimer : MonoBehaviour
 
     private void gameLost()
     {
-        SceneManager.LoadScene("LoseScreen");
+        PlayerStateManager.Instance.getState().gameLost = true;
+        SceneManager.LoadScene("LoseMenu");
     }
 
     private IEnumerator waitForGears()

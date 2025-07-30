@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/StartMenu.unity
     guid: 4d0a6015ba381b12db8722a63cd3e0c6
   - enabled: 1
+    path: Assets/Scenes/MainScene.unity
+    guid: 05d1c02522d71404da819f5653b47fdd
+  - enabled: 0
     path: Assets/Scenes/Tut level.unity
     guid: 2e7b46e01d3814ee48cfb2694d285bfd
   - enabled: 1
@@ -26,6 +29,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Movement Playtest.unity
     guid: 9c435c60b0f17428dbdf64754bd3a049
+  - enabled: 1
+    path: Assets/Scenes/Dash Level.unity
+    guid: 5e19d1a50babfec4f9076c08833e8cf2
+  - enabled: 1
+    path: Assets/Scenes/LoseMenu.unity
+    guid: aac8e1bf49ec47fabb59db56a6f3abfd
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: e9e11a1204130478d96d48adcba6f683, type: 3}
   m_UseUCBPForAssetBundles: 0

@@ -8,7 +8,7 @@ public class Crusher : MonoBehaviour
     int increaseamount = 1;
     Vector3 currentposy;
     Vector3 goalpos;
-    float increment = 10;
+    public float range = 10;
     public float upTime = 5;
     public float downTime = 5;
    public bool isDown = false;
@@ -17,7 +17,7 @@ public class Crusher : MonoBehaviour
     void Start()
     {
         currentposy = this.gameObject.transform.position;
-        goalpos = currentposy - new Vector3(0f, -increment, 0f);
+        goalpos = currentposy - new Vector3(0f, -range, 0f);
         StartCoroutine(moveCrusher());
     }
 
@@ -34,14 +34,14 @@ public class Crusher : MonoBehaviour
 
             if (!isDown && isStopped == false)
             {
-                float newy = Mathf.Lerp(currentposy.y, goalpos.y, timer / downTime);
+                float newy = Mathf.Lerp(currentposy.y, goalpos.y, timer / upTime);
 
                 Vector3 newPosition = this.gameObject.transform.position;
                 newPosition.y = newy;
 
                 transform.position = newPosition;
 
-                if (timer > downTime)
+                if (timer > upTime)
                 {
                     timer = 0;
                     isDown = true;
@@ -52,13 +52,13 @@ public class Crusher : MonoBehaviour
             else if (isDown && isStopped == false)
             {
 
-                float originy = Mathf.Lerp(goalpos.y, currentposy.y, timer / upTime);
+                float originy = Mathf.Lerp(goalpos.y, currentposy.y, timer / downTime);
                 Vector3 rar = this.gameObject.transform.position;
                 rar.y = originy;
 
                 transform.position = rar;
 
-                if (timer > upTime)
+                if (timer > downTime)
                 {
                     isDown = false;
                     timer = 0;
