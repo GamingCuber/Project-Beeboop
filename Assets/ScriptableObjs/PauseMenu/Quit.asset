@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c55f6c5a38864d4cb17094fe7ff46d2, type: 3}
+  m_Name: Quit
+  m_EditorClassIdentifier: 
+  optionName: Quit
+  description: DONT DO IT.
+  channelNumber: 05
+  backgroundImg: {fileID: -7727679585812335486, guid: 64f1ea29601d74991b42ef5c8202b60a, type: 3}
+  channelLogo: {fileID: -1803710564758930647, guid: a993c2b874a78d343b92e85cb453a005, type: 3}
