@@ -16,8 +16,6 @@ public class PlayerStateManager : MonoBehaviour
         {
             Instance = this;
         }
-
-        resetUpgrades();
     }
 
     public PlayerState getState()
@@ -44,23 +42,5 @@ public class PlayerStateManager : MonoBehaviour
         {
             state.isMoving = false;
         }
-    }
-
-    private void resetUpgrades()
-    {
-        state.canDash = false;
-        state.canDoubleJump = false;
-        state.canHook = false;
-        StartCoroutine(waitForData());
-    }
-
-    private IEnumerator waitForData()
-    {
-        while (PlayerDataManager.Instance == null)
-        {
-            yield return new WaitForEndOfFrame();
-        }
-
-        PlayerDataManager.Instance.getData().jumpAmt = 1;
     }
 }

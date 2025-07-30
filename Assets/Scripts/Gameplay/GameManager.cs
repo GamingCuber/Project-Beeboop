@@ -12,11 +12,14 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
 
-        StartCoroutine(waitForState());
+        if (PlayerStateManager.Instance.getState().gameLost)
+        {
+            StartCoroutine(waitForState());
+        }
     }
 
     // Yes I know this code is disgusting. No, I'm not going to change it
-    private void resetState()
+    public void resetState()
     {
         PlayerStateManager.Instance.getState().keepMomentum = false;
         PlayerStateManager.Instance.getState().isDead = false;
@@ -28,6 +31,10 @@ public class GameManager : MonoBehaviour
         PlayerStateManager.Instance.getState().canDash = false;
         PlayerStateManager.Instance.getState().canDoubleJump = false;
         PlayerStateManager.Instance.getState().canHook = false;
+        PlayerDataManager.Instance.getData().jumpAmt = 1;
+
+        //im assuming we just reset when u first load in after u lose
+        PlayerStateManager.Instance.getState().gameLost = false;
     }
 
     private IEnumerator waitForState()
