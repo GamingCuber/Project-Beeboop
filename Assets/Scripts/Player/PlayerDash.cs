@@ -12,7 +12,7 @@ public class PlayerDash : MonoBehaviour
     void Update()
     {
         //need this to be dashbuttondown
-        if (PlayerInputs.Instance.pressingDashButton && debounce == false && PlayerStateManager.Instance.getState().canDash && !onCooldown)
+        if (PlayerInputs.Instance.playerController.Player.Dash.WasPressedThisFrame() && debounce == false && PlayerStateManager.Instance.getState().canDash && !onCooldown)
         {
             PlayerJump.Instance.cancelJump(false);
             StartCoroutine(DashCoroutine());
