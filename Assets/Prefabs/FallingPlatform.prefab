@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5859711863803096591}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FallingPlatform
-  m_TagString: Untagged
+  m_TagString: PlatformJump
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,7 +43,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4256757649948040987}
   - component: {fileID: 1987352046223129821}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 5410349653697400445}
   - component: {fileID: 5880906003948884585}
   - component: {fileID: 5386882154702330500}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
