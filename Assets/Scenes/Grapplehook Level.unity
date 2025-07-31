@@ -966,6 +966,7 @@ MonoBehaviour:
   rb: {fileID: 1396455829}
   hookLineRenderer: {fileID: 1396455820}
   hookTarget: {fileID: 1603332665}
+  hookReturnSpeed: 0
 --- !u!70 &1396455822
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
