@@ -94,7 +94,7 @@ public class PlayerJump : MonoBehaviour
         {
             time += Time.deltaTime;
 
-            if (!PlayerInputs.Instance.playerController.Player.Jump.IsPressed()) //if they let go or player starts falling, increase grav so they fall faster
+            if (!PlayerInputs.Instance.playerController.Player.Jump.IsPressed() && time >= PlayerDataManager.Instance.getData().minJumpTime) //if they let go or player starts falling, increase grav so they fall faster
             {
                 break;
             }

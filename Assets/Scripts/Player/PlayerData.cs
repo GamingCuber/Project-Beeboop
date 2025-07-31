@@ -10,6 +10,7 @@ public class PlayerData : ScriptableObject
     public int jumpAmt; //max jumps consecutively (so like double jump would be 2)
     public float jumpHeight;
     public float jumpTime;
+    public float minJumpTime; //minimum time of jump before cancel if u like feather the button
     public float jumpApexTime;
     public float percentApex; //percentage of the jumpheight that is slowed for apex floaty time
     public float apexDampening; //linear dampening at apex to lower speed
