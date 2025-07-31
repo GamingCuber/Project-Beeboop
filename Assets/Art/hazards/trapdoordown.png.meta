@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 34f64d6489aac2f4d95d73d17fc59b95
+guid: b3a9289d60ee64100aa8d982a2e1b53f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2315074188773805987
-    second: trapdooropen_0
+      213: 79382136757107519
+    second: trapdoordown_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: trapdooropen_0
+      name: trapdoordown_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 16
-        height: 90
+        y: 14
+        width: 90
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3afc98a75bbc02020800000000000000
-      internalID: 2315074188773805987
+      spriteID: f3b3beef1a50a1100800000000000000
+      internalID: 79382136757107519
       vertices: []
       indices: 
       edges: []
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      trapdooropen_0: 2315074188773805987
+      trapdoordown_0: 79382136757107519
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
