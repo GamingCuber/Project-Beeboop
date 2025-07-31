@@ -81,8 +81,8 @@ public class PlayerDash : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
-        rb.constraints = RigidbodyConstraints2D.FreezePositionY;
-        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        // rb.constraints = RigidbodyConstraints2D.FreezePositionY;
+        // rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
         SoundManager.Instance.playPlayerSound("dash");
         PlayerMove.Instance.startMovement();
