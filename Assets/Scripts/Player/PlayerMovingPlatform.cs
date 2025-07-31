@@ -5,16 +5,12 @@ using System.Collections;
 public class PlayerMovingPlatform : MonoBehaviour
 {
     private bool isAttached = false;
-
-    private Coroutine movingPlatCo;
-
     private MovingPlatform curPlat;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("MovingPlatform") && !isAttached)
         {
-            Debug.Log("moving");
             curPlat = collision.gameObject.GetComponent<MovingPlatform>();
             attachPlayer();
         }
@@ -22,9 +18,8 @@ public class PlayerMovingPlatform : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (isAttached)
+        if (collision.gameObject.CompareTag("MovingPlatform") && isAttached)
         {
-            Debug.Log("gone");
             detachPlayer();
         }
     }
@@ -32,40 +27,25 @@ public class PlayerMovingPlatform : MonoBehaviour
     private void attachPlayer()
     {
         isAttached = true;
-        StartCoroutine(movePlayer());
     }
 
     private void detachPlayer()
     {
         isAttached = false;
         curPlat = null;
-
-        if (movingPlatCo != null)
-        {
-            StopCoroutine(movingPlatCo);
-        }
-
-        movingPlatCo = null;
     }
 
-    private IEnumerator movePlayer()//GOTTA FIX
+    private void FixedUpdate()
     {
-        GameObject platGO = curPlat.gameObject;
+        movePlayer();
+    }
 
-        Vector3 distFromPlat = transform.position - platGO.transform.position;
-
-        while (isAttached)
+    private void movePlayer()
+    {
+        if (isAttached)
         {
-            if (!PlayerStateManager.Instance.getState().isMoving && !PlayerStateManager.Instance.getState().isJumping)
-            {
-                transform.position = platGO.transform.position + distFromPlat;
-            }
-            else
-            {
-                distFromPlat = transform.position - platGO.transform.position;
-            }
-
-            yield return new WaitForEndOfFrame();
+            PlayerStateManager.Instance.getState().isFalling = false;
+            gameObject.GetComponent<Rigidbody2D>().linearVelocityY = curPlat.platformVeloY;
         }
     }
 }

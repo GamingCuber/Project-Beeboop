@@ -23,7 +23,8 @@ public class MovingPlatform : MonoBehaviour
 
     private Coroutine moveCo;
 
-    public Vector3 platformVelo; //used in moving player's position alongside platform
+    public float platformVeloX; //used in moving player's position alongside platform
+    public float platformVeloY;
 
     void Start()
     {
@@ -48,7 +49,7 @@ public class MovingPlatform : MonoBehaviour
 
         curStart = pos1;
 
-        Vector3 previousPos = startingPos;
+        Vector2 previousPos = startingPos;
 
         while (timer < moveTime)
         {
@@ -59,7 +60,7 @@ public class MovingPlatform : MonoBehaviour
                 float xPos = Mathf.Lerp(pos1.x, pos2.x, Mathf.Sin(Mathf.PI / 2 * (timer / moveTime)));
                 float yPos = Mathf.Lerp(pos1.y, pos2.y, Mathf.Sin(Mathf.PI / 2 * (timer / moveTime)));
 
-                this.gameObject.transform.position = new Vector3(xPos, yPos, 0);
+                gameObject.transform.position = new Vector2(xPos, yPos);
 
                 if (timer >= moveTime)
                 {
@@ -81,8 +82,9 @@ public class MovingPlatform : MonoBehaviour
                 }
             }
 
-            platformVelo = (this.gameObject.transform.position - previousPos) / Time.deltaTime;
-            previousPos = this.gameObject.transform.position;
+            platformVeloX = (gameObject.transform.position.x - previousPos.x) / Time.deltaTime;
+            platformVeloY = (gameObject.transform.position.y - previousPos.y) / Time.deltaTime;
+            previousPos = gameObject.transform.position;
 
             yield return new WaitForEndOfFrame();
         }
@@ -90,7 +92,7 @@ public class MovingPlatform : MonoBehaviour
 
     void resetPos()
     {
-        this.gameObject.transform.position = startingPos;
+        gameObject.transform.position = startingPos;
 
         if (moveCo != null)
         {
