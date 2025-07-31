@@ -16,4 +16,4 @@ MonoBehaviour:
   description: GO GAME!
   channelNumber: 01
   backgroundImg: {fileID: -7727679585812335486, guid: 64f1ea29601d74991b42ef5c8202b60a, type: 3}
-  channelLogo: {fileID: -168388379346252872, guid: fcb07bdcf35e8c34fbad0b9df3ad32bf, type: 3}
+  channelLogo: {fileID: -2138665406787640637, guid: fe4413fd080629641a06a5d0999bae66, type: 3}
