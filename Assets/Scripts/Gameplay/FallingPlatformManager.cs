@@ -91,7 +91,7 @@ public class FallingPlatformManager : MonoBehaviour
 
             float rotation = rand * dir;
 
-            spriteGO.transform.eulerAngles = new Vector3(0f, spriteGO.transform.rotation.y, rotation);
+            spriteGO.transform.localEulerAngles = new Vector3(0f, spriteGO.transform.rotation.y, rotation);
 
             dir *= -1;
 
@@ -105,15 +105,13 @@ public class FallingPlatformManager : MonoBehaviour
 
         float fallTime = 0.05f;
 
-        float initZ = spriteGO.transform.rotation.z;
-
         while (timer < fallTime)
         {
             timer += Time.deltaTime;
 
-            float rotation = Mathf.Lerp(initZ, -90, timer / fallTime);
+            float rotation = Mathf.Lerp(0, -90, timer / fallTime);
 
-            spriteGO.transform.eulerAngles = new Vector3(0f, spriteGO.transform.rotation.y, rotation);
+            spriteGO.transform.localEulerAngles = new Vector3(0f, spriteGO.transform.rotation.y, rotation);
 
             yield return new WaitForEndOfFrame();
         }
@@ -131,7 +129,7 @@ public class FallingPlatformManager : MonoBehaviour
 
             float rotation = Mathf.Lerp(-90, 0, timer / upTime);
 
-            spriteGO.transform.eulerAngles = new Vector3(0f, spriteGO.transform.rotation.y, rotation);
+            spriteGO.transform.localEulerAngles = new Vector3(0f, spriteGO.transform.rotation.y, rotation);
 
             yield return new WaitForEndOfFrame();
         }
