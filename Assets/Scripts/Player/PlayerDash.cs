@@ -12,7 +12,7 @@ public class PlayerDash : MonoBehaviour
     void Update()
     {
         //need this to be dashbuttondown
-        if (PlayerInputs.Instance.pressingDashButton && debounce == false && PlayerStateManager.Instance.getState().canDash && !onCooldown)
+        if (PlayerInputs.Instance.playerController.Player.Dash.WasPressedThisFrame() && debounce == false && PlayerStateManager.Instance.getState().canDash && !onCooldown)
         {
             PlayerJump.Instance.cancelJump(false);
             StartCoroutine(DashCoroutine());
@@ -56,6 +56,7 @@ public class PlayerDash : MonoBehaviour
         }
 
         dashDir.Normalize();
+        dashDir.y *= 5f;
 
         if (dashDir == Vector2.zero)
         {
@@ -81,13 +82,14 @@ public class PlayerDash : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
+        PlayerStateManager.Instance.getState().isDashing = false;
+        PlayerStateManager.Instance.getState().isFalling = true;
+
         rb.constraints = RigidbodyConstraints2D.FreezePositionY;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
         SoundManager.Instance.playPlayerSound("dash");
         PlayerMove.Instance.startMovement();
-        PlayerStateManager.Instance.getState().isDashing = false;
-        PlayerStateManager.Instance.getState().isFalling = true;
 
         StartCoroutine(cooldownTimer());
 
