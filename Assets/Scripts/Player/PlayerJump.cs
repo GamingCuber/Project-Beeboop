@@ -75,6 +75,7 @@ public class PlayerJump : MonoBehaviour
     {
         isJumping = true;
         PlayerStateManager.Instance.getState().isJumping = true;
+        SoundManager.Instance.playPlayerSound("Jump");
         jumpsLeft--;
         cancelJump(true);
         jumpCo = StartCoroutine(doJump());
