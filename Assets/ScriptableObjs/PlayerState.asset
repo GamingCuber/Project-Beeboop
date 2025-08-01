@@ -20,6 +20,7 @@ MonoBehaviour:
   isFalling: 0
   isDead: 0
   keepMomentum: 0
-  canDash: 0
+  canDash: 1
   canDoubleJump: 1
   canHook: 0
+  gameLost: 0
