@@ -71,6 +71,8 @@ public class PlayerMove : MonoBehaviour
                     {
                         dirSwitched = true;
 
+                        VFXManager.Instance.playVFX("turn");
+
                         if (PlayerStateManager.Instance.getState().isGrounded)
                         {
                             rb.linearVelocityX /= 4;
