@@ -38,7 +38,11 @@ public class DashAfterimage : MonoBehaviour
 
     public void cancelAfterImage()
     {
-        StopCoroutine(co);
+        if (co != null)
+        {
+            StopCoroutine(co);
+        }
+        co = null;
     }
 
     public void doAfterimage()

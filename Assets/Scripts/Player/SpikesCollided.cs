@@ -7,9 +7,18 @@ public class SpikesCollided : MonoBehaviour
         if (collision.gameObject.CompareTag("Respawn"))
         {
             Debug.Log("Respawn");
-            RespawnScript.Instance.respawntocheckpoint();
+            PlayerStateManager.Instance.getState().isDead = true;
             PlayerJump.Instance.cancelJump(false);
             DashAfterimage.Instance.cancelAfterImage();
+            DeathAnimManager.Instance.doAnimation();
+            gameObject.GetComponent<Rigidbody2D>().linearVelocity = Vector3.zero;
+            Invoke(nameof(death), 1f);
         }  
+    }
+
+    void death()
+    {
+        RespawnScript.Instance.respawntocheckpoint();
+        PlayerStateManager.Instance.getState().isDead = false;
     }
 }
