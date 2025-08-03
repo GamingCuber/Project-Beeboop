@@ -77,6 +77,11 @@ public class SettingsMenu : MonoBehaviour
             }
 
             updateVolumeUI(slider, input, prefName);
+
+            if (MusicManager.Instance != null)
+            {
+                MusicManager.Instance.volumeUpdated();
+            }
         }
     }
 
