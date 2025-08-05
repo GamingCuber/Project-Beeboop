@@ -91,23 +91,11 @@ public class PlayerMove : MonoBehaviour
                     else if (PlayerInputs.Instance.pressingLeftButton)
                     {
                         dir = -1;
-
-                        if (PlayerDataManager.Instance.getData().playerDirection == "right" && PlayerStateManager.Instance.getState().isGrounded)
-                        {
-                            VFXManager.Instance.playVFX("Turn");
-                        }
-
                         PlayerDataManager.Instance.getData().playerDirection = "left";
                     }
                     else if (PlayerInputs.Instance.pressingRightButton)
                     {
                         dir = 1;
-
-                        if (PlayerDataManager.Instance.getData().playerDirection == "left" && PlayerStateManager.Instance.getState().isGrounded)
-                        {
-                            VFXManager.Instance.playVFX("Turn");
-                        }
-
                         PlayerDataManager.Instance.getData().playerDirection = "right";
                     }
                 }

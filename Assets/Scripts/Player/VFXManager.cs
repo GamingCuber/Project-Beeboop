@@ -5,14 +5,19 @@ using System.Collections.Generic;
 public class VFXManager : MonoBehaviour
 {
     public static VFXManager Instance;
+
+    public int poolAmt;
+
     public GameObject VFXPre;
-    private GameObject[] VFXObjects = new GameObject[5];
+    private GameObject[] VFXObjects;
 
     public AnimationClip dj;
     public AnimationClip turn;
     private Dictionary<string, AnimationClip> clips = new Dictionary<string, AnimationClip>();
 
     private GameObject player;
+
+    private Coroutine moveVFXCo;
 
     private void Start()
     {
@@ -21,7 +26,9 @@ public class VFXManager : MonoBehaviour
             Instance = this;
         }
 
-        for (int i = 0; i < 5; i++)
+        VFXObjects = new GameObject[poolAmt];
+
+        for (int i = 0; i < poolAmt; i++)
         {
             GameObject newVFX = Instantiate(VFXPre, this.transform);
             VFXObjects[i] = newVFX;
@@ -34,8 +41,6 @@ public class VFXManager : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    //publiuc function returns void, turns first available on, sets the clip to dj, plays, turn pff
-
     public void playVFX(string type)
     {
         StartCoroutine(playVFXCo(type));
@@ -44,7 +49,7 @@ public class VFXManager : MonoBehaviour
     public GameObject getVFX()
     {
         GameObject returnVFX = null;
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < poolAmt; i++)
         {
             if (!VFXObjects[i].activeInHierarchy)
             {
@@ -73,7 +78,7 @@ public class VFXManager : MonoBehaviour
         vfxGO.SetActive(true);
         anim.SetTrigger(type);
 
-        yield return new WaitForSecondsRealtime(2f);
+        yield return new WaitForSecondsRealtime(clips[type].length);
 
         vfxGO.SetActive(false);
     }

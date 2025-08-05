@@ -1,97 +1,205 @@
 fileFormatVersion: 2
-guid: 403b1fb3b2c444445945cb78341e94d6
+guid: c2f3fefff63909345a29f9e7668fad53
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9167109234305929992
-    second: _100x100pt2_0
+      213: -4930506051987188024
+    second: _100x100turn_0
   - first:
-      213: 3991618685162450804
-    second: _100x100pt2_1
+      213: -2440056786228510668
+    second: _100x100turn_1
   - first:
-      213: 9144014843435534161
-    second: _100x100pt2_2
+      213: 534669459695692595
+    second: _100x100turn_2
   - first:
-      213: 2900689650107704867
-    second: _100x100pt2_3
+      213: 8138265544223185225
+    second: _100x100turn_3
   - first:
-      213: 1675567546000687944
-    second: _100x100pt2_4
+      213: 4431407405804080661
+    second: _100x100turn_4
   - first:
-      213: 2596633001960929852
-    second: _100x100pt2_5
+      213: 5241082950031001771
+    second: _100x100turn_5
   - first:
-      213: -4751056014809900166
-    second: _100x100pt2_6
+      213: 3388606516668014241
+    second: _100x100turn_6
   - first:
-      213: -4797700735953717534
-    second: _100x100pt2_7
+      213: -3594781643381361078
+    second: _100x100turn_7
   - first:
-      213: -7935489226678775203
-    second: _100x100pt2_8
+      213: -2801465614868923697
+    second: _100x100turn_8
   - first:
-      213: 4216465191130494441
-    second: _100x100pt2_9
+      213: 4197635362472211193
+    second: _100x100turn_9
   - first:
-      213: 1979717276706104309
-    second: _100x100pt2_10
+      213: 3871056177098209269
+    second: _100x100turn_10
   - first:
-      213: -7152509575486687322
-    second: _100x100pt2_11
+      213: 8351447006434569625
+    second: _100x100turn_11
   - first:
-      213: 257320200719425156
-    second: _100x100pt2_12
+      213: -1928973972599349003
+    second: _100x100turn_12
   - first:
-      213: -3316668611312987008
-    second: _100x100pt2_13
+      213: 7859045095252253288
+    second: _100x100turn_13
   - first:
-      213: -6899989684003305609
-    second: _100x100pt2_14
+      213: 7526000373220838518
+    second: _100x100turn_14
   - first:
-      213: -5642321972118713737
-    second: _100x100pt2_15
+      213: 5414590510564681861
+    second: _100x100turn_15
   - first:
-      213: -5929270623576363062
-    second: _100x100pt2_16
+      213: -4773501732673219621
+    second: _100x100turn_16
   - first:
-      213: -2439385573270296832
-    second: _100x100pt2_17
+      213: 3489315322483722472
+    second: _100x100turn_17
   - first:
-      213: 8694989791065385104
-    second: _100x100pt2_18
+      213: 7977011719495424365
+    second: _100x100turn_18
   - first:
-      213: -8570483821303064658
-    second: _100x100pt2_19
+      213: -4008874047007978385
+    second: _100x100turn_19
   - first:
-      213: 7033698422269988911
-    second: _100x100pt2_20
+      213: -5044341042221113164
+    second: _100x100turn_20
   - first:
-      213: -2799384841795081922
-    second: _100x100pt2_21
+      213: 5171895754312697244
+    second: _100x100turn_21
   - first:
-      213: 2850962360739185771
-    second: _100x100pt2_22
+      213: 3219716637861624179
+    second: _100x100turn_22
   - first:
-      213: -3718480072843949332
-    second: _100x100pt2_23
+      213: 5733499583602762442
+    second: _100x100turn_23
   - first:
-      213: -1196552157673262071
-    second: _100x100pt2_24
+      213: -3166853013965578815
+    second: _100x100turn_24
   - first:
-      213: -8486806732307653120
-    second: _100x100pt2_25
+      213: 3761163799827068800
+    second: _100x100turn_25
   - first:
-      213: 6439863179862712639
-    second: _100x100pt2_26
+      213: 3234682082517870961
+    second: _100x100turn_26
   - first:
-      213: -1802542808260186785
-    second: _100x100pt2_27
+      213: 7692630035365579780
+    second: _100x100turn_27
   - first:
-      213: 8425861895942328500
-    second: _100x100pt2_28
+      213: 1963172385803700721
+    second: _100x100turn_28
   - first:
-      213: 4778417065880625956
-    second: _100x100pt2_29
+      213: -2388724700976228527
+    second: _100x100turn_29
+  - first:
+      213: -8706252181726475973
+    second: _100x100turn_30
+  - first:
+      213: -7094645146296959643
+    second: _100x100turn_31
+  - first:
+      213: 5985304627257704989
+    second: _100x100turn_32
+  - first:
+      213: -1639368176923458075
+    second: _100x100turn_33
+  - first:
+      213: 1225764317954136389
+    second: _100x100turn_34
+  - first:
+      213: 5118968826639866505
+    second: _100x100turn_35
+  - first:
+      213: -649614852745236395
+    second: _100x100turn_36
+  - first:
+      213: 3667828008086516136
+    second: _100x100turn_37
+  - first:
+      213: 8270515832460591506
+    second: _100x100turn_38
+  - first:
+      213: 3172170921669785513
+    second: _100x100turn_39
+  - first:
+      213: -1767947210672252808
+    second: _100x100turn_40
+  - first:
+      213: -5880759861693981212
+    second: _100x100turn_41
+  - first:
+      213: -1674260028761767006
+    second: _100x100turn_42
+  - first:
+      213: 6433321051592020486
+    second: _100x100turn_43
+  - first:
+      213: -8344902674968393202
+    second: _100x100turn_44
+  - first:
+      213: -9058140700200031285
+    second: _100x100turn_45
+  - first:
+      213: 1754916570016549396
+    second: _100x100turn_46
+  - first:
+      213: -4812545377903844361
+    second: _100x100turn_47
+  - first:
+      213: -3009365083719932179
+    second: _100x100turn_48
+  - first:
+      213: -720297144679820722
+    second: _100x100turn_49
+  - first:
+      213: 2351248663720391503
+    second: _100x100turn_50
+  - first:
+      213: -6911151119721346208
+    second: _100x100turn_51
+  - first:
+      213: 5880970541945548647
+    second: _100x100turn_52
+  - first:
+      213: 8353648651111503999
+    second: _100x100turn_53
+  - first:
+      213: 4473076882305747331
+    second: _100x100turn_54
+  - first:
+      213: 4566540910011805330
+    second: _100x100turn_55
+  - first:
+      213: -5098735381003103520
+    second: _100x100turn_56
+  - first:
+      213: 511632283949174456
+    second: _100x100turn_57
+  - first:
+      213: 1669443607659843983
+    second: _100x100turn_58
+  - first:
+      213: -3031737061867642120
+    second: _100x100turn_59
+  - first:
+      213: -4546408914331350787
+    second: _100x100turn_60
+  - first:
+      213: 5272864592178458307
+    second: _100x100turn_61
+  - first:
+      213: 436253719281897081
+    second: _100x100turn_62
+  - first:
+      213: 6363155981662457590
+    second: _100x100turn_63
+  - first:
+      213: -4785696278840916693
+    second: _100x100turn_64
+  - first:
+      213: 436920320506806063
+    second: _100x100turn_65
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -138,7 +246,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 50
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -183,11 +291,24 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: _100x100pt2_0
+      name: _100x100turn_0
       rect:
         serializedVersion: 2
         x: 0
@@ -202,14 +323,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8031208774d183f70800000000000000
-      internalID: 9167109234305929992
+      spriteID: 8c6d3606ed2539bb0800000000000000
+      internalID: -4930506051987188024
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _100x100pt2_1
+      name: _100x100turn_1
       rect:
         serializedVersion: 2
         x: 100
@@ -224,14 +345,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 47f6befab04156730800000000000000
-      internalID: 3991618685162450804
+      spriteID: 4308119e74d232ed0800000000000000
+      internalID: -2440056786228510668
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _100x100pt2_2
+      name: _100x100turn_2
       rect:
         serializedVersion: 2
         x: 200
@@ -246,14 +367,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 157cfd39d0116ee70800000000000000
-      internalID: 9144014843435534161
+      spriteID: 33b69617a078b6700800000000000000
+      internalID: 534669459695692595
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _100x100pt2_3
+      name: _100x100turn_3
       rect:
         serializedVersion: 2
         x: 300
@@ -268,14 +389,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 32662564ed1514820800000000000000
-      internalID: 2900689650107704867
+      spriteID: 9495933e46de0f070800000000000000
+      internalID: 8138265544223185225
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _100x100pt2_4
+      name: _100x100turn_4
       rect:
         serializedVersion: 2
         x: 400
@@ -290,14 +411,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8434b883ecfc04710800000000000000
-      internalID: 1675567546000687944
+      spriteID: 51eccf59e858f7d30800000000000000
+      internalID: 4431407405804080661
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _100x100pt2_5
+      name: _100x100turn_5
       rect:
         serializedVersion: 2
         x: 0
@@ -312,14 +433,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c3affed25f7190420800000000000000
-      internalID: 2596633001960929852
+      spriteID: ba844f2bc211cb840800000000000000
+      internalID: 5241082950031001771
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _100x100pt2_6
+      name: _100x100turn_6
       rect:
         serializedVersion: 2
         x: 100
@@ -334,14 +455,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a7bd5490abbd01eb0800000000000000
-      internalID: -4751056014809900166
+      spriteID: 1ae129d5cafb60f20800000000000000
+      internalID: 3388606516668014241
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _100x100pt2_7
+      name: _100x100turn_7
       rect:
         serializedVersion: 2
         x: 200
@@ -356,14 +477,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2e639d699942b6db0800000000000000
-      internalID: -4797700735953717534
+      spriteID: a46b82d2425cc1ec0800000000000000
+      internalID: -3594781643381361078
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _100x100pt2_8
+      name: _100x100turn_8
       rect:
         serializedVersion: 2
         x: 300
@@ -378,14 +499,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d525fd4a79a7fd190800000000000000
-      internalID: -7935489226678775203
+      spriteID: fca3447bdd13f19d0800000000000000
+      internalID: -2801465614868923697
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _100x100pt2_9
+      name: _100x100turn_9
       rect:
         serializedVersion: 2
         x: 400
@@ -400,14 +521,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9e5f12560c4e38a30800000000000000
-      internalID: 4216465191130494441
+      spriteID: 9f236c44f1ff04a30800000000000000
+      internalID: 4197635362472211193
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _100x100pt2_10
+      name: _100x100turn_10
       rect:
         serializedVersion: 2
         x: 0
@@ -422,14 +543,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5f365c9cf5e597b10800000000000000
-      internalID: 1979717276706104309
+      spriteID: 5f735855511c8b530800000000000000
+      internalID: 3871056177098209269
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _100x100pt2_11
+      name: _100x100turn_11
       rect:
         serializedVersion: 2
         x: 100
@@ -444,14 +565,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6a7398ccf6e2dbc90800000000000000
-      internalID: -7152509575486687322
+      spriteID: 99d2803fdcc46e370800000000000000
+      internalID: 8351447006434569625
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _100x100pt2_12
+      name: _100x100turn_12
       rect:
         serializedVersion: 2
         x: 200
@@ -466,14 +587,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 48ed965fb5f229300800000000000000
-      internalID: 257320200719425156
+      spriteID: 5f0ed3e5468ea35e0800000000000000
+      internalID: -1928973972599349003
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _100x100pt2_13
+      name: _100x100turn_13
       rect:
         serializedVersion: 2
         x: 300
@@ -488,14 +609,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 08450017873d8f1d0800000000000000
-      internalID: -3316668611312987008
+      spriteID: 86a594800efe01d60800000000000000
+      internalID: 7859045095252253288
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _100x100pt2_14
+      name: _100x100turn_14
       rect:
         serializedVersion: 2
         x: 400
@@ -510,14 +631,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7778f1ba0ff4e30a0800000000000000
-      internalID: -6899989684003305609
+      spriteID: 67c09490779b17860800000000000000
+      internalID: 7526000373220838518
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _100x100pt2_15
+      name: _100x100turn_15
       rect:
         serializedVersion: 2
         x: 0
@@ -532,14 +653,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 77a8b778f0272b1b0800000000000000
-      internalID: -5642321972118713737
+      spriteID: 588a862b16d742b40800000000000000
+      internalID: 5414590510564681861
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _100x100pt2_16
+      name: _100x100turn_16
       rect:
         serializedVersion: 2
         x: 100
@@ -554,14 +675,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: acf629058cff6bda0800000000000000
-      internalID: -5929270623576363062
+      spriteID: bd31d49177d11cdb0800000000000000
+      internalID: -4773501732673219621
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _100x100pt2_17
+      name: _100x100turn_17
       rect:
         serializedVersion: 2
         x: 200
@@ -576,14 +697,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 007e20bdebf852ed0800000000000000
-      internalID: -2439385573270296832
+      spriteID: 8e848f17cc98c6030800000000000000
+      internalID: 3489315322483722472
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _100x100pt2_18
+      name: _100x100turn_18
       rect:
         serializedVersion: 2
         x: 300
@@ -598,8 +719,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 098a91e952fcaa870800000000000000
-      internalID: 8694989791065385104
+      spriteID: d6917a515e904be60800000000000000
+      internalID: 7977011719495424365
       vertices: []
       indices: 
       edges: []
@@ -608,7 +729,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: eeb307bb2a695f549ade9a0b71402127
+    spriteID: 10ebea998c668924896fd4736fd76684
     internalID: 0
     vertices: []
     indices: 
@@ -618,25 +739,25 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      _100x100pt2_0: 9167109234305929992
-      _100x100pt2_1: 3991618685162450804
-      _100x100pt2_10: 1979717276706104309
-      _100x100pt2_11: -7152509575486687322
-      _100x100pt2_12: 257320200719425156
-      _100x100pt2_13: -3316668611312987008
-      _100x100pt2_14: -6899989684003305609
-      _100x100pt2_15: -5642321972118713737
-      _100x100pt2_16: -5929270623576363062
-      _100x100pt2_17: -2439385573270296832
-      _100x100pt2_18: 8694989791065385104
-      _100x100pt2_2: 9144014843435534161
-      _100x100pt2_3: 2900689650107704867
-      _100x100pt2_4: 1675567546000687944
-      _100x100pt2_5: 2596633001960929852
-      _100x100pt2_6: -4751056014809900166
-      _100x100pt2_7: -4797700735953717534
-      _100x100pt2_8: -7935489226678775203
-      _100x100pt2_9: 4216465191130494441
+      _100x100turn_0: -4930506051987188024
+      _100x100turn_1: -2440056786228510668
+      _100x100turn_10: 3871056177098209269
+      _100x100turn_11: 8351447006434569625
+      _100x100turn_12: -1928973972599349003
+      _100x100turn_13: 7859045095252253288
+      _100x100turn_14: 7526000373220838518
+      _100x100turn_15: 5414590510564681861
+      _100x100turn_16: -4773501732673219621
+      _100x100turn_17: 3489315322483722472
+      _100x100turn_18: 7977011719495424365
+      _100x100turn_2: 534669459695692595
+      _100x100turn_3: 8138265544223185225
+      _100x100turn_4: 4431407405804080661
+      _100x100turn_5: 5241082950031001771
+      _100x100turn_6: 3388606516668014241
+      _100x100turn_7: -3594781643381361078
+      _100x100turn_8: -2801465614868923697
+      _100x100turn_9: 4197635362472211193
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
