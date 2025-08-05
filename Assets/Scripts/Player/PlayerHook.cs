@@ -8,7 +8,7 @@ public class PlayerHook : MonoBehaviour
 
     public LineRenderer hookLineRenderer;
 
-    public GameObject hookTarget;
+    private GameObject hookTarget;
 
     private GameObject[] hookObjects;
 
@@ -20,6 +20,7 @@ public class PlayerHook : MonoBehaviour
 
     private void Start()
     {
+        hookTarget = GameObject.FindGameObjectWithTag("HookTarget");
         hookObjects = GameObject.FindGameObjectsWithTag("Hook");
 
         foreach (GameObject hook in hookObjects)
