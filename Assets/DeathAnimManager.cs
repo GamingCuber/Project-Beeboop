@@ -73,6 +73,14 @@ public class DeathAnimManager : MonoBehaviour
     {
         Rigidbody2D rb = g.GetComponent<Rigidbody2D>();
 
+        SpriteRenderer sr = g.GetComponent<SpriteRenderer>();
+
+        Color32 c = sr.color;
+
+        sr.color = new Color32(255, 255, 255, 255);
+
+        g.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+
         float timer = 0;
 
         while (timer < pieceLifetime)
@@ -80,6 +88,18 @@ public class DeathAnimManager : MonoBehaviour
             timer += Time.deltaTime;
 
             rb.gravityScale = Mathf.Lerp(1, maxGravScale, timer / pieceLifetime);
+
+            if (timer > pieceLifetime/2)
+            {
+                Debug.Log((timer - (pieceLifetime / 2)) / (pieceLifetime / 2));
+                //color fade to black
+                byte a = (byte)Mathf.Lerp(255, 0, (timer - (pieceLifetime / 2)) / (pieceLifetime / 2));
+                sr.color = new Color32(a,a,a,255);
+
+                //scale to be teeny
+                float scale = Mathf.Lerp(0.2f, 0f, (timer - (pieceLifetime / 2)) / (pieceLifetime / 2));
+                g.transform.localScale = new Vector3(scale, scale, scale);
+            }
 
             yield return new WaitForEndOfFrame();
         }

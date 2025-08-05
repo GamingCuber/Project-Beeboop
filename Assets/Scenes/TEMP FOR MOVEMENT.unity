@@ -1221,7 +1221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piecePre: {fileID: 4656014686642323462, guid: 0e76bcf90bdf948a487c5cba3a753d7c, type: 3}
   pieceAmt: 7
-  pieceLifetime: 1
+  pieceLifetime: 2
   maxXForce: 7
   maxYForce: 10
   maxGravScale: 5
