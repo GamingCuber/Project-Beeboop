@@ -18,6 +18,7 @@ public class LevelTransitionManager : MonoBehaviour
     {
         if (collision.transform.CompareTag("Player"))
         {
+            GameDataManager.Instance.updateTime(GameTimer.Instance.getTimeLeft());
             LevelTransition.Instance.doTransition(nextSceneName);
             MusicManager.Instance.transitionSong(nextSongName);
         }

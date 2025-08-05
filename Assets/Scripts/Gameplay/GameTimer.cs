@@ -7,7 +7,9 @@ public class GameTimer : MonoBehaviour
 {
     public static GameTimer Instance;
 
-    public int time; //TOTAL in seconds
+    private float time;
+
+    private float timeLeft = 0;
 
     public TMP_Text timerText;
 
@@ -27,8 +29,6 @@ public class GameTimer : MonoBehaviour
 
     private IEnumerator startTimer()
     {
-        float timeLeft = time;
-
         while (timeLeft > 0)
         {
             timeLeft -= Time.deltaTime;
@@ -83,12 +83,20 @@ public class GameTimer : MonoBehaviour
         SceneManager.LoadScene("LoseMenu");
     }
 
+    public float getTimeLeft()
+    {
+        return timeLeft;
+    }
+
     private IEnumerator waitForGears()
     {
         while (TimerGearManager.Instance == null)
         {
             yield return new WaitForEndOfFrame();
         }
+
+        timeLeft = GameDataManager.Instance.getTimeLeft();
+        time = GameDataManager.Instance.getTotalTime();
 
         StartCoroutine(startTimer());
     }
