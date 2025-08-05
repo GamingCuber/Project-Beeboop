@@ -73,6 +73,11 @@ public class PlayerMove : MonoBehaviour
 
                         if (PlayerStateManager.Instance.getState().isGrounded)
                         {
+                            VFXManager.Instance.playVFX("Turn");
+                        }
+
+                        if (PlayerStateManager.Instance.getState().isGrounded)
+                        {
                             rb.linearVelocityX /= 4;
                         }
                         else if (PlayerStateManager.Instance.getState().isJumping)
