@@ -72,7 +72,7 @@ public class PlayerDash : MonoBehaviour
         rb.constraints = RigidbodyConstraints2D.FreezePositionY;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
-        rb.AddForce(dashDir * PlayerDataManager.Instance.getData().dashStr, ForceMode2D.Impulse);
+        rb.AddForce(dashDir * PlayerDataManager.Instance.getData().dashStrength, ForceMode2D.Impulse);
 
         DashAfterimage.Instance.doAfterimage();
 
@@ -100,7 +100,7 @@ public class PlayerDash : MonoBehaviour
     {
         float timer = 0;
 
-        float totalTime = PlayerDataManager.Instance.getData().dashCDTime;
+        float totalTime = PlayerDataManager.Instance.getData().dashCooldownTime;
 
         while (timer <= totalTime)
         {
