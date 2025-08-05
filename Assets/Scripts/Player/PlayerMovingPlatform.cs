@@ -1,11 +1,14 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using System;
 
 public class PlayerMovingPlatform : MonoBehaviour
 {
     private bool isAttached = false;
     private MovingPlatform curPlat;
+    [SerializeField]
+    private float distanceFromPlat;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -42,7 +45,7 @@ public class PlayerMovingPlatform : MonoBehaviour
 
     private void movePlayer()
     {
-        if (isAttached)
+        if (isAttached && Math.Abs(curPlat.transform.position.y - transform.position.y) >= distanceFromPlat)
         {
             PlayerStateManager.Instance.getState().isFalling = false;
             gameObject.GetComponent<Rigidbody2D>().linearVelocityY = curPlat.platformVeloY;
