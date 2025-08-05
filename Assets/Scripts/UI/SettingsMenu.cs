@@ -181,6 +181,8 @@ public class SettingsMenu : MonoBehaviour
     {
         slider.value = PlayerPrefs.GetInt(prefName, 100);
         input.text = PlayerPrefs.GetInt(prefName, 100).ToString();
+
+        MusicManager.Instance.volumeUpdated();
     }
 
     public void hideMenu()
