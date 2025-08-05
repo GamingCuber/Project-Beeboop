@@ -25,9 +25,14 @@ public class GameDataManager : MonoBehaviour
         data["Deaths"] = 0;
     }
 
-    public float getTime()
+    public float getTimeLeft()
     {
         return data["Time"];
+    }
+
+    public float getTotalTime()
+    {
+        return totalTime;
     }
 
     public void updateTime(float time)

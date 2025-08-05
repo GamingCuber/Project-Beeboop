@@ -29,8 +29,6 @@ public class GameTimer : MonoBehaviour
 
     private IEnumerator startTimer()
     {
-        timeLeft = time;
-
         while (timeLeft > 0)
         {
             timeLeft -= Time.deltaTime;
@@ -97,7 +95,9 @@ public class GameTimer : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
-        time = GameDataManager.Instance.getTime();
+        timeLeft = GameDataManager.Instance.getTimeLeft();
+        time = GameDataManager.Instance.getTotalTime();
+
         StartCoroutine(startTimer());
     }
 }
