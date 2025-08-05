@@ -166,7 +166,11 @@ public class PauseMenu : MonoBehaviour
         SoundManager.Instance.playSoundFX("crtOn", player.transform.position, 0, 10, 1, true);
         SoundManager.Instance.playLoopedSound("crtAmbience", player.transform.position, 0, 10, 1f, out int index);
         loopedInt = index;
-        URPVOlume.enabled = true;
+
+        if (URPVOlume != null)
+        {
+            URPVOlume.enabled = true;
+        }
     }
 
     private void hideMenu()
@@ -177,7 +181,11 @@ public class PauseMenu : MonoBehaviour
         menuActive = false;
         SoundManager.Instance.playSoundFX("crtOff", player.transform.position, 0, 10, 1, true);
         SoundManager.Instance.stopLoopSound(loopedInt);
-        URPVOlume.enabled = false;
+
+        if (URPVOlume != null)
+        {
+            URPVOlume.enabled = false;
+        }
     }
 
     private void resetMenu()

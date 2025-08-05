@@ -16,4 +16,4 @@ MonoBehaviour:
   description: No Information
   channelNumber: 02
   backgroundImg: {fileID: -7727679585812335486, guid: 64f1ea29601d74991b42ef5c8202b60a, type: 3}
-  channelLogo: {fileID: -5466425049178438109, guid: a993c2b874a78d343b92e85cb453a005, type: 3}
+  channelLogo: {fileID: 2678906242164913133, guid: 7b15478208f40df428736ed4c6c7da97, type: 3}

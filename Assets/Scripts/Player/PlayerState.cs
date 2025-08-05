@@ -16,4 +16,5 @@ public class PlayerState : ScriptableObject
     public bool canDash = false;
     public bool canDoubleJump = false;
     public bool canHook = false;
+    public bool gameLost = false;
 }

@@ -33,14 +33,14 @@ public class LevelTransition : MonoBehaviour
     {
         StartCoroutine(doTransitionCo(scene));
     }
-    
+
     private IEnumerator doTransitionCo(string scene)
     {
         transitionObj.SetActive(true);
 
         anim.clip = fadeInAnim;
         anim.Play();
-        
+
         yield return new WaitForSecondsRealtime(anim.clip.length);
 
         SceneManager.LoadScene(scene);

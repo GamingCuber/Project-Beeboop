@@ -15,6 +15,8 @@ public class DashAfterimage : MonoBehaviour
 
     private GameObject player;
 
+    private Coroutine co;
+
     private void Start()
     {
         if (Instance == null)
@@ -34,9 +36,14 @@ public class DashAfterimage : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
+    public void cancelAfterImage()
+    {
+        StopCoroutine(co);
+    }
+
     public void doAfterimage()
     {
-        StartCoroutine(afterimageCo());
+        co = StartCoroutine(afterimageCo());
     }
 
     private IEnumerator afterimageCo() //to actually like 'spawn' the afterimages

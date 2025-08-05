@@ -11,7 +11,8 @@ public class PlayerDash : MonoBehaviour
 
     void Update()
     {
-        if (PlayerInputs.Instance.pressingDashButton && debounce == false && PlayerStateManager.Instance.getState().canDash && !onCooldown)
+        //need this to be dashbuttondown
+        if (PlayerInputs.Instance.playerController.Player.Dash.WasPressedThisFrame() && debounce == false && PlayerStateManager.Instance.getState().canDash && !onCooldown)
         {
             PlayerJump.Instance.cancelJump(false);
             StartCoroutine(DashCoroutine());
@@ -55,6 +56,7 @@ public class PlayerDash : MonoBehaviour
         }
 
         dashDir.Normalize();
+        dashDir.y *= 5f;
 
         if (dashDir == Vector2.zero)
         {
@@ -70,7 +72,7 @@ public class PlayerDash : MonoBehaviour
         rb.constraints = RigidbodyConstraints2D.FreezePositionY;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
-        rb.AddForce(dashDir * PlayerDataManager.Instance.getData().dashStr, ForceMode2D.Impulse);
+        rb.AddForce(dashDir * PlayerDataManager.Instance.getData().dashStrength, ForceMode2D.Impulse);
 
         DashAfterimage.Instance.doAfterimage();
 
@@ -80,13 +82,14 @@ public class PlayerDash : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
+        PlayerStateManager.Instance.getState().isDashing = false;
+        PlayerStateManager.Instance.getState().isFalling = true;
+
         rb.constraints = RigidbodyConstraints2D.FreezePositionY;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
         SoundManager.Instance.playPlayerSound("dash");
         PlayerMove.Instance.startMovement();
-        PlayerStateManager.Instance.getState().isDashing = false;
-        PlayerStateManager.Instance.getState().isFalling = true;
 
         StartCoroutine(cooldownTimer());
 
@@ -95,11 +98,13 @@ public class PlayerDash : MonoBehaviour
 
     private IEnumerator cooldownTimer()
     {
-        int frames = 0;
+        float timer = 0;
 
-        while (frames < PlayerDataManager.Instance.getData().dashCDFrames)
+        float totalTime = PlayerDataManager.Instance.getData().dashCooldownTime;
+
+        while (timer <= totalTime)
         {
-            frames++;
+            timer += Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
 

@@ -5,6 +5,8 @@ public class LevelTransitionManager : MonoBehaviour
 {
     public string nextSceneName;
 
+    public string nextSongName;
+
     private Collider2D coll;
 
     private void Start()
@@ -17,6 +19,7 @@ public class LevelTransitionManager : MonoBehaviour
         if (collision.transform.CompareTag("Player"))
         {
             LevelTransition.Instance.doTransition(nextSceneName);
+            MusicManager.Instance.transitionSong(nextSongName);
         }
     }
 }

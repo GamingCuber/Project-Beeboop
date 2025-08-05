@@ -12,27 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df1cfc8610cad45bd9b50d33af477a02, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  playerAcc: 35
-  playerMaxSpd: 13
-  coyoteFrames: 9
-  jumpAmt: 1
-  jumpHeight: 4
-  jumpTime: 0.35
-  jumpApexTime: 0.15
-  percentApex: 0
   apexDampening: 25
-  jumpFallGrav: 3.5
-  dashStr: 20
-  dashTime: 0.15
-  dashCDFrames: 20
-  playerDirection: right
-  hookDistanceLimit: 16
-  hookCancelDistance: 1.5
-  hookSpeed: 60
-  hookPointCD: 1
-  dampeningPostHook: 0
+  bounceForce: 1000
+  coyoteTime: 9
   maxHorizontalSpeed: 30
   maxNegativeVerticalSpeed: 30
   maxPositiveVerticalSpeed: 30
-  bounceForce: 1000
-  current_checkpoint: {fileID: 0}
+  playerAcceleration: 35
+  playerDirection: right
+  playerMaxSpd: 13
+  dashCooldownTime: 5
+  dashStrength: 15
+  dashTime: 0.15
+  dampeningPostHook: 2
+  hookCancelDistance: 1.5
+  hookDistanceLimit: 16
+  hookPointCooldown: 5
+  hookSpeed: 60
+  jumpApexTime: 0.15
+  jumpAmt: 1
+  jumpFallGrav: 3.5
+  jumpHeight: 4
+  jumpTime: 0.35
+  minJumpTime: 0.075
+  percentApex: 0
+  currentCheckpoint: {fileID: 0}
