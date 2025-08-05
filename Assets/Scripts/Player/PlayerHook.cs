@@ -124,7 +124,7 @@ public class PlayerHook : MonoBehaviour
     private IEnumerator hookCooldownCo(GameObject hook)
     {
         float timer = 0;
-        float totalTime = PlayerDataManager.Instance.getData().hookPointCD;
+        float totalTime = PlayerDataManager.Instance.getData().hookPointCooldown;
 
         hookCooldowns[hook] = true;
 
@@ -184,7 +184,7 @@ public class PlayerHook : MonoBehaviour
             {
                 break;
             }
-            
+
             if (!hookLineRenderer.enabled)
             {
                 hookLineRenderer.enabled = true;
@@ -248,7 +248,7 @@ public class PlayerHook : MonoBehaviour
         while (Vector3.Distance(transform.position, hookReturnPos) > 0.5)
         {
             returnTime += Time.deltaTime;
-            
+
             hookReturnPos = Vector3.MoveTowards(hookReturnPos, transform.position, hookReturnSpeed * (returnTime * 10) * Time.deltaTime);
             hookLineRenderer.SetPosition(0, transform.position);
             hookLineRenderer.SetPosition(1, hookReturnPos);

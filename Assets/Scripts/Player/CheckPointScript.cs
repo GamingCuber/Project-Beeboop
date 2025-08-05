@@ -19,7 +19,7 @@ public class CheckPointScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Checkpoint"))
         {
-            PlayerDataManager.Instance.getData().current_checkpoint = collision.gameObject;
+            PlayerDataManager.Instance.getData().currentCheckpoint = collision.gameObject;
             Debug.Log("Collided with a checkpoint");
 
 
@@ -27,5 +27,5 @@ public class CheckPointScript : MonoBehaviour
     }
 
 
-    
+
 }
