@@ -42,5 +42,9 @@ public class PlayerStateManager : MonoBehaviour
         {
             state.isMoving = false;
         }
+        if (PlayerInputs.Instance.playerController.Player.Escape.WasPressedThisFrame())
+            Instance.getState().pausedGame = true;
+        else
+            Instance.getState().pausedGame = false;
     }
 }

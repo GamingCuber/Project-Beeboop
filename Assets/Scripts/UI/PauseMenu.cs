@@ -436,11 +436,14 @@ public class PauseMenu : MonoBehaviour
 
     private void switchEffect()
     {
+        if (Random.Range(0, 3) == 0)
         StartCoroutine(switchEffectCo());
     }
 
     private IEnumerator switchEffectCo()
     {
+        SoundManager.Instance.playSoundFX("staticSwitch", player.transform.position, 0, 10, 1, true);
+
         float moveYDist = 200;
 
         float minX = 950;

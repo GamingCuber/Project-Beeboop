@@ -25,6 +25,7 @@ public class SoundManager: MonoBehaviour
     public AudioClip crtAmbience;
     public AudioClip crtOff;
     public AudioClip crtClick;
+    public AudioClip staticSwitch;
 
     void Start()
     {
@@ -41,6 +42,8 @@ public class SoundManager: MonoBehaviour
         sfx_dictionary.Add("crtAmbience", crtAmbience);
         sfx_dictionary.Add("crtOff", crtOff);
         sfx_dictionary.Add("crtClick", crtClick);
+        sfx_dictionary.Add("staticSwitch", staticSwitch);
+
 
         audioSources = new GameObject[soundPoolAmt];
 
@@ -51,7 +54,7 @@ public class SoundManager: MonoBehaviour
             audioSources[i] = newSource;
         }
     }
-   
+
     public void playPlayerSound(string key)
     {
         ourAudioSource.PlayOneShot(sfx_dictionary[key]);
