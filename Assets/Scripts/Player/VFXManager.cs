@@ -73,7 +73,7 @@ public class VFXManager : MonoBehaviour
             vfxGO.transform.localEulerAngles = new Vector3(0f, 0f, 0f);
         }
 
-        vfxGO.transform.position = player.transform.position + Vector3.down * player.GetComponent<CapsuleCollider2D>().size.y/3;
+        vfxGO.transform.position = player.transform.position + Vector3.down * 4/5;
 
         vfxGO.SetActive(true);
         anim.SetTrigger(type);
