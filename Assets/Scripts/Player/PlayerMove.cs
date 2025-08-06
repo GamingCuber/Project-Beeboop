@@ -39,7 +39,7 @@ public class PlayerMove : MonoBehaviour
 
 
 
-        if (!PlayerStateManager.Instance.getState().isHooked && !PlayerStateManager.Instance.getState().isDashing && !isPaused)
+        if (!PlayerStateManager.Instance.getState().isHooked && !PlayerStateManager.Instance.getState().isDashing && !isPaused && !PlayerStateManager.Instance.getState().isDead)
         {
             //to STOP player
             if (!PlayerStateManager.Instance.getState().isMoving || //if theyre not choosing a direction to move
@@ -70,6 +70,11 @@ public class PlayerMove : MonoBehaviour
                     if (PlayerInputs.Instance.pressingLeftButton && PlayerInputs.Instance.pressingRightButton)
                     {
                         dirSwitched = true;
+
+                        if (PlayerStateManager.Instance.getState().isGrounded)
+                        {
+                            VFXManager.Instance.playVFX("Turn");
+                        }
 
                         if (PlayerStateManager.Instance.getState().isGrounded)
                         {

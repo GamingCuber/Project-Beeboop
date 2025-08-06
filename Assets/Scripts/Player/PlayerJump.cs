@@ -57,6 +57,11 @@ public class PlayerJump : MonoBehaviour
 
         if (PlayerInputs.Instance.playerController.Player.Jump.WasPressedThisFrame() && jumpsLeft > 0 && (canJump || isJumping))
         {
+            if (PlayerStateManager.Instance.getState().canDoubleJump && jumpsLeft == 1)
+            {
+                VFXManager.Instance.playVFX("DoubleJump");
+            }
+
             jump();
         }
         else if (PlayerInputs.Instance.playerController.Player.Jump.WasPressedThisFrame() && !canJump && jumpsLeft == 2)

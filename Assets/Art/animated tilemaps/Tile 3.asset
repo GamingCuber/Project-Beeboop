@@ -12,9 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
   m_Name: Tile 3
   m_EditorClassIdentifier: 
-  m_AnimatedSprites: []
-  m_MinSpeed: 1
-  m_MaxSpeed: 1
+  m_AnimatedSprites:
+  - {fileID: 350316976311624783, guid: d82bc55080bca5e498d29e02b5bc3ac6, type: 3}
+  - {fileID: 7533511163008067194, guid: d82bc55080bca5e498d29e02b5bc3ac6, type: 3}
+  - {fileID: -893642887677788871, guid: d82bc55080bca5e498d29e02b5bc3ac6, type: 3}
+  - {fileID: -4020275202410283942, guid: d82bc55080bca5e498d29e02b5bc3ac6, type: 3}
+  - {fileID: -5565302918165741895, guid: d82bc55080bca5e498d29e02b5bc3ac6, type: 3}
+  - {fileID: 252196106, guid: d82bc55080bca5e498d29e02b5bc3ac6, type: 3}
+  - {fileID: 1077291498, guid: d82bc55080bca5e498d29e02b5bc3ac6, type: 3}
+  - {fileID: 2129730488, guid: d82bc55080bca5e498d29e02b5bc3ac6, type: 3}
+  - {fileID: -1582663755, guid: d82bc55080bca5e498d29e02b5bc3ac6, type: 3}
+  - {fileID: -939397730, guid: d82bc55080bca5e498d29e02b5bc3ac6, type: 3}
+  - {fileID: -1641715408, guid: d82bc55080bca5e498d29e02b5bc3ac6, type: 3}
+  - {fileID: -108539588, guid: d82bc55080bca5e498d29e02b5bc3ac6, type: 3}
+  - {fileID: 1302148460, guid: d82bc55080bca5e498d29e02b5bc3ac6, type: 3}
+  - {fileID: -1230883262, guid: d82bc55080bca5e498d29e02b5bc3ac6, type: 3}
+  - {fileID: -192995012, guid: d82bc55080bca5e498d29e02b5bc3ac6, type: 3}
+  - {fileID: -1760436951, guid: d82bc55080bca5e498d29e02b5bc3ac6, type: 3}
+  m_MinSpeed: 20
+  m_MaxSpeed: 20
   m_AnimationStartTime: 0
   m_AnimationStartFrame: 0
   m_TileColliderType: 0
