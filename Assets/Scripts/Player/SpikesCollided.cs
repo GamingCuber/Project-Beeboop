@@ -19,6 +19,11 @@ public class SpikesCollided : MonoBehaviour
     void death()
     {
         RespawnScript.Instance.respawntocheckpoint();
+        Invoke(nameof(giveInputs), 0.5f);
+    }
+
+    void giveInputs()
+    {
         PlayerStateManager.Instance.getState().isDead = false;
     }
 }

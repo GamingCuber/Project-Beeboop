@@ -19,6 +19,8 @@ public class DeathAnimManager : MonoBehaviour
 
     public float maxGravScale;
 
+    public GameObject transitionScreen;
+
     private GameObject player;
     
     private void Start()
@@ -42,6 +44,7 @@ public class DeathAnimManager : MonoBehaviour
 
     public void doAnimation()
     {
+        StartCoroutine(doTransition());
         StartCoroutine(flingShrapnel());
     }
 
@@ -105,6 +108,27 @@ public class DeathAnimManager : MonoBehaviour
         }
 
         g.SetActive(false);
+        yield break;
+    }
+
+    private IEnumerator doTransition()
+    {
+        Animator anim = transitionScreen.GetComponent<Animator>();
+
+
+        yield return new WaitForSecondsRealtime(0.25f);
+
+        anim.SetTrigger("Close");
+
+        yield return new WaitForSecondsRealtime(1f);
+
+        anim.SetTrigger("Back");
+        anim.SetTrigger("Open");
+
+        yield return new WaitForSecondsRealtime(1f);
+
+        anim.SetTrigger("Back");
+
         yield break;
     }
 }
