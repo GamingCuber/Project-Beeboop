@@ -108,7 +108,7 @@ public class PlayerMove : MonoBehaviour
                 }
 
 
-                rb.AddForceX(PlayerDataManager.Instance.getData().playerAcc * AFMult * dir, ForceMode2D.Force);
+                rb.AddForceX(PlayerDataManager.Instance.getData().playerAcceleration * AFMult * dir, ForceMode2D.Force);
             }
         }
     }

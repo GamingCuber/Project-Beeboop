@@ -12,6 +12,7 @@ TagManager:
   - MovingPlatform
   - Conveyor
   - EventSystem
+  - HookTarget
   layers:
   - Default
   - TransparentFX

@@ -14,7 +14,7 @@ public class RespawnScript : MonoBehaviour
 
     public void respawntocheckpoint()
     {
-        transform.position = PlayerDataManager.Instance.getData().current_checkpoint.gameObject.transform.position;
+        transform.position = PlayerDataManager.Instance.getData().currentCheckpoint.gameObject.transform.position;
 
 
 

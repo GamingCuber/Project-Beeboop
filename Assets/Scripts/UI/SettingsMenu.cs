@@ -3,6 +3,8 @@ using UnityEngine.UI;
 using System.Collections;
 using TMPro;
 using UnityEngine.EventSystems;
+using System;
+using UnityEngine.Rendering;
 
 //INPUTS N STUFF HAVE SENSITIVE STRINGS!!! CUZ IM TOO LAZY TO MAKE IT WORK BETTER
 
@@ -14,7 +16,7 @@ using UnityEngine.EventSystems;
 
 public class SettingsMenu : MonoBehaviour
 {
-    public GameObject MasterVolObj;
+    public GameObject MasterVolumeVolObj;
 
     public GameObject MusicVolObj;
 
@@ -24,65 +26,47 @@ public class SettingsMenu : MonoBehaviour
     private EventSystem eventSystem;
 
 
+
     private void Awake()
     {
         Transform setting = transform.GetChild(2);
 
-        MasterVolObj = setting.GetChild(1).gameObject;
+        MasterVolumeVolObj = setting.GetChild(1).gameObject;
         MusicVolObj = setting.GetChild(2).gameObject;
         SFXVolObj = setting.GetChild(3).gameObject;
 
         eventSystem = GameObject.FindGameObjectWithTag("EventSystem").GetComponent<EventSystem>();
-        eventSystem.SetSelectedGameObject(MasterVolObj.transform.GetChild(2).gameObject);
+        eventSystem.SetSelectedGameObject(MasterVolumeVolObj.transform.GetChild(2).gameObject);
         Debug.Log(eventSystem);
     }
 
-    //THIS IS ACTUALLY BUNS OK BUT IT SHOULD WORK!
-    public void settingChanged(string typeAndPref)
+    public void slideMasterVolume()
     {
-        if (!loading)
-        {
-            string inputType = typeAndPref.Substring(0, 5);
-            string prefName = typeAndPref.Substring(5, typeAndPref.Length - 5);
+        GameObject changed = MasterVolumeVolObj;
+        Slider slider = changed.transform.GetChild(0).GetComponent<Slider>();
+        TMP_InputField input = changed.transform.GetChild(1).GetComponent<TMP_InputField>();
+        var newAmount = Mathf.RoundToInt(slider.value);
 
-            GameObject changed = null;
+        PlayerPrefs.SetInt("MasterVolume", newAmount);
 
-            int newVal = 0;
+        updateVolumeUI(slider, input, "MasterVolume");
+    }
 
-            switch (prefName)
-            {
-                case "MasterVolume":
-                    changed = MasterVolObj;
-                    break;
-                case "MusicVolume":
-                    changed = MusicVolObj;
-                    break;
-                case "SFXVolume":
-                    changed = SFXVolObj;
-                    break;
-            }
+    public void inputMasterVolume()
+    {
+        GameObject changed = MasterVolumeVolObj;
+        Slider slider = changed.transform.GetChild(0).GetComponent<Slider>();
+        TMP_InputField input = changed.transform.GetChild(1).GetComponent<TMP_InputField>();
+        int newAmount = int.Parse(input.text);
 
-            Slider slider = changed.transform.GetChild(0).GetComponent<Slider>();
-            TMP_InputField input = changed.transform.GetChild(1).GetComponent<TMP_InputField>();
+        PlayerPrefs.SetInt("MasterVolume", newAmount);
 
-            if (inputType == "slide")
-            {
-                newVal = Mathf.RoundToInt(slider.value);
-                PlayerPrefs.SetInt(prefName, newVal);
-            }
-            else if (inputType == "input")
-            {
-                newVal = int.Parse(input.text);
-                PlayerPrefs.SetInt(prefName, newVal);
-            }
-
-            updateVolumeUI(slider, input, prefName);
-        }
+        updateVolumeUI(slider, input, "MasterVolume");
     }
 
     public void changeMasterVolume(int amount)
     {
-        GameObject changed = MasterVolObj;
+        GameObject changed = MasterVolumeVolObj;
         Slider slider = changed.transform.GetChild(0).GetComponent<Slider>();
         TMP_InputField input = changed.transform.GetChild(1).GetComponent<TMP_InputField>();
         var newAmount = PlayerPrefs.GetInt("MasterVolume") + amount;
@@ -99,6 +83,30 @@ public class SettingsMenu : MonoBehaviour
 
         updateVolumeUI(slider, input, "MasterVolume");
 
+    }
+
+    public void slideMusicVolume()
+    {
+        GameObject changed = MusicVolObj;
+        Slider slider = changed.transform.GetChild(0).GetComponent<Slider>();
+        TMP_InputField input = changed.transform.GetChild(1).GetComponent<TMP_InputField>();
+        var newAmount = Mathf.RoundToInt(slider.value);
+
+        PlayerPrefs.SetInt("MusicVolume", newAmount);
+
+        updateVolumeUI(slider, input, "MusicVolume");
+    }
+
+    public void inputMusicVolume()
+    {
+        GameObject changed = MusicVolObj;
+        Slider slider = changed.transform.GetChild(0).GetComponent<Slider>();
+        TMP_InputField input = changed.transform.GetChild(1).GetComponent<TMP_InputField>();
+        int newAmount = int.Parse(input.text);
+
+        PlayerPrefs.SetInt("MusicVolume", newAmount);
+
+        updateVolumeUI(slider, input, "MusicVolume");
     }
     public void changeMusicVolume(int amount)
     {
@@ -120,6 +128,32 @@ public class SettingsMenu : MonoBehaviour
 
         updateVolumeUI(slider, input, "MusicVolume");
 
+    }
+
+    public void slideSFXVolume()
+    {
+        GameObject changed = SFXVolObj;
+        Slider slider = changed.transform.GetChild(0).GetComponent<Slider>();
+        TMP_InputField input = changed.transform.GetChild(1).GetComponent<TMP_InputField>();
+
+        var newAmount = Mathf.RoundToInt(slider.value);
+
+        PlayerPrefs.SetInt("SFXVolume", newAmount);
+
+        updateVolumeUI(slider, input, "SFXVolume");
+    }
+
+    public void inputSFXVolume()
+    {
+        GameObject changed = SFXVolObj;
+        Slider slider = changed.transform.GetChild(0).GetComponent<Slider>();
+        TMP_InputField input = changed.transform.GetChild(1).GetComponent<TMP_InputField>();
+
+        int newAmount = int.Parse(input.text);
+
+        PlayerPrefs.SetInt("SFXVolume", newAmount);
+
+        updateVolumeUI(slider, input, "SFXVolume");
     }
 
     public void changeSFXVolume(int amount)
@@ -147,6 +181,8 @@ public class SettingsMenu : MonoBehaviour
     {
         slider.value = PlayerPrefs.GetInt(prefName, 100);
         input.text = PlayerPrefs.GetInt(prefName, 100).ToString();
+
+        MusicManager.Instance.volumeUpdated();
     }
 
     public void hideMenu()
@@ -169,8 +205,8 @@ public class SettingsMenu : MonoBehaviour
         Slider slider;
         TMP_InputField input;
 
-        slider = MasterVolObj.transform.GetChild(0).GetComponent<Slider>();
-        input = MasterVolObj.transform.GetChild(1).GetComponent<TMP_InputField>();
+        slider = MasterVolumeVolObj.transform.GetChild(0).GetComponent<Slider>();
+        input = MasterVolumeVolObj.transform.GetChild(1).GetComponent<TMP_InputField>();
         updateVolumeUI(slider, input, "MasterVolume");
 
         slider = MusicVolObj.transform.GetChild(0).GetComponent<Slider>();
