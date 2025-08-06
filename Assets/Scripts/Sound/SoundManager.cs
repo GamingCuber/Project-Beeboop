@@ -26,6 +26,7 @@ public class SoundManager: MonoBehaviour
     public AudioClip crtOff;
     public AudioClip crtClick;
     public AudioClip staticSwitch;
+    public AudioClip hook;
 
     void Start()
     {
@@ -38,6 +39,7 @@ public class SoundManager: MonoBehaviour
         sfx_dictionary.Add("fall", fall);
         sfx_dictionary.Add("Jump", jump);
         sfx_dictionary.Add("Test", test);
+        sfx_dictionary.Add("Hook", hook);
         sfx_dictionary.Add("crtOn", crtOn);
         sfx_dictionary.Add("crtAmbience", crtAmbience);
         sfx_dictionary.Add("crtOff", crtOff);
