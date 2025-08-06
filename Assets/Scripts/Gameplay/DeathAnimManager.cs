@@ -113,8 +113,9 @@ public class DeathAnimManager : MonoBehaviour
 
     private IEnumerator doTransition()
     {
-        Animator anim = transitionScreen.GetComponent<Animator>();
+        transitionScreen.SetActive(true);
 
+        Animator anim = transitionScreen.GetComponent<Animator>();
 
         yield return new WaitForSecondsRealtime(0.25f);
 
@@ -128,6 +129,7 @@ public class DeathAnimManager : MonoBehaviour
         yield return new WaitForSecondsRealtime(1f);
 
         anim.SetTrigger("Back");
+        transitionScreen.SetActive(false);
 
         yield break;
     }
