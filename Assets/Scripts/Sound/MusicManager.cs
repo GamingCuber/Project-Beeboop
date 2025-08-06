@@ -122,6 +122,6 @@ public class MusicManager : MonoBehaviour
 
     private void calculateMaxVolume()
     {
-        maxVolume = (float)PlayerPrefs.GetInt("MasterVolume", 100)/100 * (float)PlayerPrefs.GetInt("MusicVolume", 100)/100;
+        maxVolume = 0.35f * (float)PlayerPrefs.GetInt("MasterVolume", 100)/100 * (float)PlayerPrefs.GetInt("MusicVolume", 100)/100;
     }
 }
