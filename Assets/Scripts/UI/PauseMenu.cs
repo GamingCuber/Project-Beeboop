@@ -164,7 +164,7 @@ public class PauseMenu : MonoBehaviour
         menuObject.SetActive(true);
         menuActive = true;
         SoundManager.Instance.playSoundFX("crtOn", player.transform.position, 0, 10, 1, true);
-        SoundManager.Instance.playLoopedSound("crtAmbience", player.transform.position, 0, 10, 0f, out int index);
+        SoundManager.Instance.playLoopedSound("crtAmbience", player.transform.position, 0, 10, 0.2f, out int index);
         loopedInt = index;
 
         if (URPVOlume != null)
@@ -436,11 +436,14 @@ public class PauseMenu : MonoBehaviour
 
     private void switchEffect()
     {
+        if (Random.Range(0, 3) == 0)
         StartCoroutine(switchEffectCo());
     }
 
     private IEnumerator switchEffectCo()
     {
+        SoundManager.Instance.playSoundFX("staticSwitch", player.transform.position, 0, 10, 200, true);
+
         float moveYDist = 200;
 
         float minX = 950;

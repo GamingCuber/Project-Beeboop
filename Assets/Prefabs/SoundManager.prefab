@@ -52,3 +52,8 @@ MonoBehaviour:
   jump: {fileID: 0}
   Walk: {fileID: 0}
   test: {fileID: 8300000, guid: 3ca9423fa40664e0594c90a9b93dea97, type: 3}
+  crtOn: {fileID: 0}
+  crtAmbience: {fileID: 0}
+  crtOff: {fileID: 0}
+  crtClick: {fileID: 0}
+  staticSwitch: {fileID: 8300000, guid: 0613fb36545ac4be6bcbf9d12efec11b, type: 3}

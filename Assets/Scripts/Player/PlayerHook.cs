@@ -142,6 +142,7 @@ public class PlayerHook : MonoBehaviour
 
     private void doHook()
     {
+        SoundManager.Instance.playPlayerSound("Hook");
         StartCoroutine(hookCo());
     }
 
