@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   apexDampening: 25
   bounceForce: 1000
-  coyoteTime: 9
+  coyoteTime: 0.1
   maxHorizontalSpeed: 30
   maxNegativeVerticalSpeed: 30
   maxPositiveVerticalSpeed: 30
   playerAcceleration: 35
-  playerDirection: left
+  playerDirection: right
   playerMaxSpd: 13
-  dashCooldownTime: 1
+  dashCooldownTime: 0.3
   dashStrength: 15
   dashTime: 0.15
   dampeningPostHook: 1.5
@@ -30,7 +30,7 @@ MonoBehaviour:
   hookPointCooldown: 5
   hookSpeed: 60
   jumpApexTime: 0.15
-  jumpAmt: 2
+  jumpAmt: 1
   jumpFallGrav: 3.5
   jumpHeight: 4
   jumpTime: 0.35
