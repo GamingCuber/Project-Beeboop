@@ -164,7 +164,7 @@ public class PauseMenu : MonoBehaviour
         menuObject.SetActive(true);
         menuActive = true;
         SoundManager.Instance.playSoundFX("crtOn", player.transform.position, 0, 10, 1, true);
-        SoundManager.Instance.playLoopedSound("crtAmbience", player.transform.position, 0, 10, 1f, out int index);
+        SoundManager.Instance.playLoopedSound("crtAmbience", player.transform.position, 0, 10, 0f, out int index);
         loopedInt = index;
 
         if (URPVOlume != null)
@@ -179,7 +179,7 @@ public class PauseMenu : MonoBehaviour
         menuObject.SetActive(false);
         GameManager.Instance.resumeGame();
         menuActive = false;
-        SoundManager.Instance.playSoundFX("crtOff", player.transform.position, 0, 10, 1, true);
+        SoundManager.Instance.playSoundFX("crtOff", player.transform.position, 0.5f, 10, 1, true);
         SoundManager.Instance.stopLoopSound(loopedInt);
 
         if (URPVOlume != null)
