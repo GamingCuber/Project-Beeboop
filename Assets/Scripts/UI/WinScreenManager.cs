@@ -78,8 +78,9 @@ public class WinScreenManager : MonoBehaviour
         string time = "";
 
         float mins = (int)secs / 60;
-        float sec = secs % 60;
+        int sec = (int)(secs % 60);
         float milli = (float)Math.Round(secs - ((int)secs), 2);
+        Debug.Log(milli);
 
         time += mins + ":";
 
@@ -92,6 +93,8 @@ public class WinScreenManager : MonoBehaviour
             time += sec;
         }
         time += ":";
+        milli *= 100;
+        milli = (int)milli;
         if (milli < 10)
         {
             time += "0" + milli;

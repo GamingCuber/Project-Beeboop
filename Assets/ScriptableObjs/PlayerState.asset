@@ -24,3 +24,6 @@ MonoBehaviour:
   canDoubleJump: 0
   canHook: 0
   gameLost: 0
+  pausedGame: 0
+  deathNumber: 15
+  totalTime: 100
