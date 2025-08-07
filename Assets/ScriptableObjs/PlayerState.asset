@@ -21,6 +21,7 @@ MonoBehaviour:
   isDead: 0
   keepMomentum: 0
   canDash: 1
-  canDoubleJump: 0
-  canHook: 0
+  canDoubleJump: 1
+  canHook: 1
   gameLost: 0
+  pausedGame: 0

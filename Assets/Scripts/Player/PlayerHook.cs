@@ -163,7 +163,6 @@ public class PlayerHook : MonoBehaviour
 
         if (returnCo != null)
         {
-            Debug.Log("stopped co");
             StopCoroutine(returnCo);
             returnCo = null;
         }
@@ -197,7 +196,7 @@ public class PlayerHook : MonoBehaviour
 
         // Makes you slower when you let go of the hook
         rb.linearDamping = PlayerDataManager.Instance.getData().dampeningPostHook;
-        rb.constraints = RigidbodyConstraints2D.FreezePositionY;
+        rb.linearVelocityY *= PlayerDataManager.Instance.getData().yVelocityMultiplierPostHook;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
         yield return new WaitForSecondsRealtime(0.1f);

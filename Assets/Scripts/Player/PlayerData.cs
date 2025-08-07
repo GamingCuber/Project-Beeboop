@@ -23,6 +23,7 @@ public class PlayerData : ScriptableObject
     public float dashTime; //how long the speed of the dash is kept until its reset
     [Header("Hook")]
     public float dampeningPostHook;
+    public float yVelocityMultiplierPostHook;
     public float hookCancelDistance; //how close player has to be to hook for their hook to be cancelled
     public float hookDistanceLimit;
     public float hookPointCooldown; //seconds in which each point is on cd after used

@@ -25,12 +25,13 @@ MonoBehaviour:
   dashStrength: 15
   dashTime: 0.15
   dampeningPostHook: 1.5
-  hookCancelDistance: 1
+  yVelocityMultiplierPostHook: 0.8
+  hookCancelDistance: 0
   hookDistanceLimit: 16
   hookPointCooldown: 5
   hookSpeed: 60
   jumpApexTime: 0.15
-  jumpAmt: 1
+  jumpAmt: 2
   jumpFallGrav: 3.5
   jumpHeight: 4
   jumpTime: 0.35
