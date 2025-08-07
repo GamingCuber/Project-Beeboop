@@ -47,6 +47,8 @@ MonoBehaviour:
   piecePre: {fileID: 4656014686642323462, guid: 0e76bcf90bdf948a487c5cba3a753d7c, type: 3}
   pieceAmt: 10
   pieceLifetime: 1
+  shrinkTime: 0.5
   maxXForce: 10
   maxYForce: 10
   maxGravScale: 5
+  transitionScreen: {fileID: 0}
