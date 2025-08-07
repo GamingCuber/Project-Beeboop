@@ -13,6 +13,8 @@ public class DeathAnimManager : MonoBehaviour
 
     public float pieceLifetime;
 
+    public float shrinkTime;
+
     public float maxXForce;
 
     public float maxYForce;
@@ -20,6 +22,8 @@ public class DeathAnimManager : MonoBehaviour
     public float maxGravScale;
 
     public GameObject transitionScreen;
+
+    private bool inAnimation;
 
     private GameObject player;
     
@@ -44,8 +48,13 @@ public class DeathAnimManager : MonoBehaviour
 
     public void doAnimation()
     {
-        StartCoroutine(doTransition());
-        StartCoroutine(flingShrapnel());
+        if (!inAnimation)
+        {
+            inAnimation = true;
+            StartCoroutine(doTransition());
+            StartCoroutine(shrinkPlayer());
+            StartCoroutine(flingShrapnel());
+        }
     }
 
     private IEnumerator flingShrapnel()
@@ -94,7 +103,6 @@ public class DeathAnimManager : MonoBehaviour
 
             if (timer > pieceLifetime/2)
             {
-                Debug.Log((timer - (pieceLifetime / 2)) / (pieceLifetime / 2));
                 //color fade to black
                 byte a = (byte)Mathf.Lerp(255, 0, (timer - (pieceLifetime / 2)) / (pieceLifetime / 2));
                 sr.color = new Color32(a,a,a,255);
@@ -108,6 +116,28 @@ public class DeathAnimManager : MonoBehaviour
         }
 
         g.SetActive(false);
+        yield break;
+    }
+
+    private IEnumerator shrinkPlayer()
+    {
+        float timer = 0;
+
+        while (timer < shrinkTime)
+        {
+            timer += Time.deltaTime;
+
+            float scale = Mathf.Lerp(1, 0.01f, timer / shrinkTime);
+
+            player.transform.localScale = new Vector3(scale, scale, scale);
+
+            yield return new WaitForEndOfFrame();
+        }
+
+        yield return new WaitForSecondsRealtime(1f);
+
+        player.transform.localScale = Vector3.one;
+
         yield break;
     }
 
@@ -130,6 +160,7 @@ public class DeathAnimManager : MonoBehaviour
 
         anim.SetTrigger("Back");
         transitionScreen.SetActive(false);
+        inAnimation = false;
 
         yield break;
     }
