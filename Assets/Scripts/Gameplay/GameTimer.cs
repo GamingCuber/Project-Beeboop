@@ -32,6 +32,8 @@ public class GameTimer : MonoBehaviour
         while (timeLeft > 0)
         {
             timeLeft -= Time.deltaTime;
+            PlayerStateManager.Instance.getState().totalTime += Time.deltaTime;
+            Debug.Log(PlayerStateManager.Instance.getState().totalTime);
 
             //setText(Mathf.RoundToInt(timeLeft));
 
@@ -55,9 +57,9 @@ public class GameTimer : MonoBehaviour
 
         float mins = (int)secs / 60;
         float sec = secs % 60;
-        
+
         time += mins + ":";
-        
+
         if (sec < 10)
         {
             time += "0" + sec;

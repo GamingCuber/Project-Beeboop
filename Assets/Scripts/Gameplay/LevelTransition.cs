@@ -31,6 +31,15 @@ public class LevelTransition : MonoBehaviour
 
     public void doTransition(string scene)
     {
+        if (scene.Equals("MainScene"))
+        {
+            // Resets some Player States so game functions properly
+            PlayerStateManager.Instance.getState().deathNumber = 0;
+            PlayerStateManager.Instance.getState().totalTime = 0;
+            PlayerStateManager.Instance.getState().canDash = false;
+            PlayerStateManager.Instance.getState().canHook = false;
+            PlayerStateManager.Instance.getState().canDoubleJump = false;
+        }
         StartCoroutine(doTransitionCo(scene));
     }
 

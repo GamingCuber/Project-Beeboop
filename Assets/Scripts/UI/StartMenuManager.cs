@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,6 +14,7 @@ public class StartMenuManager : MonoBehaviour
     {
         LevelTransition.Instance.doTransition("MainScene");
         MusicManager.Instance.transitionSong("LevelMusic");
+
     }
 
     public void quitGame()

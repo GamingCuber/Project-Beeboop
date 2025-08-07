@@ -8,14 +8,13 @@ public class PlayerStateManager : MonoBehaviour
 
     public PlayerState state;
 
-    public Rigidbody2D rb;
-
     void Start()
     {
         if (Instance == null)
         {
             Instance = this;
         }
+
     }
 
     public PlayerState getState()
@@ -23,28 +22,5 @@ public class PlayerStateManager : MonoBehaviour
         return state;
     }
 
-    private void Update()
-    {
-        if (rb.linearVelocityY < 0 && !state.isFalling && !state.isGrounded && !state.isDashing && !state.isHooked && !state.isJumping)
-        {
-            state.isFalling = true;
-        }
-        else if (state.isFalling && state.isGrounded)
-        {
-            state.isFalling = false;
-        }
 
-        if (PlayerInputs.Instance.pressingLeftButton || PlayerInputs.Instance.pressingRightButton) //check if player is moving by seeing if they input anything lolo
-        {
-            state.isMoving = true;
-        }
-        else if ((!PlayerInputs.Instance.pressingLeftButton && !PlayerInputs.Instance.pressingRightButton) && state.isMoving)
-        {
-            state.isMoving = false;
-        }
-        if (PlayerInputs.Instance.playerController.Player.Escape.WasPressedThisFrame())
-            Instance.getState().pausedGame = true;
-        else
-            Instance.getState().pausedGame = false;
-    }
 }
