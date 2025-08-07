@@ -5,8 +5,8 @@ public class StartMenuManager : MonoBehaviour
 {
     private void Start()
     {
-        //MusicManager.Instance.fadeIn();
-        //MusicManager.Instance.playMusic("StartScreen");
+        MusicManager.Instance.fadeIn();
+        MusicManager.Instance.playMusic("StartScreen");
     }
 
     public void startGame()
