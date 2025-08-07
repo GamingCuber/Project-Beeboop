@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class StartMenuManager : MonoBehaviour
 {
+    public GameObject settingsObj;
+
     private void Start()
     {
         MusicManager.Instance.fadeIn();
@@ -22,6 +24,11 @@ public class StartMenuManager : MonoBehaviour
 
     public void openOptions()
     {
-        // TODO: Put Options Menu Stuff in Here
+        settingsObj.SetActive(true);
+    }
+
+    public void hideOptions()
+    {
+        settingsObj.SetActive(false);
     }
 }
