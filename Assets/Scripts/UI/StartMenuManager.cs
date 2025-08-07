@@ -9,10 +9,10 @@ public class StartMenuManager : MonoBehaviour
         MusicManager.Instance.playMusic("StartScreen");
     }
 
-    public void startGame()
+    public void startCutscene()
     {
-        LevelTransition.Instance.doTransition("MainScene");
-        MusicManager.Instance.transitionSong("LevelMusic");
+        LevelTransition.Instance.doTransition("Cutscene");
+        MusicManager.Instance.transitionSong("Cutscene");
     }
 
     public void quitGame()
