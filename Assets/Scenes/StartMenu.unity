@@ -734,7 +734,7 @@ GameObject:
   - component: {fileID: 681411006}
   m_Layer: 0
   m_Name: EventSystem
-  m_TagString: Untagged
+  m_TagString: EventSystem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2917,8 +2917,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6300252444468486863}
         m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
-        m_MethodName: settingChanged
-        m_Mode: 5
+        m_MethodName: slideSFXVolume
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3083,8 +3083,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6300252444468486863}
         m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
-        m_MethodName: settingChanged
-        m_Mode: 5
+        m_MethodName: inputMasterVolume
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3474,8 +3474,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6300252444468486863}
         m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
-        m_MethodName: settingChanged
-        m_Mode: 5
+        m_MethodName: slideMusicVolume
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3922,8 +3922,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6300252444468486863}
         m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
-        m_MethodName: settingChanged
-        m_Mode: 5
+        m_MethodName: inputSFXVolume
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4777,8 +4777,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6300252444468486863}
         m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
-        m_MethodName: settingChanged
-        m_Mode: 5
+        m_MethodName: inputMusicVolume
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6002,8 +6002,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6300252444468486863}
         m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
-        m_MethodName: settingChanged
-        m_Mode: 5
+        m_MethodName: slideMasterVolume
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
