@@ -624,7 +624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96bc6f79a84984ca082afadf89c960e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MasterVolObj: {fileID: 8335288796920976118}
+  MasterVolumeVolObj: {fileID: 0}
   MusicVolObj: {fileID: 1317286683882868560}
   SFXVolObj: {fileID: 6766638778301700941}
 --- !u!1 &874416059889263284
