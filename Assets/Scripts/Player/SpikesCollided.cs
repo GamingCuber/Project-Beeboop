@@ -26,5 +26,6 @@ public class SpikesCollided : MonoBehaviour
     void giveInputs()
     {
         PlayerStateManager.Instance.getState().isDead = false;
+        TimerGearManager.Instance.vibrateGears();
     }
 }

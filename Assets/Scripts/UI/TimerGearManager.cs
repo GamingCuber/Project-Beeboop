@@ -17,13 +17,11 @@ public class TimerGearManager : MonoBehaviour
         }
     }
 
-    private void Update()
+    public void vibrateGears()
     {
-        if (Input.GetKeyDown(KeyCode.V))
+        for(int i = 0; i < gears.Count; i++)
         {
-            gears[0].GetComponent<TimerGear>().vibrateGear();
-            gears[1].GetComponent<TimerGear>().vibrateGear();
-            gears[2].GetComponent<TimerGear>().vibrateGear();
+            gears[i].GetComponent<TimerGear>().vibrateGear();
         }
     }
 

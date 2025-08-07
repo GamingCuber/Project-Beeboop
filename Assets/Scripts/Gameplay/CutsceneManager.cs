@@ -35,9 +35,8 @@ public class CutsceneManager : MonoBehaviour
 
         while (true)
         {
-            if (PlayerInputs.Instance.playerController.Player.Jump.WasPressedThisFrame() && !clicked)
+            if (PlayerInputs.Instance.playerController.Player.Jump.WasPerformedThisFrame() && !clicked)
             {
-                Debug.Log("Hello");
                 clicked = true;
                 endCutscene();
             }
