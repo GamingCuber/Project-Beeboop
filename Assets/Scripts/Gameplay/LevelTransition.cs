@@ -69,6 +69,15 @@ public class LevelTransition : MonoBehaviour
         PlayerStateManager.Instance.getState().canHook = false;
         PlayerStateManager.Instance.getState().canDoubleJump = false;
 
+        StartCoroutine(waitForTimer());
+    }
+
+    private IEnumerator waitForTimer()
+    {
+        while (GameTimer.Instance == null)
+        {
+            yield return new WaitForEndOfFrame();
+        }
         GameTimer.Instance.timeLeft = GameDataManager.Instance.totalTime;
     }
 }
