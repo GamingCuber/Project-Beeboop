@@ -25,6 +25,17 @@ public class LoseScreenManager : MonoBehaviour
         StartCoroutine(doLights());
     }
 
+    public void restart()
+    {
+        LevelTransition.Instance.doTransition("MainScene");
+        MusicManager.Instance.transitionSong("DoubleJump");
+    }
+
+    public void quit()
+    {
+        Application.Quit();
+    }
+
     private IEnumerator doLights()
     {
         while (true)

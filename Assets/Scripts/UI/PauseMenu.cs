@@ -140,11 +140,18 @@ public class PauseMenu : MonoBehaviour
                             resetMenu();
                             hideMenu();
                             break;
-                        case 1:
+                        case 1: //settings
                             showSettings();
                             hideOptions();
                             break;
-
+                        case 2: //credits
+                            break;
+                        case 3: //menu
+                            //SceneManager.LoadScene("StartMenu");
+                            break;
+                        case 4: //quit
+                            Application.Quit();
+                            break;
                     }
                 }
             }
@@ -442,7 +449,7 @@ public class PauseMenu : MonoBehaviour
 
     private IEnumerator switchEffectCo()
     {
-        SoundManager.Instance.playSoundFX("staticSwitch", player.transform.position, 0, 10, 200, true);
+        SoundManager.Instance.playSoundFX("staticSwitch", player.transform.position, 0, 10, 0.5f, true);
 
         float moveYDist = 200;
 

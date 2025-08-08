@@ -81,7 +81,8 @@ public class GameTimer : MonoBehaviour
     private void gameLost()
     {
         PlayerStateManager.Instance.getState().gameLost = true;
-        SceneManager.LoadScene("LoseMenu");
+        LevelTransition.Instance.doTransition("LoseMenu");
+        MusicManager.Instance.transitionSong("test");
     }
 
     public float getTimeLeft()
