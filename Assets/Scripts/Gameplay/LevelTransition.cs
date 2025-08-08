@@ -31,16 +31,11 @@ public class LevelTransition : MonoBehaviour
 
     public void doTransition(string scene)
     {
+        StartCoroutine(doTransitionCo(scene));
         if (scene.Equals("MainScene"))
         {
-            // Resets some Player States so game functions properly
-            PlayerStateManager.Instance.getState().deathNumber = 0;
-            PlayerStateManager.Instance.getState().totalTime = 0;
-            PlayerStateManager.Instance.getState().canDash = false;
-            PlayerStateManager.Instance.getState().canHook = false;
-            PlayerStateManager.Instance.getState().canDoubleJump = false;
+            resetStats();
         }
-        StartCoroutine(doTransitionCo(scene));
     }
 
     private IEnumerator doTransitionCo(string scene)
@@ -64,5 +59,16 @@ public class LevelTransition : MonoBehaviour
         transitionObj.SetActive(false);
 
         yield break;
+    }
+
+    public void resetStats()
+    {
+        PlayerStateManager.Instance.getState().deathNumber = 0;
+        PlayerStateManager.Instance.getState().totalTime = 0;
+        PlayerStateManager.Instance.getState().canDash = false;
+        PlayerStateManager.Instance.getState().canHook = false;
+        PlayerStateManager.Instance.getState().canDoubleJump = false;
+
+        GameTimer.Instance.timeLeft = GameDataManager.Instance.totalTime;
     }
 }

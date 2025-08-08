@@ -474,9 +474,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2137267371}
-        m_TargetAssemblyTypeName: StartMenuManager, Assembly-CSharp
-        m_MethodName: startGame
+      - m_Target: {fileID: 2137267373}
+        m_TargetAssemblyTypeName: WinScreenManager, Assembly-CSharp
+        m_MethodName: replayButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1707,6 +1707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62be9cee569020e7280ee428e313e59d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  settingsObj: {fileID: 0}
 --- !u!4 &2137267372
 Transform:
   m_ObjectHideFlags: 0

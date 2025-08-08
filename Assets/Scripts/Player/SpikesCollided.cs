@@ -8,7 +8,7 @@ public class SpikesCollided : MonoBehaviour
         {
             Debug.Log("Respawn");
             PlayerStateManager.Instance.getState().isDead = true;
-            PlayerStateManager.Instance.getState().deathNumber += 1;
+            PlayerStateManager.Instance.getState().deathNumber++;
             PlayerJump.Instance.cancelJump(false);
             DashAfterimage.Instance.cancelAfterImage();
             DeathAnimManager.Instance.doAnimation();
