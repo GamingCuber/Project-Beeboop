@@ -21,9 +21,15 @@ public class WinScreenManager : MonoBehaviour
     [Tooltip("First is for +, Second is for blank, Third is assumed to be anything above")]
     private int[] deathsPerSign;
 
-    public void backButton()
+    public void quitButton()
     {
-        SceneManager.LoadScene("StartMenu");
+        Application.Quit();
+    }
+
+    public void replayButton()
+    {
+        LevelTransition.Instance.doTransition("StartMenu");
+
     }
 
     private void Start()

@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Runtime.CompilerServices;
 
 public class GameTimer : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class GameTimer : MonoBehaviour
 
     private float time;
 
-    private float timeLeft = 0;
+    public float timeLeft;
 
     public TMP_Text timerText;
 
@@ -25,6 +26,7 @@ public class GameTimer : MonoBehaviour
         }
 
         StartCoroutine(waitForGears());
+
     }
 
     private IEnumerator startTimer()
@@ -33,9 +35,6 @@ public class GameTimer : MonoBehaviour
         {
             timeLeft -= Time.deltaTime;
             PlayerStateManager.Instance.getState().totalTime += Time.deltaTime;
-            Debug.Log(PlayerStateManager.Instance.getState().totalTime);
-
-            //setText(Mathf.RoundToInt(timeLeft));
 
             timerText.text = ((int)(100 * timeLeft / time)).ToString() + "%";
 
