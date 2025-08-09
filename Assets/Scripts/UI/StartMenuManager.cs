@@ -1,18 +1,21 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class StartMenuManager : MonoBehaviour
 {
+    public GameObject settingsObj;
+
     private void Start()
     {
         MusicManager.Instance.fadeIn();
         MusicManager.Instance.playMusic("StartScreen");
     }
 
-    public void startGame()
+    public void startCutscene()
     {
-        LevelTransition.Instance.doTransition("MainScene");
-        MusicManager.Instance.transitionSong("LevelMusic");
+        LevelTransition.Instance.doTransition("Cutscene");
+        MusicManager.Instance.transitionSong("Cutscene");
     }
 
     public void quitGame()
@@ -22,6 +25,11 @@ public class StartMenuManager : MonoBehaviour
 
     public void openOptions()
     {
-        // TODO: Put Options Menu Stuff in Here
+        settingsObj.SetActive(true);
+    }
+
+    public void hideOptions()
+    {
+        settingsObj.SetActive(false);
     }
 }

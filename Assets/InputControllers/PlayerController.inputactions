@@ -104,6 +104,17 @@
                 },
                 {
                     "name": "",
+                    "id": "06375c7b-d9aa-4392-8800-438193df053c",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "01ebefca-3637-4abd-a317-64077eb9d993",
                     "path": "<Gamepad>/leftStick/left",
                     "interactions": "",

@@ -47,6 +47,9 @@ public class SettingsMenu : MonoBehaviour
         TMP_InputField input = changed.transform.GetChild(1).GetComponent<TMP_InputField>();
         var newAmount = Mathf.RoundToInt(slider.value);
 
+
+        Debug.Log(newAmount);
+
         PlayerPrefs.SetInt("MasterVolume", newAmount);
 
         updateVolumeUI(slider, input, "MasterVolume");

@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Runtime.CompilerServices;
 
 public class GameTimer : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class GameTimer : MonoBehaviour
 
     private float time;
 
-    private float timeLeft = 0;
+    public float timeLeft;
 
     public TMP_Text timerText;
 
@@ -25,6 +26,7 @@ public class GameTimer : MonoBehaviour
         }
 
         StartCoroutine(waitForGears());
+
     }
 
     private IEnumerator startTimer()
@@ -32,8 +34,7 @@ public class GameTimer : MonoBehaviour
         while (timeLeft > 0)
         {
             timeLeft -= Time.deltaTime;
-
-            //setText(Mathf.RoundToInt(timeLeft));
+            PlayerStateManager.Instance.getState().totalTime += Time.deltaTime;
 
             timerText.text = ((int)(100 * timeLeft / time)).ToString() + "%";
 
@@ -55,9 +56,9 @@ public class GameTimer : MonoBehaviour
 
         float mins = (int)secs / 60;
         float sec = secs % 60;
-        
+
         time += mins + ":";
-        
+
         if (sec < 10)
         {
             time += "0" + sec;
@@ -80,7 +81,8 @@ public class GameTimer : MonoBehaviour
     private void gameLost()
     {
         PlayerStateManager.Instance.getState().gameLost = true;
-        SceneManager.LoadScene("LoseMenu");
+        LevelTransition.Instance.doTransition("LoseMenu");
+        MusicManager.Instance.transitionSong("test");
     }
 
     public float getTimeLeft()

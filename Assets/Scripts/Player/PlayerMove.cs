@@ -37,6 +37,28 @@ public class PlayerMove : MonoBehaviour
             gamePad = null;
         }
 
+        if (rb.linearVelocityY < 0 && !PlayerStateManager.Instance.getState().isFalling && !PlayerStateManager.Instance.getState().isGrounded && !PlayerStateManager.Instance.getState().isDashing && !PlayerStateManager.Instance.getState().isHooked && !PlayerStateManager.Instance.getState().isJumping)
+        {
+           PlayerStateManager.Instance.getState().isFalling = true;
+        }
+        else if (PlayerStateManager.Instance.getState().isFalling &&PlayerStateManager.Instance.getState().isGrounded)
+        {
+            PlayerStateManager.Instance.getState().isFalling = false;
+        }
+
+        if (PlayerInputs.Instance.pressingLeftButton || PlayerInputs.Instance.pressingRightButton) //check if player is moving by seeing if they input anything lolo
+        {
+           PlayerStateManager.Instance.getState().isMoving = true;
+        }
+        else if ((!PlayerInputs.Instance.pressingLeftButton && !PlayerInputs.Instance.pressingRightButton) && PlayerStateManager.Instance.getState().isMoving)
+        {
+           PlayerStateManager.Instance.getState().isMoving = false;
+        }
+        if (PlayerInputs.Instance.playerController.Player.Escape.WasPressedThisFrame())
+            PlayerStateManager.Instance.getState().pausedGame = true;
+        else
+            PlayerStateManager.Instance.getState().pausedGame = false;
+
 
 
         if (!PlayerStateManager.Instance.getState().isHooked && !PlayerStateManager.Instance.getState().isDashing && !isPaused && !PlayerStateManager.Instance.getState().isDead)

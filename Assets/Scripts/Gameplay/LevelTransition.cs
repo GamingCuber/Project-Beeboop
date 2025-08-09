@@ -32,6 +32,10 @@ public class LevelTransition : MonoBehaviour
     public void doTransition(string scene)
     {
         StartCoroutine(doTransitionCo(scene));
+        if (scene.Equals("MainScene"))
+        {
+            resetStats();
+        }
     }
 
     private IEnumerator doTransitionCo(string scene)
@@ -55,5 +59,25 @@ public class LevelTransition : MonoBehaviour
         transitionObj.SetActive(false);
 
         yield break;
+    }
+
+    public void resetStats()
+    {
+        PlayerStateManager.Instance.getState().deathNumber = 0;
+        PlayerStateManager.Instance.getState().totalTime = 0;
+        PlayerStateManager.Instance.getState().canDash = false;
+        PlayerStateManager.Instance.getState().canHook = false;
+        PlayerStateManager.Instance.getState().canDoubleJump = false;
+
+        StartCoroutine(waitForTimer());
+    }
+
+    private IEnumerator waitForTimer()
+    {
+        while (GameTimer.Instance == null)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+        GameTimer.Instance.timeLeft = GameDataManager.Instance.totalTime;
     }
 }

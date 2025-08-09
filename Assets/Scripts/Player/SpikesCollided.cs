@@ -8,15 +8,16 @@ public class SpikesCollided : MonoBehaviour
         {
             Debug.Log("Respawn");
             PlayerStateManager.Instance.getState().isDead = true;
+            PlayerStateManager.Instance.getState().deathNumber++;
             PlayerJump.Instance.cancelJump(false);
             DashAfterimage.Instance.cancelAfterImage();
             DeathAnimManager.Instance.doAnimation();
             gameObject.GetComponent<Rigidbody2D>().linearVelocity = Vector3.zero;
-            Invoke(nameof(death), 1f);
-        }  
+            Invoke(nameof(onDeath), 1f);
+        }
     }
 
-    void death()
+    void onDeath()
     {
         RespawnScript.Instance.respawntocheckpoint();
         Invoke(nameof(giveInputs), 0.5f);
@@ -25,5 +26,6 @@ public class SpikesCollided : MonoBehaviour
     void giveInputs()
     {
         PlayerStateManager.Instance.getState().isDead = false;
+        TimerGearManager.Instance.vibrateGears();
     }
 }

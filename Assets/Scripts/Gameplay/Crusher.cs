@@ -10,18 +10,23 @@ public class Crusher : MonoBehaviour
     Vector3 goalpos;
     public float upTime = 5;
     public float downTime = 5;
-   public bool isDown = false;
-     public   bool isStopped = false;
+    public bool isDown = false;
+    public bool isStopped = false;
     public float stoptime = 1;
+    public float offsetTime;
+
     void Start()
     {
         currentposy = crusherPart.transform.localPosition;
         goalpos = currentposy + new Vector3(0f, 0.75f, 0f);
-        StartCoroutine(moveCrusher());
+        Invoke(nameof(startCrusher), offsetTime);
     }
 
-    // Start is 
-    // called once before the first execution of Update after the MonoBehaviour is created
+
+    private void startCrusher()
+    {
+        StartCoroutine(moveCrusher());
+    }
     IEnumerator moveCrusher()
     {
         float timer = 0;

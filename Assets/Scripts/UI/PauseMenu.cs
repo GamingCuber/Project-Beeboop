@@ -64,8 +64,8 @@ public class PauseMenu : MonoBehaviour
     {
         optionGameObjects = new GameObject[7];
 
-        optionsOject = menuObject.transform.GetChild(2).gameObject;
-        settingsObject = menuObject.transform.GetChild(3).gameObject;
+        optionsOject = menuObject.transform.GetChild(3).gameObject;
+        settingsObject = menuObject.transform.GetChild(4).gameObject;
 
         for (int i = 0; i < 7; i++)
         {
@@ -140,11 +140,18 @@ public class PauseMenu : MonoBehaviour
                             resetMenu();
                             hideMenu();
                             break;
-                        case 1:
+                        case 1: //settings
                             showSettings();
                             hideOptions();
                             break;
-
+                        case 2: //credits
+                            break;
+                        case 3: //menu
+                            //SceneManager.LoadScene("StartMenu");
+                            break;
+                        case 4: //quit
+                            Application.Quit();
+                            break;
                     }
                 }
             }
@@ -164,7 +171,7 @@ public class PauseMenu : MonoBehaviour
         menuObject.SetActive(true);
         menuActive = true;
         SoundManager.Instance.playSoundFX("crtOn", player.transform.position, 0, 10, 1, true);
-        SoundManager.Instance.playLoopedSound("crtAmbience", player.transform.position, 0, 10, 1f, out int index);
+        SoundManager.Instance.playLoopedSound("crtAmbience", player.transform.position, 0, 10, 0.2f, out int index);
         loopedInt = index;
 
         if (URPVOlume != null)
@@ -179,7 +186,7 @@ public class PauseMenu : MonoBehaviour
         menuObject.SetActive(false);
         GameManager.Instance.resumeGame();
         menuActive = false;
-        SoundManager.Instance.playSoundFX("crtOff", player.transform.position, 0, 10, 1, true);
+        SoundManager.Instance.playSoundFX("crtOff", player.transform.position, 0.5f, 10, 1, true);
         SoundManager.Instance.stopLoopSound(loopedInt);
 
         if (URPVOlume != null)
@@ -436,11 +443,14 @@ public class PauseMenu : MonoBehaviour
 
     private void switchEffect()
     {
+        if (Random.Range(0, 3) == 0)
         StartCoroutine(switchEffectCo());
     }
 
     private IEnumerator switchEffectCo()
     {
+        SoundManager.Instance.playSoundFX("staticSwitch", player.transform.position, 0, 10, 0.5f, true);
+
         float moveYDist = 200;
 
         float minX = 950;
