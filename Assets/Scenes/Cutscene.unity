@@ -2047,6 +2047,8 @@ GameObject:
   - component: {fileID: 1363453108}
   - component: {fileID: 1363453107}
   - component: {fileID: 1363453110}
+  - component: {fileID: 1363453112}
+  - component: {fileID: 1363453111}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2172,6 +2174,45 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &1363453111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363453106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce3c96dfd8b14c43b3f06bb30309124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressingDashButton: 0
+  pressingJumpButton: 0
+  pressingHookButton: 0
+  jumpButtonDown: 0
+  pressingLeftButton: 0
+  pressingRightButton: 0
+  pressingUpButton: 0
+  pressingDownButton: 0
+--- !u!114 &1363453112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363453106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae81e7ffe7f834e589085370a620fcc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dir: {fileID: 1838346795}
+  skipText: {fileID: 841922098}
+  comicObjs:
+  - {fileID: 1838346794}
+  - {fileID: 1306252440}
+  - {fileID: 397731857}
+  - {fileID: 1578190339}
 --- !u!1 &1411499156
 GameObject:
   m_ObjectHideFlags: 0
