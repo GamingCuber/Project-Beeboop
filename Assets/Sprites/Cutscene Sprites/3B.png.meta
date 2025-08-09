@@ -1,24 +1,15 @@
 fileFormatVersion: 2
-guid: f124305ea7df4a948adf5cc6ab611c4f
+guid: 0381f358d90ff994ba95935798385c17
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -612419766989305847
-    second: 1A_0
-  - first:
-      213: -6148784218441472464
-    second: 1A_1
-  - first:
-      213: -1790564276503730206
-    second: 1A_2
-  - first:
-      213: 7672875622374180811
-    second: 1A_3
+      213: 1708745267818088716
+    second: 3B_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -37,7 +28,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMipmapLimit: 1
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -46,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 2
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -57,7 +48,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -82,9 +73,9 @@ TextureImporter:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 1
+    resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -109,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 1A_0
+      name: 3B_0
       rect:
         serializedVersion: 2
-        x: 1266
-        y: 1846
-        width: 6
-        height: 6
+        x: 436
+        y: 855
+        width: 653
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,74 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 908cc27777f3087f0800000000000000
-      internalID: -612419766989305847
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1A_1
-      rect:
-        serializedVersion: 2
-        x: 71
-        y: 1329
-        width: 764
-        height: 419
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 036a44bb4512baaa0800000000000000
-      internalID: -6148784218441472464
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1A_2
-      rect:
-        serializedVersion: 2
-        x: 1167
-        y: 1705
-        width: 14
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2e7ad7ff643a627e0800000000000000
-      internalID: -1790564276503730206
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1A_3
-      rect:
-        serializedVersion: 2
-        x: 955
-        y: 1460
-        width: 46
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bc70e55d9b78b7a60800000000000000
-      internalID: 7672875622374180811
+      spriteID: c094deb84cea6b710800000000000000
+      internalID: 1708745267818088716
       vertices: []
       indices: 
       edges: []
@@ -210,10 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      1A_0: -612419766989305847
-      1A_1: -6148784218441472464
-      1A_2: -1790564276503730206
-      1A_3: 7672875622374180811
+      3B_0: 1708745267818088716
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
