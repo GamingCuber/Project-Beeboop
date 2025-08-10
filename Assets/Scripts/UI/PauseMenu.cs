@@ -147,10 +147,17 @@ public class PauseMenu : MonoBehaviour
                         case 2: //credits
                             break;
                         case 3: //menu
-                            //SceneManager.LoadScene("StartMenu");
+                            GameManager.Instance.resumeGame();
+                            LevelTransition.Instance.doTransition("StartMenu");
+                            MusicManager.Instance.transitionSong("StartScreen");
                             break;
                         case 4: //quit
                             Application.Quit();
+                            break;
+                        case 5: //restart
+                            GameManager.Instance.resumeGame();
+                            LevelTransition.Instance.doTransition("MainScene");
+                            MusicManager.Instance.transitionSong("DoubleJump");
                             break;
                     }
                 }
@@ -373,8 +380,9 @@ public class PauseMenu : MonoBehaviour
         updateOptionData(optionGameObjects[3], optionData[0]);
         updateOptionData(optionGameObjects[4], optionData[1]);
         updateOptionData(optionGameObjects[5], optionData[2]);
-        updateOptionData(optionGameObjects[2], optionData[4]);
-        updateOptionData(optionGameObjects[1], optionData[3]);
+        updateOptionData(optionGameObjects[2], optionData[5]);
+        updateOptionData(optionGameObjects[1], optionData[4]);
+        updateOptionData(optionGameObjects[0], optionData[3]);
     }
 
     private void updateOptionData(GameObject option, PauseOption data)
@@ -394,7 +402,7 @@ public class PauseMenu : MonoBehaviour
 
             if (num < 0)
             {
-                return 5 + num;
+                return optionData.Length + num;
             }
             else
             {
@@ -408,7 +416,7 @@ public class PauseMenu : MonoBehaviour
 
             if (num >= optionData.Length)
             {
-                return num % 5;
+                return num % optionData.Length;
             }
             else
             {

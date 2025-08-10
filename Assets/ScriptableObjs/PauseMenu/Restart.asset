@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c55f6c5a38864d4cb17094fe7ff46d2, type: 3}
-  m_Name: Menu
+  m_Name: Restart
   m_EditorClassIdentifier: 
-  optionName: Menu
-  description: no longer broken
-  channelNumber: 04
+  optionName: Restart
+  description: Run it back
+  channelNumber: 06
   backgroundImg: {fileID: -7727679585812335486, guid: 64f1ea29601d74991b42ef5c8202b60a, type: 3}
-  channelLogo: {fileID: -6903622159558019323, guid: f368016e0ee4249408d042d86d2187dd, type: 3}
+  channelLogo: {fileID: 21300000, guid: 16e4f9f3b54dc4f54bfefdc1614305cc, type: 3}
