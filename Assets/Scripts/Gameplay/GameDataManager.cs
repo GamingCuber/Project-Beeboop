@@ -40,4 +40,10 @@ public class GameDataManager : MonoBehaviour
         data["Time"] = time;
         Debug.Log(data["Time"]);
     }
+
+    public void resetData()
+    {
+        data["Time"] = totalTime;
+        data["Deaths"] = 0;
+    }
 }

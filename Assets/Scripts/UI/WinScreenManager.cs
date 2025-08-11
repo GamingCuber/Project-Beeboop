@@ -79,6 +79,7 @@ public class WinScreenManager : MonoBehaviour
         }
     }
     // Thanks Kevin!
+    // $20.
     private string convertToTimeString(float secs)
     {
         string time = "";
