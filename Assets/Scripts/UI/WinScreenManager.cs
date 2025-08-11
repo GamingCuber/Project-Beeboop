@@ -52,23 +52,21 @@ public class WinScreenManager : MonoBehaviour
 
     private void doResults()
     {
-        //int deathNumber = PlayerStateManager.Instance.getState().deathNumber;
-        //float totalTime = PlayerStateManager.Instance.getState().totalTime;
+        int deathNumber = PlayerStateManager.Instance.getState().deathNumber;
+        float totalTime = PlayerStateManager.Instance.getState().totalTime;
 
-        //float mins = (int)totalTime / 60;
-        //int sec = (int)(totalTime % 60);
-        //float milli = (float)Math.Round(totalTime - ((int)totalTime), 2);
-        //milli *= 100;
-        //milli = (int)milli;
+        float mins = (int)totalTime / 60;
+        int sec = (int)(totalTime % 60);
+        float milli = (float)Math.Round(totalTime - ((int)totalTime), 2);
+        milli *= 100;
+        milli = (int)milli;
 
-        //char currentSign = getSign(deathNumber);
-        //char currentLetter = getLetter(totalTime);
-        //string grade = string.Format("{0}", string.Format("{0}{1}", currentLetter, currentSign));
+        char currentSign = getSign(deathNumber);
+        char currentLetter = getLetter(totalTime);
+        string grade = string.Format("{0}", string.Format("{0}{1}", currentLetter, currentSign));
 
         TMP_Text[] text = { deathText, minText, secText, milText };
-        //float[] vals = { deathNumber, mins, sec, milli };
-        float[] vals = {20, 2, 20, 30};
-        string grade = "A+";
+        float[] vals = { deathNumber, mins, sec, milli };
 
         StartCoroutine(revealResultsCo(text, vals, grade));
     }
