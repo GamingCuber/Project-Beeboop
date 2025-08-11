@@ -14,6 +14,7 @@ public class PlayerConveyor : MonoBehaviour
         if (collision.gameObject.CompareTag("Conveyor"))
         {
             curConvey = collision.gameObject.GetComponent<ConveyorPlatform>();
+            Debug.Log(curConvey);
             attachPlayer();
         }
     }

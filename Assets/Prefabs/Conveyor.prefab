@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8184538559479625457}
   - component: {fileID: 8799101657952115693}
   - component: {fileID: 4869724295890200655}
-  - component: {fileID: 2674699795504451639}
   m_Layer: 6
   m_Name: Conveyor
   m_TagString: Conveyor
@@ -162,23 +161,9 @@ PlatformEffector2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RotationalOffset: 0
-  m_UseOneWay: 1
+  m_UseOneWay: 0
   m_UseOneWayGrouping: 0
   m_SurfaceArc: 180
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
---- !u!114 &2674699795504451639
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3969384344483584018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5aab97e43db08486fa598d5a87767d31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
-  dir: 1

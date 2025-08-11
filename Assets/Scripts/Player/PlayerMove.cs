@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -15,7 +14,6 @@ public class PlayerMove : MonoBehaviour
 
     private bool dirSwitched = false; //used for when they are pressing both left n right for latest input
 
-    private Gamepad gamePad;
 
     private void Start()
     {
@@ -28,14 +26,6 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
-        if (gamePad != null)
-        {
-            gamePad = Gamepad.current;
-        }
-        else
-        {
-            gamePad = null;
-        }
 
         if (rb.linearVelocityY < 0 && !PlayerStateManager.Instance.getState().isFalling && !PlayerStateManager.Instance.getState().isGrounded && !PlayerStateManager.Instance.getState().isDashing && !PlayerStateManager.Instance.getState().isHooked && !PlayerStateManager.Instance.getState().isJumping)
         {
