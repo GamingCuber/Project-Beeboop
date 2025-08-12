@@ -31,8 +31,6 @@ public class CameraFollow : MonoBehaviour
             speed = maxSpeed;
         }
 
-        Debug.Log(speed);
-
         Vector3 targetPos = player.transform.position + Vector3.right * dir * xDirOffset;
 
         Vector3 newPos = Vector3.MoveTowards(transform.position, targetPos + new Vector3(0f, yOffset, 0f), speed * Time.deltaTime);

@@ -28,13 +28,13 @@ public class PlayerData : ScriptableObject
     public float hookPointCooldown; //seconds in which each point is on cd after used
     public float hookSpeed;
     [Header("Jump")]
-    public float jumpApexTime;
     public int jumpAmt; //max jumps consecutively (so like double jump would be 2)
     public float jumpFallGrav; //grav when falling
     public float jumpHeight;
     public float jumpTime;
     public float minJumpTime; //minimum time of jump before cancel if u like feather the button
-    public float percentApex; //percentage of the jumpheight that is slowed for apex floaty time
+    [Tooltip("Time before fall gravity applies to jump")]
+    public float jumpFloatTime; 
 
     public GameObject currentCheckpoint;
 }

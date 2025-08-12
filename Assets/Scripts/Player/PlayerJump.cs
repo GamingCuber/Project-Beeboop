@@ -62,6 +62,7 @@ public class PlayerJump : MonoBehaviour
                 VFXManager.Instance.playVFX("DoubleJump");
             }
 
+            cancelJump(true);
             jump();
         }
         else if (PlayerInputs.Instance.playerController.Player.Jump.WasPressedThisFrame() && !canJump && jumpsLeft == 2)
@@ -100,6 +101,13 @@ public class PlayerJump : MonoBehaviour
         {
             time += Time.deltaTime;
 
+            RaycastHit2D coll = Physics2D.Raycast(this.transform.position, Vector2.up, 1.1f, platformLayer);
+
+            if (coll.collider != null && !coll.collider.gameObject.TryGetComponent<PlatformEffector2D>(out PlatformEffector2D PE))
+            {
+                break;
+            }
+
             if (!PlayerInputs.Instance.playerController.Player.Jump.IsPressed() && time >= PlayerDataManager.Instance.getData().minJumpTime) //if they let go or player starts falling, increase grav so they fall faster
             {
                 break;
@@ -109,27 +117,17 @@ public class PlayerJump : MonoBehaviour
 
             if (time < data.jumpTime)
             {
-                pos.y = Mathf.Lerp(initPos.y, initPos.y + (data.jumpHeight * (1f - data.percentApex)), (Mathf.Sin(Mathf.PI / 2f * (time / data.jumpTime))));
-
-                if (time > data.jumpTime / 2)
-                {
-                    PlayerGravManager.Instance.setGrav(PlayerDataManager.Instance.getData().jumpFallGrav * Mathf.Lerp(0, 1, (time - data.jumpTime / 2f) / (data.jumpTime / 2f)));
-                }
+                pos.y = Mathf.Lerp(initPos.y, initPos.y + data.jumpHeight, (Mathf.Sin(Mathf.PI / 2f * (time / data.jumpTime))));
             }
 
             this.gameObject.transform.position = pos;
-
-            RaycastHit2D coll = Physics2D.Raycast(this.transform.position, Vector2.up, 1.1f, platformLayer);
-
-            if (coll.collider != null && !coll.collider.gameObject.TryGetComponent<PlatformEffector2D>(out PlatformEffector2D PE))
-            {
-                break;
-            }
 
             yield return new WaitForEndOfFrame();
         }
 
         rb.linearDamping = 0;
+
+        yield return new WaitForSecondsRealtime(PlayerDataManager.Instance.getData().jumpFloatTime);
         PlayerStateManager.Instance.getState().isFalling = true;
 
         if (preJumpCo != null)
