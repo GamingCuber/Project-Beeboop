@@ -6,7 +6,6 @@ public class SpikesCollided : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Respawn"))
         {
-            Debug.Log("Respawn");
             PlayerStateManager.Instance.getState().isDead = true;
             PlayerStateManager.Instance.getState().deathNumber++;
             PlayerJump.Instance.cancelJump(false);
@@ -19,6 +18,7 @@ public class SpikesCollided : MonoBehaviour
 
     void onDeath()
     {
+        CameraZoomManager.Instance.resetZoom();
         RespawnScript.Instance.respawntocheckpoint();
         Invoke(nameof(giveInputs), 0.5f);
     }

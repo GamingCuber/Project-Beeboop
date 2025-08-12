@@ -15,11 +15,20 @@ public class Crusher : MonoBehaviour
     public float stoptime = 1;
     public float offsetTime;
 
+    private GameObject[] hitboxes;
+    private bool isKilling = false;
+
     void Start()
     {
         currentposy = crusherPart.transform.localPosition;
         goalpos = currentposy + new Vector3(0f, 0.75f, 0f);
         Invoke(nameof(startCrusher), offsetTime);
+
+        hitboxes = new GameObject[crusherPart.transform.childCount];
+        for(int i = 0; i < hitboxes.Length; i++)
+        {
+            hitboxes[i] = crusherPart.transform.GetChild(i).gameObject;
+        }
     }
 
 
@@ -30,7 +39,6 @@ public class Crusher : MonoBehaviour
     IEnumerator moveCrusher()
     {
         float timer = 0;
-        
 
         while (true)
         {
@@ -55,6 +63,10 @@ public class Crusher : MonoBehaviour
             }
             else if (isDown && isStopped == false)
             {
+                if (!isKilling)
+                {
+                    setKill(true);
+                }
 
                 float originy = Mathf.Lerp(goalpos.y, currentposy.y, timer / downTime);
                 Vector3 rar = crusherPart.transform.localPosition;
@@ -71,6 +83,11 @@ public class Crusher : MonoBehaviour
             }
             if (isStopped)
             {
+                if (isKilling)
+                {
+                    setKill(false);
+                }
+
                 if (timer > stoptime)
                 {
                     isStopped = false;
@@ -78,16 +95,24 @@ public class Crusher : MonoBehaviour
                 }
             }
 
-
-
-
             yield return new WaitForEndOfFrame();
         }
-
+    }
+    
+    private void setKill(bool kill) //true to set tags to kill player, false to not
+    {
+        if (kill)
+        {
+            isKilling = true;
+        }
+        else
+        {
+            isKilling = false;
+        }
+    
+        for (int i = 0; i < hitboxes.Length; i++)
+        {
+            hitboxes[i].GetComponent<BoxCollider2D>().enabled = kill;
+        }
     }
 }
-
-   
-
-    // Update is called once per frame
-  
