@@ -9,6 +9,8 @@ public class TimerGearManager : MonoBehaviour
 
     public float timeWhenStop; //in seconds
 
+    private float speedMult = 1;
+
     private void Start()
     {
         if (Instance == null)
@@ -22,6 +24,28 @@ public class TimerGearManager : MonoBehaviour
         for(int i = 0; i < gears.Count; i++)
         {
             gears[i].GetComponent<TimerGear>().vibrateGear();
+        }
+    }
+
+    public void setMult(float m)
+    {
+        speedMult = m;
+    }
+
+    public void resetMult()
+    {
+        speedMult = 1f;
+    }
+
+    public void reverseGears()
+    {
+        if (speedMult > 0)
+        {
+            speedMult *= -1;
+        }
+        else
+        {
+            Mathf.Abs(speedMult);
         }
     }
 
@@ -42,9 +66,8 @@ public class TimerGearManager : MonoBehaviour
                 
                 if (!tg.paused)
                 {
-                    tg.setSpeed(Mathf.Lerp(tg.maxSpeed, tg.minSpeed, percentTime));
+                    tg.setSpeed(Mathf.Lerp(tg.maxSpeed, tg.minSpeed, percentTime) * speedMult);
                 }
-
             }
         }
     }

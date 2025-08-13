@@ -7,7 +7,6 @@ public class PlayerCollectScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Collectable"))
         {
-            Debug.Log("Is Collided");
             switch (collision.gameObject.GetComponent<CollectibleData>().upgrade)
             {
                 case CollectibleData.UpgradeOptions.Dash:
@@ -32,6 +31,9 @@ public class PlayerCollectScript : MonoBehaviour
                     {
                         UpgradePopupManager.Instance.showPopup("Double Jump", collision);
                     }
+                    break;
+                case CollectibleData.UpgradeOptions.Time:
+                    GameTimer.Instance.addTime(collision.gameObject.GetComponent<CollectibleData>().time);
                     break;
 
             }

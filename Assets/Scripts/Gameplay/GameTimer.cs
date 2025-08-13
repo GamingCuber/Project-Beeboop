@@ -90,6 +90,41 @@ public class GameTimer : MonoBehaviour
         return timeLeft;
     }
 
+    public void addTime(float time)
+    {
+        StartCoroutine(addTimeCo(time));
+    }
+
+    //dripfeeding the time so it increases in increments instead of it all being added at once
+    private IEnumerator addTimeCo(float time)
+    {
+        float maxAdd = time/10;
+
+        float timeLeftToAdd = time;
+
+        TimerGearManager.Instance.setMult(5f);
+        TimerGearManager.Instance.reverseGears();
+
+        while (timeLeftToAdd > 0)
+        {
+            timeLeftToAdd -= maxAdd;
+
+            if (timeLeft + maxAdd > this.time)
+            {
+                timeLeft = this.time;
+            }
+            else
+            {
+                timeLeft += maxAdd;
+            }
+
+            yield return new WaitForSecondsRealtime(0.1f);
+        }
+
+        TimerGearManager.Instance.reverseGears();
+        TimerGearManager.Instance.resetMult();
+    }
+
     private IEnumerator waitForGears()
     {
         while (TimerGearManager.Instance == null)

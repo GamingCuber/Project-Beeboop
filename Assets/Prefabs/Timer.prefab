@@ -253,8 +253,8 @@ MonoBehaviour:
   maxSpeed: 250
   paused: 0
   dir: -1
-  maxWiggle: 1.5
-  wiggleAmt: 3
+  maxWiggle: 2.25
+  wiggleAmt: 6
 --- !u!1 &3318585275957164571
 GameObject:
   m_ObjectHideFlags: 0
@@ -759,8 +759,8 @@ MonoBehaviour:
   maxSpeed: 150
   paused: 0
   dir: 1
-  maxWiggle: 2.5
-  wiggleAmt: 4
+  maxWiggle: 3.75
+  wiggleAmt: 8
 --- !u!1 &6261879073137696546
 GameObject:
   m_ObjectHideFlags: 0
@@ -1135,6 +1135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb929bab4a1df4683a041b45e82c2213, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeLeft: 0
   timerText: {fileID: 8512652970634042940}
   chargeBar: {fileID: 5246202905096191115}
   chargeMaxX: -166
@@ -1355,8 +1356,8 @@ MonoBehaviour:
   maxSpeed: 100
   paused: 0
   dir: 1
-  maxWiggle: 4
-  wiggleAmt: 4
+  maxWiggle: 6
+  wiggleAmt: 8
 --- !u!1 &9216895781237024149
 GameObject:
   m_ObjectHideFlags: 0
