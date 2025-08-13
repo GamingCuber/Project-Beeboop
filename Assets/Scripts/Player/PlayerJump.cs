@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Tilemaps;
 using System.Collections;
 
 public class PlayerJump : MonoBehaviour
@@ -103,7 +104,7 @@ public class PlayerJump : MonoBehaviour
 
             RaycastHit2D coll = Physics2D.Raycast(this.transform.position, Vector2.up, 1.1f, platformLayer);
 
-            if (coll.collider != null && !coll.collider.gameObject.TryGetComponent<PlatformEffector2D>(out PlatformEffector2D PE))
+            if (coll.collider != null && coll.collider.gameObject.TryGetComponent<TilemapCollider2D>(out TilemapCollider2D TC))
             {
                 break;
             }
