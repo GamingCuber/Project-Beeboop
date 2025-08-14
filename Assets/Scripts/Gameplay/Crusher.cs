@@ -77,7 +77,7 @@ public class Crusher : MonoBehaviour
                 {
                     isPlayingUp = false;
                     setKill(true);
-                    SoundManager.Instance.playSoundFX("crusherDown", hitboxes[1].transform.position, 0, 30, 1, false);
+                    SoundManager.Instance.playSoundFX("crusherFall", hitboxes[1].transform.position, 0, 15, 1, false);
                 }
 
                 float originy = Mathf.Lerp(goalpos.y, currentposy.y, timer / downTime);
@@ -91,6 +91,7 @@ public class Crusher : MonoBehaviour
                     isDown = false;
                     timer = 0;
                     isStopped = true;
+                    SoundManager.Instance.playSoundFX("crusherDown", hitboxes[1].transform.position, 0, 30, 1, false);
                 }
             }
             if (isStopped)
