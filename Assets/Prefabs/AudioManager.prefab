@@ -72,5 +72,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 5db189b322cb14941bc51c99ebf3cdcf, type: 3}
   - name: crusherUp
     clip: {fileID: 8300000, guid: 3ebb07c7f06ca47e2a4ae2ee3991ab73, type: 3}
+  - name: crusherFall
+    clip: {fileID: 8300000, guid: e286f7aff675b4112a6939422cc1cdd8, type: 3}
   - name: crusherDown
     clip: {fileID: 8300000, guid: 932e165de8b26437686e34eae42209be, type: 3}
