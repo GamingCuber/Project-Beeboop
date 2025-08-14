@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7200855331290460782
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5996641641324138639}
+  - component: {fileID: 835163191560819617}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5996641641324138639
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7200855331290460782}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -37.31, y: 0.27, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &835163191560819617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7200855331290460782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad7dffa28723d414f86afd1d1125ef16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ourAudioSource: {fileID: 0}
+  sourcePre: {fileID: 3151618570316114197, guid: 5445bd3f195df4e7b9411f4542d05c5f, type: 3}
+  soundPoolAmt: 10
+  sounds:
+  - name: dash
+    clip: {fileID: 8300000, guid: 3329713cd05bd4cf7abee06658f86346, type: 3}
+  - name: fall
+    clip: {fileID: 8300000, guid: 1a5af4170f93b4fcb9f52929f72c09fe, type: 3}
+  - name: jump
+    clip: {fileID: 8300000, guid: 2094b612fa88449dcac873fcebc6cc4d, type: 3}
+  - name: hook
+    clip: {fileID: 8300000, guid: 58ee0e8b028e47741918444dc43d0884, type: 3}
+  - name: crtOn
+    clip: {fileID: 8300000, guid: 285643033ee094bea8494c44f80f8716, type: 3}
+  - name: crtOff
+    clip: {fileID: 8300000, guid: b3006ef07a7cd4d0ebf76a9218acf177, type: 3}
+  - name: crtClick
+    clip: {fileID: 8300000, guid: c7a851d8348194471a4fca4900607f30, type: 3}
+  - name: crtAmbience
+    clip: {fileID: 8300000, guid: 328263a5379a14975b84c9ae9c8525ce, type: 3}
+  - name: staticSwitch
+    clip: {fileID: 8300000, guid: 05d201563eadb379385ebef69368b10a, type: 3}
+  - name: checkpoint
+    clip: {fileID: 8300000, guid: 809de6351e42440df9c8ff69c357c129, type: 3}
+  - name: factoryAmbience
+    clip: {fileID: 8300000, guid: 5db189b322cb14941bc51c99ebf3cdcf, type: 3}
+  - name: crusherUp
+    clip: {fileID: 8300000, guid: 3ebb07c7f06ca47e2a4ae2ee3991ab73, type: 3}
+  - name: crusherDown
+    clip: {fileID: 8300000, guid: 932e165de8b26437686e34eae42209be, type: 3}
