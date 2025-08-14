@@ -38,6 +38,8 @@ public class Crusher : MonoBehaviour
     }
     IEnumerator moveCrusher()
     {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
         float timer = 0;
 
         bool isPlayingUp = false;
@@ -114,7 +116,7 @@ public class Crusher : MonoBehaviour
                 }
             }
 
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
     }
     

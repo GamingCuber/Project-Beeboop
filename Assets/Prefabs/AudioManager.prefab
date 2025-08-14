@@ -76,3 +76,5 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: e286f7aff675b4112a6939422cc1cdd8, type: 3}
   - name: crusherDown
     clip: {fileID: 8300000, guid: 932e165de8b26437686e34eae42209be, type: 3}
+  - name: batteryAlert
+    clip: {fileID: 8300000, guid: 38c1a53f3a237471da410b5fd67da670, type: 3}

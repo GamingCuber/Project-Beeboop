@@ -47,6 +47,8 @@ public class PlayerConveyor : MonoBehaviour
 
     private IEnumerator movePlayer()//GOTTA FIX
     {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
         float speed = curConvey.speed;
         float dir = curConvey.dir;
 
@@ -56,7 +58,7 @@ public class PlayerConveyor : MonoBehaviour
 
             transform.position = Vector3.MoveTowards(transform.position, targetPos, 1);
 
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
     }
 }

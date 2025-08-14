@@ -28,6 +28,8 @@ public class PlayerDash : MonoBehaviour
 
     public IEnumerator DashCoroutine()
     {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
         float timer = 0;
 
         debounce = true;
@@ -79,7 +81,7 @@ public class PlayerDash : MonoBehaviour
         while (timer < PlayerDataManager.Instance.getData().dashTime)
         {
             timer += Time.deltaTime;
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
 
         PlayerStateManager.Instance.getState().isDashing = false;
@@ -98,6 +100,8 @@ public class PlayerDash : MonoBehaviour
 
     private IEnumerator cooldownTimer()
     {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
         float timer = 0;
 
         float totalTime = PlayerDataManager.Instance.getData().dashCooldownTime;
@@ -105,7 +109,7 @@ public class PlayerDash : MonoBehaviour
         while (timer <= totalTime)
         {
             timer += Time.deltaTime;
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
 
         onCooldown = false;

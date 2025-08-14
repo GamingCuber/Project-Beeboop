@@ -43,10 +43,14 @@ public class UpgradePopupManager : MonoBehaviour
 
     private IEnumerator animatePopup(GameObject text) //fades and moves the text
     {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
         float timer = 0;
 
         TMP_Text PUtext = text.transform.GetChild(0).GetComponent<TMP_Text>();
         TMP_Text PUPlus = text.transform.GetChild(1).GetComponent<TMP_Text>();
+
+        yield return new WaitForSecondsRealtime(0.5f);
 
         while (timer < popupTime)
         {
@@ -58,7 +62,7 @@ public class UpgradePopupManager : MonoBehaviour
 
             text.transform.position += Vector3.up * floatSpeed * Time.deltaTime;
 
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
 
         text.SetActive(false);

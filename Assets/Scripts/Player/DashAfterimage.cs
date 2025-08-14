@@ -52,6 +52,8 @@ public class DashAfterimage : MonoBehaviour
 
     private IEnumerator afterimageCo() //to actually like 'spawn' the afterimages
     {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
         int curAmt = 0; //how many afterimages have spawned
 
         float timer = 0;
@@ -79,12 +81,14 @@ public class DashAfterimage : MonoBehaviour
                 StartCoroutine(fadeImage(img));
             }
 
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
     }
 
     private IEnumerator fadeImage(GameObject obj) //to fade each afterimage
     {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
         float timer = 0;
 
         SpriteRenderer sr = obj.GetComponent<SpriteRenderer>();
@@ -97,7 +101,7 @@ public class DashAfterimage : MonoBehaviour
             float a = Mathf.Lerp(255, 0, timer / imageFadeTime);
             color.a = (byte)a;
             sr.color = color;
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
 
         obj.SetActive(false);

@@ -29,6 +29,8 @@ public class CutsceneManager : MonoBehaviour
 
     private IEnumerator allowSkip()
     {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
         skipText.SetActive(true);
 
         bool clicked = false;
@@ -41,7 +43,7 @@ public class CutsceneManager : MonoBehaviour
                 endCutscene();
             }
 
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
     }
 

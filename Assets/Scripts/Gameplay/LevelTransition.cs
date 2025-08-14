@@ -74,9 +74,11 @@ public class LevelTransition : MonoBehaviour
 
     private IEnumerator waitForTimer()
     {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
         while (GameTimer.Instance == null)
         {
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
         GameTimer.Instance.timeLeft = GameDataManager.Instance.totalTime;
     }

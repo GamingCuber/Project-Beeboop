@@ -41,6 +41,8 @@ public class MovingPlatform : MonoBehaviour
 
     IEnumerator movePositionCo()
     {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
         float timer = 0;
 
         pos1 = startingPos;
@@ -86,7 +88,7 @@ public class MovingPlatform : MonoBehaviour
             platformVeloY = (gameObject.transform.position.y - previousPos.y) / Time.deltaTime;
             previousPos = gameObject.transform.position;
 
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
     }
 

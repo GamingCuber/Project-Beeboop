@@ -459,6 +459,8 @@ public class PauseMenu : MonoBehaviour
 
     private IEnumerator switchEffectCo()
     {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
         SoundManager.Instance.playSoundFX("staticSwitch", player.transform.position, 0, 10, 0.5f, true);
 
         float moveYDist = 200;
@@ -510,7 +512,7 @@ public class PauseMenu : MonoBehaviour
             }
 
 
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
 
         switchImg.SetActive(false);

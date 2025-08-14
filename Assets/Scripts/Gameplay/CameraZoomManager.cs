@@ -67,6 +67,8 @@ public class CameraZoomManager : MonoBehaviour
 
     private IEnumerator zoomCamera(float start, float end)
     {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
         float timer = 0;
 
         while (timer < zoomTime)
@@ -77,7 +79,7 @@ public class CameraZoomManager : MonoBehaviour
 
             cam.orthographicSize = size;
 
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
 
         yield break;

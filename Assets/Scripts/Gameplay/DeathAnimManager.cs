@@ -83,6 +83,8 @@ public class DeathAnimManager : MonoBehaviour
 
     private IEnumerator sharpnelLifetime(GameObject g)
     {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
         Rigidbody2D rb = g.GetComponent<Rigidbody2D>();
 
         SpriteRenderer sr = g.GetComponent<SpriteRenderer>();
@@ -112,7 +114,7 @@ public class DeathAnimManager : MonoBehaviour
                 g.transform.localScale = new Vector3(scale, scale, scale);
             }
 
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
 
         g.SetActive(false);
@@ -121,6 +123,8 @@ public class DeathAnimManager : MonoBehaviour
 
     private IEnumerator shrinkPlayer()
     {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
         float timer = 0;
 
         while (timer < shrinkTime)
@@ -131,7 +135,7 @@ public class DeathAnimManager : MonoBehaviour
 
             player.transform.localScale = new Vector3(scale, scale, scale);
 
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
 
         yield return new WaitForSecondsRealtime(1f);

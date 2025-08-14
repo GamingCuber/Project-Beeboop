@@ -119,6 +119,8 @@ public class SoundManager: MonoBehaviour
 
     private IEnumerator turnOffSound(GameObject obj, float time)
     {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
         float timer = 0;
 
         float startTime = Time.realtimeSinceStartup;
@@ -126,7 +128,7 @@ public class SoundManager: MonoBehaviour
         while (timer < time)
         {
             timer = Time.realtimeSinceStartup - startTime;
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
 
         obj.SetActive(false);
