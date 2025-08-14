@@ -186,6 +186,11 @@ public class SettingsMenu : MonoBehaviour
         input.text = PlayerPrefs.GetInt(prefName, 100).ToString();
 
         MusicManager.Instance.volumeUpdated();
+
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.volumeUpdated();
+        }
     }
 
     public void hideMenu()

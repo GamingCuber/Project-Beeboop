@@ -36,7 +36,6 @@ public class WinScreenManager : MonoBehaviour
     public void replayButton()
     {
         LevelTransition.Instance.doTransition("StartMenu");
-
     }
 
     private void Start()

@@ -17,6 +17,8 @@ public class SoundManager: MonoBehaviour
 
     public int soundPoolAmt;
 
+    private float maxVolume = 1f;
+
     [Serializable]
     public struct SoundClip
     {
@@ -46,6 +48,14 @@ public class SoundManager: MonoBehaviour
             newSource.SetActive(false);
             audioSources[i] = newSource;
         }
+
+        volumeUpdated();
+    }
+
+    public void volumeUpdated()
+    {
+        maxVolume = (float)PlayerPrefs.GetInt("MasterVolume", 100) / 100 * (float)PlayerPrefs.GetInt("SFXVolume", 100) / 100;
+        ourAudioSource.volume = maxVolume;
     }
 
     public void playPlayerSound(string key)
@@ -62,7 +72,7 @@ public class SoundManager: MonoBehaviour
         curSound.transform.position = soundPos;
         source.minDistance = minDist;
         source.maxDistance = maxDist;
-        source.volume = volume;
+        source.volume = volume * maxVolume;
 
         if (mono)
         {
@@ -87,7 +97,7 @@ public class SoundManager: MonoBehaviour
         curSound.transform.position = soundPos;
         source.minDistance = minDist;
         source.maxDistance = maxDist;
-        source.volume = volume;
+        source.volume = volume * maxVolume;
         source.loop = true;
 
         if (mono)
@@ -113,8 +123,7 @@ public class SoundManager: MonoBehaviour
 
     public void setLoopedVolume(int i, float volume)
     {
-        Debug.Log(volume);
-        audioSources[i].GetComponent<AudioSource>().volume = volume;
+        audioSources[i].GetComponent<AudioSource>().volume = volume * maxVolume;
     }
 
     private IEnumerator turnOffSound(GameObject obj, float time)

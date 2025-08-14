@@ -36,14 +36,6 @@ public class PauseMenu : MonoBehaviour
 
     private Vector3[] optionPos = //this is a bad way to do this but
     {
-        //new Vector3(-1245, 380, 0),
-        //new Vector3(-858, 380, 0),
-        //new Vector3(-470, 380, 0),
-        //new Vector3(0, 350, 0),
-        //new Vector3(470, 380, 0),
-        //new Vector3(858, 380, 0),
-        //new Vector3(1245, 380, 0)
-
         new Vector3(-1024, 470, 0),
         new Vector3(-760, 416, 0),
         new Vector3(-620, 240, 0),
@@ -89,6 +81,7 @@ public class PauseMenu : MonoBehaviour
         else if (PlayerInputs.Instance.playerController.Player.Escape.WasPressedThisFrame() && menuActive)
         {
             hideMenu();
+
         }
 
         if (menuActive)
@@ -157,7 +150,6 @@ public class PauseMenu : MonoBehaviour
                         case 5: //restart
                             GameManager.Instance.resumeGame();
                             GameManager.Instance.resetState();
-                            GameDataManager.Instance.resetData();
                             LevelTransition.Instance.doTransition("MainScene");
                             MusicManager.Instance.transitionSong("DoubleJump");
                             break;
@@ -180,8 +172,10 @@ public class PauseMenu : MonoBehaviour
         menuObject.SetActive(true);
         menuActive = true;
         SoundManager.Instance.playSoundFX("crtOn", player.transform.position, 0, 10, 1, true);
-        SoundManager.Instance.playLoopedSound("crtAmbience", player.transform.position, 0, 10, 0.2f, true, out int index);
+        SoundManager.Instance.playLoopedSound("crtAmbience", player.transform.position, 0, 10, 0.75f, true, out int index);
         loopedInt = index;
+        MusicManager.Instance.pauseSong();
+        PlayerStateManager.Instance.getState().pausedGame = true;
 
         if (URPVOlume != null)
         {
@@ -197,6 +191,8 @@ public class PauseMenu : MonoBehaviour
         menuActive = false;
         SoundManager.Instance.playSoundFX("crtOff", player.transform.position, 0.5f, 10, 1, true);
         SoundManager.Instance.stopLoopSound(loopedInt);
+        MusicManager.Instance.resumeSong();
+        PlayerStateManager.Instance.getState().pausedGame = false;
 
         if (URPVOlume != null)
         {
@@ -215,27 +211,6 @@ public class PauseMenu : MonoBehaviour
     private void updateMenu()
     {
         Image menuBG = menuObject.transform.GetChild(0).GetComponent<Image>();
-
-        //Color32 color;
-
-        //int i = 0;
-
-        //foreach (GameObject g in optionGameObjects)
-        //{
-        //    if (i != 3)
-        //    {
-        //        color = new Color32(140, 140, 140, 100);
-        //    }
-        //    else
-        //    {
-        //        color = new Color32(255, 255, 255, 100);
-        //    }
-
-        //    g.transform.GetChild(3).GetComponent<Image>().color = color;
-
-        //    i++;
-        //}
-
 
         menuBG.sprite = optionData[curOption].backgroundImg;
 
@@ -461,7 +436,7 @@ public class PauseMenu : MonoBehaviour
     {
         WaitForEndOfFrame wait = new WaitForEndOfFrame();
 
-        SoundManager.Instance.playSoundFX("staticSwitch", player.transform.position, 0, 10, 0.5f, true);
+        SoundManager.Instance.playSoundFX("staticSwitch", player.transform.position, 0, 10, 0.25f, true);
 
         float moveYDist = 200;
 

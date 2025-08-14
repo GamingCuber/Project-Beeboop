@@ -45,5 +45,7 @@ public class GameDataManager : MonoBehaviour
     {
         data["Time"] = totalTime;
         data["Deaths"] = 0;
+        PlayerStateManager.Instance.getState().totalTime = 0f;
+        PlayerStateManager.Instance.getState().deathNumber = 0;
     }
 }

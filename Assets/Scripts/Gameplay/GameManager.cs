@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
         PlayerStateManager.Instance.getState().canDash = false;
         PlayerStateManager.Instance.getState().canDoubleJump = false;
         PlayerStateManager.Instance.getState().canHook = false;
+        PlayerStateManager.Instance.getState().pausedGame = false;
         PlayerDataManager.Instance.getData().jumpAmt = 1;
 
         //im assuming we just reset when u first load in after u lose

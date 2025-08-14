@@ -90,6 +90,19 @@ public class MusicManager : MonoBehaviour
         yield break;
     }
 
+    //for pause menu
+    public void resumeSong()
+    {
+        musicPlayer.Play();
+        playBackgroundAmbience();
+    }
+
+    public void pauseSong()
+    {
+        musicPlayer.Pause();
+        stopBackgroundAmbience();
+    }
+
     public void playBackgroundAmbience()
     {
         StartCoroutine(waitForSoundManager());
