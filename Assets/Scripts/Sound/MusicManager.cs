@@ -106,6 +106,8 @@ public class MusicManager : MonoBehaviour
 
     private IEnumerator fadeOutCo()
     {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
         float timer = 0;
 
         while (timer < transitionTime)
@@ -121,7 +123,7 @@ public class MusicManager : MonoBehaviour
                 SoundManager.Instance.setLoopedVolume(factoryAmbIndex, volume * 2f);
             }
 
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
 
         yield break;
@@ -129,6 +131,8 @@ public class MusicManager : MonoBehaviour
 
     private IEnumerator fadeInCo()
     {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
         float timer = 0;
 
         if (SoundManager.Instance != null)
@@ -144,7 +148,7 @@ public class MusicManager : MonoBehaviour
 
             musicPlayer.volume = volume;
 
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
 
         yield break;
@@ -152,9 +156,11 @@ public class MusicManager : MonoBehaviour
 
     private IEnumerator waitForSoundManager()
     {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
         while (SoundManager.Instance == null)
         {
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
 
         //had an issue where volume was 0 b/c of the lerp in fadeout (i think), so just stall it out, unnoticeable anyway

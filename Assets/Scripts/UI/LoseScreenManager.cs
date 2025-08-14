@@ -40,6 +40,8 @@ public class LoseScreenManager : MonoBehaviour
 
     private IEnumerator doLights()
     {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
         while (true)
         {
             if (!doing)
@@ -47,12 +49,14 @@ public class LoseScreenManager : MonoBehaviour
                 StartCoroutine(flashLight());
             }
 
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
     }
 
     private IEnumerator flashLight()
     {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
         doing = true;
 
         float timer = 0;
@@ -91,7 +95,7 @@ public class LoseScreenManager : MonoBehaviour
 
             img.color = color;
 
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
 
         doing = false;

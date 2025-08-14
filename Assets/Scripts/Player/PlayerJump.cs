@@ -90,6 +90,8 @@ public class PlayerJump : MonoBehaviour
 
     private IEnumerator doJump() //itll addforce and watch for conditions to mess with the gravity
     {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
         float time = 0;
 
         Vector3 initPos = this.gameObject.transform.position;
@@ -123,7 +125,7 @@ public class PlayerJump : MonoBehaviour
 
             this.gameObject.transform.position = pos;
 
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
 
         rb.linearDamping = 0;
@@ -139,7 +141,7 @@ public class PlayerJump : MonoBehaviour
 
         while (!PlayerStateManager.Instance.getState().isGrounded) //just stall till the player hits the ground to reset grav
         {
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
 
         isJumping = false;
@@ -150,6 +152,8 @@ public class PlayerJump : MonoBehaviour
 
     private IEnumerator coyoteTimer() //counts frames for when the player can jump off whilst not PlayerStateManager.Instance.getState().isGrounded
     {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
         float timer = 0;
 
         float totalTime = PlayerDataManager.Instance.getData().coyoteTime;
@@ -157,7 +161,7 @@ public class PlayerJump : MonoBehaviour
         while (timer <= totalTime)
         {
             timer += Time.deltaTime;
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
 
         canJump = false;
@@ -167,6 +171,8 @@ public class PlayerJump : MonoBehaviour
 
     private IEnumerator checkForPreInput()
     {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
         bool wantsJump = false; //if they preinput
 
         bool alreadyPressing = PlayerInputs.Instance.playerController.Player.Jump.IsPressed();
@@ -197,15 +203,15 @@ public class PlayerJump : MonoBehaviour
                 break;
             }
 
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
 
         while (!PlayerStateManager.Instance.getState().isGrounded) //wait for player to hit the ground
         {
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
 
-        yield return new WaitForEndOfFrame();
+        yield return wait;
 
         if (wantsJump)
         {
@@ -239,9 +245,11 @@ public class PlayerJump : MonoBehaviour
 
     private IEnumerator waitForData() //wait for the data manager singleton to be initialized
     {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
         while (PlayerDataManager.Instance == null)
         {
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
 
         resetJumps();

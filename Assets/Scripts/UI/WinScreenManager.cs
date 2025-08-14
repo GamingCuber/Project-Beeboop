@@ -138,6 +138,9 @@ public class WinScreenManager : MonoBehaviour
     //lol this is dumb but itll work
     private IEnumerator revealResultsCo(TMP_Text[] text, float[] vals, string grade)
     {
+        WaitForSecondsRealtime animDelay = new WaitForSecondsRealtime(0.25f);
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
         int index = 0;
         animDone = true;
         
@@ -145,19 +148,19 @@ public class WinScreenManager : MonoBehaviour
         {
             if (animDone)
             {
-                yield return new WaitForSecondsRealtime(0.25f);
+                yield return animDelay;
                 StartCoroutine(animateTextCo(text[index], vals[index]));
                 index++;
             }
             else
             {
-                yield return new WaitForEndOfFrame();
+                yield return wait;
             }
         }
 
         while (!animDone)
         {
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
         
         yield return new WaitForSecondsRealtime(0.5f);

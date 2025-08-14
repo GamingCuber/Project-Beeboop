@@ -49,12 +49,13 @@ public class FallingPlatformManager : MonoBehaviour
 
     private IEnumerator waitToDissolve()
     {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
         float timer = 0;
 
         while (timer < secondsUntilDissolve)
         {
             timer += Time.deltaTime;
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
 
         dissolvePlatform();
@@ -62,12 +63,13 @@ public class FallingPlatformManager : MonoBehaviour
 
     private IEnumerator waitForReapperance()
     {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
         float timer = 0;
 
         while (timer < secondsUntilReappearance)
         {
             timer += Time.deltaTime;
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
 
         StartCoroutine(fixPlatform());
@@ -77,6 +79,8 @@ public class FallingPlatformManager : MonoBehaviour
 
     private IEnumerator wigglePlatform()
     {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
         float maxWiggle = 3;
 
         float timer = 0;
@@ -95,12 +99,14 @@ public class FallingPlatformManager : MonoBehaviour
 
             dir *= -1;
 
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
     }
 
     private IEnumerator breakPlatform()
     {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
         float timer = 0;
 
         float fallTime = 0.05f;
@@ -113,12 +119,14 @@ public class FallingPlatformManager : MonoBehaviour
 
             spriteGO.transform.localEulerAngles = new Vector3(0f, spriteGO.transform.rotation.y, rotation);
 
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
     }
 
     private IEnumerator fixPlatform()
     {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
         float timer = 0;
 
         float upTime = 0.25f;
@@ -131,7 +139,7 @@ public class FallingPlatformManager : MonoBehaviour
 
             spriteGO.transform.localEulerAngles = new Vector3(0f, spriteGO.transform.rotation.y, rotation);
 
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
 
         spriteGO.GetComponent<SpriteRenderer>().sprite = upSprite;

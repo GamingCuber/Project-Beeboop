@@ -172,6 +172,8 @@ public class PlayerMove : MonoBehaviour
 
     private IEnumerator checkTurn()
     {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
         string startDir = PlayerDataManager.Instance.getData().playerDirection;
 
         while (true)
@@ -194,7 +196,7 @@ public class PlayerMove : MonoBehaviour
                 break;
             }
 
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
 
         yield break;

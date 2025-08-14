@@ -39,9 +39,11 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator waitForState()
     {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
         while (PlayerStateManager.Instance == null)
         {
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
 
         resetState();

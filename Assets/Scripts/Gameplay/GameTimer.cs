@@ -1,8 +1,8 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine.SceneManagement;
-using System.Runtime.CompilerServices;
 
 public class GameTimer : MonoBehaviour
 {
@@ -15,8 +15,14 @@ public class GameTimer : MonoBehaviour
     public TMP_Text timerText;
 
     public RectTransform chargeBar;
+
     public float chargeMaxX;
     public float chargeMinX;
+
+    public float maxVertSpeed;
+
+    private Dictionary<float, bool> intervalsHit = new Dictionary<float, bool>();
+    private float dingAmount = 4;
 
     private void Start()
     {
@@ -26,11 +32,12 @@ public class GameTimer : MonoBehaviour
         }
 
         StartCoroutine(waitForGears());
-
     }
 
     private IEnumerator startTimer()
     {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
         while (timeLeft > 0)
         {
             timeLeft -= Time.deltaTime;
@@ -42,7 +49,7 @@ public class GameTimer : MonoBehaviour
 
             TimerGearManager.Instance.setGearSpeed(timeLeft, time);
 
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
 
         gameLost();
@@ -50,31 +57,17 @@ public class GameTimer : MonoBehaviour
         yield break;
     }
 
-    private void setText(float secs) //for like actual time, keeping just in case we pivot back
-    {
-        string time = "";
-
-        float mins = (int)secs / 60;
-        float sec = secs % 60;
-
-        time += mins + ":";
-
-        if (sec < 10)
-        {
-            time += "0" + sec;
-        }
-        else
-        {
-            time += sec;
-        }
-
-        timerText.text = time;
-    }
-
     private void moveBar(float timeLeft)
     {
         Vector3 barPos = chargeBar.localPosition;
         barPos.x = Mathf.Lerp(chargeMaxX, chargeMinX, timeLeft / time);
+        barPos.y += maxVertSpeed * Time.deltaTime;
+
+        if (barPos.y >= 120) //-93 top, 120 bottom, found by moving charge in editor
+        {
+            barPos.y = -93f;
+        }
+
         chargeBar.localPosition = barPos;
     }
 
@@ -88,6 +81,38 @@ public class GameTimer : MonoBehaviour
     public float getTimeLeft()
     {
         return timeLeft;
+    }
+
+    private void initializeList()
+    {
+        float interval = time / dingAmount;
+
+        float count = interval;
+
+        for (int i = 0; i < dingAmount; i++)
+        {
+            if (timeLeft > count)
+            {
+                intervalsHit[count] = false;
+            }
+            else
+            {
+                intervalsHit[count] = true;
+            }
+            count += interval;
+        }
+    }
+
+    private void checkIntervals()
+    {
+        foreach (KeyValuePair<float, bool> kv in intervalsHit)
+        {
+            if (kv.Key < timeLeft && !kv.Value)
+            {
+                SoundManager.Instance.playPlayerSound("batteryAlert");
+                break;
+            }
+        }
     }
 
     public void addTime(float time)
@@ -127,13 +152,16 @@ public class GameTimer : MonoBehaviour
 
     private IEnumerator waitForGears()
     {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
         while (TimerGearManager.Instance == null)
         {
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
 
         timeLeft = GameDataManager.Instance.getTimeLeft();
         time = GameDataManager.Instance.getTotalTime();
+        initializeList();
 
         StartCoroutine(startTimer());
     }
