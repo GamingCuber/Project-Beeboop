@@ -40,12 +40,22 @@ public class Crusher : MonoBehaviour
     {
         float timer = 0;
 
+        bool isPlayingUp = false;
+        int loopInt = -1;
+
         while (true)
         {
             timer += Time.deltaTime;
 
             if (!isDown && isStopped == false)
             {
+                if (!isPlayingUp)
+                {
+                    isPlayingUp = true;
+                    SoundManager.Instance.playLoopedSound("crusherUp", transform.position, 0, 25, 1, false, out int i);
+                    loopInt = i;
+                }
+
                 float newy = Mathf.Lerp(currentposy.y, goalpos.y, timer / upTime);
 
                 Vector3 newPosition = crusherPart.transform.localPosition;
@@ -65,7 +75,9 @@ public class Crusher : MonoBehaviour
             {
                 if (!isKilling)
                 {
+                    isPlayingUp = false;
                     setKill(true);
+                    SoundManager.Instance.playSoundFX("crusherDown", hitboxes[1].transform.position, 0, 30, 1, false);
                 }
 
                 float originy = Mathf.Lerp(goalpos.y, currentposy.y, timer / downTime);
@@ -86,6 +98,12 @@ public class Crusher : MonoBehaviour
                 if (isKilling)
                 {
                     setKill(false);
+                }
+
+                if (loopInt != -1)
+                {
+                    SoundManager.Instance.stopLoopSound(loopInt);
+                    loopInt = -1;
                 }
 
                 if (timer > stoptime)

@@ -180,7 +180,7 @@ public class PauseMenu : MonoBehaviour
         menuObject.SetActive(true);
         menuActive = true;
         SoundManager.Instance.playSoundFX("crtOn", player.transform.position, 0, 10, 1, true);
-        SoundManager.Instance.playLoopedSound("crtAmbience", player.transform.position, 0, 10, 0.2f, out int index);
+        SoundManager.Instance.playLoopedSound("crtAmbience", player.transform.position, 0, 10, 0.2f, true, out int index);
         loopedInt = index;
 
         if (URPVOlume != null)
