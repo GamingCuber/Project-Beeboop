@@ -50,6 +50,8 @@ public class UpgradePopupManager : MonoBehaviour
         TMP_Text PUtext = text.transform.GetChild(0).GetComponent<TMP_Text>();
         TMP_Text PUPlus = text.transform.GetChild(1).GetComponent<TMP_Text>();
 
+        yield return new WaitForSecondsRealtime(0.5f);
+
         while (timer < popupTime)
         {
             timer += Time.deltaTime;

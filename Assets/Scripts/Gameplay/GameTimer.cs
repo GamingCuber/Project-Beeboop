@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
@@ -22,7 +23,7 @@ public class GameTimer : MonoBehaviour
     public float maxVertSpeed;
 
     private Dictionary<float, bool> intervalsHit = new Dictionary<float, bool>();
-    private float dingAmount = 4;
+    private float[] dingPercentTimes = {75, 50, 25, 15, 10, 5, 3, 2, 1};
 
     private void Start()
     {
@@ -85,21 +86,47 @@ public class GameTimer : MonoBehaviour
 
     private void initializeList()
     {
-        float interval = time / dingAmount;
-
-        float count = interval;
-
-        for (int i = 0; i < dingAmount; i++)
+        for (int i = 0; i < dingPercentTimes.Length; i++)
         {
-            if (timeLeft > count)
+            float percent = dingPercentTimes[i] / 100;
+
+            float dingTime = time * percent;
+
+            intervalsHit[dingTime] = false;
+        }
+    }
+
+    //will allow the timer to beep again for these intervals (when u recharge back up)
+    private void updateIntervalList()
+    {
+        float curTimeLeft = timeLeft;
+
+        List<float> times = new List<float>();
+
+        //to get all the ding times that have already went off
+        foreach(KeyValuePair<float, bool> kv in intervalsHit)
+        {
+            if (kv.Key < curTimeLeft && kv.Value)
             {
-                intervalsHit[count] = false;
+                times.Add(kv.Key);
             }
-            else
-            {
-                intervalsHit[count] = true;
-            }
-            count += interval;
+        }
+
+        //turn them all to true again
+        for (int i = 0; i < times.Count; i++)
+        {
+            intervalsHit[times[i]] = false;
+        }
+    }
+
+    private IEnumerator IntervalChecks()
+    {
+        WaitForSecondsRealtime wait = new WaitForSecondsRealtime(1f);
+
+        while (true)
+        {
+            checkIntervals();
+            yield return wait;
         }
     }
 
@@ -107,12 +134,75 @@ public class GameTimer : MonoBehaviour
     {
         foreach (KeyValuePair<float, bool> kv in intervalsHit)
         {
-            if (kv.Key < timeLeft && !kv.Value)
+            if (kv.Key >= timeLeft && !kv.Value)
             {
+                intervalsHit[kv.Key] = true;
                 SoundManager.Instance.playPlayerSound("batteryAlert");
+                StartCoroutine(flashChargeColor());
                 break;
             }
         }
+    }
+
+    private IEnumerator flashChargeColor()
+    {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
+        Image[] imgs = new Image[chargeBar.childCount];
+
+        for (int i = 0; i < imgs.Length; i++)
+        {
+            imgs[i] = chargeBar.GetChild(i).GetComponent<Image>();
+        }
+
+        float timer = 0;
+        float flashTime = 0.2f;
+
+        int flashCount = 0;
+        int totalCount = 3;
+
+        bool onRed = false;
+
+        Color32 color = imgs[0].color;
+
+        while (flashCount < totalCount)
+        {
+            timer += Time.deltaTime;
+
+            if (!onRed)
+            {
+                color.g = (byte)Mathf.Lerp(255, 0, timer / flashTime);
+                color.b = (byte)Mathf.Lerp(255, 0, timer / flashTime);
+            }
+            else
+            {
+                color.g = (byte)Mathf.Lerp(0, 255, timer / flashTime);
+                color.b = (byte)Mathf.Lerp(0, 255, timer / flashTime);
+            }
+
+            for (int e = 0; e < imgs.Length; e++)
+            {
+                imgs[e].color = color;
+            }
+
+            if (timer >= flashTime)
+            {
+                timer = 0;
+
+                if (!onRed)
+                {
+                    onRed = true;
+                }
+                else
+                {
+                    onRed = false;
+                    flashCount++;
+                }
+            }
+
+            yield return wait;
+        }
+        yield break;
     }
 
     public void addTime(float time)
@@ -148,6 +238,8 @@ public class GameTimer : MonoBehaviour
 
         TimerGearManager.Instance.reverseGears();
         TimerGearManager.Instance.resetMult();
+
+        updateIntervalList();
     }
 
     private IEnumerator waitForGears()
@@ -162,6 +254,7 @@ public class GameTimer : MonoBehaviour
         timeLeft = GameDataManager.Instance.getTimeLeft();
         time = GameDataManager.Instance.getTotalTime();
         initializeList();
+        StartCoroutine(IntervalChecks());
 
         StartCoroutine(startTimer());
     }
