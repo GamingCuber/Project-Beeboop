@@ -282,14 +282,14 @@ RectTransform:
   m_GameObject: {fileID: 2198309332933613313}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: -4.071513}
-  m_LocalScale: {x: 1.51, y: 1.51, z: 1.51}
+  m_LocalScale: {x: 1, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7699718712267462502}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -179.7, y: 154}
+  m_AnchoredPosition: {x: 0, y: 395.1}
   m_SizeDelta: {x: 329, y: 105}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8488718556828903978
@@ -320,7 +320,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -8319833605722106392, guid: b059d611f93ea57449e6a10e11bd18ff, type: 3}
+  m_Sprite: {fileID: -4139213558954207034, guid: 689bdad910fadc84daa136eb287f9194, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -938,14 +938,14 @@ RectTransform:
   m_GameObject: {fileID: 6622619690511221215}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: -4.071513}
-  m_LocalScale: {x: 1.51, y: 1.51, z: 1.51}
+  m_LocalScale: {x: 1, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7699718712267462502}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -179.7, y: -149.3}
+  m_AnchoredPosition: {x: 0, y: -384.9}
   m_SizeDelta: {x: 329, y: 105}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5061552200032222409
@@ -976,7 +976,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -8319833605722106392, guid: b059d611f93ea57449e6a10e11bd18ff, type: 3}
+  m_Sprite: {fileID: -4139213558954207034, guid: 689bdad910fadc84daa136eb287f9194, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1288,8 +1288,8 @@ MonoBehaviour:
   timeLeft: 0
   timerText: {fileID: 8512652970634042940}
   chargeBar: {fileID: 7699718712267462502}
-  chargeMaxX: -115
-  chargeMinX: 55
+  chargeMaxX: -180
+  chargeMinX: -20
   maxVertSpeed: 25
 --- !u!1 &8837135601911276029
 GameObject:
@@ -1369,14 +1369,14 @@ RectTransform:
   m_GameObject: {fileID: 8942203813714129529}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -4.071513}
-  m_LocalScale: {x: 1.51, y: 1.51, z: 1.51}
+  m_LocalScale: {x: 1, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7699718712267462502}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -179.7, y: 0.9}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 329, y: 105}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1547875651083309400
@@ -1407,7 +1407,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -8319833605722106392, guid: b059d611f93ea57449e6a10e11bd18ff, type: 3}
+  m_Sprite: {fileID: -4139213558954207034, guid: 689bdad910fadc84daa136eb287f9194, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1518,6 +1518,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7699718712267462502}
+  - component: {fileID: 2078199804848884141}
   m_Layer: 0
   m_Name: Charge
   m_TagString: Untagged
@@ -1544,9 +1545,17 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 43.5, y: 120}
+  m_AnchoredPosition: {x: -26.999996, y: -382.9}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &2078199804848884141
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9066692849280101277}
+  m_CullTransparentMesh: 1
 --- !u!1 &9216895781237024149
 GameObject:
   m_ObjectHideFlags: 0

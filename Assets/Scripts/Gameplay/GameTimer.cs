@@ -64,9 +64,9 @@ public class GameTimer : MonoBehaviour
         barPos.x = Mathf.Lerp(chargeMaxX, chargeMinX, timeLeft / time);
         barPos.y += maxVertSpeed * Time.deltaTime;
 
-        if (barPos.y >= 120) //-93 top, 120 bottom, found by moving charge in editor
+        if (barPos.y >= 216) //found by moving charge in editor
         {
-            barPos.y = -93f;
+            barPos.y = -327f;
         }
 
         chargeBar.localPosition = barPos;
@@ -156,7 +156,7 @@ public class GameTimer : MonoBehaviour
         }
 
         float timer = 0;
-        float flashTime = 0.2f;
+        float flashTime = 0.15f;
 
         int flashCount = 0;
         int totalCount = 3;
