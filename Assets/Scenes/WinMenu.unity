@@ -2903,12 +2903,14 @@ MonoBehaviour:
   secText: {fileID: 1924208205}
   milText: {fileID: 841586654}
   rankText: {fileID: 830877843}
-  rankChars: 5300410042004300
+  rankChars: 560053004100420043004400
   secondsPerRank:
   - 60
-  - 90
-  - 120
+  - 75
+  - 105
   - 150
+  - 210
+  - 300
   deathsPerSign: 0300000007000000
 --- !u!114 &2137267374
 MonoBehaviour:
