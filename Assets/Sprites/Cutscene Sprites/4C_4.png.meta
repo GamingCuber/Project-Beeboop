@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 05877535709523240b282ffa491b9ec3
+guid: 67a5b2b0461694c458cc9d2c8cf6c9f3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4312946510973752838
-    second: 3C_think_0
-  - first:
-      213: 2817203857124567999
-    second: 3C_think_1
+      213: 3370346304675636533
+    second: 4C_4_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,9 +46,9 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -103,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 3C_think_0
+      name: 4C_4_0
       rect:
         serializedVersion: 2
-        x: 1139
-        y: 830
-        width: 7
-        height: 7
+        x: 0
+        y: 753
+        width: 860
+        height: 511
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,30 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 606d9d1300aaadb30800000000000000
-      internalID: 4312946510973752838
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 3C_think_1
-      rect:
-        serializedVersion: 2
-        x: 251
-        y: 89
-        width: 1133
-        height: 697
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fbb25cb5bf7b81720800000000000000
-      internalID: 2817203857124567999
+      spriteID: 535ed347b10e5ce20800000000000000
+      internalID: 3370346304675636533
       vertices: []
       indices: 
       edges: []
@@ -150,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -160,8 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      3C_think_0: 4312946510973752838
-      3C_think_1: 2817203857124567999
+      4C_4_0: 3370346304675636533
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

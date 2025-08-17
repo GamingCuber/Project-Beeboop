@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 38f090725a517fc4ea855a09ee013c87
+guid: c30b1bda42fdfa144a28facdc7abe351
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: 3153276549497064505
     second: 4C_0
-  - first:
-      213: -6903594810960381232
-    second: 4C_1
-  - first:
-      213: 5784702664582281384
-    second: 4C_2
-  - first:
-      213: 1787782160251124453
-    second: 4C_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -57,7 +48,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -112,10 +103,10 @@ TextureImporter:
       name: 4C_0
       rect:
         serializedVersion: 2
-        x: 138
-        y: 1278
-        width: 17
-        height: 32
+        x: 0
+        y: 753
+        width: 860
+        height: 511
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -126,72 +117,6 @@ TextureImporter:
       bones: []
       spriteID: 93c8753a050b2cb20800000000000000
       internalID: 3153276549497064505
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 4C_1
-      rect:
-        serializedVersion: 2
-        x: 532
-        y: 1294
-        width: 8
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0daf973a8118130a0800000000000000
-      internalID: -6903594810960381232
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 4C_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 705
-        width: 746
-        height: 560
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8a8beadbc64674050800000000000000
-      internalID: 5784702664582281384
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 4C_3
-      rect:
-        serializedVersion: 2
-        x: 56
-        y: 1119
-        width: 13
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5ea7c85176a7fc810800000000000000
-      internalID: 1787782160251124453
       vertices: []
       indices: 
       edges: []
@@ -211,9 +136,6 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       4C_0: 3153276549497064505
-      4C_1: -6903594810960381232
-      4C_2: 5784702664582281384
-      4C_3: 1787782160251124453
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

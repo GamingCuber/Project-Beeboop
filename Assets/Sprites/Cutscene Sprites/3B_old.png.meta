@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 05877535709523240b282ffa491b9ec3
+guid: 0381f358d90ff994ba95935798385c17
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4312946510973752838
-    second: 3C_think_0
-  - first:
-      213: 2817203857124567999
-    second: 3C_think_1
+      213: 1708745267818088716
+    second: 3B_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +48,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -103,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 3C_think_0
+      name: 3B_0
       rect:
         serializedVersion: 2
-        x: 1139
-        y: 830
-        width: 7
-        height: 7
+        x: 436
+        y: 855
+        width: 653
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,30 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 606d9d1300aaadb30800000000000000
-      internalID: 4312946510973752838
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 3C_think_1
-      rect:
-        serializedVersion: 2
-        x: 251
-        y: 89
-        width: 1133
-        height: 697
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fbb25cb5bf7b81720800000000000000
-      internalID: 2817203857124567999
+      spriteID: c094deb84cea6b710800000000000000
+      internalID: 1708745267818088716
       vertices: []
       indices: 
       edges: []
@@ -160,8 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      3C_think_0: 4312946510973752838
-      3C_think_1: 2817203857124567999
+      3B_0: 1708745267818088716
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
