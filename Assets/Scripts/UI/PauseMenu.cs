@@ -138,6 +138,8 @@ public class PauseMenu : MonoBehaviour
                             hideOptions();
                             break;
                         case 2: //credits
+                            //SceneManager.LoadSceneAsync("Credits", LoadSceneMode.Additive);
+                            //GameManager.Instance.resumeGame();
                             break;
                         case 3: //menu
                             GameManager.Instance.resumeGame();

@@ -18,6 +18,12 @@ public class StartMenuManager : MonoBehaviour
         MusicManager.Instance.transitionSong("Cutscene");
     }
 
+    public void startCredits()
+    {
+        MusicManager.Instance.fadeOut();
+        LevelTransition.Instance.doTransition("Credits");
+    }
+
     public void quitGame()
     {
         Application.Quit();
