@@ -42,27 +42,43 @@ public class StartMenuManager : MonoBehaviour
     public void openOptions()
     {
         settingsObj.SetActive(true);
-        EventSystem.current.SetSelectedGameObject(firstSettingsButton);
+
+        if (Gamepad.current != null)
+        {
+            EventSystem.current.SetSelectedGameObject(firstSettingsButton);
+        }
     }
 
     public void hideOptions()
     {
         settingsObj.SetActive(false);
-        EventSystem.current.SetSelectedGameObject(menuSelect.transform.GetChild(1).gameObject);
+
+        if (Gamepad.current != null)
+        {
+            EventSystem.current.SetSelectedGameObject(menuSelect.transform.GetChild(1).gameObject);
+        }
     }
 
     public void openLevelSelect()
     {
         levelSelect.SetActive(true);
         menuSelect.SetActive(false);
-        EventSystem.current.SetSelectedGameObject(levelSelect.transform.GetChild(1).gameObject.transform.GetChild(1).gameObject);
+
+        if (Gamepad.current != null)
+        {
+            EventSystem.current.SetSelectedGameObject(levelSelect.transform.GetChild(1).gameObject.transform.GetChild(1).gameObject);
+        }
     }
 
     public void hideLevelSelect()
     {
         levelSelect.SetActive(false);
         menuSelect.SetActive(true);
-        EventSystem.current.SetSelectedGameObject(menuSelect.transform.GetChild(0).gameObject);
+
+        if (Gamepad.current != null)
+        {
+            EventSystem.current.SetSelectedGameObject(menuSelect.transform.GetChild(0).gameObject);
+        }
     }
 
     private void Update()
