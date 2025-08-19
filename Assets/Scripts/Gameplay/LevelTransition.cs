@@ -55,6 +55,10 @@ public class LevelTransition : MonoBehaviour
             resetStats();
             StartCoroutine(waitForTimer());
         }
+        else if (scene.Equals("StartMenu"))
+        {
+            resetStats();
+        }
 
         yield return new WaitForSecondsRealtime(anim.clip.length);
 
@@ -70,6 +74,7 @@ public class LevelTransition : MonoBehaviour
         PlayerStateManager.Instance.getState().canDoubleJump = false;
         PlayerStateManager.Instance.getState().deathNumber = 0;
         PlayerStateManager.Instance.getState().totalTime = 0;
+        GameDataManager.Instance.resetData();
     }
 
     private IEnumerator waitForTimer()
