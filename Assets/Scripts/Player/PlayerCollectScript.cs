@@ -34,6 +34,7 @@ public class PlayerCollectScript : MonoBehaviour
                     break;
                 case CollectibleData.UpgradeOptions.Time:
                     GameTimer.Instance.addTime(collision.gameObject.GetComponent<CollectibleData>().time);
+                    SoundManager.Instance.playSoundFX("batteryPickup", Vector3.zero, 0, 200, 0.15f, true);
                     break;
 
             }

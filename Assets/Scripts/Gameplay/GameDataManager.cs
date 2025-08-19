@@ -9,6 +9,12 @@ public class GameDataManager : MonoBehaviour
 
     public float totalTime;
 
+    public LevelData[] levels;
+
+    private LevelData curLevel;
+
+    private int levelNum = 0;
+
     private void Start()
     {
         if (Instance == null)
@@ -23,6 +29,20 @@ public class GameDataManager : MonoBehaviour
 
         data["Time"] = totalTime;
         data["Deaths"] = 0;
+    }
+
+    //param is just level name of the scriptableobject
+    public void setLevelData(string sceneName)
+    {
+        for (int i = 0; i < levels.Length; i++)
+        {
+            LevelData curData = levels[i];
+
+            if (curData.levelName == sceneName)
+            {
+                curLevel = curData;
+            }
+        }
     }
 
     public float getTimeLeft()
@@ -41,11 +61,29 @@ public class GameDataManager : MonoBehaviour
         Debug.Log(data["Time"]);
     }
 
+    //this is called from the leveltransitionmanager, itll auto go to the next level in the sequence
+    public void nextLevel()
+    {
+        levelNum++;
+
+        if (levelNum < curLevel.scenes.Length)
+        {
+            LevelTransition.Instance.doTransition(curLevel.scenes[levelNum].sceneName);
+            MusicManager.Instance.transitionSong(curLevel.scenes[levelNum].sceneSong);
+        }
+        else
+        {
+            LevelTransition.Instance.doTransition("WinMenu");
+            MusicManager.Instance.transitionSong("test");
+        }
+    }
+
     public void resetData()
     {
         data["Time"] = totalTime;
         data["Deaths"] = 0;
         PlayerStateManager.Instance.getState().totalTime = 0f;
         PlayerStateManager.Instance.getState().deathNumber = 0;
+        levelNum = 0;
     }
 }

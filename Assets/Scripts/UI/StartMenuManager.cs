@@ -1,10 +1,19 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 public class StartMenuManager : MonoBehaviour
 {
     public GameObject settingsObj;
+
+    public GameObject firstSettingsButton;
+
+    public GameObject menuSelect;
+
+    public GameObject levelSelect;
+
+    private GameObject lastButton;
 
     private void Start()
     {
@@ -16,6 +25,7 @@ public class StartMenuManager : MonoBehaviour
     {
         LevelTransition.Instance.doTransition("Cutscene");
         MusicManager.Instance.transitionSong("Cutscene");
+        GameDataManager.Instance.setLevelData("Story");
     }
 
     public void startCredits()
@@ -32,10 +42,57 @@ public class StartMenuManager : MonoBehaviour
     public void openOptions()
     {
         settingsObj.SetActive(true);
+
+        if (Gamepad.current != null)
+        {
+            EventSystem.current.SetSelectedGameObject(firstSettingsButton);
+        }
     }
 
     public void hideOptions()
     {
         settingsObj.SetActive(false);
+
+        if (Gamepad.current != null)
+        {
+            EventSystem.current.SetSelectedGameObject(menuSelect.transform.GetChild(1).gameObject);
+        }
+    }
+
+    public void openLevelSelect()
+    {
+        levelSelect.SetActive(true);
+        menuSelect.SetActive(false);
+
+        if (Gamepad.current != null)
+        {
+            EventSystem.current.SetSelectedGameObject(levelSelect.transform.GetChild(1).gameObject.transform.GetChild(1).gameObject);
+        }
+    }
+
+    public void hideLevelSelect()
+    {
+        levelSelect.SetActive(false);
+        menuSelect.SetActive(true);
+
+        if (Gamepad.current != null)
+        {
+            EventSystem.current.SetSelectedGameObject(menuSelect.transform.GetChild(0).gameObject);
+        }
+    }
+
+    private void Update()
+    {
+        if (Gamepad.current != null)
+        {
+            if (EventSystem.current.currentSelectedGameObject == null)
+            {
+                EventSystem.current.SetSelectedGameObject(lastButton);
+            }
+            else if (lastButton != EventSystem.current.currentSelectedGameObject)
+            {
+                lastButton = EventSystem.current.currentSelectedGameObject;
+            }
+        }
     }
 }
