@@ -2004,7 +2004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f89c7bc36a2e4b33bef0b4375a6ae4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalTime: 300
+  totalTime: 150
   levels:
   - {fileID: 11400000, guid: fdacffef3ce964bdd8f371c66bed2f98, type: 2}
 --- !u!4 &1044357329
