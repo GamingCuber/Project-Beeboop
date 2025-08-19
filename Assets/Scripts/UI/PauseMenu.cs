@@ -18,6 +18,8 @@ public class PauseMenu : MonoBehaviour
 
     private bool settingsActive = false;
 
+    private bool justClosedSettings = false;
+
     public PauseOption[] optionData;
 
     private GameObject[] optionGameObjects;
@@ -134,8 +136,11 @@ public class PauseMenu : MonoBehaviour
                             hideMenu();
                             break;
                         case 1: //settings
-                            showSettings();
-                            hideOptions();
+                            if (!justClosedSettings) //this is here so settings properly closes with controller
+                            {
+                                showSettings();
+                                hideOptions();
+                            }
                             break;
                         case 2: //credits
                             //SceneManager.LoadSceneAsync("Credits", LoadSceneMode.Additive);
@@ -415,6 +420,16 @@ public class PauseMenu : MonoBehaviour
     {
         settingsActive = false;
         settingsObject.SetActive(false);
+        Debug.Log("trjue");
+        justClosedSettings = true;
+        StartCoroutine(waitToOpenSettings());
+    }
+
+    private IEnumerator waitToOpenSettings()
+    {
+        yield return new WaitForEndOfFrame();
+        justClosedSettings = false;
+        yield break;
     }
 
     public void showOptions()
@@ -426,7 +441,6 @@ public class PauseMenu : MonoBehaviour
     {
         optionsOject.SetActive(false);
     }
-
 
     private void switchEffect()
     {

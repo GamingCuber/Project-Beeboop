@@ -3,8 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using TMPro;
 using UnityEngine.EventSystems;
-using System;
-using UnityEngine.Rendering;
+using UnityEngine.InputSystem;
 
 //INPUTS N STUFF HAVE SENSITIVE STRINGS!!! CUZ IM TOO LAZY TO MAKE IT WORK BETTER
 
@@ -22,13 +21,13 @@ public class SettingsMenu : MonoBehaviour
 
     public GameObject SFXVolObj;
 
-    private bool loading = false;
     private EventSystem eventSystem;
 
+    private Coroutine checkCo;
 
-
-    private void Awake()
+    private void OnEnable()
     {
+        Debug.Log("awake");
         Transform setting = transform.GetChild(2);
 
         MasterVolumeVolObj = setting.GetChild(1).gameObject;
@@ -37,7 +36,11 @@ public class SettingsMenu : MonoBehaviour
 
         eventSystem = GameObject.FindGameObjectWithTag("EventSystem").GetComponent<EventSystem>();
         eventSystem.SetSelectedGameObject(MasterVolumeVolObj.transform.GetChild(2).gameObject);
-        Debug.Log(eventSystem);
+
+        if (Gamepad.current != null)
+        {
+            checkCo = StartCoroutine(checkForSelected());
+        }
     }
 
     public void slideMasterVolume()
@@ -197,6 +200,7 @@ public class SettingsMenu : MonoBehaviour
     {
         PauseMenu pause = this.gameObject.GetComponentInParent<PauseMenu>();
 
+        StopCoroutine(checkCo);
         pause.hideSettings();
         pause.showOptions();
     }
@@ -208,8 +212,6 @@ public class SettingsMenu : MonoBehaviour
 
     private IEnumerator loadMenuCo()
     {
-        loading = true;
-
         Slider slider;
         TMP_InputField input;
 
@@ -225,8 +227,28 @@ public class SettingsMenu : MonoBehaviour
         input = SFXVolObj.transform.GetChild(1).GetComponent<TMP_InputField>();
         updateVolumeUI(slider, input, "SFXVolume");
 
-        loading = false;
-
         yield break;
+    }
+
+    //to make sure theres always something selected
+    private IEnumerator checkForSelected()
+    {
+        WaitForSecondsRealtime wait = new WaitForSecondsRealtime(0.1f);
+
+        GameObject lastSelected = EventSystem.current.currentSelectedGameObject;
+
+        while (true)
+        {
+            if (EventSystem.current.currentSelectedGameObject == null)
+            {
+                EventSystem.current.SetSelectedGameObject(lastSelected);
+            }
+            else if (lastSelected != EventSystem.current.currentSelectedGameObject && lastSelected != null)
+            {
+                lastSelected = EventSystem.current.currentSelectedGameObject;
+            }
+
+            yield return wait;
+        }
     }
 }
