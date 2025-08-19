@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   apexDampening: 25
   bounceForce: 1000
-  coyoteTime: 9
+  coyoteTime: 0.2
   maxHorizontalSpeed: 30
   maxNegativeVerticalSpeed: 30
   maxPositiveVerticalSpeed: 30
@@ -28,12 +28,16 @@ MonoBehaviour:
   hookCancelDistance: 1
   hookDistanceLimit: 16
   hookPointCooldown: 5
+<<<<<<< HEAD
   hookSpeed: 120
   jumpApexTime: 0.15
+=======
+  hookSpeed: 60
+>>>>>>> main
   jumpAmt: 2
   jumpFallGrav: 3.5
   jumpHeight: 4
   jumpTime: 0.35
-  minJumpTime: 0.075
-  percentApex: 0
+  minJumpTime: 0.125
+  jumpFloatTime: 0.1
   currentCheckpoint: {fileID: 0}

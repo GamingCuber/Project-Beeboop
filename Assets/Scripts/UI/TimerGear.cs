@@ -36,6 +36,8 @@ public class TimerGear : MonoBehaviour
 
     private IEnumerator vibrateCo()
     {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
         paused = true;
         setSpeed(0);
 
@@ -71,7 +73,7 @@ public class TimerGear : MonoBehaviour
                 timesMoved++;
             }
 
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
 
         rect.localPosition = ogPos;

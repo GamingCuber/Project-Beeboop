@@ -1,31 +1,29 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class CheckPointScript : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
+    private Dictionary<GameObject, bool> checkpointsHit = new Dictionary<GameObject, bool>();
 
-    }
+    public Sprite on;
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
+    public Sprite off;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Checkpoint"))
         {
+            if (!checkpointsHit.ContainsKey(collision.gameObject))
+            {
+                checkpointsHit[collision.gameObject] = true;
+                SoundManager.Instance.playSoundFX("checkpoint", collision.transform.position, 0, 15, 0.15f, false);
+            }
+
             PlayerDataManager.Instance.getData().currentCheckpoint = collision.gameObject;
-            Debug.Log("Collided with a checkpoint");
 
+            SpriteRenderer sr = collision.gameObject.GetComponent<SpriteRenderer>();
 
+            sr.sprite = on;
         }
     }
-
-
-
 }

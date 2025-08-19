@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
         PlayerStateManager.Instance.getState().canDash = false;
         PlayerStateManager.Instance.getState().canDoubleJump = false;
         PlayerStateManager.Instance.getState().canHook = false;
+        PlayerStateManager.Instance.getState().pausedGame = false;
         PlayerDataManager.Instance.getData().jumpAmt = 1;
 
         //im assuming we just reset when u first load in after u lose
@@ -39,9 +40,11 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator waitForState()
     {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
         while (PlayerStateManager.Instance == null)
         {
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
 
         resetState();

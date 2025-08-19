@@ -35,6 +35,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LoseMenu.unity
     guid: aac8e1bf49ec47fabb59db56a6f3abfd
+  - enabled: 1
+    path: Assets/Scenes/Cutscene.unity
+    guid: 590cda96301617e4083d15ed9a64601b
+  - enabled: 1
+    path: Assets/Scenes/WinMenu.unity
+    guid: 32473f12a0f1302a38be2d6f4c0e8573
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: e9e11a1204130478d96d48adcba6f683, type: 3}
   m_UseUCBPForAssetBundles: 0

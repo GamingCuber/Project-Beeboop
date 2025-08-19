@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Tilemaps;
 using System.Collections;
 
 public class PlayerJump : MonoBehaviour
@@ -55,8 +56,14 @@ public class PlayerJump : MonoBehaviour
             PlayerStateManager.Instance.getState().isGrounded = false;
         }
 
-        if (PlayerInputs.Instance.playerController.Player.Jump.WasPressedThisFrame() && jumpsLeft > 0 && (canJump || isJumping))
+        if (PlayerInputs.Instance.playerController.Player.Jump.WasPressedThisFrame() && !PlayerStateManager.Instance.getState().isDead && jumpsLeft > 0 && (canJump || isJumping))
         {
+            if (PlayerStateManager.Instance.getState().canDoubleJump && jumpsLeft == 1)
+            {
+                VFXManager.Instance.playVFX("DoubleJump");
+            }
+
+            cancelJump(true);
             jump();
         }
         else if (PlayerInputs.Instance.playerController.Player.Jump.WasPressedThisFrame() && !canJump && jumpsLeft == 2)
@@ -75,7 +82,7 @@ public class PlayerJump : MonoBehaviour
     {
         isJumping = true;
         PlayerStateManager.Instance.getState().isJumping = true;
-        SoundManager.Instance.playPlayerSound("Jump");
+        SoundManager.Instance.playPlayerSound("jump");
         jumpsLeft--;
         cancelJump(true);
         jumpCo = StartCoroutine(doJump());
@@ -83,6 +90,8 @@ public class PlayerJump : MonoBehaviour
 
     private IEnumerator doJump() //itll addforce and watch for conditions to mess with the gravity
     {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
         float time = 0;
 
         Vector3 initPos = this.gameObject.transform.position;
@@ -95,6 +104,13 @@ public class PlayerJump : MonoBehaviour
         {
             time += Time.deltaTime;
 
+            RaycastHit2D coll = Physics2D.Raycast(this.transform.position, Vector2.up, 1.1f, platformLayer);
+
+            if (coll.collider != null && coll.collider.gameObject.TryGetComponent<TilemapCollider2D>(out TilemapCollider2D TC))
+            {
+                break;
+            }
+
             if (!PlayerInputs.Instance.playerController.Player.Jump.IsPressed() && time >= PlayerDataManager.Instance.getData().minJumpTime) //if they let go or player starts falling, increase grav so they fall faster
             {
                 break;
@@ -104,27 +120,17 @@ public class PlayerJump : MonoBehaviour
 
             if (time < data.jumpTime)
             {
-                pos.y = Mathf.Lerp(initPos.y, initPos.y + (data.jumpHeight * (1f - data.percentApex)), (Mathf.Sin(Mathf.PI / 2f * (time / data.jumpTime))));
-
-                if (time > data.jumpTime / 2)
-                {
-                    PlayerGravManager.Instance.setGrav(PlayerDataManager.Instance.getData().jumpFallGrav * Mathf.Lerp(0, 1, (time - data.jumpTime / 2f) / (data.jumpTime / 2f)));
-                }
+                pos.y = Mathf.Lerp(initPos.y, initPos.y + data.jumpHeight, (Mathf.Sin(Mathf.PI / 2f * (time / data.jumpTime))));
             }
 
             this.gameObject.transform.position = pos;
 
-            RaycastHit2D coll = Physics2D.Raycast(this.transform.position, Vector2.up, 1.1f, platformLayer);
-
-            if (coll.collider != null && !coll.collider.gameObject.TryGetComponent<PlatformEffector2D>(out PlatformEffector2D PE))
-            {
-                break;
-            }
-
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
 
         rb.linearDamping = 0;
+
+        yield return new WaitForSecondsRealtime(PlayerDataManager.Instance.getData().jumpFloatTime);
         PlayerStateManager.Instance.getState().isFalling = true;
 
         if (preJumpCo != null)
@@ -135,7 +141,7 @@ public class PlayerJump : MonoBehaviour
 
         while (!PlayerStateManager.Instance.getState().isGrounded) //just stall till the player hits the ground to reset grav
         {
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
 
         isJumping = false;
@@ -146,6 +152,8 @@ public class PlayerJump : MonoBehaviour
 
     private IEnumerator coyoteTimer() //counts frames for when the player can jump off whilst not PlayerStateManager.Instance.getState().isGrounded
     {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
         float timer = 0;
 
         float totalTime = PlayerDataManager.Instance.getData().coyoteTime;
@@ -153,7 +161,7 @@ public class PlayerJump : MonoBehaviour
         while (timer <= totalTime)
         {
             timer += Time.deltaTime;
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
 
         canJump = false;
@@ -163,6 +171,8 @@ public class PlayerJump : MonoBehaviour
 
     private IEnumerator checkForPreInput()
     {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
         bool wantsJump = false; //if they preinput
 
         bool alreadyPressing = PlayerInputs.Instance.playerController.Player.Jump.IsPressed();
@@ -193,15 +203,15 @@ public class PlayerJump : MonoBehaviour
                 break;
             }
 
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
 
         while (!PlayerStateManager.Instance.getState().isGrounded) //wait for player to hit the ground
         {
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
 
-        yield return new WaitForEndOfFrame();
+        yield return wait;
 
         if (wantsJump)
         {
@@ -235,9 +245,11 @@ public class PlayerJump : MonoBehaviour
 
     private IEnumerator waitForData() //wait for the data manager singleton to be initialized
     {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
         while (PlayerDataManager.Instance == null)
         {
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
 
         resetJumps();

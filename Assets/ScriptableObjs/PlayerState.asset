@@ -12,14 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44f517166f069b5ca85b2a6f145c4910, type: 3}
   m_Name: PlayerState
   m_EditorClassIdentifier: 
-  isGrounded: 1
+  isGrounded: 0
   isMoving: 0
   isDashing: 0
   isHooked: 0
-  isJumping: 0
-  isFalling: 0
+  isJumping: 1
+  isFalling: 1
   isDead: 0
   keepMomentum: 0
   canDash: 0
-  canDoubleJump: 1
+  canDoubleJump: 0
   canHook: 0
+  gameLost: 0
+  pausedGame: 0
+  deathNumber: 0
+  totalTime: 3.4866602

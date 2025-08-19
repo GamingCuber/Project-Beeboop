@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class PlayerMove : MonoBehaviour
     float AFMult = 1; //add force mult, so i can make it close to 0 if the player is close to max speed
 
     private bool dirSwitched = false; //used for when they are pressing both left n right for latest input
+
+    private Coroutine turnCheckCo;
 
     private Gamepad gamePad;
 
@@ -37,9 +40,25 @@ public class PlayerMove : MonoBehaviour
             gamePad = null;
         }
 
+        if (rb.linearVelocityY < 0 && !PlayerStateManager.Instance.getState().isFalling && !PlayerStateManager.Instance.getState().isGrounded && !PlayerStateManager.Instance.getState().isDashing && !PlayerStateManager.Instance.getState().isHooked && !PlayerStateManager.Instance.getState().isJumping)
+        {
+           PlayerStateManager.Instance.getState().isFalling = true;
+        }
+        else if (PlayerStateManager.Instance.getState().isFalling &&PlayerStateManager.Instance.getState().isGrounded)
+        {
+            PlayerStateManager.Instance.getState().isFalling = false;
+        }
 
+        if (PlayerInputs.Instance.pressingLeftButton || PlayerInputs.Instance.pressingRightButton) //check if player is moving by seeing if they input anything lolo
+        {
+           PlayerStateManager.Instance.getState().isMoving = true;
+        }
+        else if ((!PlayerInputs.Instance.pressingLeftButton && !PlayerInputs.Instance.pressingRightButton) && PlayerStateManager.Instance.getState().isMoving)
+        {
+           PlayerStateManager.Instance.getState().isMoving = false;
+        }
 
-        if (!PlayerStateManager.Instance.getState().isHooked && !PlayerStateManager.Instance.getState().isDashing && !isPaused)
+        if (!PlayerStateManager.Instance.getState().isHooked && !PlayerStateManager.Instance.getState().isDashing && !isPaused && !PlayerStateManager.Instance.getState().isDead)
         {
             //to STOP player
             if (!PlayerStateManager.Instance.getState().isMoving || //if theyre not choosing a direction to move
@@ -47,6 +66,7 @@ public class PlayerMove : MonoBehaviour
                rb.linearVelocityX < -PlayerDataManager.Instance.getData().maxHorizontalSpeed / 1.5 && PlayerInputs.Instance.pressingRightButton) //for ice skating, if players going left but holding right
             {
                 rb.linearVelocityX = 0;
+                tryEndTurnCheck();
             }
             else if (PlayerInputs.Instance.pressingLeftButton || PlayerInputs.Instance.pressingRightButton)
             {
@@ -69,7 +89,14 @@ public class PlayerMove : MonoBehaviour
                 {
                     if (PlayerInputs.Instance.pressingLeftButton && PlayerInputs.Instance.pressingRightButton)
                     {
+                        tryEndTurnCheck();
+
                         dirSwitched = true;
+
+                        if (PlayerStateManager.Instance.getState().isGrounded)
+                        {
+                            VFXManager.Instance.playVFX("Turn");
+                        }
 
                         if (PlayerStateManager.Instance.getState().isGrounded)
                         {
@@ -87,11 +114,13 @@ public class PlayerMove : MonoBehaviour
                     {
                         dir = -1;
                         PlayerDataManager.Instance.getData().playerDirection = "left";
+                        startTurnCheck();
                     }
                     else if (PlayerInputs.Instance.pressingRightButton)
                     {
                         dir = 1;
                         PlayerDataManager.Instance.getData().playerDirection = "right";
+                        startTurnCheck();
                     }
                 }
                 else
@@ -116,6 +145,55 @@ public class PlayerMove : MonoBehaviour
     public void startMovement()
     {
         isPaused = false;
+    }
+
+    private void startTurnCheck()
+    {
+        if (turnCheckCo == null)
+        {
+            turnCheckCo = StartCoroutine(checkTurn());
+        }
+    }
+
+    private void tryEndTurnCheck()
+    {
+        if (turnCheckCo != null)
+        {
+            StopCoroutine(turnCheckCo);
+        }
+        turnCheckCo = null;
+    }
+
+    private IEnumerator checkTurn()
+    {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
+        string startDir = PlayerDataManager.Instance.getData().playerDirection;
+
+        while (true)
+        {
+            if (PlayerDataManager.Instance.getData().playerDirection != startDir)
+            {
+                if (PlayerStateManager.Instance.getState().isGrounded)
+                {
+                    VFXManager.Instance.playVFX("Turn");
+                }
+
+                if (PlayerStateManager.Instance.getState().isGrounded)
+                {
+                    rb.linearVelocityX /= 4;
+                }
+                else if (PlayerStateManager.Instance.getState().isJumping)
+                {
+                    rb.linearVelocityX /= 4.5f;
+                }
+                break;
+            }
+
+            yield return wait;
+        }
+
+        yield break;
     }
 
     private int dirStringtoInt(string s)

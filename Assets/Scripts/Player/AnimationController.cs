@@ -9,11 +9,11 @@ public class AnimationController : MonoBehaviour
 
     void Update()
     {
-        if (PlayerDataManager.Instance.getData().playerDirection == "left" && !sr.flipX) //if they goin left, flip sprite, otherwise don't
+        if (PlayerDataManager.Instance.getData().playerDirection == "left" && !sr.flipX && !PlayerStateManager.Instance.getState().pausedGame) //if they goin left, flip sprite, otherwise don't
         {
             sr.flipX = true;
         }
-        else if (PlayerDataManager.Instance.getData().playerDirection == "right" && sr.flipX)
+        else if (PlayerDataManager.Instance.getData().playerDirection == "right" && sr.flipX && !PlayerStateManager.Instance.getState().pausedGame)
         {
             sr.flipX = false;
         }

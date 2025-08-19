@@ -7,9 +7,12 @@ public class CollectibleData : MonoBehaviour
         None,
         Dash,
         Hook,
-        DoubleJump
-
+        DoubleJump,
+        Time
     }
     public UpgradeOptions upgrade;
+
+    [Tooltip("ONLY APPLICABLE IF YOU CHOOSE TIME UPGRADE")]
+    public float time;
 
 }

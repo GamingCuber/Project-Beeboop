@@ -25,6 +25,8 @@ public class MusicManager : MonoBehaviour
 
     private float maxVolume;
 
+    private int factoryAmbIndex = -1; //for manipulating the background ambience
+
     private void Start()
     {
         if (Instance == null)
@@ -49,6 +51,12 @@ public class MusicManager : MonoBehaviour
     {
         calculateMaxVolume();
         musicPlayer.volume = maxVolume;
+
+        if (factoryAmbIndex != -1)
+        {
+            SoundManager.Instance.setLoopedVolume(factoryAmbIndex, maxVolume * 2f);
+
+        }
     }
 
     public void playMusic(string songName)
@@ -82,8 +90,37 @@ public class MusicManager : MonoBehaviour
         yield break;
     }
 
+    //for pause menu
+    public void resumeSong()
+    {
+        musicPlayer.Play();
+        playBackgroundAmbience();
+    }
+
+    public void pauseSong()
+    {
+        musicPlayer.Pause();
+        stopBackgroundAmbience();
+    }
+
+    public void playBackgroundAmbience()
+    {
+        StartCoroutine(waitForSoundManager());
+    }
+
+    public void stopBackgroundAmbience()
+    {
+        if (factoryAmbIndex != -1)
+        {
+            SoundManager.Instance.stopLoopSound(factoryAmbIndex);
+        }
+        factoryAmbIndex = -1;
+    }
+
     private IEnumerator fadeOutCo()
     {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
         float timer = 0;
 
         while (timer < transitionTime)
@@ -94,7 +131,12 @@ public class MusicManager : MonoBehaviour
 
             musicPlayer.volume = volume;
 
-            yield return new WaitForEndOfFrame();
+            if (factoryAmbIndex != -1)
+            {
+                SoundManager.Instance.setLoopedVolume(factoryAmbIndex, volume * 2f);
+            }
+
+            yield return wait;
         }
 
         yield break;
@@ -102,9 +144,14 @@ public class MusicManager : MonoBehaviour
 
     private IEnumerator fadeInCo()
     {
-        Debug.Log(maxVolume);
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
 
         float timer = 0;
+
+        if (SoundManager.Instance != null)
+        {
+            playBackgroundAmbience();
+        }
 
         while (timer < transitionTime)
         {
@@ -114,14 +161,30 @@ public class MusicManager : MonoBehaviour
 
             musicPlayer.volume = volume;
 
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
 
         yield break;
     }
 
+    private IEnumerator waitForSoundManager()
+    {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
+        while (SoundManager.Instance == null)
+        {
+            yield return wait;
+        }
+
+        //had an issue where volume was 0 b/c of the lerp in fadeout (i think), so just stall it out, unnoticeable anyway
+        yield return new WaitForSecondsRealtime(0.1f);
+
+        SoundManager.Instance.playLoopedSound("factoryAmbience", Vector3.zero, 0, 300, maxVolume * 2f, true, out int i);
+        factoryAmbIndex = i;
+    }
+
     private void calculateMaxVolume()
     {
-        maxVolume = (float)PlayerPrefs.GetInt("MasterVolume", 100)/100 * (float)PlayerPrefs.GetInt("MusicVolume", 100)/100;
+        maxVolume = 0.35f * (float)PlayerPrefs.GetInt("MasterVolume", 100)/100 * (float)PlayerPrefs.GetInt("MusicVolume", 100)/100;
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "PlayerState", menuName = "PlayerState", order = 1)]
 public class PlayerState : ScriptableObject
 {
+    [Header("General States revolving around the Player")]
     public bool isGrounded = false;
     public bool isMoving = false;
     public bool isDashing = false;
@@ -17,4 +18,8 @@ public class PlayerState : ScriptableObject
     public bool canDoubleJump = false;
     public bool canHook = false;
     public bool gameLost = false;
+    public bool pausedGame = false;
+    [Header("Ranking Data")]
+    public int deathNumber = 0;
+    public float totalTime = 0f;
 }

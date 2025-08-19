@@ -50,10 +50,37 @@ public class LevelTransition : MonoBehaviour
         anim.clip = fadeOutAnim;
         anim.Play();
 
+        if (scene.Equals("MainScene"))
+        {
+            resetStats();
+            StartCoroutine(waitForTimer());
+        }
+
         yield return new WaitForSecondsRealtime(anim.clip.length);
 
         transitionObj.SetActive(false);
 
         yield break;
+    }
+
+    public void resetStats()
+    {
+        PlayerStateManager.Instance.getState().canDash = false;
+        PlayerStateManager.Instance.getState().canHook = false;
+        PlayerStateManager.Instance.getState().canDoubleJump = false;
+        PlayerStateManager.Instance.getState().deathNumber = 0;
+        PlayerStateManager.Instance.getState().totalTime = 0;
+    }
+
+    private IEnumerator waitForTimer()
+    {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
+        while (GameTimer.Instance == null)
+        {
+            yield return wait;
+        }
+
+        GameTimer.Instance.timeLeft = GameDataManager.Instance.totalTime;
     }
 }

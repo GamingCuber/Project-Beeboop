@@ -8,7 +8,7 @@ public class PlayerHook : MonoBehaviour
 
     public LineRenderer hookLineRenderer;
 
-    public GameObject hookTarget;
+    private GameObject hookTarget;
 
     private GameObject[] hookObjects;
 
@@ -20,6 +20,7 @@ public class PlayerHook : MonoBehaviour
 
     private void Start()
     {
+        hookTarget = GameObject.FindGameObjectWithTag("HookTarget");
         hookObjects = GameObject.FindGameObjectsWithTag("Hook");
 
         foreach (GameObject hook in hookObjects)
@@ -123,6 +124,8 @@ public class PlayerHook : MonoBehaviour
 
     private IEnumerator hookCooldownCo(GameObject hook)
     {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
         float timer = 0;
         float totalTime = PlayerDataManager.Instance.getData().hookPointCooldown;
 
@@ -132,7 +135,7 @@ public class PlayerHook : MonoBehaviour
         {
             timer += Time.deltaTime;
 
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
 
         hookCooldowns[hook] = false;
@@ -141,11 +144,14 @@ public class PlayerHook : MonoBehaviour
 
     private void doHook()
     {
+        SoundManager.Instance.playPlayerSound("Hook");
         StartCoroutine(hookCo());
     }
 
     private IEnumerator hookCo()
     {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
         GameObject hook = getClosestAvailHook();
 
         putOnCooldown(hook);
@@ -161,7 +167,6 @@ public class PlayerHook : MonoBehaviour
 
         if (returnCo != null)
         {
-            Debug.Log("stopped co");
             StopCoroutine(returnCo);
             returnCo = null;
         }
@@ -190,7 +195,7 @@ public class PlayerHook : MonoBehaviour
                 hookLineRenderer.enabled = true;
             }
 
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
 
         // Makes you slower when you let go of the hook
@@ -208,7 +213,7 @@ public class PlayerHook : MonoBehaviour
         //wait till player hits ground
         while (!PlayerStateManager.Instance.getState().isGrounded)
         {
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
 
         PlayerStateManager.Instance.getState().isHooked = false;
@@ -239,6 +244,8 @@ public class PlayerHook : MonoBehaviour
 
     private IEnumerator hookReturn(GameObject hook)
     {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
         Vector3 initHookPos = hook.transform.position;
 
         Vector3 hookReturnPos = initHookPos;
@@ -253,7 +260,7 @@ public class PlayerHook : MonoBehaviour
             hookLineRenderer.SetPosition(0, transform.position);
             hookLineRenderer.SetPosition(1, hookReturnPos);
 
-            yield return new WaitForEndOfFrame();
+            yield return wait;
         }
 
         hookLineRenderer.enabled = false;
