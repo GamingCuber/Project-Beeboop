@@ -28,9 +28,18 @@ public class CreditScreenManager : MonoBehaviour
 
         float totalTime = (float)dir.playableAsset.duration;
 
+        bool clicked = false;
+
         while (timer < totalTime)
         {
             timer = Time.realtimeSinceStartup - startTime;
+
+            if (PlayerInputs.Instance.playerController.Player.Jump.WasPerformedThisFrame() && !clicked)
+            {
+                clicked = true;
+                endCutscene();
+            }
+
             yield return wait;
         }
 
