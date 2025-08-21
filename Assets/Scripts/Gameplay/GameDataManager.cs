@@ -74,7 +74,7 @@ public class GameDataManager : MonoBehaviour
         else
         {
             LevelTransition.Instance.doTransition("WinMenu");
-            MusicManager.Instance.transitionSong("test");
+            MusicManager.Instance.transitionSong("Win");
         }
     }
 

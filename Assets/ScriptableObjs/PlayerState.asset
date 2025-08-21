@@ -26,4 +26,4 @@ MonoBehaviour:
   gameLost: 0
   pausedGame: 0
   deathNumber: 0
-  totalTime: 74.9
+  totalTime: 74
