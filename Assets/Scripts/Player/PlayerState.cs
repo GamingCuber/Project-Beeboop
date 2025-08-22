@@ -22,4 +22,7 @@ public class PlayerState : ScriptableObject
     [Header("Ranking Data")]
     public int deathNumber = 0;
     public float totalTime = 0f;
+    public float firstLevelTime = 0f;
+    public float secondLevelTime = 0f;
+
 }

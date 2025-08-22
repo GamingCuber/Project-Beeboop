@@ -64,6 +64,16 @@ public class LevelTransition : MonoBehaviour
         {
             resetStats();
             StartCoroutine(waitForTimer());
+            Debug.Log(PlayerStateManager.Instance.getState().firstLevelTime);
+        }
+        else if (scene.Equals("Dash Level"))
+        {
+            PlayerStateManager.Instance.getState().firstLevelTime = PlayerStateManager.Instance.getState().totalTime;
+        }
+        else if (scene.Equals("WinMenu"))
+        {
+            PlayerStateManager.Instance.getState().secondLevelTime = PlayerStateManager.Instance.getState().totalTime - PlayerStateManager.Instance.getState().firstLevelTime;
+
         }
         else if (scene.Equals("StartMenu"))
         {
