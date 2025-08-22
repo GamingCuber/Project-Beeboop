@@ -671,6 +671,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 442772820}
   m_CullTransparentMesh: 1
+--- !u!1 &518080365
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 518080366}
+  - component: {fileID: 518080369}
+  - component: {fileID: 518080368}
+  m_Layer: 5
+  m_Name: DyingImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &518080366
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518080365}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 652123258}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 200, y: 200}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &518080368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518080365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &518080369
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518080365}
+  m_CullTransparentMesh: 1
 --- !u!1 &559383655
 GameObject:
   m_ObjectHideFlags: 0
@@ -1051,6 +1126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitionObj: {fileID: 984244002}
+  dyingObj: {fileID: 518080365}
   anim: {fileID: 984244003}
   fadeInAnim: {fileID: 7400000, guid: 35958a348674742c1808179ede7789c7, type: 2}
   fadeOutAnim: {fileID: 7400000, guid: f784bc1a5746148e4aa384f6ecbd3566, type: 2}
@@ -1131,6 +1207,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 984244006}
+  - {fileID: 518080366}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1759,7 +1836,7 @@ GameObject:
   - component: {fileID: 984244004}
   - component: {fileID: 984244003}
   m_Layer: 5
-  m_Name: Image
+  m_Name: TransitionImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2004,7 +2081,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f89c7bc36a2e4b33bef0b4375a6ae4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalTime: 150
+  totalTime: 25
   levels:
   - {fileID: 11400000, guid: fdacffef3ce964bdd8f371c66bed2f98, type: 2}
 --- !u!4 &1044357329
@@ -3310,6 +3387,10 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: 19b0086a29c48917cb71b02d2bca1848, type: 3}
   - name: Dash
     audioClip: {fileID: 8300000, guid: fe47a48ab4197434b8b771e4ed931850, type: 3}
+  - name: Win
+    audioClip: {fileID: 8300000, guid: 2299b03dc3f994614ac6b0ce67cc0518, type: 3}
+  - name: Lose
+    audioClip: {fileID: 8300000, guid: cf21ddb78aa30482191667acc7a666f5, type: 3}
   transitionTime: 1
 --- !u!82 &1753078683
 AudioSource:
