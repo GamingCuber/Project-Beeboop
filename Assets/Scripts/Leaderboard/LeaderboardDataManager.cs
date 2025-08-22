@@ -61,8 +61,15 @@ public class LeaderboardDataManager : MonoBehaviour
 
     private scoreWrapper readJSON()
     {
+        if (!File.Exists(Application.persistentDataPath + "/scoredata.json")) //make a new json file if one dont exist
+        {
+            Debug.Log("making new json");
+            File.WriteAllText(Application.persistentDataPath + "/scoredata.json", "{}");
+        }
+
         var json = File.ReadAllText(Application.persistentDataPath + "/scoredata.json");
-        return(JsonUtility.FromJson<scoreWrapper>(json));
+
+        return (JsonUtility.FromJson<scoreWrapper>(json));
     }
 
     private void updateJSON(scoreWrapper newWrap)
