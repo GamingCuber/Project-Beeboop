@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 public class LoseScreenManager : MonoBehaviour
 {
@@ -18,11 +20,28 @@ public class LoseScreenManager : MonoBehaviour
 
     private bool doing = false;
 
+    private GameObject lastButton;
+
     private void Start()
     {
         img = lightPanel.GetComponent<Image>();
 
         StartCoroutine(doLights());
+    }
+
+    private void Update()
+    {
+        if (Gamepad.current != null)
+        {
+            if (EventSystem.current.currentSelectedGameObject == null)
+            {
+                EventSystem.current.SetSelectedGameObject(lastButton);
+            }
+            else if (lastButton != EventSystem.current.currentSelectedGameObject)
+            {
+                lastButton = EventSystem.current.currentSelectedGameObject;
+            }
+        }
     }
 
     public void restart()

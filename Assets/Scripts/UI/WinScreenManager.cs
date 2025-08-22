@@ -334,7 +334,7 @@ public class WinScreenManager : MonoBehaviour
                 curScoreObj = newObj;
                 name = "AAA";
 
-                Color32 highlightColor = new Color32((byte)10, (byte)255, (byte)0, (byte)255);
+                Color32 highlightColor = new Color32((byte)44, (byte)136, (byte)86, (byte)255);
                 rankText.color = highlightColor;
                 nameText.color = highlightColor;
                 timeText.color = highlightColor;

@@ -25,6 +25,8 @@ public class GameTimer : MonoBehaviour
     private Dictionary<float, bool> intervalsHit = new Dictionary<float, bool>();
     private float[] dingPercentTimes = {75, 50, 25, 15, 10, 5, 3, 2, 1};
 
+    private bool isDying;
+
     private void Start()
     {
         if (Instance == null)
@@ -53,7 +55,8 @@ public class GameTimer : MonoBehaviour
             yield return wait;
         }
 
-        gameLost();
+        isDying = true;
+        LevelTransition.Instance.startDyingEffect();
 
         yield break;
     }
@@ -72,11 +75,15 @@ public class GameTimer : MonoBehaviour
         chargeBar.localPosition = barPos;
     }
 
-    private void gameLost()
+    public void gameLost()
     {
+        PlayerJump.Instance.cancelJump(false);
+        DashAfterimage.Instance.cancelAfterImage();
+        DeathAnimManager.Instance.doAnimation();
+        SoundManager.Instance.playPlayerSound("death");
         PlayerStateManager.Instance.getState().gameLost = true;
         LevelTransition.Instance.doTransition("LoseMenu");
-        MusicManager.Instance.transitionSong("test");
+        MusicManager.Instance.transitionSong("Lose");
     }
 
     public float getTimeLeft()
@@ -208,6 +215,13 @@ public class GameTimer : MonoBehaviour
     public void addTime(float time)
     {
         StartCoroutine(addTimeCo(time));
+
+        if (isDying)
+        {
+            Debug.Log("saved");
+            LevelTransition.Instance.stopDying();
+            StartCoroutine(startTimer());
+        }
     }
 
     //dripfeeding the time so it increases in increments instead of it all being added at once
