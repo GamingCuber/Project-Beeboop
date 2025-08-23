@@ -27,7 +27,6 @@ public class SettingsMenu : MonoBehaviour
 
     private void OnEnable()
     {
-        Debug.Log("awake");
         Transform setting = transform.GetChild(2);
 
         MasterVolumeVolObj = setting.GetChild(1).gameObject;
@@ -41,6 +40,8 @@ public class SettingsMenu : MonoBehaviour
         {
             checkCo = StartCoroutine(checkForSelected());
         }
+
+        updateAllSettings();
     }
 
     public void slideMasterVolume()
@@ -49,9 +50,6 @@ public class SettingsMenu : MonoBehaviour
         Slider slider = changed.transform.GetChild(0).GetComponent<Slider>();
         TMP_InputField input = changed.transform.GetChild(1).GetComponent<TMP_InputField>();
         var newAmount = Mathf.RoundToInt(slider.value);
-
-
-        Debug.Log(newAmount);
 
         PlayerPrefs.SetInt("MasterVolume", newAmount);
 
@@ -200,9 +198,18 @@ public class SettingsMenu : MonoBehaviour
     {
         PauseMenu pause = this.gameObject.GetComponentInParent<PauseMenu>();
 
-        StopCoroutine(checkCo);
+        tryStopCheckCo();
         pause.hideSettings();
         pause.showOptions();
+    }
+
+    private void tryStopCheckCo()
+    {
+        if (checkCo != null)
+        {
+            StopCoroutine(checkCo);
+        }
+        checkCo = null;
     }
 
     public void updateAllSettings()
