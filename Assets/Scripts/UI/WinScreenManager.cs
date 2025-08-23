@@ -173,6 +173,7 @@ public class WinScreenManager : MonoBehaviour
     }
     // Thanks Kevin!
     // $20.
+    // Dang it.
     private string convertToTimeString(float secs)
     {
         string time = "";
@@ -194,7 +195,7 @@ public class WinScreenManager : MonoBehaviour
         time += ":";
         milli *= 100;
         milli = (int)milli;
-        if (milli < 10)
+        if (milli <= 10)
         {
             time += "0" + milli;
         }
@@ -203,7 +204,7 @@ public class WinScreenManager : MonoBehaviour
             time += milli;
         }
 
-        return time;
+        return time.Substring(0, 7);
     }
 
     //lol this is dumb but itll work

@@ -84,6 +84,8 @@ public class LevelTransition : MonoBehaviour
         PlayerStateManager.Instance.getState().canDoubleJump = false;
         PlayerStateManager.Instance.getState().deathNumber = 0;
         PlayerStateManager.Instance.getState().totalTime = 0;
+        PlayerStateManager.Instance.getState().firstLevelTime = 0;
+        PlayerStateManager.Instance.getState().secondLevelTime = 0;
         GameDataManager.Instance.resetData();
     }
 
