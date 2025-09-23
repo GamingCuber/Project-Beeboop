@@ -11,7 +11,7 @@ public class GameDataManager : MonoBehaviour
 
     public LevelData[] levels;
 
-    private LevelData curLevel;
+    public LevelData curLevel;
 
     private int levelNum = 0;
 
@@ -29,6 +29,14 @@ public class GameDataManager : MonoBehaviour
 
         data["Time"] = totalTime;
         data["Deaths"] = 0;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            nextLevel();
+        }
     }
 
     //param is just level name of the scriptableobject

@@ -28,6 +28,13 @@ public class StartMenuManager : MonoBehaviour
         GameDataManager.Instance.setLevelData("Story");
     }
 
+    public void startBSide(string dataName)
+    {
+        GameDataManager.Instance.setLevelData(dataName);
+        LevelTransition.Instance.doTransition(GameDataManager.Instance.curLevel.scenes[0].sceneName);
+        MusicManager.Instance.transitionSong(GameDataManager.Instance.curLevel.scenes[0].sceneSong);
+    }
+
     public void startCredits()
     {
         MusicManager.Instance.fadeOut();

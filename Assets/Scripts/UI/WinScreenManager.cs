@@ -305,10 +305,14 @@ public class WinScreenManager : MonoBehaviour
 
     private void initializeBoard()
     {
-        LeaderboardDataManager.scoreWrapper wrap = LeaderboardDataManager.Instance.getJSON();
+        LeaderboardDataManager.levelScoreData wrap = LeaderboardDataManager.Instance.getCurData();
+
+        Debug.Log(LeaderboardDataManager.Instance.curLevelData.scores.Count);
 
         //weird name so we know which one the person just got
         wrap.scores.Add(new LeaderboardDataManager.Score("curScore", PlayerStateManager.Instance.getState().totalTime));
+
+        Debug.Log(LeaderboardDataManager.Instance.curLevelData.scores.Count);
 
         wrap = sortWrap(wrap);
 
@@ -353,9 +357,9 @@ public class WinScreenManager : MonoBehaviour
         }
     }
 
-    public LeaderboardDataManager.scoreWrapper sortWrap(LeaderboardDataManager.scoreWrapper wrap)
+    public LeaderboardDataManager.levelScoreData sortWrap(LeaderboardDataManager.levelScoreData wrap)
     {
-        LeaderboardDataManager.scoreWrapper returnWrap = wrap;
+        LeaderboardDataManager.levelScoreData returnWrap = wrap;
 
         //bubble sort to get scores in order from least to greatest
         for (int i = 1; i < returnWrap.scores.Count; i++)
@@ -376,6 +380,7 @@ public class WinScreenManager : MonoBehaviour
 
     public void saveScore()
     {
+        cleanWrap();
         updateBoardColor(false);
         LeaderboardDataManager.Instance.addScoreToJSON(getName(), PlayerStateManager.Instance.getState().totalTime);
     }
@@ -383,6 +388,20 @@ public class WinScreenManager : MonoBehaviour
     public void cancelScore()
     {
         updateBoardColor(true);
+    }
+
+    private void cleanWrap() //get rid of duplicate score value (that was made to cache curScoreObj, w/ name of curScore)
+    {
+        var wrap = LeaderboardDataManager.Instance.getCurData();
+
+        for (int i = 0; i < wrap.scores.Count; i++)
+        {
+            if (wrap.scores[i].name == "curScore")
+            {
+                wrap.scores.RemoveAt(i);
+                break;
+            }
+        }
     }
 
     private string getName()

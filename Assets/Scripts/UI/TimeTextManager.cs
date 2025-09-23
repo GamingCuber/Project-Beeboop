@@ -13,7 +13,6 @@ public class TimeTextManager : MonoBehaviour
     public GameObject timer;
     void Update()
     {
-        Debug.Log(PlayerStateManager.Instance.getState().wantsTimer);
         timer.SetActive(PlayerStateManager.Instance.getState().wantsTimer);
 
         totalTimeText.text = convertToTimeString(PlayerStateManager.Instance.getState().totalTime);
