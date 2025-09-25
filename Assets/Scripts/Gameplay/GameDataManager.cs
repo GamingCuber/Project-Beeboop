@@ -51,6 +51,9 @@ public class GameDataManager : MonoBehaviour
                 curLevel = curData;
             }
         }
+
+        setTotalTime();
+        resetData();
     }
 
     public float getTimeLeft()
@@ -63,10 +66,14 @@ public class GameDataManager : MonoBehaviour
         return totalTime;
     }
 
+    public void setTotalTime()
+    {
+        totalTime = curLevel.levelTotalTime;
+    }
+
     public void updateTime(float time)
     {
         data["Time"] = time;
-        Debug.Log(data["Time"]);
     }
 
     //this is called from the leveltransitionmanager, itll auto go to the next level in the sequence

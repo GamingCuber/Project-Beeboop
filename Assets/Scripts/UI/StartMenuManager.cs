@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class StartMenuManager : MonoBehaviour
 {
+    public static StartMenuManager Instance;
+
     public GameObject settingsObj;
 
     public GameObject firstSettingsButton;
@@ -13,10 +15,17 @@ public class StartMenuManager : MonoBehaviour
 
     public GameObject levelSelect;
 
+    public GameObject bSideSelect;
+
     private GameObject lastButton;
 
     private void Start()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+
         MusicManager.Instance.fadeIn();
         MusicManager.Instance.playMusic("StartScreen");
     }
@@ -85,6 +94,28 @@ public class StartMenuManager : MonoBehaviour
         if (Gamepad.current != null)
         {
             EventSystem.current.SetSelectedGameObject(menuSelect.transform.GetChild(0).gameObject);
+        }
+    }
+
+    public void showBSide()
+    {
+        levelSelect.SetActive(false);
+        bSideSelect.SetActive(true);
+
+        if (Gamepad.current != null)
+        {
+            EventSystem.current.SetSelectedGameObject(bSideSelect.transform.GetChild(0).gameObject);
+        }
+    }
+
+    public void hideBSide()
+    {
+        levelSelect.SetActive(true);
+        bSideSelect.SetActive(false);
+
+        if (Gamepad.current != null)
+        {
+            EventSystem.current.SetSelectedGameObject(levelSelect.transform.GetChild(1).gameObject.transform.GetChild(1).gameObject);
         }
     }
 

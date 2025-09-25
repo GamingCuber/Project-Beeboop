@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Test1
   m_EditorClassIdentifier: 
   levelName: Test
+  levelCover: {fileID: 21300000, guid: 5e3bb21368bdb46b0ac5c3d87049d9f0, type: 3}
+  levelTotalTime: 10
   scenes:
   - sceneName: test1
     sceneSong: test1

@@ -992,6 +992,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6384330303554759135, guid: 749558097378e40b19cb57047e4749f3, type: 3}
   m_PrefabInstance: {fileID: 1242629375}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1242629377 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4244040361730850465, guid: 749558097378e40b19cb57047e4749f3, type: 3}
+  m_PrefabInstance: {fileID: 1242629375}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1251108873
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1120,6 +1131,21 @@ PrefabInstance:
 --- !u!224 &1251108874 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5461940555540999824, guid: 221fa24a235824db895d3e9f466da7a9, type: 3}
+  m_PrefabInstance: {fileID: 1251108873}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1251108875 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7394091247002797949, guid: 221fa24a235824db895d3e9f466da7a9, type: 3}
+  m_PrefabInstance: {fileID: 1251108873}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1251108876 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 755968422315816998, guid: 221fa24a235824db895d3e9f466da7a9, type: 3}
+  m_PrefabInstance: {fileID: 1251108873}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1251108877 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4487762700819075061, guid: 221fa24a235824db895d3e9f466da7a9, type: 3}
   m_PrefabInstance: {fileID: 1251108873}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1358560357
@@ -1445,6 +1471,7 @@ GameObject:
   - component: {fileID: 1565099604}
   - component: {fileID: 1565099603}
   - component: {fileID: 1565099602}
+  - component: {fileID: 1565099606}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1538,6 +1565,32 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1565099606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565099601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7499ec419eaf4b669503523b789ccf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuObject: {fileID: 1251108877}
+  optionData:
+  - {fileID: 11400000, guid: 50b77d9063fcf4af697b9349bcc14b59, type: 2}
+  - {fileID: 11400000, guid: 0b2209477c7c24ec0826dc7803ab8a9f, type: 2}
+  - {fileID: 11400000, guid: 87a17585b093b4fb9ad1d68225b2b460, type: 2}
+  - {fileID: 11400000, guid: e774cf9ad07214eb3aa113b292a8eae5, type: 2}
+  - {fileID: 11400000, guid: 291a9a4032aaf432b90f9369e6971875, type: 2}
+  - {fileID: 11400000, guid: 5eb477208e43e432393c1afc839928c8, type: 2}
+  optionPre: {fileID: 3005552269053860544, guid: bf99d76e902a34c4cb8ed2f713e372a3, type: 3}
+  URPVOlume: {fileID: 1242629377}
+  optionLogo: {fileID: 1251108876}
+  switchImg: {fileID: 1251108875}
+  switchFrames: 15
+  maxSwitchOpacity: 255
 --- !u!1 &1636780319
 GameObject:
   m_ObjectHideFlags: 0
