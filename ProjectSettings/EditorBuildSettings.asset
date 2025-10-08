@@ -44,6 +44,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Screens/Credits.unity
     guid: 6da270bd2b6be4f18be0a48169241c2d
+  - enabled: 1
+    path: Assets/Scenes/TestLevel/test1.unity
+    guid: 218c00171d8f04ffa83463c3afa1329b
+  - enabled: 1
+    path: Assets/Scenes/TestLevel/test2.unity
+    guid: eab229000ad90469c801947333a56e49
+  - enabled: 1
+    path: Assets/super awesome level.unity
+    guid: 9957abb285e1547558c141a275033a61
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: e9e11a1204130478d96d48adcba6f683, type: 3}
   m_UseUCBPForAssetBundles: 0
