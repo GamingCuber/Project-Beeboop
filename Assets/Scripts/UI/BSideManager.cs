@@ -192,11 +192,11 @@ public class BSideManager : MonoBehaviour
 
             if (e == 0)
             {
-                newNav.selectOnLeft = backButton;
+                newNav.selectOnLeft = options[options.Length - 1].transform.GetChild(1).GetComponent<Button>();
             }
             else if (e == options.Length - 1)
             {
-                newNav.selectOnRight = backButton;
+                newNav.selectOnRight = options[0].transform.GetChild(1).GetComponent<Button>();
             }
 
             if (newNav.selectOnLeft == null)

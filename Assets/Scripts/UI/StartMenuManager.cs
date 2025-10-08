@@ -59,20 +59,14 @@ public class StartMenuManager : MonoBehaviour
     {
         settingsObj.SetActive(true);
 
-        if (Gamepad.current != null)
-        {
-            EventSystem.current.SetSelectedGameObject(firstSettingsButton);
-        }
+        EventSystem.current.SetSelectedGameObject(firstSettingsButton);
     }
 
     public void hideOptions()
     {
         settingsObj.SetActive(false);
 
-        if (Gamepad.current != null)
-        {
-            EventSystem.current.SetSelectedGameObject(menuSelect.transform.GetChild(1).gameObject);
-        }
+        EventSystem.current.SetSelectedGameObject(menuSelect.transform.GetChild(1).gameObject);
     }
 
     public void openLevelSelect()
@@ -80,10 +74,7 @@ public class StartMenuManager : MonoBehaviour
         levelSelect.SetActive(true);
         menuSelect.SetActive(false);
 
-        if (Gamepad.current != null)
-        {
-            EventSystem.current.SetSelectedGameObject(levelSelect.transform.GetChild(1).gameObject.transform.GetChild(1).gameObject);
-        }
+        EventSystem.current.SetSelectedGameObject(levelSelect.transform.GetChild(1).gameObject.transform.GetChild(1).gameObject);
     }
 
     public void hideLevelSelect()
@@ -91,10 +82,7 @@ public class StartMenuManager : MonoBehaviour
         levelSelect.SetActive(false);
         menuSelect.SetActive(true);
 
-        if (Gamepad.current != null)
-        {
-            EventSystem.current.SetSelectedGameObject(menuSelect.transform.GetChild(0).gameObject);
-        }
+        EventSystem.current.SetSelectedGameObject(menuSelect.transform.GetChild(0).gameObject);
     }
 
     public void showBSide()
@@ -102,10 +90,7 @@ public class StartMenuManager : MonoBehaviour
         levelSelect.SetActive(false);
         bSideSelect.SetActive(true);
 
-        if (Gamepad.current != null)
-        {
-            EventSystem.current.SetSelectedGameObject(bSideSelect.transform.GetChild(0).gameObject);
-        }
+        EventSystem.current.SetSelectedGameObject(bSideSelect.transform.GetChild(0).gameObject);
     }
 
     public void hideBSide()
@@ -113,24 +98,18 @@ public class StartMenuManager : MonoBehaviour
         levelSelect.SetActive(true);
         bSideSelect.SetActive(false);
 
-        if (Gamepad.current != null)
-        {
-            EventSystem.current.SetSelectedGameObject(levelSelect.transform.GetChild(1).gameObject.transform.GetChild(1).gameObject);
-        }
+        EventSystem.current.SetSelectedGameObject(levelSelect.transform.GetChild(1).gameObject.transform.GetChild(1).gameObject);
     }
 
     private void Update()
     {
-        if (Gamepad.current != null)
+        if (EventSystem.current.currentSelectedGameObject == null)
         {
-            if (EventSystem.current.currentSelectedGameObject == null)
-            {
-                EventSystem.current.SetSelectedGameObject(lastButton);
-            }
-            else if (lastButton != EventSystem.current.currentSelectedGameObject)
-            {
-                lastButton = EventSystem.current.currentSelectedGameObject;
-            }
+            EventSystem.current.SetSelectedGameObject(lastButton);
+        }
+        else if (lastButton != EventSystem.current.currentSelectedGameObject)
+        {
+            lastButton = EventSystem.current.currentSelectedGameObject;
         }
     }
 }
