@@ -11,7 +11,7 @@ public class GameDataManager : MonoBehaviour
 
     public LevelData[] levels;
 
-    private LevelData curLevel;
+    public LevelData curLevel;
 
     private int levelNum = 0;
 
@@ -31,6 +31,14 @@ public class GameDataManager : MonoBehaviour
         data["Deaths"] = 0;
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            nextLevel();
+        }
+    }
+
     //param is just level name of the scriptableobject
     public void setLevelData(string sceneName)
     {
@@ -43,6 +51,9 @@ public class GameDataManager : MonoBehaviour
                 curLevel = curData;
             }
         }
+
+        setTotalTime();
+        resetData();
     }
 
     public float getTimeLeft()
@@ -55,10 +66,14 @@ public class GameDataManager : MonoBehaviour
         return totalTime;
     }
 
+    public void setTotalTime()
+    {
+        totalTime = curLevel.levelTotalTime;
+    }
+
     public void updateTime(float time)
     {
         data["Time"] = time;
-        Debug.Log(data["Time"]);
     }
 
     //this is called from the leveltransitionmanager, itll auto go to the next level in the sequence

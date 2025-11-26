@@ -15,5 +15,9 @@ public class LevelData : ScriptableObject
 
     public string levelName;
 
+    public Sprite levelCover;
+
+    public float levelTotalTime;
+
     public Scene[] scenes;
 }
