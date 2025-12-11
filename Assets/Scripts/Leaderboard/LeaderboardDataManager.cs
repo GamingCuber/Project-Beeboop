@@ -101,18 +101,6 @@ public class LeaderboardDataManager : MonoBehaviour
 
         curLevelData.scores.Add(new Score(name, score));
 
-    
-        // foreach (levelScoreData s in curWrap.levelData)
-        // {
-        //     Debug.Log(s.levelName);
-        //     if (s.levelName == GameDataManager.Instance.curLevel.levelName)
-        //     {
-        //         curWrap.levelData[i] = curLevelData;
-        //         updateJSON(curWrap);
-        //     }
-        //     i++;
-        // }
-
         for (int i = 0; i < curWrap.levelData.Count; ++i)
         {
             if (curWrap.levelData[i].levelName == GameDataManager.Instance.curLevel.levelName)
