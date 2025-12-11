@@ -99,29 +99,21 @@ public class LeaderboardDataManager : MonoBehaviour
             curWrap = new scoreWrapper();
         }
 
-        Debug.Log("before" + curLevelData.scores.Count);
-
         curLevelData.scores.Add(new Score(name, score));
 
-        Debug.Log("after" + curLevelData.scores.Count);
-
-        int i = 0;
-
-        Debug.Log("curlevel" + GameDataManager.Instance.curLevel.levelName);
-
-        foreach (levelScoreData s in curWrap.levelData)
+        for (int i = 0; i < curWrap.levelData.Count; ++i)
         {
-            Debug.Log(s.levelName);
-            if (s.levelName == GameDataManager.Instance.curLevel.levelName)
+            if (curWrap.levelData[i].levelName == GameDataManager.Instance.curLevel.levelName)
             {
                 curWrap.levelData[i] = curLevelData;
                 updateJSON(curWrap);
             }
-            i++;
+            else if (i == curWrap.levelData.Count - 1)
+            {
+                curWrap.levelData.Add(curLevelData);
+                updateJSON(curWrap);
+            }
         }
-
-        curWrap.levelData.Add(curLevelData);
-        updateJSON(curWrap);
     }
 
     private scoreWrapper readJSON()
