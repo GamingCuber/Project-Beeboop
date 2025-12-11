@@ -133,7 +133,10 @@ public class MusicManager : MonoBehaviour
 
             if (factoryAmbIndex != -1)
             {
-                SoundManager.Instance.setLoopedVolume(factoryAmbIndex, volume * 2f);
+                if (SoundManager.Instance != null)
+                {
+                    SoundManager.Instance.setLoopedVolume(factoryAmbIndex, volume * 2f);   
+                }
             }
 
             yield return wait;
@@ -158,6 +161,11 @@ public class MusicManager : MonoBehaviour
             timer += Time.deltaTime;
 
             float volume = Mathf.Lerp(0, maxVolume, timer / transitionTime);
+
+            if (musicPlayer == null)
+            {
+                yield break;
+            }
 
             musicPlayer.volume = volume;
 
