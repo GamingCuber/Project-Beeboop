@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7870123396006590892}
   - component: {fileID: 57549513763155824}
   - component: {fileID: 8904304891329060632}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Semisolid
   m_TagString: PlatformJump
   m_Icon: {fileID: 0}
