@@ -19,7 +19,7 @@ MonoBehaviour:
   maxNegativeVerticalSpeed: 30
   maxPositiveVerticalSpeed: 30
   playerAcceleration: 35
-  playerDirection: right
+  playerDirection: left
   playerMaxSpd: 13
   dashCooldownTime: 0.3
   dashStrength: 15
@@ -28,12 +28,7 @@ MonoBehaviour:
   hookCancelDistance: 1
   hookDistanceLimit: 16
   hookPointCooldown: 5
-<<<<<<< HEAD
-  hookSpeed: 120
-  jumpApexTime: 0.15
-=======
   hookSpeed: 60
->>>>>>> main
   jumpAmt: 2
   jumpFallGrav: 3.5
   jumpHeight: 4
