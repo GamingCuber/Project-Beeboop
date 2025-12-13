@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 8328045660878689098}
   - component: {fileID: 4533798692799507070}
   - component: {fileID: 4450464518495690519}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BouncePad
-  m_TagString: Untagged
+  m_TagString: BouncePlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

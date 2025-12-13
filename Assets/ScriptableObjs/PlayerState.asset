@@ -26,7 +26,7 @@ MonoBehaviour:
   gameLost: 0
   pausedGame: 0
   wantsTimer: 0
-  deathNumber: 20
+  deathNumber: 35
   totalTime: 0
   firstLevelTime: 23.121595
   secondLevelTime: 0
