@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   apexDampening: 25
-  bounceForce: 1000
+  bounceForce: 70
   coyoteTime: 0.2
   maxHorizontalSpeed: 30
   maxNegativeVerticalSpeed: 30
   maxPositiveVerticalSpeed: 30
   playerAcceleration: 35
-  playerDirection: left
+  playerDirection: right
   playerMaxSpd: 13
   dashCooldownTime: 0.3
   dashStrength: 15
