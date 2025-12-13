@@ -48,8 +48,8 @@ public class LoseScreenManager : MonoBehaviour
     {
         GameManager.Instance.resetState();
         GameDataManager.Instance.resetData();
-        LevelTransition.Instance.doTransition("MainScene");
-        MusicManager.Instance.transitionSong("DoubleJump");
+        LevelTransition.Instance.doTransition(GameDataManager.Instance.curLevel.scenes[0].sceneName);
+        MusicManager.Instance.transitionSong(GameDataManager.Instance.curLevel.scenes[0].sceneSong);
     }
 
     public void quit()

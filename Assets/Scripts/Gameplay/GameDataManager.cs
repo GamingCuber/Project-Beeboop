@@ -93,7 +93,6 @@ public class GameDataManager : MonoBehaviour
             MusicManager.Instance.transitionSong("Win");
         }
     }
-
     public void resetData()
     {
         data["Time"] = totalTime;

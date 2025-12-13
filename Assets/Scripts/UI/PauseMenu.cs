@@ -157,8 +157,8 @@ public class PauseMenu : MonoBehaviour
                         case 5: //restart
                             GameManager.Instance.resumeGame();
                             GameManager.Instance.resetState();
-                            LevelTransition.Instance.doTransition("MainScene");
-                            MusicManager.Instance.transitionSong("DoubleJump");
+                            LevelTransition.Instance.doTransition(GameDataManager.Instance.curLevel.scenes[0].sceneName);
+                            MusicManager.Instance.transitionSong(GameDataManager.Instance.curLevel.scenes[0].sceneSong);
                             break;
                     }
                 }
