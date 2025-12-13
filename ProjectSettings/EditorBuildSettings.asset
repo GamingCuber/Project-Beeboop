@@ -56,6 +56,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Road of Inconvenience/RoadOfInconvenience.unity
     guid: d8933bc7042d7488e883cf295e860e40
+  - enabled: 1
+    path: Assets/Scenes/Story/Hook Level.unity
+    guid: c36900bf9f1525c4b8bbbeeb10cb3091
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: e9e11a1204130478d96d48adcba6f683, type: 3}
   m_UseUCBPForAssetBundles: 0
