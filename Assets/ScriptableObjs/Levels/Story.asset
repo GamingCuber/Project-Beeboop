@@ -20,3 +20,5 @@ MonoBehaviour:
     sceneSong: DoubleJump
   - sceneName: Dash Level
     sceneSong: Dash
+  - sceneName: Hook Level
+    sceneSong: Dash
