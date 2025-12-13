@@ -11,9 +11,9 @@ public class PlayerBounce : MonoBehaviour
     }
     void Update()
     {
-        if (Physics2D.Raycast(transform.position, Vector2.down, 1.01f, platformLayer))
+        if (Physics2D.Raycast(transform.position, Vector2.down, 1.3f, platformLayer))
         {
-            GameObject bottomPlatform = Physics2D.Raycast(transform.position, Vector2.down, 1.01f, platformLayer).collider.gameObject;
+            GameObject bottomPlatform = Physics2D.Raycast(transform.position, Vector2.down, 1.3f, platformLayer).collider.gameObject;
             if (bottomPlatform != null && bottomPlatform.CompareTag("BouncePlatform"))
             {
                 rb.AddForce(Vector2.up * PlayerDataManager.Instance.getData().bounceForce);

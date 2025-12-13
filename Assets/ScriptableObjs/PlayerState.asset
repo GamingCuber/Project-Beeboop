@@ -27,6 +27,6 @@ MonoBehaviour:
   pausedGame: 0
   wantsTimer: 0
   deathNumber: 1
-  totalTime: 5.1419883
+  totalTime: 0
   firstLevelTime: 0
   secondLevelTime: 0
