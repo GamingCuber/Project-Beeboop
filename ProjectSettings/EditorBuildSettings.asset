@@ -9,16 +9,16 @@ EditorBuildSettings:
     path: Assets/Scenes/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Scenes/StartMenu.unity
+    path: Assets/Scenes/Screens/StartMenu.unity
     guid: 4d0a6015ba381b12db8722a63cd3e0c6
   - enabled: 1
-    path: Assets/Scenes/MainScene.unity
+    path: Assets/Scenes/Story/MainScene.unity
     guid: 05d1c02522d71404da819f5653b47fdd
   - enabled: 0
     path: Assets/Scenes/Tut level.unity
     guid: 2e7b46e01d3814ee48cfb2694d285bfd
   - enabled: 1
-    path: Assets/Scenes/Another Scene.unity
+    path: Assets/Scenes/Testing/Another Scene.unity
     guid: 62df98bec57f78a458ea5cc4170e4a96
   - enabled: 0
     path: Assets/Scenes/WinScreen.unity
@@ -27,20 +27,35 @@ EditorBuildSettings:
     path: Assets/Scenes/LoseScreen.unity
     guid: 1d228f9c2558648d9a95561001a2b243
   - enabled: 1
-    path: Assets/Scenes/Movement Playtest.unity
+    path: Assets/Scenes/Testing/Movement Playtest.unity
     guid: 9c435c60b0f17428dbdf64754bd3a049
   - enabled: 1
-    path: Assets/Scenes/Dash Level.unity
+    path: Assets/Scenes/Story/Dash Level.unity
     guid: 5e19d1a50babfec4f9076c08833e8cf2
   - enabled: 1
-    path: Assets/Scenes/LoseMenu.unity
+    path: Assets/Scenes/Screens/LoseMenu.unity
     guid: aac8e1bf49ec47fabb59db56a6f3abfd
   - enabled: 1
-    path: Assets/Scenes/Cutscene.unity
+    path: Assets/Scenes/Screens/Cutscene.unity
     guid: 590cda96301617e4083d15ed9a64601b
   - enabled: 1
-    path: Assets/Scenes/WinMenu.unity
+    path: Assets/Scenes/Screens/WinMenu.unity
     guid: 32473f12a0f1302a38be2d6f4c0e8573
+  - enabled: 1
+    path: Assets/Scenes/Screens/Credits.unity
+    guid: 6da270bd2b6be4f18be0a48169241c2d
+  - enabled: 1
+    path: Assets/Scenes/TestLevel/test1.unity
+    guid: 218c00171d8f04ffa83463c3afa1329b
+  - enabled: 1
+    path: Assets/Scenes/TestLevel/test2.unity
+    guid: eab229000ad90469c801947333a56e49
+  - enabled: 1
+    path: Assets/super awesome level.unity
+    guid: 9957abb285e1547558c141a275033a61
+  - enabled: 1
+    path: Assets/Scenes/Road of Inconvenience/RoadOfInconvenience.unity
+    guid: d8933bc7042d7488e883cf295e860e40
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: e9e11a1204130478d96d48adcba6f683, type: 3}
   m_UseUCBPForAssetBundles: 0

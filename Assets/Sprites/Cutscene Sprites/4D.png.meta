@@ -1,22 +1,10 @@
 fileFormatVersion: 2
-guid: e2c36ee0381b96e48b3de6b9d2817673
+guid: fb02588b127a90a4c9e099edad6fc7a8
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: -3820168886491333673
     second: 4D_0
-  - first:
-      213: -3488816175898542115
-    second: 4D_1
-  - first:
-      213: 727763777982237082
-    second: 4D_2
-  - first:
-      213: 2152727209490558432
-    second: 4D_3
-  - first:
-      213: -2544681297230926698
-    second: 4D_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -58,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -115,10 +103,10 @@ TextureImporter:
       name: 4D_0
       rect:
         serializedVersion: 2
-        x: 718
-        y: 1140
-        width: 71
-        height: 109
+        x: 795
+        y: 686
+        width: 628
+        height: 573
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -133,99 +121,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: 4D_1
-      rect:
-        serializedVersion: 2
-        x: 727
-        y: 770
-        width: 764
-        height: 613
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ddf3eec2c2c359fc0800000000000000
-      internalID: -3488816175898542115
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 4D_2
-      rect:
-        serializedVersion: 2
-        x: 1482
-        y: 1119
-        width: 45
-        height: 98
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a99070bdc49891a00800000000000000
-      internalID: 727763777982237082
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 4D_3
-      rect:
-        serializedVersion: 2
-        x: 1474
-        y: 978
-        width: 30
-        height: 65
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0eda00ccdf500ed10800000000000000
-      internalID: 2152727209490558432
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 4D_4
-      rect:
-        serializedVersion: 2
-        x: 1368
-        y: 695
-        width: 69
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 69c68fba7d97facd0800000000000000
-      internalID: -2544681297230926698
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -236,10 +136,6 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       4D_0: -3820168886491333673
-      4D_1: -3488816175898542115
-      4D_2: 727763777982237082
-      4D_3: 2152727209490558432
-      4D_4: -2544681297230926698
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

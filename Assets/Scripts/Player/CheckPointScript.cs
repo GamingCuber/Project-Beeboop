@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using System.Collections.Generic;
 
 public class CheckPointScript : MonoBehaviour
@@ -24,6 +25,8 @@ public class CheckPointScript : MonoBehaviour
             SpriteRenderer sr = collision.gameObject.GetComponent<SpriteRenderer>();
 
             sr.sprite = on;
+
+            collision.transform.GetChild(0).GetComponent<Light2D>().color = new Color32((byte)60, (byte)99, (byte)0, (byte)150);
         }
     }
 }

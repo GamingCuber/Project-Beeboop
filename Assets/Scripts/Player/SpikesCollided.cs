@@ -2,10 +2,13 @@ using UnityEngine;
 
 public class SpikesCollided : MonoBehaviour
 {
+    private bool alreadyTriggered = false;
+
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Respawn"))
+        if (collision.gameObject.CompareTag("Respawn") && !alreadyTriggered)
         {
+            alreadyTriggered = true;
             PlayerStateManager.Instance.getState().isDead = true;
             PlayerStateManager.Instance.getState().deathNumber++;
             PlayerJump.Instance.cancelJump(false);
@@ -28,5 +31,6 @@ public class SpikesCollided : MonoBehaviour
     {
         PlayerStateManager.Instance.getState().isDead = false;
         TimerGearManager.Instance.vibrateGears();
+        alreadyTriggered = false;
     }
 }

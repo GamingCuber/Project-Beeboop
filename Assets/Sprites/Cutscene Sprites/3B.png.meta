@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0381f358d90ff994ba95935798385c17
+guid: 4c9993f359678914b99b2e5bfbaf614a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1708745267818088716
-    second: 3B_0
+      213: 3600786072462075563
+    second: 3B.V2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -48,7 +48,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 3B_0
+      name: 3B.V2_0
       rect:
         serializedVersion: 2
-        x: 436
-        y: 855
-        width: 653
-        height: 350
+        x: 268
+        y: 317
+        width: 1044
+        height: 632
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c094deb84cea6b710800000000000000
-      internalID: 1708745267818088716
+      spriteID: ba6a649eadf88f130800000000000000
+      internalID: 3600786072462075563
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      3B_0: 1708745267818088716
+      3B.V2_0: 3600786072462075563
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

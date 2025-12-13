@@ -13,6 +13,8 @@ TagManager:
   - Conveyor
   - EventSystem
   - HookTarget
+  - NameSelect
+  - TimerText
   layers:
   - Default
   - TransparentFX

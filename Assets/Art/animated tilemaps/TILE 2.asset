@@ -13,24 +13,23 @@ MonoBehaviour:
   m_Name: TILE 2
   m_EditorClassIdentifier: 
   m_AnimatedSprites:
-  - {fileID: -5623305008720386698, guid: d82bc55080bca5e498d29e02b5bc3ac6, type: 3}
-  - {fileID: 7225161436430775461, guid: d82bc55080bca5e498d29e02b5bc3ac6, type: 3}
-  - {fileID: -4378902238657297332, guid: d82bc55080bca5e498d29e02b5bc3ac6, type: 3}
-  - {fileID: -8716941710915377073, guid: d82bc55080bca5e498d29e02b5bc3ac6, type: 3}
-  - {fileID: 5729873951477396785, guid: d82bc55080bca5e498d29e02b5bc3ac6, type: 3}
-  - {fileID: 325471524, guid: d82bc55080bca5e498d29e02b5bc3ac6, type: 3}
-  - {fileID: -1907546910, guid: d82bc55080bca5e498d29e02b5bc3ac6, type: 3}
-  - {fileID: 926884766, guid: d82bc55080bca5e498d29e02b5bc3ac6, type: 3}
-  - {fileID: -1268307995, guid: d82bc55080bca5e498d29e02b5bc3ac6, type: 3}
-  - {fileID: -771938390, guid: d82bc55080bca5e498d29e02b5bc3ac6, type: 3}
-  - {fileID: 753623778, guid: d82bc55080bca5e498d29e02b5bc3ac6, type: 3}
-  - {fileID: 909384096, guid: d82bc55080bca5e498d29e02b5bc3ac6, type: 3}
-  - {fileID: -1929775351, guid: d82bc55080bca5e498d29e02b5bc3ac6, type: 3}
-  - {fileID: 1942936055, guid: d82bc55080bca5e498d29e02b5bc3ac6, type: 3}
-  - {fileID: 1922003365, guid: d82bc55080bca5e498d29e02b5bc3ac6, type: 3}
-  - {fileID: -1300910201, guid: d82bc55080bca5e498d29e02b5bc3ac6, type: 3}
-  m_MinSpeed: 1
-  m_MaxSpeed: 1
+  - {fileID: 199663076, guid: 934fe83134dc8da4b91d488db537a653, type: 3}
+  - {fileID: 1465668711, guid: 934fe83134dc8da4b91d488db537a653, type: 3}
+  - {fileID: -1533201580, guid: 934fe83134dc8da4b91d488db537a653, type: 3}
+  - {fileID: 1183109715, guid: 934fe83134dc8da4b91d488db537a653, type: 3}
+  - {fileID: 2031707809, guid: 934fe83134dc8da4b91d488db537a653, type: 3}
+  - {fileID: 261254809, guid: 934fe83134dc8da4b91d488db537a653, type: 3}
+  - {fileID: -1014689808, guid: 934fe83134dc8da4b91d488db537a653, type: 3}
+  - {fileID: 1757605535, guid: 934fe83134dc8da4b91d488db537a653, type: 3}
+  - {fileID: -293099397, guid: 934fe83134dc8da4b91d488db537a653, type: 3}
+  - {fileID: 1272139231, guid: 934fe83134dc8da4b91d488db537a653, type: 3}
+  - {fileID: -735569606, guid: 934fe83134dc8da4b91d488db537a653, type: 3}
+  - {fileID: -464771450, guid: 934fe83134dc8da4b91d488db537a653, type: 3}
+  - {fileID: -1858450074, guid: 934fe83134dc8da4b91d488db537a653, type: 3}
+  - {fileID: -1187195119, guid: 934fe83134dc8da4b91d488db537a653, type: 3}
+  - {fileID: 482212007, guid: 934fe83134dc8da4b91d488db537a653, type: 3}
+  m_MinSpeed: 20
+  m_MaxSpeed: 20
   m_AnimationStartTime: 0
   m_AnimationStartFrame: 0
   m_TileColliderType: 0

@@ -19,7 +19,11 @@ public class PlayerState : ScriptableObject
     public bool canHook = false;
     public bool gameLost = false;
     public bool pausedGame = false;
+    public bool wantsTimer = false;
     [Header("Ranking Data")]
     public int deathNumber = 0;
     public float totalTime = 0f;
+    public float firstLevelTime = 0f;
+    public float secondLevelTime = 0f;
+
 }
