@@ -311,6 +311,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 639694fa4bb3f4628b02ffc655ec2a96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  curLevelData:
+    levelName: 
+    scores: []
 --- !u!95 &47244525
 Animator:
   serializedVersion: 7
@@ -5223,12 +5226,12 @@ MonoBehaviour:
   rankText: {fileID: 830877843}
   rankChars: 560053004100420043004400
   secondsPerRank:
-  - 60
-  - 75
+  - 90
   - 105
-  - 150
-  - 210
-  - 300
+  - 135
+  - 180
+  - 240
+  - 330
   deathsPerSign: 0300000007000000
   scorePoolParent: {fileID: 1942650106}
   scorePre: {fileID: 3567635377919900325, guid: 532701bef736f4122a5227d984b54ffc, type: 3}

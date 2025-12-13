@@ -27,6 +27,11 @@ public class TimeTextManager : MonoBehaviour
             PlayerStateManager.Instance.getState().secondLevelTime += Time.deltaTime;
             levelTimeText.text = convertToTimeString(PlayerStateManager.Instance.getState().secondLevelTime);
         }
+        else if (SceneManager.GetSceneByName("Hook Level").isLoaded)
+        {
+            PlayerStateManager.Instance.getState().thirdLevelTime += Time.deltaTime;
+            levelTimeText.text = convertToTimeString(PlayerStateManager.Instance.getState().thirdLevelTime);
+        }
 
     }
 

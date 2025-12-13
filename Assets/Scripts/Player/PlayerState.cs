@@ -25,5 +25,6 @@ public class PlayerState : ScriptableObject
     public float totalTime = 0f;
     public float firstLevelTime = 0f;
     public float secondLevelTime = 0f;
+    public float thirdLevelTime = 0f;
 
 }
