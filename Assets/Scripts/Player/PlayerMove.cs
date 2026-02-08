@@ -135,6 +135,24 @@ public class PlayerMove : MonoBehaviour
                 rb.AddForceX(PlayerDataManager.Instance.getData().playerAcceleration * AFMult * dir, ForceMode2D.Force);
             }
         }
+        else if (PlayerStateManager.Instance.getState().isHooked && !PlayerStateManager.Instance.getState().isHookPulling)
+        {
+            if (PlayerInputs.Instance.pressingLeftButton || PlayerInputs.Instance.pressingRightButton)
+            {
+                dir = PlayerInputs.Instance.pressingLeftButton ? -1 : 1;
+
+                PlayerDataManager.Instance.getData().playerDirection = dir == -1 ? "left" : "right";
+
+                float xVelo = rb.linearVelocityX;
+
+                if (xVelo * dir < 0)
+                {
+                    rb.linearVelocityX /= 1.05f;
+                }
+
+                rb.AddForceX(dir * 10, ForceMode2D.Force);
+            }
+        }
     }
 
     public void stopMovement()

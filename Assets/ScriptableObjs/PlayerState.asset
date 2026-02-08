@@ -16,6 +16,7 @@ MonoBehaviour:
   isMoving: 0
   isDashing: 0
   isHooked: 0
+  isHookPulling: 0
   isJumping: 0
   isFalling: 0
   isDead: 0
@@ -26,7 +27,8 @@ MonoBehaviour:
   gameLost: 0
   pausedGame: 0
   wantsTimer: 0
-  deathNumber: 1
+  deathNumber: 8
   totalTime: 0
   firstLevelTime: 0
   secondLevelTime: 0
+  thirdLevelTime: 0
