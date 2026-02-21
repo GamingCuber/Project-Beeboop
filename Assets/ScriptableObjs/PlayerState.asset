@@ -27,8 +27,8 @@ MonoBehaviour:
   gameLost: 0
   pausedGame: 0
   wantsTimer: 0
-  deathNumber: 8
+  deathNumber: 20
   totalTime: 0
   firstLevelTime: 0
   secondLevelTime: 0
-  thirdLevelTime: 0
+  thirdLevelTime: 520.53064

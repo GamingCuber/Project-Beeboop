@@ -1,0 +1,366 @@
+fileFormatVersion: 2
+guid: aabff2f34d6ad458fbdc609e8f670bc6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7350407960013160602
+    second: grapple_sheet (1)_0
+  - first:
+      213: 215243436106398343
+    second: grapple_sheet (1)_1
+  - first:
+      213: 1395756107816475408
+    second: grapple_sheet (1)_2
+  - first:
+      213: 302618949309648492
+    second: grapple_sheet (1)_3
+  - first:
+      213: 1349136230423446949
+    second: grapple_sheet (1)_4
+  - first:
+      213: 1554096038725177888
+    second: grapple_sheet (1)_5
+  - first:
+      213: 8971472935572134725
+    second: grapple_sheet (1)_6
+  - first:
+      213: 7848420673202308207
+    second: grapple_sheet (1)_7
+  - first:
+      213: 1581285305439341105
+    second: grapple_sheet (1)_8
+  - first:
+      213: 2806106286509159648
+    second: grapple_sheet (1)_9
+  - first:
+      213: 8856583078463597635
+    second: grapple_sheet (1)_10
+  - first:
+      213: -3422261647692671581
+    second: grapple_sheet (1)_11
+  - first:
+      213: 3861886602195346777
+    second: grapple_sheet (1)_12
+  - first:
+      213: 2607771815383818132
+    second: grapple_sheet (1)_13
+  - first:
+      213: -3344604868012531410
+    second: grapple_sheet (1)_14
+  - first:
+      213: -6351385213089132271
+    second: grapple_sheet (1)_15
+  - first:
+      213: 4773326536175255645
+    second: grapple_sheet (1)_16
+  - first:
+      213: -7036004663289214459
+    second: grapple_sheet (1)_17
+  - first:
+      213: 660715408293364542
+    second: grapple_sheet (1)_18
+  - first:
+      213: 4851287591607676048
+    second: grapple_sheet (1)_19
+  - first:
+      213: 7059853286084486186
+    second: grapple_sheet (1)_20
+  - first:
+      213: -3729128199608237824
+    second: grapple_sheet (1)_21
+  - first:
+      213: 7640165941056471520
+    second: grapple_sheet (1)_22
+  - first:
+      213: 5025132356193918736
+    second: grapple_sheet (1)_23
+  - first:
+      213: 7454549363858706142
+    second: grapple_sheet (1)_24
+  - first:
+      213: -4788963793136190617
+    second: grapple_sheet (1)_25
+  - first:
+      213: -1581339903729790948
+    second: grapple_sheet (1)_26
+  - first:
+      213: -3017575010223303781
+    second: grapple_sheet (1)_27
+  - first:
+      213: -7539792163132124196
+    second: grapple_sheet (1)_28
+  - first:
+      213: 2761633019374168313
+    second: grapple_sheet (1)_29
+  - first:
+      213: -1502412203395480459
+    second: grapple_sheet (1)_30
+  - first:
+      213: -7415056598232259323
+    second: grapple_sheet (1)_31
+  - first:
+      213: -7972768707840039145
+    second: grapple_sheet (1)_32
+  - first:
+      213: 7911962915267552069
+    second: grapple_sheet (1)_33
+  - first:
+      213: 4644395503178395906
+    second: grapple_sheet (1)_34
+  - first:
+      213: 5917514713645799815
+    second: grapple_sheet (1)_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 400
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: grapple_sheet (1)_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1100
+        height: 1222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66f363d87ea1ef990800000000000000
+      internalID: -7350407960013160602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grapple_sheet (1)_1
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 0
+        width: 1100
+        height: 1222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78a3b55c3c2bcf200800000000000000
+      internalID: 215243436106398343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grapple_sheet (1)_2
+      rect:
+        serializedVersion: 2
+        x: 2200
+        y: 0
+        width: 1100
+        height: 1222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01b9b77f8c8be5310800000000000000
+      internalID: 1395756107816475408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grapple_sheet (1)_3
+      rect:
+        serializedVersion: 2
+        x: 3300
+        y: 0
+        width: 1100
+        height: 1222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6e47efb45e133400800000000000000
+      internalID: 302618949309648492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grapple_sheet (1)_4
+      rect:
+        serializedVersion: 2
+        x: 4400
+        y: 0
+        width: 1100
+        height: 1222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a5cff7e04819b210800000000000000
+      internalID: 1349136230423446949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: bde2b50d0a4974510b83bf1050a477a8
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      grapple_sheet (1)_0: -7350407960013160602
+      grapple_sheet (1)_1: 215243436106398343
+      grapple_sheet (1)_2: 1395756107816475408
+      grapple_sheet (1)_3: 302618949309648492
+      grapple_sheet (1)_4: 1349136230423446949
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
