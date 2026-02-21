@@ -58,10 +58,11 @@ public class PlayerMove : MonoBehaviour
            PlayerStateManager.Instance.getState().isMoving = false;
         }
 
-        if (!PlayerStateManager.Instance.getState().isHooked && !PlayerStateManager.Instance.getState().isDashing && !isPaused && !PlayerStateManager.Instance.getState().isDead)
+        if (!PlayerStateManager.Instance.getState().isHookPulling && !PlayerStateManager.Instance.getState().isDashing && !isPaused && !PlayerStateManager.Instance.getState().isDead)
         {
             //to STOP player
-            if (!PlayerStateManager.Instance.getState().isMoving || //if theyre not choosing a direction to move
+            if (!PlayerStateManager.Instance.getState().isHooked && //so we don't stop mid hook
+                !PlayerStateManager.Instance.getState().isMoving || //if theyre not choosing a direction to move
                rb.linearVelocityX > PlayerDataManager.Instance.getData().maxHorizontalSpeed / 1.5 && PlayerInputs.Instance.pressingLeftButton || //for the ice skating, if players going right but holding left
                rb.linearVelocityX < -PlayerDataManager.Instance.getData().maxHorizontalSpeed / 1.5 && PlayerInputs.Instance.pressingRightButton) //for ice skating, if players going left but holding right
             {
@@ -72,7 +73,9 @@ public class PlayerMove : MonoBehaviour
             {
                 float xVelo = rb.linearVelocityX;
 
-                float maxSpd = PlayerDataManager.Instance.getData().playerMaxSpd;
+                //changes max speed so player can move faster midair when hooking
+                float maxSpd = !PlayerStateManager.Instance.getState().isHooked ?
+                    PlayerDataManager.Instance.getData().playerMaxSpd : PlayerDataManager.Instance.getData().playerMaxHookSpd;
 
                 if (Mathf.Abs(xVelo) > maxSpd - maxSpd / 4) //so if the player is approaching their max speed
                 {

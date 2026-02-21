@@ -17,6 +17,9 @@ public class PlayerData : ScriptableObject
     public string playerDirection;
     public float playerMaxSpd; //self explanatory
 
+    [Tooltip("Max lateral movement when flying w/ hook")]
+    public float playerMaxHookSpd;
+
     [Header("Dash")]
     public float dashCooldownTime; //how much real time is dash cd
     public float dashStrength = 15;

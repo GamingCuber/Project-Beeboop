@@ -21,11 +21,12 @@ MonoBehaviour:
   playerAcceleration: 35
   playerDirection: right
   playerMaxSpd: 13
+  playerMaxHookSpd: 18
   dashCooldownTime: 0.3
   dashStrength: 15
   dashTime: 0.15
   dampeningPostHook: 2
-  hookCancelDistance: 2
+  hookCancelDistance: 3
   hookDistanceLimit: 16
   hookPointCooldown: 1
   hookSpeed: 50

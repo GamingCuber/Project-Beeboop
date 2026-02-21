@@ -36,6 +36,7 @@ public class PlayerSpeedCheck : MonoBehaviour
             }
         }
 
+        Debug.Log(rb.linearVelocity);
     }
 
 }
