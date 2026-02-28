@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PathOfPain
   m_EditorClassIdentifier: 
   levelName: Road of Inconvenience
-  levelCover: {fileID: 3891342145923934150, guid: a993c2b874a78d343b92e85cb453a005, type: 3}
+  levelCover: {fileID: 2187265878677187532, guid: 16a9b9bf622fc44b498d8306103d5ec7, type: 3}
   levelTotalTime: 500
   scenes:
   - sceneName: RoadOfInconvenience
