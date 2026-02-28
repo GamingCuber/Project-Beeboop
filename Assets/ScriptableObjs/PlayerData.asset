@@ -19,16 +19,17 @@ MonoBehaviour:
   maxNegativeVerticalSpeed: 30
   maxPositiveVerticalSpeed: 30
   playerAcceleration: 35
-  playerDirection: left
+  playerDirection: right
   playerMaxSpd: 13
+  playerMaxHookSpd: 18
   dashCooldownTime: 0.3
   dashStrength: 15
   dashTime: 0.15
-  dampeningPostHook: 1.5
-  hookCancelDistance: 1
+  dampeningPostHook: 2
+  hookCancelDistance: 3
   hookDistanceLimit: 16
   hookPointCooldown: 5
-  hookSpeed: 60
+  hookSpeed: 50
   jumpAmt: 2
   jumpFallGrav: 3.5
   jumpHeight: 4

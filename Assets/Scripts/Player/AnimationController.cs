@@ -61,6 +61,15 @@ public class AnimationController : MonoBehaviour
         else
         {
             anim.SetBool("isFalling", false);
+        }   
+
+        if (PlayerStateManager.Instance.getState().isHookPulling)
+        {
+            anim.SetBool("isHooking", true);
+        }
+        else
+        {
+            anim.SetBool("isHooking", false);
         }
     }
 }

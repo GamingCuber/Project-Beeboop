@@ -157,7 +157,11 @@ public class PlayerHook : MonoBehaviour
         putOnCooldown(hook);
 
         PlayerStateManager.Instance.getState().isHooked = true;
+        PlayerStateManager.Instance.getState().isHookPulling = true;
         PlayerStateManager.Instance.getState().keepMomentum = true;
+
+        PlayerJump.Instance.resetJumps();
+        PlayerDash.Instance.resetDash();
 
         rb.linearDamping = 0;
 
@@ -199,9 +203,10 @@ public class PlayerHook : MonoBehaviour
         }
 
         // Makes you slower when you let go of the hook
+        PlayerStateManager.Instance.getState().isHookPulling = false;
         rb.linearDamping = PlayerDataManager.Instance.getData().dampeningPostHook;
-        rb.constraints = RigidbodyConstraints2D.FreezePositionY;
-        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        // rb.constraints = RigidbodyConstraints2D.FreezePositionY;
+        // rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
         yield return new WaitForSecondsRealtime(0.1f);
 

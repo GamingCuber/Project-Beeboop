@@ -219,7 +219,7 @@ public class PlayerJump : MonoBehaviour
         }
     }
 
-    private void resetJumps() //gives jumpsleft back
+    public void resetJumps() //gives jumpsleft back
     {
         jumpsLeft = PlayerDataManager.Instance.getData().jumpAmt;
     }
