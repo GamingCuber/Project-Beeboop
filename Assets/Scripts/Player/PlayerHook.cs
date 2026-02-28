@@ -160,6 +160,9 @@ public class PlayerHook : MonoBehaviour
         PlayerStateManager.Instance.getState().isHookPulling = true;
         PlayerStateManager.Instance.getState().keepMomentum = true;
 
+        PlayerJump.Instance.resetJumps();
+        PlayerDash.Instance.resetDash();
+
         rb.linearDamping = 0;
 
         // Resets player force for a frame, then continues movement in the next line

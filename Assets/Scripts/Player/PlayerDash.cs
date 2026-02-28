@@ -3,11 +3,21 @@ using UnityEngine;
 
 public class PlayerDash : MonoBehaviour
 {
+    public static PlayerDash Instance;
+
     public Rigidbody2D rb;
 
     public bool debounce = false;
 
     private bool onCooldown;
+
+    void Start()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
 
     void Update()
     {
@@ -25,6 +35,10 @@ public class PlayerDash : MonoBehaviour
         }
     }
 
+    public void resetDash()
+    {
+        debounce = false;
+    }
 
     public IEnumerator DashCoroutine()
     {

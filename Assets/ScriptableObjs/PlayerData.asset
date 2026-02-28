@@ -28,7 +28,7 @@ MonoBehaviour:
   dampeningPostHook: 2
   hookCancelDistance: 3
   hookDistanceLimit: 16
-  hookPointCooldown: 1
+  hookPointCooldown: 5
   hookSpeed: 50
   jumpAmt: 2
   jumpFallGrav: 3.5
