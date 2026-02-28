@@ -147,6 +147,7 @@ public class PauseMenu : MonoBehaviour
                             //GameManager.Instance.resumeGame();
                             break;
                         case 3: //menu
+                            PlayerStateManager.Instance.getState().pausedGame = false;
                             GameManager.Instance.resumeGame();
                             LevelTransition.Instance.doTransition("StartMenu");
                             MusicManager.Instance.transitionSong("StartScreen");

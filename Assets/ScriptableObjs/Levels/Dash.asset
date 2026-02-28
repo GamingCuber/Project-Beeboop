@@ -10,13 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c55a8ef29b1fb4e3289dbee7e6cf8636, type: 3}
-  m_Name: Test1
+  m_Name: Dash
   m_EditorClassIdentifier: 
-  levelName: Test
-  levelCover: {fileID: 21300000, guid: 5e3bb21368bdb46b0ac5c3d87049d9f0, type: 3}
-  levelTotalTime: 10
+  levelName: Dash!
+  levelCover: {fileID: -8330497853930410563, guid: d8d3b9e318c0f42ac873ccf2e3c7ca92, type: 3}
+  levelTotalTime: 600
   scenes:
-  - sceneName: test1
-    sceneSong: test1
-  - sceneName: test2
-    sceneSong: test1
+  - sceneName: Dash Level
+    sceneSong: Dash

@@ -2335,6 +2335,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fdacffef3ce964bdd8f371c66bed2f98, type: 2}
   - {fileID: 11400000, guid: 96faa116e81f84566b8fc8f2b36c8ec9, type: 2}
   - {fileID: 11400000, guid: 4323a519553bf49ae95bfbdec7846de3, type: 2}
+  - {fileID: 11400000, guid: b94b8ec8e4aa94d00b4981a8517ee6b7, type: 2}
+  - {fileID: 11400000, guid: 400f6603aaf3f445ea2bf5db4998abef, type: 2}
   curLevel: {fileID: 0}
 --- !u!4 &1044357329
 Transform:
@@ -3775,6 +3777,8 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: f47268499bd7d4fb4b71f9e2c25a197b, type: 3}
   - name: ROI
     audioClip: {fileID: 8300000, guid: 1de4710a26813b5a38b1477123b64cde, type: 3}
+  - name: Hook
+    audioClip: {fileID: 8300000, guid: 82dd63092eee24632af8eee4123ff7d6, type: 3}
   transitionTime: 1
 --- !u!82 &1753078683
 AudioSource:
