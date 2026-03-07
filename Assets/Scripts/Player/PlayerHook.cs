@@ -33,7 +33,7 @@ public class PlayerHook : MonoBehaviour
 
     void Update()
     {
-        if (PlayerStateManager.Instance.getState().canHook)
+        if (PlayerStateManager.Instance.getState().canHook && !PlayerStateManager.Instance.state.pausedGame)
         {
             hookReaction();
 
@@ -187,7 +187,7 @@ public class PlayerHook : MonoBehaviour
         {
             float sqrtMax = Mathf.Sqrt(PlayerDataManager.Instance.getData().maxInitBoostRange);
             float boostForce = (sqrtMax - Mathf.Sqrt(distFromHook))/sqrtMax;
-            rb.AddForce(hookVector * PlayerDataManager.Instance.getData().initHookStrength * boostForce, ForceMode2D.Impulse);   
+            rb.AddForce(hookVector * PlayerDataManager.Instance.getData().initHookStrength * boostForce, ForceMode2D.Impulse);
             Debug.Log("power is " + boostForce * PlayerDataManager.Instance.getData().initHookStrength + "w/ distance " + distFromHook);
         }
 

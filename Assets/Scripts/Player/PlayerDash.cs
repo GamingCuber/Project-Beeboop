@@ -22,7 +22,7 @@ public class PlayerDash : MonoBehaviour
     void Update()
     {
         //need this to be dashbuttondown
-        if (PlayerInputs.Instance.playerController.Player.Dash.WasPressedThisFrame() && debounce == false && PlayerStateManager.Instance.getState().canDash && !onCooldown && !PlayerStateManager.Instance.getState().isDead)
+        if (PlayerInputs.Instance.playerController.Player.Dash.WasPressedThisFrame() && debounce == false && PlayerStateManager.Instance.getState().canDash && !onCooldown && !PlayerStateManager.Instance.getState().isDead && !PlayerStateManager.Instance.getState().pausedGame)
         {
             PlayerJump.Instance.cancelJump(false);
             StartCoroutine(DashCoroutine());
