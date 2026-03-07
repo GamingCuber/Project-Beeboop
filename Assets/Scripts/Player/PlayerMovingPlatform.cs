@@ -6,16 +6,15 @@ using System;
 public class PlayerMovingPlatform : MonoBehaviour
 {
     private bool isAttached = false;
-    private MovingPlatform curPlat;
-    [SerializeField]
-    private float distanceFromPlat;
+    private GameObject curPlat;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("MovingPlatform") && !isAttached)
         {
-            curPlat = collision.gameObject.GetComponent<MovingPlatform>();
-            attachPlayer();
+            isAttached = true;
+            curPlat = collision.gameObject;
+            transform.SetParent(curPlat.transform);
         }
     }
 
@@ -23,32 +22,9 @@ public class PlayerMovingPlatform : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("MovingPlatform") && isAttached)
         {
-            detachPlayer();
-        }
-    }
+            isAttached = false;
+            transform.SetParent(null);
 
-    private void attachPlayer()
-    {
-        isAttached = true;
-    }
-
-    private void detachPlayer()
-    {
-        isAttached = false;
-        curPlat = null;
-    }
-
-    private void FixedUpdate()
-    {
-        movePlayer();
-    }
-
-    private void movePlayer()
-    {
-        if (isAttached && Math.Abs(curPlat.transform.position.y - transform.position.y) >= distanceFromPlat)
-        {
-            PlayerStateManager.Instance.getState().isFalling = false;
-            gameObject.GetComponent<Rigidbody2D>().linearVelocityY = curPlat.platformVeloY;
         }
     }
 }
