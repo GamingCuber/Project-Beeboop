@@ -177,10 +177,13 @@ public class PlayerHook : MonoBehaviour
 
         hookLineRenderer.enabled = true;
 
+        Vector2 hookVector = (hook.transform.position - transform.position).normalized;
+        rb.AddForce(hookVector * PlayerDataManager.Instance.getData().initHookStrength, ForceMode2D.Impulse);
+
         while (PlayerStateManager.Instance.getState().isHooked)
         {
             // Calculates Vector between player and HookPoint for applying Force
-            Vector2 hookVector = (hook.transform.position - transform.position).normalized;
+            hookVector = (hook.transform.position - transform.position).normalized;
             rb.AddForce(hookVector * PlayerDataManager.Instance.getData().hookSpeed, ForceMode2D.Force);
 
             // Draws line between Player and Hook Point

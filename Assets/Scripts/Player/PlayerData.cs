@@ -30,6 +30,8 @@ public class PlayerData : ScriptableObject
     public float hookDistanceLimit;
     public float hookPointCooldown; //seconds in which each point is on cd after used
     public float hookSpeed;
+
+    public float initHookStrength = 15;
     [Header("Jump")]
     public int jumpAmt; //max jumps consecutively (so like double jump would be 2)
     public float jumpFallGrav; //grav when falling
