@@ -84,8 +84,8 @@ public class MovingPlatform : MonoBehaviour
                 }
             }
 
-            platformVeloX = (gameObject.transform.position.x - previousPos.x) / Time.deltaTime;
-            platformVeloY = (gameObject.transform.position.y - previousPos.y) / Time.deltaTime;
+            platformVeloX = (gameObject.transform.position.x - previousPos.x) / Time.fixedDeltaTime;
+            platformVeloY = (gameObject.transform.position.y - previousPos.y) / Time.fixedDeltaTime;
             previousPos = gameObject.transform.position;
 
             yield return wait;
