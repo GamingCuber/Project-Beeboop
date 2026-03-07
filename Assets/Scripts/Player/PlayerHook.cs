@@ -185,9 +185,10 @@ public class PlayerHook : MonoBehaviour
 
         if (distFromHook <= PlayerDataManager.Instance.getData().maxInitBoostRange)
         {
-            float boostForce = Mathf.Lerp(PlayerDataManager.Instance.getData().initHookStrength, 0, distFromHook/PlayerDataManager.Instance.getData().maxInitBoostRange);
-            rb.AddForce(hookVector * PlayerDataManager.Instance.getData().initHookStrength, ForceMode2D.Impulse);   
-            Debug.Log("power is " + boostForce);
+            float sqrtMax = Mathf.Sqrt(PlayerDataManager.Instance.getData().maxInitBoostRange);
+            float boostForce = (sqrtMax - Mathf.Sqrt(distFromHook))/sqrtMax;
+            rb.AddForce(hookVector * PlayerDataManager.Instance.getData().initHookStrength * boostForce, ForceMode2D.Impulse);   
+            Debug.Log("power is " + boostForce * PlayerDataManager.Instance.getData().initHookStrength + "w/ distance " + distFromHook);
         }
 
         while (PlayerStateManager.Instance.getState().isHooked)
