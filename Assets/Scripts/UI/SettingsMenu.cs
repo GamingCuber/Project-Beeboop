@@ -4,6 +4,9 @@ using System.Collections;
 using TMPro;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using System;
+using UnityEditor.SearchService;
+using UnityEngine.SceneManagement;
 
 //INPUTS N STUFF HAVE SENSITIVE STRINGS!!! CUZ IM TOO LAZY TO MAKE IT WORK BETTER
 
@@ -26,7 +29,7 @@ public class SettingsMenu : MonoBehaviour
     private Coroutine checkCo;
 
     private void OnEnable()
-    {
+    {  
         Transform setting = transform.GetChild(2);
 
         MasterVolumeVolObj = setting.GetChild(1).gameObject;
@@ -42,6 +45,8 @@ public class SettingsMenu : MonoBehaviour
         }
 
         updateAllSettings();
+
+        StartCoroutine(waitForOverlay());
     }
 
     public void slideMasterVolume()
@@ -54,6 +59,7 @@ public class SettingsMenu : MonoBehaviour
         PlayerPrefs.SetInt("MasterVolume", newAmount);
 
         updateVolumeUI(slider, input, "MasterVolume");
+        updateOverlay("master");
     }
 
     public void inputMasterVolume()
@@ -66,6 +72,7 @@ public class SettingsMenu : MonoBehaviour
         PlayerPrefs.SetInt("MasterVolume", newAmount);
 
         updateVolumeUI(slider, input, "MasterVolume");
+        updateOverlay("master");
     }
 
     public void changeMasterVolume(int amount)
@@ -86,6 +93,7 @@ public class SettingsMenu : MonoBehaviour
         PlayerPrefs.SetInt("MasterVolume", newAmount);
 
         updateVolumeUI(slider, input, "MasterVolume");
+        updateOverlay("master");
 
     }
 
@@ -99,6 +107,7 @@ public class SettingsMenu : MonoBehaviour
         PlayerPrefs.SetInt("MusicVolume", newAmount);
 
         updateVolumeUI(slider, input, "MusicVolume");
+        updateOverlay("music");
     }
 
     public void inputMusicVolume()
@@ -111,6 +120,7 @@ public class SettingsMenu : MonoBehaviour
         PlayerPrefs.SetInt("MusicVolume", newAmount);
 
         updateVolumeUI(slider, input, "MusicVolume");
+        updateOverlay("music");
     }
     public void changeMusicVolume(int amount)
     {
@@ -131,7 +141,7 @@ public class SettingsMenu : MonoBehaviour
         PlayerPrefs.SetInt("MusicVolume", newAmount);
 
         updateVolumeUI(slider, input, "MusicVolume");
-
+        updateOverlay("music");
     }
 
     public void slideSFXVolume()
@@ -145,6 +155,7 @@ public class SettingsMenu : MonoBehaviour
         PlayerPrefs.SetInt("SFXVolume", newAmount);
 
         updateVolumeUI(slider, input, "SFXVolume");
+        updateOverlay("sfx");
     }
 
     public void inputSFXVolume()
@@ -158,6 +169,7 @@ public class SettingsMenu : MonoBehaviour
         PlayerPrefs.SetInt("SFXVolume", newAmount);
 
         updateVolumeUI(slider, input, "SFXVolume");
+        updateOverlay("sfx");
     }
 
     public void changeSFXVolume(int amount)
@@ -179,6 +191,7 @@ public class SettingsMenu : MonoBehaviour
         PlayerPrefs.SetInt("SFXVolume", newAmount);
 
         updateVolumeUI(slider, input, "SFXVolume");
+        updateOverlay("sfx");
     }
 
     public void updateVolumeUI(Slider slider, TMP_InputField input, string prefName)
@@ -199,6 +212,9 @@ public class SettingsMenu : MonoBehaviour
         PauseMenu pause = this.gameObject.GetComponentInParent<PauseMenu>();
 
         tryStopCheckCo();
+
+        if (SceneManager.GetActiveScene().name.Equals("StartMenu")) this.gameObject.SetActive(false);
+
         pause.hideSettings();
         pause.showOptions();
     }
@@ -257,5 +273,51 @@ public class SettingsMenu : MonoBehaviour
 
             yield return wait;
         }
+    }
+
+    public void updateOverlay(String name)
+    {
+        SettingsOverlayManager manager = SettingsOverlayManager.Instance;
+
+        if (manager == null) return;
+
+        switch (name){
+            case("master"):
+                manager.updateValue("master", PlayerPrefs.GetInt("MasterVolume"));
+                break;
+            case("music"):
+                manager.updateValue("music", PlayerPrefs.GetInt("MusicVolume"));
+                break;
+            case("sfx"):
+                manager.updateValue("sfx", PlayerPrefs.GetInt("SFXVolume"));
+                break;
+        }
+    }
+
+    private IEnumerator waitForOverlay()
+    {
+
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
+        while (SettingsOverlayManager.Instance == null)
+        {
+            yield return wait;
+        }
+
+        SettingsOverlayManager manager = SettingsOverlayManager.Instance;
+
+        if (manager.isInitialized()) yield break;
+
+        manager.createOverlay("master", MasterVolumeVolObj.transform.GetChild(0).position);
+        manager.createOverlay("music", MusicVolObj.transform.GetChild(0).position);
+        manager.createOverlay("sfx", SFXVolObj.transform.GetChild(0).position);
+
+        yield return new WaitForSecondsRealtime(0.1f);
+
+        manager.updateValue("master", PlayerPrefs.GetInt("MasterVolume"));
+        manager.updateValue("music", PlayerPrefs.GetInt("MusicVolume"));
+        manager.updateValue("sfx", PlayerPrefs.GetInt("SFXVolume"));
+
+        manager.doneInitializing();
     }
 }

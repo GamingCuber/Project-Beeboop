@@ -413,6 +413,7 @@ public class PauseMenu : MonoBehaviour
     private void showSettings()
     {
         settingsActive = true;
+        optionLogo.SetActive(false);
         settingsObject.SetActive(true);
         settingsObject.GetComponent<SettingsMenu>().updateAllSettings();
     }
@@ -421,7 +422,7 @@ public class PauseMenu : MonoBehaviour
     {
         settingsActive = false;
         settingsObject.SetActive(false);
-        Debug.Log("trjue");
+        optionLogo.SetActive(true);
         justClosedSettings = true;
         StartCoroutine(waitToOpenSettings());
     }
