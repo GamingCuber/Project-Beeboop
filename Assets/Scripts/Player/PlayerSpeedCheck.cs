@@ -35,6 +35,8 @@ public class PlayerSpeedCheck : MonoBehaviour
                 rb.linearVelocityY = -PlayerDataManager.Instance.getData().maxNegativeVerticalSpeed;
             }
         }
+
+        // Debug.Log(rb.linearVelocity);
     }
 
 }

@@ -32,6 +32,8 @@ public class PlayerData : ScriptableObject
     public float hookSpeed;
 
     public float initHookStrength = 15;
+
+    public float maxInitBoostRange = 7;
     [Header("Jump")]
     public int jumpAmt; //max jumps consecutively (so like double jump would be 2)
     public float jumpFallGrav; //grav when falling

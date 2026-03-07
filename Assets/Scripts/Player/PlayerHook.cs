@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using System;
+using Unity.VisualScripting;
 
 public class PlayerHook : MonoBehaviour
 {
@@ -178,7 +180,15 @@ public class PlayerHook : MonoBehaviour
         hookLineRenderer.enabled = true;
 
         Vector2 hookVector = (hook.transform.position - transform.position).normalized;
-        rb.AddForce(hookVector * PlayerDataManager.Instance.getData().initHookStrength, ForceMode2D.Impulse);
+
+        float distFromHook = Vector3.Distance(this.transform.position, hook.transform.position);
+
+        if (distFromHook <= PlayerDataManager.Instance.getData().maxInitBoostRange)
+        {
+            float boostForce = Mathf.Lerp(PlayerDataManager.Instance.getData().initHookStrength, 0, distFromHook/PlayerDataManager.Instance.getData().maxInitBoostRange);
+            rb.AddForce(hookVector * PlayerDataManager.Instance.getData().initHookStrength, ForceMode2D.Impulse);   
+            Debug.Log("power is " + boostForce);
+        }
 
         while (PlayerStateManager.Instance.getState().isHooked)
         {

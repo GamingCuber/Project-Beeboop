@@ -30,6 +30,7 @@ MonoBehaviour:
   hookDistanceLimit: 16
   hookPointCooldown: 5
   hookSpeed: 50
+  initHookStrength: 25
   jumpAmt: 2
   jumpFallGrav: 3.5
   jumpHeight: 4
