@@ -5,7 +5,6 @@ using TMPro;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using System;
-using UnityEditor.SearchService;
 using UnityEngine.SceneManagement;
 
 //INPUTS N STUFF HAVE SENSITIVE STRINGS!!! CUZ IM TOO LAZY TO MAKE IT WORK BETTER
@@ -24,9 +23,14 @@ public class SettingsMenu : MonoBehaviour
 
     public GameObject SFXVolObj;
 
+    public TMP_Text VIDIOtext;
+
     private EventSystem eventSystem;
 
     private Coroutine checkCo;
+
+    private bool canBlip = true;
+    private Coroutine glowCo;
 
     private void OnEnable()
     {  
@@ -45,6 +49,8 @@ public class SettingsMenu : MonoBehaviour
         }
 
         updateAllSettings();
+
+        startVIDIOGlow();
 
         StartCoroutine(waitForOverlay());
     }
@@ -94,7 +100,6 @@ public class SettingsMenu : MonoBehaviour
 
         updateVolumeUI(slider, input, "MasterVolume");
         updateOverlay("master");
-
     }
 
     public void slideMusicVolume()
@@ -204,6 +209,8 @@ public class SettingsMenu : MonoBehaviour
         if (SoundManager.Instance != null)
         {
             SoundManager.Instance.volumeUpdated();
+            playBlip();
+            blipCooldown();
         }
     }
 
@@ -212,13 +219,17 @@ public class SettingsMenu : MonoBehaviour
         PauseMenu pause = this.gameObject.GetComponentInParent<PauseMenu>();
 
         tryStopCheckCo();
+        stopVIDIOGlow();
 
-        if (SceneManager.GetActiveScene().name.Equals("StartMenu")) this.gameObject.SetActive(false);
+        if (SceneManager.GetActiveScene().name.Equals("StartMenu")) 
+        {
+            StartMenuManager.Instance.hideOptions();
+            return;
+        }
 
         pause.hideSettings();
         pause.showOptions();
     }
-
     private void tryStopCheckCo()
     {
         if (checkCo != null)
@@ -294,6 +305,11 @@ public class SettingsMenu : MonoBehaviour
         }
     }
 
+    // private IEnumerator checkButtonHold()
+    // {
+        
+    // }
+
     private IEnumerator waitForOverlay()
     {
 
@@ -312,12 +328,64 @@ public class SettingsMenu : MonoBehaviour
         manager.createOverlay("music", MusicVolObj.transform.GetChild(0).position);
         manager.createOverlay("sfx", SFXVolObj.transform.GetChild(0).position);
 
-        yield return new WaitForSecondsRealtime(0.1f);
+        yield return wait;
 
         manager.updateValue("master", PlayerPrefs.GetInt("MasterVolume"));
         manager.updateValue("music", PlayerPrefs.GetInt("MusicVolume"));
         manager.updateValue("sfx", PlayerPrefs.GetInt("SFXVolume"));
 
         manager.doneInitializing();
+    }
+
+    private void playBlip()
+    {
+        if (SoundManager.Instance == null || !canBlip) return;
+
+        SoundManager.Instance.playSoundFX("uiBlip", Vector3.zero, 0, 10, 0.4f, true);
+    }
+
+    //to prevent multiple of them playing at once
+    private void blipCooldown()
+    {
+        if (canBlip) StartCoroutine(blipCooldownCo());
+    }
+
+    private IEnumerator blipCooldownCo()
+    {
+        canBlip = false;
+        yield return new WaitForSecondsRealtime(0.1f);
+        canBlip = true;
+    }
+
+    //purely visual thing cuz i thought it'd look cool
+
+    private void startVIDIOGlow()
+    {
+        if (glowCo == null) glowCo = StartCoroutine(VIDIOGlowCo());
+    }
+
+    private void stopVIDIOGlow()
+    {
+        if (glowCo != null) StopCoroutine(glowCo);
+        glowCo = null;
+    }
+
+    private IEnumerator VIDIOGlowCo()
+    {
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+
+        Color32 initColor = new Color32(20, 77, 23, 255);
+        Color32 glowColor = new Color32(24, 255, 0, 255);
+
+        float time = 0;
+
+        while (true)
+        {
+            time += Time.unscaledDeltaTime;
+
+            VIDIOtext.color = Color32.Lerp(initColor, glowColor, (Mathf.Sin(time) + 1) / 2);
+
+            yield return wait;
+        }
     }
 }

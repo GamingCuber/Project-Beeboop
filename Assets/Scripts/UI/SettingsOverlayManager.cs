@@ -30,7 +30,6 @@ public class SettingsOverlayManager : MonoBehaviour
 
     public void doneInitializing()
     {
-        Debug.Log("Done");
         initialized = true;
     }
 
