@@ -153,6 +153,9 @@ public class SoundManager: MonoBehaviour
                 return g;
             }
         }
+
+        expandSoundPool();
+
         return null;
     }
 
@@ -170,5 +173,28 @@ public class SoundManager: MonoBehaviour
         }
         index = -1;
         return null;
+    }
+
+    private void expandSoundPool()
+    {
+        int size = audioSources.Length * 2;
+
+        GameObject[] newAudioSources = new GameObject[size];
+
+        for (int i = 0; i < size; i++)
+        {
+            if (i < audioSources.Length)
+            {
+                newAudioSources[i] = audioSources[i];
+            }
+            else
+            {
+                GameObject newSource = Instantiate(sourcePre, this.transform);
+                newSource.SetActive(false);
+                audioSources[i] = newSource;
+            }
+        }
+        
+        audioSources = newAudioSources;
     }
 }

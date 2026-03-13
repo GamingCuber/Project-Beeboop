@@ -82,3 +82,5 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 6a908a4ad77d24861a928d753eb4bfc4, type: 3}
   - name: batteryPickup
     clip: {fileID: 8300000, guid: 22de62432d4f0472596119d622122b1f, type: 3}
+  - name: uiBlip
+    clip: {fileID: 8300000, guid: 425d52fd8aeb941da944cde538e805d0, type: 3}
