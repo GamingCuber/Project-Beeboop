@@ -39,6 +39,7 @@ public class PlayerJump : MonoBehaviour
         {
             canJump = true;
             PlayerStateManager.Instance.getState().isGrounded = true;
+            PlayerStateManager.Instance.getState().isJumping = false;
             rb.linearDamping = 0;
 
             if (jumpsLeft < PlayerDataManager.Instance.getData().jumpAmt && !isJumping)
