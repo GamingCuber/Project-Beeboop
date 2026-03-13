@@ -5226,12 +5226,12 @@ MonoBehaviour:
   rankText: {fileID: 830877843}
   rankChars: 560053004100420043004400
   secondsPerRank:
-  - 90
+  - 65
+  - 175
   - 105
-  - 135
-  - 180
-  - 240
-  - 330
+  - 160
+  - 210
+  - 300
   deathsPerSign: 0300000007000000
   scorePoolParent: {fileID: 1942650106}
   scorePre: {fileID: 3567635377919900325, guid: 532701bef736f4122a5227d984b54ffc, type: 3}
