@@ -7,6 +7,7 @@ public class PlayerJump : MonoBehaviour
     public static PlayerJump Instance;
 
     public Rigidbody2D rb;
+    public CircleCollider2D bottomCollider;
 
     private bool canJump = true;
 
@@ -32,10 +33,9 @@ public class PlayerJump : MonoBehaviour
         platformLayer = LayerMask.GetMask("Platform");
         StartCoroutine(waitForData());
     }
-
     void Update()
     {
-        if (Physics2D.Raycast(this.transform.position, Vector2.down, 1.1f, platformLayer)) //if player is close to ground theyre PlayerStateManager.Instance.getState().isGrounded!
+        if (Physics2D.Raycast(this.transform.position + Vector3.left * 0.3f, Vector2.down, 1.1f, platformLayer) || Physics2D.Raycast(this.transform.position + Vector3.right * 0.3f, Vector2.down, 1.1f, platformLayer)) //if player is close to ground theyre PlayerStateManager.Instance.getState().isGrounded!
         {
             canJump = true;
             PlayerStateManager.Instance.getState().isGrounded = true;
