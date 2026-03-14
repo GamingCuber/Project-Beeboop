@@ -178,8 +178,6 @@ public class BSideManager : MonoBehaviour
 
         //connecting back button's nav with newly made buttons
 
-        Debug.Log(backButton);
-
         Navigation backNav = backButton.navigation;
         backNav.selectOnRight = options[0].transform.GetChild(1).GetComponent<Button>();
         backNav.selectOnLeft = options[options.Length - 1].transform.GetChild(1).GetComponent<Button>();

@@ -50,12 +50,12 @@ public class MusicManager : MonoBehaviour
     public void volumeUpdated()
     {
         calculateMaxVolume();
+        
         musicPlayer.volume = maxVolume;
 
         if (factoryAmbIndex != -1)
         {
             SoundManager.Instance.setLoopedVolume(factoryAmbIndex, maxVolume * 2f);
-
         }
     }
 
@@ -150,6 +150,8 @@ public class MusicManager : MonoBehaviour
         WaitForEndOfFrame wait = new WaitForEndOfFrame();
 
         float timer = 0;
+
+        calculateMaxVolume();
 
         if (SoundManager.Instance != null)
         {
