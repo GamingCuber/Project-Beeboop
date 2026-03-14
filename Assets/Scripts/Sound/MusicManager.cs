@@ -51,7 +51,6 @@ public class MusicManager : MonoBehaviour
     {
         calculateMaxVolume();
         
-        Debug.Log("volume update changed " + maxVolume);
         musicPlayer.volume = maxVolume;
 
         if (factoryAmbIndex != -1)
@@ -130,7 +129,6 @@ public class MusicManager : MonoBehaviour
 
             float volume = Mathf.Lerp(maxVolume, 0, timer / transitionTime);
 
-            Debug.Log("fade out volume changed");
             musicPlayer.volume = volume;
 
             if (factoryAmbIndex != -1)
@@ -171,7 +169,6 @@ public class MusicManager : MonoBehaviour
                 yield break;
             }
 
-            Debug.Log("fade in volume changed");
             musicPlayer.volume = volume;
 
             yield return wait;
