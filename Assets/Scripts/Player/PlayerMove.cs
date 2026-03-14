@@ -69,7 +69,7 @@ public class PlayerMove : MonoBehaviour
                 rb.linearVelocityX = 0;
                 tryEndTurnCheck();
             }
-            else if (PlayerInputs.Instance.pressingLeftButton || PlayerInputs.Instance.pressingRightButton)
+            else if ((PlayerInputs.Instance.pressingLeftButton || PlayerInputs.Instance.pressingRightButton) && !isPaused)
             {
                 float xVelo = rb.linearVelocityX;
 
@@ -191,7 +191,7 @@ public class PlayerMove : MonoBehaviour
 
         string startDir = PlayerDataManager.Instance.getData().playerDirection;
 
-        while (true)
+        while (!isPaused)
         {
             if (PlayerDataManager.Instance.getData().playerDirection != startDir)
             {
