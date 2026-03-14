@@ -55,12 +55,12 @@ public class SoundManager: MonoBehaviour
     public void volumeUpdated()
     {
         maxVolume = (float)PlayerPrefs.GetInt("MasterVolume", 100) / 100 * (float)PlayerPrefs.GetInt("SFXVolume", 100) / 100;
-        ourAudioSource.volume = maxVolume;
+        if (ourAudioSource != null) ourAudioSource.volume = maxVolume;
     }
 
     public void playPlayerSound(string key)
     {
-        ourAudioSource.PlayOneShot(sfx_dictionary[key]);
+        if (ourAudioSource != null) ourAudioSource.PlayOneShot(sfx_dictionary[key]);
     }
 
     public void playSoundFX(string key, Vector3 soundPos, float minDist, float maxDist, float volume, bool mono)
