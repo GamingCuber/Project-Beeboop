@@ -18,3 +18,12 @@ MonoBehaviour:
   scenes:
   - sceneName: Dash Level
     sceneSong: Dash
+    sceneTime: 0
+  secondsPerRank:
+  - 20
+  - 100
+  - 200
+  - 300
+  - 400
+  - 500
+  deathsPerSign: 0000000003000000

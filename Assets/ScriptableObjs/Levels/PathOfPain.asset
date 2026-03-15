@@ -18,3 +18,12 @@ MonoBehaviour:
   scenes:
   - sceneName: RoadOfInconvenience
     sceneSong: ROI
+    sceneTime: 0
+  secondsPerRank:
+  - 60
+  - 80
+  - 100
+  - 200
+  - 300
+  - 400
+  deathsPerSign: 0000000001000000

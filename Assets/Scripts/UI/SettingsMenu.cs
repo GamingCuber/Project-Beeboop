@@ -48,11 +48,11 @@ public class SettingsMenu : MonoBehaviour
             checkCo = StartCoroutine(checkForSelected());
         }
 
+        StartCoroutine(waitForOverlay());
+        
         updateAllSettings();
 
         startVIDIOGlow();
-
-        StartCoroutine(waitForOverlay());
     }
 
     public void slideMasterVolume()
@@ -312,11 +312,13 @@ public class SettingsMenu : MonoBehaviour
 
     private IEnumerator waitForOverlay()
     {
+        Debug.Log("HI");
 
         WaitForEndOfFrame wait = new WaitForEndOfFrame();
 
         while (SettingsOverlayManager.Instance == null)
         {
+            Debug.Log("waiting for overlay");
             yield return wait;
         }
 

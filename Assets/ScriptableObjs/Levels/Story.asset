@@ -18,5 +18,15 @@ MonoBehaviour:
   scenes:
   - sceneName: MainScene
     sceneSong: DoubleJump
+    sceneTime: 0
   - sceneName: Dash Level
     sceneSong: Dash
+    sceneTime: 0
+  secondsPerRank:
+  - 65
+  - 105
+  - 160
+  - 175
+  - 210
+  - 300
+  deathsPerSign: 0300000007000000

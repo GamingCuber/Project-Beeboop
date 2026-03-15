@@ -218,7 +218,6 @@ public class GameTimer : MonoBehaviour
 
         if (isDying)
         {
-            Debug.Log("saved");
             LevelTransition.Instance.stopDying();
             StartCoroutine(startTimer());
         }
