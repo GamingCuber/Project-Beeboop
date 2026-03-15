@@ -1,16 +1,47 @@
 using System;
+using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class TimeTextManager : MonoBehaviour
 {
+    public static TimeTextManager Instance;
 
     [SerializeField]
     private TMP_Text totalTimeText;
     [SerializeField]
     private TMP_Text levelTimeText;
     public GameObject timer;
+
+    private Coroutine timerCo = null;
+
+    void Start()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
+
+    public void enableTimer()
+    {
+        
+    }
+
+    public void disableTimer()
+    {
+        
+    }
+
+    private IEnumerator startTimer()
+    {
+        float timer = 0;
+
+        yield break;
+    }
+
     void Update()
     {
         timer.SetActive(PlayerStateManager.Instance.getState().wantsTimer);
@@ -32,8 +63,8 @@ public class TimeTextManager : MonoBehaviour
             PlayerStateManager.Instance.getState().thirdLevelTime += Time.deltaTime;
             levelTimeText.text = convertToTimeString(PlayerStateManager.Instance.getState().thirdLevelTime);
         }
-
     }
+    
 
     private string convertToTimeString(float secs)
     {
