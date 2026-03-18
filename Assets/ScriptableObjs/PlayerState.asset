@@ -19,7 +19,7 @@ MonoBehaviour:
   isHookPulling: 0
   isJumping: 0
   isFalling: 0
-  isDead: 0
+  isDead: 1
   keepMomentum: 0
   canDash: 1
   canDoubleJump: 1
@@ -27,7 +27,7 @@ MonoBehaviour:
   gameLost: 0
   pausedGame: 0
   wantsTimer: 0
-  deathNumber: 8
+  deathNumber: 12
   totalTime: 186.96198
   firstLevelTime: 43.000465
   secondLevelTime: 42.87384
