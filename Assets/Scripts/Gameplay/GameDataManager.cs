@@ -31,14 +31,6 @@ public class GameDataManager : MonoBehaviour
         data["Deaths"] = 0;
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            nextLevel();
-        }
-    }
-
     //param is just level name of the scriptableobject
     public void setLevelData(string sceneName)
     {
