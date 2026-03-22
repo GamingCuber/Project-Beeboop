@@ -48,6 +48,16 @@ public class GameDataManager : MonoBehaviour
         resetData();
     }
 
+    public LevelData getLevelData()
+    {
+        return curLevel;
+    }
+
+    public int getLevelNumber()
+    {
+        return levelNum;
+    }
+
     public float getTimeLeft()
     {
         return data["Time"];
@@ -92,5 +102,10 @@ public class GameDataManager : MonoBehaviour
         PlayerStateManager.Instance.getState().totalTime = 0f;
         PlayerStateManager.Instance.getState().deathNumber = 0;
         levelNum = 0;
+
+        for (int i = 0; i < curLevel.scenes.Length; ++i)
+        {
+            curLevel.scenes[i].sceneTime = 0;
+        }
     }
 }

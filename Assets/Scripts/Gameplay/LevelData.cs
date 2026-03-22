@@ -9,6 +9,8 @@ public class LevelData : ScriptableObject
     [Serializable]
     public struct Scene
     {
+        [Tooltip("Name to be shown in the timer")]
+        public string displayName;
         public string sceneName;
         public string sceneSong;
 

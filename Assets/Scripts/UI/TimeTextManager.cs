@@ -1,27 +1,59 @@
 using System;
 using System.Collections;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class TimeTextManager : MonoBehaviour
 {
     public static TimeTextManager Instance;
 
-    [SerializeField]
-    private TMP_Text totalTimeText;
-    [SerializeField]
-    private TMP_Text levelTimeText;
     public GameObject timer;
 
-    private Coroutine timerCo = null;
+    public TMP_Text mainTimer;
+
+    public GameObject levelTimePre;
+
+    private GameObject[] levelTimes;
 
     void Start()
     {
         if (Instance == null)
         {
             Instance = this;
+        }
+
+        setUp();
+    }
+
+    void Update()
+    {
+        mainTimer.text = convertToTimeString(PlayerStateManager.Instance.getState().totalTime);
+    }
+
+    public void setUp()
+    {
+        LevelData level = GameDataManager.Instance.getLevelData();
+
+        levelTimes = new GameObject[level.scenes.Length];
+
+        for (int i = 0; i < level.scenes.Length; ++i)
+        {
+            GameObject newLevelTime = Instantiate(levelTimePre, timer.transform);
+            levelTimes[i] = newLevelTime;
+            levelTimes[i].transform.GetChild(0).GetComponent<TimerLevelText>().setUp();
+            levelTimes[i].transform.GetChild(0).GetComponent<TimerLevelText>().setData(level.scenes[i]);
+            levelTimes[i].transform.GetChild(0).GetComponent<TimerLevelText>().updateText();
+            levelTimes[i].transform.localPosition = new Vector3(0, 11f - (32f * i), 0);
+
+            if (i != GameDataManager.Instance.getLevelNumber())
+            {
+                levelTimes[i].transform.GetChild(0).GetComponent<TimerLevelText>().setColor(new Color32(78, 115, 70, 100));
+            }
+            else
+            {
+                levelTimes[i].transform.GetChild(0).GetComponent<TimerLevelText>().startTimer();
+            }
         }
     }
 
@@ -34,37 +66,6 @@ public class TimeTextManager : MonoBehaviour
     {
         
     }
-
-    private IEnumerator startTimer()
-    {
-        float timer = 0;
-
-        yield break;
-    }
-
-    void Update()
-    {
-        timer.SetActive(PlayerStateManager.Instance.getState().wantsTimer);
-
-        totalTimeText.text = convertToTimeString(PlayerStateManager.Instance.getState().totalTime);
-
-        if (SceneManager.GetSceneByName("MainScene").isLoaded)
-        {
-            PlayerStateManager.Instance.getState().firstLevelTime += Time.deltaTime;
-            levelTimeText.text = convertToTimeString(PlayerStateManager.Instance.getState().firstLevelTime);
-        }
-        else if (SceneManager.GetSceneByName("Dash Level").isLoaded)
-        {
-            PlayerStateManager.Instance.getState().secondLevelTime += Time.deltaTime;
-            levelTimeText.text = convertToTimeString(PlayerStateManager.Instance.getState().secondLevelTime);
-        }
-        else if (SceneManager.GetSceneByName("Hook Level").isLoaded)
-        {
-            PlayerStateManager.Instance.getState().thirdLevelTime += Time.deltaTime;
-            levelTimeText.text = convertToTimeString(PlayerStateManager.Instance.getState().thirdLevelTime);
-        }
-    }
-    
 
     private string convertToTimeString(float secs)
     {
