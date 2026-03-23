@@ -25,6 +25,8 @@ public class SettingsMenu : MonoBehaviour
 
     public TMP_Text VIDIOtext;
 
+    public Toggle timerToggle;
+
     private EventSystem eventSystem;
 
     private Coroutine checkCo;
@@ -39,6 +41,7 @@ public class SettingsMenu : MonoBehaviour
         MasterVolumeVolObj = setting.GetChild(1).gameObject;
         MusicVolObj = setting.GetChild(2).gameObject;
         SFXVolObj = setting.GetChild(3).gameObject;
+        timerToggle = setting.GetChild(4).GetChild(0).GetComponent<Toggle>();
 
         eventSystem = GameObject.FindGameObjectWithTag("EventSystem").GetComponent<EventSystem>();
         eventSystem.SetSelectedGameObject(MasterVolumeVolObj.transform.GetChild(2).gameObject);
@@ -48,11 +51,11 @@ public class SettingsMenu : MonoBehaviour
             checkCo = StartCoroutine(checkForSelected());
         }
 
+        StartCoroutine(waitForOverlay());
+        
         updateAllSettings();
 
         startVIDIOGlow();
-
-        StartCoroutine(waitForOverlay());
     }
 
     public void slideMasterVolume()
@@ -261,6 +264,9 @@ public class SettingsMenu : MonoBehaviour
         input = SFXVolObj.transform.GetChild(1).GetComponent<TMP_InputField>();
         updateVolumeUI(slider, input, "SFXVolume");
 
+        if (TimeTextManager.Instance != null) TimeTextManager.Instance.checkEnable();
+        timerToggle.isOn = PlayerStateManager.Instance.getState().wantsTimer;
+
         yield break;
     }
 
@@ -312,7 +318,6 @@ public class SettingsMenu : MonoBehaviour
 
     private IEnumerator waitForOverlay()
     {
-
         WaitForEndOfFrame wait = new WaitForEndOfFrame();
 
         while (SettingsOverlayManager.Instance == null)

@@ -31,14 +31,6 @@ public class GameDataManager : MonoBehaviour
         data["Deaths"] = 0;
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            nextLevel();
-        }
-    }
-
     //param is just level name of the scriptableobject
     public void setLevelData(string sceneName)
     {
@@ -54,6 +46,16 @@ public class GameDataManager : MonoBehaviour
 
         setTotalTime();
         resetData();
+    }
+
+    public LevelData getLevelData()
+    {
+        return curLevel;
+    }
+
+    public int getLevelNumber()
+    {
+        return levelNum;
     }
 
     public float getTimeLeft()
@@ -100,5 +102,10 @@ public class GameDataManager : MonoBehaviour
         PlayerStateManager.Instance.getState().totalTime = 0f;
         PlayerStateManager.Instance.getState().deathNumber = 0;
         levelNum = 0;
+
+        for (int i = 0; i < curLevel.scenes.Length; ++i)
+        {
+            curLevel.scenes[i].sceneTime = 0;
+        }
     }
 }

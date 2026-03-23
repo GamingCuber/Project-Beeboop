@@ -16,5 +16,15 @@ MonoBehaviour:
   levelCover: {fileID: 4764815796737506119, guid: 53634e15ac76d44ac9018601611dea30, type: 3}
   levelTotalTime: 600
   scenes:
-  - sceneName: MainScene
+  - displayName: Jump!
+    sceneName: MainScene
     sceneSong: DoubleJump
+    sceneTime: 0
+  secondsPerRank:
+  - 20
+  - 100
+  - 200
+  - 300
+  - 400
+  - 500
+  deathsPerSign: 0000000003000000

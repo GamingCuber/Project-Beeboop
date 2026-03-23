@@ -16,5 +16,15 @@ MonoBehaviour:
   levelCover: {fileID: -8330497853930410563, guid: d8d3b9e318c0f42ac873ccf2e3c7ca92, type: 3}
   levelTotalTime: 600
   scenes:
-  - sceneName: Dash Level
+  - displayName: Dash!
+    sceneName: Dash Level
     sceneSong: Dash
+    sceneTime: 0
+  secondsPerRank:
+  - 20
+  - 100
+  - 200
+  - 300
+  - 400
+  - 500
+  deathsPerSign: 0000000003000000

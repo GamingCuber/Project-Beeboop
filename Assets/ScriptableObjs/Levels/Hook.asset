@@ -16,5 +16,15 @@ MonoBehaviour:
   levelCover: {fileID: -3624733604863672600, guid: 161aee1bacc5c47f9a4be76917826bad, type: 3}
   levelTotalTime: 600
   scenes:
-  - sceneName: Hook Level
+  - displayName: Hook!
+    sceneName: Hook Level
     sceneSong: Hook
+    sceneTime: 0
+  secondsPerRank:
+  - 20
+  - 100
+  - 200
+  - 300
+  - 400
+  - 500
+  deathsPerSign: 0000000003000000
