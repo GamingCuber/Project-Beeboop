@@ -13,8 +13,6 @@ public class TimerLevelText : MonoBehaviour
     public Image background;
     public TMP_Text levelNameText;
 
-    private TMP_Text deltaTimeText;
-
     private TMP_Text levelTimeText;
 
     private float time = 0;
@@ -24,8 +22,6 @@ public class TimerLevelText : MonoBehaviour
         background = transform.GetComponent<Image>();
         levelNameText = transform.GetChild(0).GetComponent<TMP_Text>();
         levelTimeText = transform.GetChild(1).GetComponent<TMP_Text>();
-        deltaTimeText = transform.GetChild(2).GetComponent<TMP_Text>();
-
     }
     public void startTimer()
     {
@@ -59,7 +55,6 @@ public class TimerLevelText : MonoBehaviour
     {
         levelTimeText.text = convertToTimeString(data.sceneTime);
         levelNameText.text = data.displayName;
-        deltaTimeText.text = "0";
     }
 
     private string convertToTimeString(float secs)

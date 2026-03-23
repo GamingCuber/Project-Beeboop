@@ -608,6 +608,7 @@ GameObject:
   m_Component:
   - component: {fileID: 965563170304076892}
   - component: {fileID: 2196943386562606507}
+  - component: {fileID: 5680388636483522264}
   m_Layer: 5
   m_Name: Timer
   m_TagString: Untagged
@@ -657,6 +658,22 @@ MonoBehaviour:
   - {fileID: 6209628715285537654}
   - {fileID: 2095451058904951510}
   timeWhenStop: 2
+--- !u!114 &5680388636483522264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5658707902054598549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b56e1a59c73a18a4bcc61d681b5308e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: {fileID: 4376339552937715195}
+  levelMask: {fileID: 1486309915966318258}
+  mainTimer: {fileID: 8143246369373602091}
+  levelTimePre: {fileID: 2378062229379665227, guid: c5ac62f3e893d47ca848fb8dbd0a1d7a, type: 3}
 --- !u!1 &5848139144648467917
 GameObject:
   m_ObjectHideFlags: 0
@@ -1658,7 +1675,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2157572916121002865, guid: 5f215db6f13be439d8afca5b3da23856, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3533904062038764477, guid: 5f215db6f13be439d8afca5b3da23856, type: 3}
       propertyPath: m_Pivot.x
@@ -1740,6 +1757,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3885113884279660600, guid: 5f215db6f13be439d8afca5b3da23856, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 94
+      objectReference: {fileID: 0}
+    - target: {fileID: 3885113884279660600, guid: 5f215db6f13be439d8afca5b3da23856, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -21.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4064513792016883145, guid: 5f215db6f13be439d8afca5b3da23856, type: 3}
       propertyPath: m_SizeDelta.y
       value: 33.5
@@ -1754,14 +1779,16 @@ PrefabInstance:
     - {fileID: 6199535235282347484, guid: 5f215db6f13be439d8afca5b3da23856, type: 3}
     - {fileID: 7689971094138227215, guid: 5f215db6f13be439d8afca5b3da23856, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2157572916121002865, guid: 5f215db6f13be439d8afca5b3da23856, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7559056764556442392}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f215db6f13be439d8afca5b3da23856, type: 3}
 --- !u!224 &1170988152989166903 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3533904062038764477, guid: 5f215db6f13be439d8afca5b3da23856, type: 3}
+  m_PrefabInstance: {fileID: 2398972194903115402}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1486309915966318258 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3885113884279660600, guid: 5f215db6f13be439d8afca5b3da23856, type: 3}
   m_PrefabInstance: {fileID: 2398972194903115402}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &4376339552937715195 stripped
@@ -1769,21 +1796,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2157572916121002865, guid: 5f215db6f13be439d8afca5b3da23856, type: 3}
   m_PrefabInstance: {fileID: 2398972194903115402}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7559056764556442392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4376339552937715195}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b56e1a59c73a18a4bcc61d681b5308e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timer: {fileID: 4376339552937715195}
-  mainTimer: {fileID: 8143246369373602091}
-  levelTimePre: {fileID: 2378062229379665227, guid: c5ac62f3e893d47ca848fb8dbd0a1d7a, type: 3}
 --- !u!114 &8143246369373602091 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5784948409265653665, guid: 5f215db6f13be439d8afca5b3da23856, type: 3}

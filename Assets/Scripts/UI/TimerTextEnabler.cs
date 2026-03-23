@@ -1,17 +1,29 @@
+using System;
 using UnityEngine;
 
 public class TimerTextEnabler : MonoBehaviour
 {
+    Boolean initializing = true;
     public void reverseWantTimer()
     {
-        if (PlayerStateManager.Instance.getState().wantsTimer)
+        Debug.Log("reverse");
+        if (!PlayerStateManager.Instance.getState().wantsTimer && initializing)
         {
-            PlayerStateManager.Instance.getState().wantsTimer = false;
+            initializing = false;
+            return;
+        }
+        else if (initializing)
+        {
+            initializing = false;
+        }
+        
+        if (TimeTextManager.Instance != null) 
+        {
+            TimeTextManager.Instance.swapEnable();
         }
         else
         {
-            PlayerStateManager.Instance.getState().wantsTimer = true;
-
+            PlayerStateManager.Instance.getState().wantsTimer = !PlayerStateManager.Instance.getState().wantsTimer;
         }
     }
 }
