@@ -2,6 +2,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class PlayerCollectScript : MonoBehaviour
 {
@@ -24,19 +25,19 @@ public class PlayerCollectScript : MonoBehaviour
     [SerializeField]
     private string dashDescriptionText;
     [SerializeField]
-    private Sprite hookImage;
+    private VideoClip hookTutorialVideo;
     [SerializeField]
-    private Sprite doubleJumpImage;
+    private VideoClip doubleJumpTutorialVideo;
     [SerializeField]
-    private Sprite jumpImage;
+    private VideoClip jumpTutorialVideo;
     [SerializeField]
-    private Sprite dashImage;
+    private VideoClip dashTutorialVideo;
     // List of UI Object that will be manipulated
 
     private GameObject upgradePopUp;
     private TMP_Text topText;
     private TMP_Text descriptionText;
-    private Sprite upgradeSprite;
+    private VideoPlayer upgradeVideo;
 
     void Start()
     {
@@ -44,7 +45,7 @@ public class PlayerCollectScript : MonoBehaviour
         Debug.Log(upgradePopUp);
         topText = upgradePopUp.transform.Find("TopText").GetComponent<TMP_Text>();
         descriptionText = upgradePopUp.transform.Find("DescriptionText").GetComponent<TMP_Text>();
-        upgradeSprite = upgradePopUp.transform.Find("UpgradeImage").GetComponent<Image>().sprite;
+        upgradeVideo = upgradePopUp.transform.Find("UpgradeVideoPlayer").GetComponent<VideoPlayer>();
         upgradePopUp.SetActive(false);
     }
 
@@ -62,7 +63,7 @@ public class PlayerCollectScript : MonoBehaviour
                         upgradePopUp.SetActive(true);
                         topText.SetText(topDashText);
                         descriptionText.SetText(dashDescriptionText);
-                        upgradeSprite = dashImage;
+                        upgradeVideo.clip = dashTutorialVideo;
                         Invoke(nameof(setDisabled), secondsUntilDisable);
                     }
 
@@ -78,7 +79,7 @@ public class PlayerCollectScript : MonoBehaviour
                         upgradePopUp.SetActive(true);
                         topText.SetText(topHookText);
                         descriptionText.SetText(hookDescriptionText);
-                        upgradeSprite = hookImage;
+                        upgradeVideo.clip = hookTutorialVideo;
                         Invoke(nameof(setDisabled), secondsUntilDisable);
                     }
 
@@ -95,7 +96,7 @@ public class PlayerCollectScript : MonoBehaviour
                         upgradePopUp.SetActive(true);
                         topText.SetText(topDoubleJumpText);
                         descriptionText.SetText(doubleJumpDescriptionText);
-                        upgradeSprite = doubleJumpImage;
+                        upgradeVideo.clip = doubleJumpTutorialVideo;
                         Invoke(nameof(setDisabled), secondsUntilDisable);
                     }
 
@@ -112,10 +113,9 @@ public class PlayerCollectScript : MonoBehaviour
             }
             Destroy(collision.gameObject);
         }
-
-
-
     }
+
+
 
     private void setDisabled()
     {
