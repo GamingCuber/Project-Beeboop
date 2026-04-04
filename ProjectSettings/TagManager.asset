@@ -15,6 +15,7 @@ TagManager:
   - HookTarget
   - NameSelect
   - TimerText
+  - UpgradePopUp
   layers:
   - Default
   - TransparentFX

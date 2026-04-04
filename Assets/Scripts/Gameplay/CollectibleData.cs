@@ -14,5 +14,6 @@ public class CollectibleData : MonoBehaviour
 
     [Tooltip("ONLY APPLICABLE IF YOU CHOOSE TIME UPGRADE")]
     public float time;
+    public bool showPopup;
 
 }
