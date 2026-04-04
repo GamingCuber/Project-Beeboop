@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Data;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -32,12 +34,17 @@ public class PlayerCollectScript : MonoBehaviour
     private VideoClip jumpTutorialVideo;
     [SerializeField]
     private VideoClip dashTutorialVideo;
-    // List of UI Object that will be manipulated
+    [SerializeField]
+    private Vector2 targetPosition;
+    [SerializeField]
+    private float totalMovetime;
 
+    // List of UI Object that will be manipulated
     private GameObject upgradePopUp;
     private TMP_Text topText;
     private TMP_Text descriptionText;
     private VideoPlayer upgradeVideo;
+    private RectTransform panelTransform;
 
     void Start()
     {
@@ -46,7 +53,8 @@ public class PlayerCollectScript : MonoBehaviour
         topText = upgradePopUp.transform.Find("TopText").GetComponent<TMP_Text>();
         descriptionText = upgradePopUp.transform.Find("DescriptionText").GetComponent<TMP_Text>();
         upgradeVideo = upgradePopUp.transform.Find("UpgradeVideoPlayer").GetComponent<VideoPlayer>();
-        upgradePopUp.SetActive(false);
+        panelTransform = upgradePopUp.GetComponent<RectTransform>();
+        setDisabled();
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -65,6 +73,7 @@ public class PlayerCollectScript : MonoBehaviour
                         descriptionText.SetText(dashDescriptionText);
                         upgradeVideo.clip = dashTutorialVideo;
                         Invoke(nameof(setDisabled), secondsUntilDisable);
+                        StartCoroutine(movePanel());
                     }
 
                     if (UpgradePopupManager.Instance != null) //this is just so nothing errors out if we havent set it up yet
@@ -81,6 +90,8 @@ public class PlayerCollectScript : MonoBehaviour
                         descriptionText.SetText(hookDescriptionText);
                         upgradeVideo.clip = hookTutorialVideo;
                         Invoke(nameof(setDisabled), secondsUntilDisable);
+                        StartCoroutine(movePanel());
+
                     }
 
                     if (UpgradePopupManager.Instance != null) //this is just so nothing errors out if we havent set it up yet
@@ -94,10 +105,13 @@ public class PlayerCollectScript : MonoBehaviour
                     if (collision.gameObject.GetComponent<CollectibleData>().showPopup)
                     {
                         upgradePopUp.SetActive(true);
+                        Debug.Log(panelTransform.localPosition);
                         topText.SetText(topDoubleJumpText);
                         descriptionText.SetText(doubleJumpDescriptionText);
                         upgradeVideo.clip = doubleJumpTutorialVideo;
                         Invoke(nameof(setDisabled), secondsUntilDisable);
+                        StartCoroutine(movePanel());
+
                     }
 
                     if (UpgradePopupManager.Instance != null) //this is just so nothing errors out if we havent set it up yet
@@ -115,10 +129,34 @@ public class PlayerCollectScript : MonoBehaviour
         }
     }
 
+    IEnumerator movePanel()
+    {
+        float t = 0;
 
+        while (t <= totalMovetime)
+        {
+            Debug.Log(t);
+            t += Time.deltaTime;
+            Vector2.Lerp(panelTransform.localPosition, targetPosition, t / totalMovetime);
+            if (t == totalMovetime)
+            {
+                resetPanelPosition();
+                Debug.Log(panelTransform.localPosition);
+                yield break;
+            }
+            yield return new WaitForEndOfFrame();
+        }
 
+        Debug.Log(panelTransform.localPosition);
+    }
+
+    private void resetPanelPosition()
+    {
+        Invoke(nameof(setDisabled), 5f);
+    }
     private void setDisabled()
     {
+        panelTransform.localPosition.Set(-200, 100, 0);
         upgradePopUp.SetActive(false);
     }
 }
