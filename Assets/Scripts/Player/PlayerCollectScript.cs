@@ -49,7 +49,6 @@ public class PlayerCollectScript : MonoBehaviour
     void Start()
     {
         upgradePopUp = GameObject.FindGameObjectWithTag("UpgradePopUp");
-        Debug.Log(upgradePopUp);
         topText = upgradePopUp.transform.Find("TopText").GetComponent<TMP_Text>();
         descriptionText = upgradePopUp.transform.Find("DescriptionText").GetComponent<TMP_Text>();
         upgradeVideo = upgradePopUp.transform.Find("UpgradeVideoPlayer").GetComponent<VideoPlayer>();
@@ -132,12 +131,12 @@ public class PlayerCollectScript : MonoBehaviour
     IEnumerator movePanel()
     {
         float t = 0;
-
+        Vector3 initialPanelPosition = panelTransform.localPosition;
         while (t <= totalMovetime)
         {
             Debug.Log(t);
             t += Time.deltaTime;
-            Vector2.Lerp(panelTransform.localPosition, targetPosition, t / totalMovetime);
+            panelTransform.localPosition = Vector2.Lerp(initialPanelPosition, targetPosition, t / totalMovetime);
             if (t == totalMovetime)
             {
                 resetPanelPosition();
@@ -156,7 +155,7 @@ public class PlayerCollectScript : MonoBehaviour
     }
     private void setDisabled()
     {
-        panelTransform.localPosition.Set(-200, 100, 0);
+        panelTransform.localPosition = new Vector3(-1000, 0, 0);
         upgradePopUp.SetActive(false);
     }
 }
