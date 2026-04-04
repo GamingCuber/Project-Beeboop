@@ -50,6 +50,15 @@ public class TimeTextManager : MonoBehaviour
             levelTimes[i].transform.localPosition = new Vector3(0, 32f - (32f * i), 0);
         }
 
+        if (level.scenes.Length < 3)
+        {
+            int amtDiff = 3 - level.scenes.Length;
+
+            RectTransform bgRect = timer.transform.GetChild(0).GetComponent<RectTransform>();
+            bgRect.sizeDelta = new Vector2(bgRect.sizeDelta.x, bgRect.sizeDelta.y - 32f * amtDiff);
+            bgRect.localPosition = new Vector3(0, bgRect.localPosition.y + 16f * amtDiff, 0);
+        }
+
         offsetLevels();
     }
 
