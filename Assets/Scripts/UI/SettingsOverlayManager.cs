@@ -14,7 +14,7 @@ public class SettingsOverlayManager : MonoBehaviour
     public bool initialized = false;
 
     void Start()
-    {
+    {   
         if (Instance == null)
         {
             Instance = this;

@@ -114,6 +114,8 @@ public class BSideManager : MonoBehaviour
 
         float time = moveTime;
 
+        SoundManager.Instance.playSoundFX("startSwitch", Vector3.zero, 0, 1, 1, true);
+
         //i honestly have no idea how i got to this formula, i just guess and checked until it was right
         Vector3 targetPos = Vector3.zero + (Vector3.right * (curInd * (-275 * offsetMult) + (-275 * (curInd - 1)) * offsetMult));
 

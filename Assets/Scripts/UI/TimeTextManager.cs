@@ -1,38 +1,124 @@
 using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class TimeTextManager : MonoBehaviour
 {
+    public static TimeTextManager Instance;
 
-    [SerializeField]
-    private TMP_Text totalTimeText;
-    [SerializeField]
-    private TMP_Text levelTimeText;
     public GameObject timer;
+
+    public Transform levelMask;
+
+    public TMP_Text mainTimer;
+
+    public GameObject levelTimePre;
+
+    private GameObject[] levelTimes;
+
+    void Start()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+
+        setUp();
+        checkEnable();
+    }
+
     void Update()
     {
-        timer.SetActive(PlayerStateManager.Instance.getState().wantsTimer);
+        mainTimer.text = convertToTimeString(PlayerStateManager.Instance.getState().totalTime);
+    }
 
-        totalTimeText.text = convertToTimeString(PlayerStateManager.Instance.getState().totalTime);
+    public void setUp()
+    {
+        LevelData level = GameDataManager.Instance.getLevelData();
 
-        if (SceneManager.GetSceneByName("MainScene").isLoaded)
+        levelTimes = new GameObject[level.scenes.Length];
+
+        for (int i = 0; i < level.scenes.Length; ++i)
         {
-            PlayerStateManager.Instance.getState().firstLevelTime += Time.deltaTime;
-            levelTimeText.text = convertToTimeString(PlayerStateManager.Instance.getState().firstLevelTime);
-        }
-        else if (SceneManager.GetSceneByName("Dash Level").isLoaded)
-        {
-            PlayerStateManager.Instance.getState().secondLevelTime += Time.deltaTime;
-            levelTimeText.text = convertToTimeString(PlayerStateManager.Instance.getState().secondLevelTime);
-        }
-        else if (SceneManager.GetSceneByName("Hook Level").isLoaded)
-        {
-            PlayerStateManager.Instance.getState().thirdLevelTime += Time.deltaTime;
-            levelTimeText.text = convertToTimeString(PlayerStateManager.Instance.getState().thirdLevelTime);
+            GameObject newLevelTime = Instantiate(levelTimePre, levelMask.transform);
+            levelTimes[i] = newLevelTime;
+            levelTimes[i].transform.GetChild(0).GetComponent<TimerLevelText>().setUp();
+            levelTimes[i].transform.GetChild(0).GetComponent<TimerLevelText>().setData(level.scenes[i]);
+            levelTimes[i].transform.GetChild(0).GetComponent<TimerLevelText>().updateText();
+            levelTimes[i].transform.localPosition = new Vector3(0, 32f - (32f * i), 0);
         }
 
+        if (level.scenes.Length < 3)
+        {
+            int amtDiff = 3 - level.scenes.Length;
+
+            RectTransform bgRect = timer.transform.GetChild(0).GetComponent<RectTransform>();
+            bgRect.sizeDelta = new Vector2(bgRect.sizeDelta.x, bgRect.sizeDelta.y - 32f * amtDiff);
+            bgRect.localPosition = new Vector3(0, bgRect.localPosition.y + 16f * amtDiff, 0);
+        }
+
+        offsetLevels();
+    }
+
+    public void enableTimer()
+    {
+        timer.SetActive(true);
+        startTimer();
+    }
+
+    public void startTimer()
+    {
+        for (int i = 0; i < GameDataManager.Instance.getLevelData().scenes.Length; ++i)
+        {
+            if (i != GameDataManager.Instance.getLevelNumber())
+            {
+                levelTimes[i].transform.GetChild(0).GetComponent<TimerLevelText>().setColor(new Color32(78, 115, 70, 100));
+            }
+            else
+            {
+                levelTimes[i].transform.GetChild(0).GetComponent<TimerLevelText>().startTimer();
+            }
+        }
+    }
+
+    private void offsetLevels()
+    {
+        int moveAmt = GameDataManager.Instance.getLevelNumber();
+        int totalAmt = GameDataManager.Instance.getLevelData().scenes.Length;
+
+        if (moveAmt <= 1) moveAmt = 0;
+        else if (moveAmt >= totalAmt - 2) moveAmt = totalAmt - 3;
+        else moveAmt = moveAmt - 1;
+
+        Debug.Log(moveAmt);
+
+        for (int i = 0; i < levelTimes.Length; ++i)
+        {
+            levelTimes[i].transform.localPosition += Vector3.up * moveAmt * 32f;
+        }
+    }
+
+    public void disableTimer()
+    {
+        timer.SetActive(false);
+    }
+
+    public void swapEnable()
+    {
+        PlayerStateManager psm = PlayerStateManager.Instance;
+
+        if (PlayerStateManager.Instance.getState().wantsTimer) psm.getState().wantsTimer = false;
+        else psm.getState().wantsTimer = true;
+
+        checkEnable();
+    }
+
+    public void checkEnable()
+    {
+        if (PlayerStateManager.Instance.getState().wantsTimer) enableTimer();
+        else disableTimer();
     }
 
     private string convertToTimeString(float secs)

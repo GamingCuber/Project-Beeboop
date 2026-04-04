@@ -16,7 +16,19 @@ MonoBehaviour:
   levelCover: {fileID: 0}
   levelTotalTime: 150
   scenes:
-  - sceneName: MainScene
+  - displayName: Jump!
+    sceneName: MainScene
     sceneSong: DoubleJump
-  - sceneName: Dash Level
+    sceneTime: 21.25298
+  - displayName: Dash!
+    sceneName: Dash Level
     sceneSong: Dash
+    sceneTime: 0
+  secondsPerRank:
+  - 65
+  - 105
+  - 160
+  - 175
+  - 210
+  - 300
+  deathsPerSign: 0300000007000000

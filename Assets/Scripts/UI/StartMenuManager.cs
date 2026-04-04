@@ -32,6 +32,8 @@ public class StartMenuManager : MonoBehaviour
 
     public void startCutscene()
     {
+        SoundManager.Instance.playSoundFX("startSelect", Vector3.zero, 0, 1, 1, true);
+        
         LevelTransition.Instance.doTransition("Cutscene");
         MusicManager.Instance.transitionSong("Cutscene");
         GameDataManager.Instance.setLevelData("Story");
@@ -39,6 +41,8 @@ public class StartMenuManager : MonoBehaviour
 
     public void startBSide(string dataName)
     {
+        SoundManager.Instance.playSoundFX("startSelect", Vector3.zero, 0, 1, 1, true);
+
         GameDataManager.Instance.setLevelData(dataName);
         LevelTransition.Instance.doTransition(GameDataManager.Instance.curLevel.scenes[0].sceneName);
         MusicManager.Instance.transitionSong(GameDataManager.Instance.curLevel.scenes[0].sceneSong);
@@ -46,6 +50,8 @@ public class StartMenuManager : MonoBehaviour
 
     public void startCredits()
     {
+    SoundManager.Instance.playSoundFX("startSelect", Vector3.zero, 0, 1, 1, true);
+
         MusicManager.Instance.fadeOut();
         LevelTransition.Instance.doTransition("Credits");
     }
@@ -59,12 +65,16 @@ public class StartMenuManager : MonoBehaviour
     {
         settingsObj.SetActive(true);
 
+        SoundManager.Instance.playSoundFX("startSelect", Vector3.zero, 0, 1, 1, true);
+
         EventSystem.current.SetSelectedGameObject(firstSettingsButton);
     }
 
     public void hideOptions()
     {
         settingsObj.SetActive(false);
+
+        SoundManager.Instance.playSoundFX("startBack", Vector3.zero, 0, 1, 1, true);
 
         EventSystem.current.SetSelectedGameObject(menuSelect.transform.GetChild(1).gameObject);
     }
@@ -74,6 +84,8 @@ public class StartMenuManager : MonoBehaviour
         levelSelect.SetActive(true);
         menuSelect.SetActive(false);
 
+        SoundManager.Instance.playSoundFX("startSelect", Vector3.zero, 0, 1, 1, true);
+
         EventSystem.current.SetSelectedGameObject(levelSelect.transform.GetChild(1).gameObject.transform.GetChild(1).gameObject);
     }
 
@@ -81,6 +93,8 @@ public class StartMenuManager : MonoBehaviour
     {
         levelSelect.SetActive(false);
         menuSelect.SetActive(true);
+
+        SoundManager.Instance.playSoundFX("startBack", Vector3.zero, 0, 1, 1, true);
 
         EventSystem.current.SetSelectedGameObject(menuSelect.transform.GetChild(0).gameObject);
     }
@@ -90,6 +104,8 @@ public class StartMenuManager : MonoBehaviour
         levelSelect.SetActive(false);
         bSideSelect.SetActive(true);
 
+        SoundManager.Instance.playSoundFX("startSelect", Vector3.zero, 0, 1, 1, true);
+
         EventSystem.current.SetSelectedGameObject(bSideSelect.transform.GetChild(0).gameObject);
     }
 
@@ -97,6 +113,8 @@ public class StartMenuManager : MonoBehaviour
     {
         levelSelect.SetActive(true);
         bSideSelect.SetActive(false);
+
+        SoundManager.Instance.playSoundFX("startBack", Vector3.zero, 0, 1, 1, true);
 
         EventSystem.current.SetSelectedGameObject(levelSelect.transform.GetChild(1).gameObject.transform.GetChild(1).gameObject);
     }

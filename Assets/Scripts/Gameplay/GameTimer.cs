@@ -45,6 +45,8 @@ public class GameTimer : MonoBehaviour
         {
             timeLeft -= Time.deltaTime;
             PlayerStateManager.Instance.getState().totalTime += Time.deltaTime;
+        
+            GameDataManager.Instance.curLevel.scenes[GameDataManager.Instance.getLevelNumber()].sceneTime += Time.deltaTime;
 
             timerText.text = ((int)(100 * timeLeft / time)).ToString() + "%";
 
@@ -218,7 +220,6 @@ public class GameTimer : MonoBehaviour
 
         if (isDying)
         {
-            Debug.Log("saved");
             LevelTransition.Instance.stopDying();
             StartCoroutine(startTimer());
         }
