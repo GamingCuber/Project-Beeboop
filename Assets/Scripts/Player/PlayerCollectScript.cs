@@ -38,6 +38,8 @@ public class PlayerCollectScript : MonoBehaviour
     private Vector2 targetPosition;
     [SerializeField]
     private float totalMovetime;
+    [SerializeField]
+    private bool isLeft = false;
 
     // List of UI Object that will be manipulated
     private GameObject upgradePopUp;
@@ -157,7 +159,13 @@ public class PlayerCollectScript : MonoBehaviour
     }
     private void setDisabled()
     {
-        panelTransform.localPosition = new Vector3(-1000, 0, 0);
+        if (isLeft)
+        {
+            panelTransform.localPosition = new Vector3(-1000, 0, 0);
+        } else
+        {
+            panelTransform.localPosition = new Vector3(1000, 0, 0);
+        }
         upgradePopUp.SetActive(false);
     }
 }
