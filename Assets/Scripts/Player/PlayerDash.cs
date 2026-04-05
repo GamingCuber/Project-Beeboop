@@ -24,7 +24,8 @@ public class PlayerDash : MonoBehaviour
         //need this to be dashbuttondown
         if (PlayerInputs.Instance.playerController.Player.Dash.WasPressedThisFrame() && debounce == false && PlayerStateManager.Instance.getState().canDash && !onCooldown && !PlayerStateManager.Instance.getState().isDead)
         {
-            PlayerJump.Instance.cancelJump(false);
+            PlayerJump.Instance.cancelJump(false);Debug.Log("Oncd");
+            AbilityCooldownManager.Instance.onCD("dash");
             StartCoroutine(DashCoroutine());
         }
 
@@ -32,12 +33,14 @@ public class PlayerDash : MonoBehaviour
         {
             debounce = false;
             PlayerGravManager.Instance.resetGrav();
+            AbilityCooldownManager.Instance.offCD("dash");
         }
     }
 
     public void resetDash()
     {
         debounce = false;
+        AbilityCooldownManager.Instance.offCD("dash");
     }
 
     public IEnumerator DashCoroutine()

@@ -77,6 +77,11 @@ public class PlayerJump : MonoBehaviour
         {
             coyoteCo = StartCoroutine(coyoteTimer());
         }
+
+        if (PlayerStateManager.Instance.getState().canDoubleJump && jumpsLeft == 0)
+        {
+            AbilityCooldownManager.Instance.onCD("jump");
+        }
     }
 
     private void jump() //do a jump, cuz this functions gonna get called in more than one places
@@ -223,6 +228,7 @@ public class PlayerJump : MonoBehaviour
     public void resetJumps() //gives jumpsleft back
     {
         jumpsLeft = PlayerDataManager.Instance.getData().jumpAmt;
+        AbilityCooldownManager.Instance.offCD("jump");
     }
 
     public void cancelJump(bool doubleJumping) //param is IF you want the player to be able to still doublejump after you cancel

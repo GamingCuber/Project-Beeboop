@@ -64,6 +64,7 @@ public class PlayerCollectScript : MonoBehaviour
             {
                 case CollectibleData.UpgradeOptions.Dash:
                     PlayerStateManager.Instance.getState().canDash = true;
+                    AbilityCooldownManager.Instance.abilityUnlocked("dash");
 
                     if (collision.gameObject.GetComponent<CollectibleData>().showPopup)
                     {
@@ -82,6 +83,7 @@ public class PlayerCollectScript : MonoBehaviour
                     break;
                 case CollectibleData.UpgradeOptions.Hook:
                     PlayerStateManager.Instance.getState().canHook = true;
+                    AbilityCooldownManager.Instance.abilityUnlocked("hook");
                     if (collision.gameObject.GetComponent<CollectibleData>().showPopup)
                     {
                         upgradePopUp.SetActive(true);
@@ -90,7 +92,7 @@ public class PlayerCollectScript : MonoBehaviour
                         upgradeVideo.clip = hookTutorialVideo;
                         Invoke(nameof(setDisabled), secondsUntilDisable);
                         StartCoroutine(movePanel());
-
+                    
                     }
 
                     if (UpgradePopupManager.Instance != null) //this is just so nothing errors out if we havent set it up yet
@@ -101,6 +103,7 @@ public class PlayerCollectScript : MonoBehaviour
                 case CollectibleData.UpgradeOptions.DoubleJump:
                     PlayerStateManager.Instance.getState().canDoubleJump = true;
                     PlayerDataManager.Instance.getData().jumpAmt = 2;
+                    AbilityCooldownManager.Instance.abilityUnlocked("jump");
                     if (collision.gameObject.GetComponent<CollectibleData>().showPopup)
                     {
                         upgradePopUp.SetActive(true);
@@ -110,7 +113,6 @@ public class PlayerCollectScript : MonoBehaviour
                         upgradeVideo.clip = doubleJumpTutorialVideo;
                         Invoke(nameof(setDisabled), secondsUntilDisable);
                         StartCoroutine(movePanel());
-
                     }
 
                     if (UpgradePopupManager.Instance != null) //this is just so nothing errors out if we havent set it up yet

@@ -236,6 +236,8 @@ public class PlayerHook : MonoBehaviour
             hookTarget.SetActive(true);
 
             hookTarget.transform.position = hook.transform.position;
+
+            AbilityCooldownManager.Instance.offCD("hook");
         }
     }
 
@@ -244,6 +246,9 @@ public class PlayerHook : MonoBehaviour
         if (hookTarget != null)
         {
             hookTarget.SetActive(false);
+
+            //lmao terrible spot to put it but it works
+            AbilityCooldownManager.Instance.onCD("hook");
         }
     }
 
