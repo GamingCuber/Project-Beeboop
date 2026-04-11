@@ -63,6 +63,9 @@ public class AbilityCooldownManager : MonoBehaviour
 
         PlayerStateManager psm = PlayerStateManager.Instance;
 
+        //Just so it stalls just in case they enter a level with upgrades not wiped yet
+        yield return new WaitForSecondsRealtime(0.01f);
+
         if (psm.getState().canDoubleJump)
         {
             jump.gameObject.SetActive(true);
