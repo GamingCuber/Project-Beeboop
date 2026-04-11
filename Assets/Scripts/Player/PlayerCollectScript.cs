@@ -68,9 +68,9 @@ public class PlayerCollectScript : MonoBehaviour
                     PlayerStateManager.Instance.getState().canDash = true;
                     AbilityCooldownManager.Instance.abilityUnlocked("dash");
 
-                    if (collision.gameObject.GetComponent<CollectibleData>().showPopup)
+                    if (collision.gameObject.GetComponent<CollectibleData>().showPopup && upgradePopUp != null)
                     {
-                        upgradePopUp.SetActive(true);
+                        if(upgradePopUp != null) upgradePopUp.SetActive(true);
                         topText.SetText(topDashText);
                         descriptionText.SetText(dashDescriptionText);
                         upgradeVideo.clip = dashTutorialVideo;
@@ -85,8 +85,7 @@ public class PlayerCollectScript : MonoBehaviour
                     break;
                 case CollectibleData.UpgradeOptions.Hook:
                     PlayerStateManager.Instance.getState().canHook = true;
-                    AbilityCooldownManager.Instance.abilityUnlocked("hook");
-                    if (collision.gameObject.GetComponent<CollectibleData>().showPopup)
+                    if (collision.gameObject.GetComponent<CollectibleData>().showPopup && upgradePopUp != null)
                     {
                         upgradePopUp.SetActive(true);
                         topText.SetText(topHookText);
@@ -105,11 +104,9 @@ public class PlayerCollectScript : MonoBehaviour
                 case CollectibleData.UpgradeOptions.DoubleJump:
                     PlayerStateManager.Instance.getState().canDoubleJump = true;
                     PlayerDataManager.Instance.getData().jumpAmt = 2;
-                    AbilityCooldownManager.Instance.abilityUnlocked("jump");
-                    if (collision.gameObject.GetComponent<CollectibleData>().showPopup)
+                    if (collision.gameObject.GetComponent<CollectibleData>().showPopup && upgradePopUp != null)
                     {
                         upgradePopUp.SetActive(true);
-                        Debug.Log(panelTransform.localPosition);
                         topText.SetText(topDoubleJumpText);
                         descriptionText.SetText(doubleJumpDescriptionText);
                         upgradeVideo.clip = doubleJumpTutorialVideo;
@@ -138,19 +135,15 @@ public class PlayerCollectScript : MonoBehaviour
         Vector3 initialPanelPosition = panelTransform.localPosition;
         while (t <= totalMovetime)
         {
-            Debug.Log(t);
             t += Time.deltaTime;
             panelTransform.localPosition = Vector2.Lerp(initialPanelPosition, targetPosition, t / totalMovetime);
             if (t == totalMovetime)
             {
                 resetPanelPosition();
-                Debug.Log(panelTransform.localPosition);
                 yield break;
             }
             yield return new WaitForEndOfFrame();
         }
-
-        Debug.Log(panelTransform.localPosition);
     }
 
     private void resetPanelPosition()
