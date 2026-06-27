@@ -25,10 +25,10 @@ MonoBehaviour:
   canDoubleJump: 1
   canHook: 1
   gameLost: 0
-  pausedGame: 1
+  pausedGame: 0
   wantsTimer: 1
   deathNumber: 0
-  totalTime: 1.815853
+  totalTime: 13.099844
   firstLevelTime: 0
   secondLevelTime: 0
   thirdLevelTime: 859.49805
