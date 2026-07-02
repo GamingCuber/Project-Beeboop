@@ -34,6 +34,10 @@ public class SoundManager: MonoBehaviour
         {
             Instance = this;
         }
+        else
+        {
+            Destroy(this);
+        }
 
         for (int i = 0; i < sounds.Length; i++)
         {
