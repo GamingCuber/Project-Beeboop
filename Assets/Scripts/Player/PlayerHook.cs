@@ -35,7 +35,7 @@ public class PlayerHook : MonoBehaviour
         {
             hookReaction();
 
-            if (getClosestAvailHook() != null && PlayerInputs.Instance.playerController.Player.Hook.WasPressedThisFrame())
+            if (getClosestAvailHook() != null && !PlayerStateManager.Instance.getState().isDead && PlayerInputs.Instance.playerController.Player.Hook.WasPressedThisFrame())
             {
                 doHook();
             }
