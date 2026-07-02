@@ -55,7 +55,7 @@ MonoBehaviour:
   - name: jump
     clip: {fileID: 8300000, guid: 2094b612fa88449dcac873fcebc6cc4d, type: 3}
   - name: hook
-    clip: {fileID: 8300000, guid: 58ee0e8b028e47741918444dc43d0884, type: 3}
+    clip: {fileID: 8300000, guid: 9dfc2fd3f994f4bffbc478d4cf615dd5, type: 3}
   - name: crtOn
     clip: {fileID: 8300000, guid: 285643033ee094bea8494c44f80f8716, type: 3}
   - name: crtOff

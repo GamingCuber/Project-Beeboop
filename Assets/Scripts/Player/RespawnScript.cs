@@ -7,7 +7,6 @@ public class RespawnScript : MonoBehaviour
     {
         if (Instance == null)
         {
-
             Instance = this;
         }
     }

@@ -18,6 +18,7 @@ public class PlayerCollectScript : MonoBehaviour
             {
                 case CollectibleData.UpgradeOptions.Dash:
                     PlayerStateManager.Instance.getState().canDash = true;
+                    AbilityCooldownManager.Instance.abilityUnlocked("dash");
 
                     if (UpgradePopupManager.Instance != null) //this is just so nothing errors out if we havent set it up yet
                     {
