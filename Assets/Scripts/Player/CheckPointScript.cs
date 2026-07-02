@@ -12,7 +12,7 @@ public class CheckPointScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Checkpoint"))
+        if (collision.gameObject.CompareTag("Checkpoint") && !PlayerStateManager.Instance.getState().isDead)
         {
             if (!checkpointsHit.ContainsKey(collision.gameObject))
             {
