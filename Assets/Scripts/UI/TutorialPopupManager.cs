@@ -75,6 +75,7 @@ public class TutorialPopupManager : MonoBehaviour
         upgradeVideo.clip = data.tutorialVideo;
 
         StartCoroutine(movePanel(hiddenPosition, showingPosition));
+        upgradeVideo.Play();
     }
 
     private void hidePanel()

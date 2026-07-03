@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 454ed1167b3e64a01b5b3505bc79aaf0, type: 3}
   m_Name: DoubleJump
   m_EditorClassIdentifier: 
-  topText: double jump
-  descriptionText: 12321321321321
-  tutorialVideo: {fileID: 0}
+  topText: Double Jump
+  descriptionText: ability to jump midair!
+  tutorialVideo: {fileID: 32900000, guid: 465227799b17c4ed9bdb021a540e11ea, type: 3}
