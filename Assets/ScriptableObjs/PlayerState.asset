@@ -27,8 +27,13 @@ MonoBehaviour:
   gameLost: 0
   pausedGame: 0
   wantsTimer: 1
+<<<<<<< Updated upstream
   deathNumber: 10
   totalTime: 4.429449
+=======
+  deathNumber: 4
+  totalTime: 13.099844
+>>>>>>> Stashed changes
   firstLevelTime: 0
   secondLevelTime: 0
   thirdLevelTime: 859.49805
