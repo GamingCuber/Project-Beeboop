@@ -150,7 +150,7 @@ public class PlayerHook : MonoBehaviour
 
     private IEnumerator hookCo()
     {
-        WaitForFixedUpdate wait = new WaitForFixedUpdate();
+        WaitForSecondsRealtime wait = new WaitForSecondsRealtime(0.02f);
 
         GameObject hook = getClosestAvailHook();
 
