@@ -4,6 +4,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Video;
+using UnityEngine.UI;
 
 public class TutorialPopupManager : MonoBehaviour
 {
@@ -25,9 +26,11 @@ public class TutorialPopupManager : MonoBehaviour
     private WaitForEndOfFrame wait = new WaitForEndOfFrame();
     public dataEnum[] dataOptions;
     private GameObject upgradePopUp;
-    private TMP_Text topText;
     private TMP_Text descriptionText;
     private VideoPlayer upgradeVideo;
+    private Image inputIcon;
+    private TMP_Text inputText;
+
     private RectTransform panelTransform;
     public float moveTime;
     public Vector3 hiddenPosition;
@@ -41,10 +44,14 @@ public class TutorialPopupManager : MonoBehaviour
         }
 
         upgradePopUp = GameObject.FindGameObjectWithTag("UpgradePopUp");
-        topText = upgradePopUp.transform.Find("TopText").GetComponent<TMP_Text>();
         descriptionText = upgradePopUp.transform.Find("DescriptionText").GetComponent<TMP_Text>();
         upgradeVideo = upgradePopUp.transform.Find("UpgradeVideoPlayer").GetComponent<VideoPlayer>();
         panelTransform = upgradePopUp.GetComponent<RectTransform>();
+        
+        GameObject input = upgradePopUp.transform.Find("Input").gameObject;
+
+        inputIcon = input.transform.Find("InputIcon").GetComponent<Image>();
+        inputText = input.transform.Find("InputText2").GetComponent<TMP_Text>();
 
         hidePanel();
     }
@@ -70,9 +77,10 @@ public class TutorialPopupManager : MonoBehaviour
             return;
         }
 
-        topText.text = data.topText;
         descriptionText.text = data.descriptionText;
         upgradeVideo.clip = data.tutorialVideo;
+        inputIcon.sprite = data.inputIcon;
+        inputText.text = "to " + data.inputName + "!";
 
         StartCoroutine(movePanel(hiddenPosition, showingPosition));
         upgradeVideo.Play();

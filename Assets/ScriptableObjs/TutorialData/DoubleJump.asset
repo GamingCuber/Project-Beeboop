@@ -15,3 +15,5 @@ MonoBehaviour:
   topText: Double Jump
   descriptionText: ability to jump midair!
   tutorialVideo: {fileID: 32900000, guid: 465227799b17c4ed9bdb021a540e11ea, type: 3}
+  inputIcon: {fileID: 5833419428869421893, guid: b75cb4b9823054587a5c2b692d88e238, type: 3}
+  inputName: jump
