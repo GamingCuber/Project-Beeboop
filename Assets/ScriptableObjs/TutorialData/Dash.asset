@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 454ed1167b3e64a01b5b3505bc79aaf0, type: 3}
-  m_Name: DoubleJump
+  m_Name: Dash
   m_EditorClassIdentifier: 
-  topText: Double Jump
-  descriptionText: ability to jump midair!
-  tutorialVideo: {fileID: 32900000, guid: 6517bb131364d481c9b71b180729dd5a, type: 3}
-  inputIcon: {fileID: 5833419428869421893, guid: b75cb4b9823054587a5c2b692d88e238, type: 3}
-  inputName: jump
+  topText: Dash
+  descriptionText: propel yourself in any direction!
+  tutorialVideo: {fileID: 32900000, guid: 17de4cd48f14e4be1a41d9c1a71f7e66, type: 3}
+  inputIcon: {fileID: -20900907848755987, guid: b75cb4b9823054587a5c2b692d88e238, type: 3}
+  inputName: dash
