@@ -208,7 +208,7 @@ public class PlayerHook : MonoBehaviour
         // rb.constraints = RigidbodyConstraints2D.FreezePositionY;
         // rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
-        yield return new WaitForSecondsRealtime(0.1f);
+        yield return wait;
 
         returnCo = StartCoroutine(hookReturn(hook));
 
