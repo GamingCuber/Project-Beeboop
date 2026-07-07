@@ -70,6 +70,8 @@ public class PauseMenu : MonoBehaviour
         }
 
         player = GameObject.FindGameObjectWithTag("Player");
+
+
     }
 
     private void Update()
