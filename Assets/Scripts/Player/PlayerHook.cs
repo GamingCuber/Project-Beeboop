@@ -29,7 +29,7 @@ public class PlayerHook : MonoBehaviour
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (PlayerStateManager.Instance.getState().canHook)
         {
@@ -124,7 +124,7 @@ public class PlayerHook : MonoBehaviour
 
     private IEnumerator hookCooldownCo(GameObject hook)
     {
-        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+        WaitForFixedUpdate wait = new WaitForFixedUpdate();
 
         float timer = 0;
         float totalTime = PlayerDataManager.Instance.getData().hookPointCooldown;
@@ -150,7 +150,7 @@ public class PlayerHook : MonoBehaviour
 
     private IEnumerator hookCo()
     {
-        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+        WaitForFixedUpdate wait = new WaitForFixedUpdate();
 
         GameObject hook = getClosestAvailHook();
 
@@ -254,7 +254,7 @@ public class PlayerHook : MonoBehaviour
 
     private IEnumerator hookReturn(GameObject hook)
     {
-        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+        WaitForFixedUpdate wait = new WaitForFixedUpdate();
 
         Vector3 initHookPos = hook.transform.position;
 
