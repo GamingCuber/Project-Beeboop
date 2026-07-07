@@ -1,79 +1,19 @@
 fileFormatVersion: 2
-guid: b75cb4b9823054587a5c2b692d88e238
+guid: fdaf870bb0af4448e9b71b0cdd948a65
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7520038860587960274
-    second: tutorialIcons_0
+      213: 4048015607985979974
+    second: East_Pressed_0
   - first:
-      213: -5035006942450762485
-    second: tutorialIcons_1
+      213: -1946841452694025215
+    second: East_Pressed_1
   - first:
-      213: 5833419428869421893
-    second: tutorialIcons_2
+      213: -6318150071871046085
+    second: East_Pressed_2
   - first:
-      213: -20900907848755987
-    second: tutorialIcons_3
-  - first:
-      213: -1546314274209911597
-    second: tutorialIcons_4
-  - first:
-      213: 8565415819845351643
-    second: tutorialIcons_5
-  - first:
-      213: 544932130616881391
-    second: tutorialIcons_6
-  - first:
-      213: -7008600755887818046
-    second: tutorialIcons_7
-  - first:
-      213: -4489123845652679023
-    second: tutorialIcons_8
-  - first:
-      213: 3473786467684649090
-    second: tutorialIcons_9
-  - first:
-      213: -3512682327371996395
-    second: tutorialIcons_10
-  - first:
-      213: -7651992184692666806
-    second: tutorialIcons_11
-  - first:
-      213: 5628079346621816835
-    second: tutorialIcons_12
-  - first:
-      213: 2764140337493410001
-    second: tutorialIcons_13
-  - first:
-      213: 8614452246518243821
-    second: tutorialIcons_14
-  - first:
-      213: -1084662773201318708
-    second: tutorialIcons_15
-  - first:
-      213: -6235994408449760276
-    second: tutorialIcons_16
-  - first:
-      213: -6035525436562597514
-    second: tutorialIcons_17
-  - first:
-      213: -4877042770206349884
-    second: tutorialIcons_18
-  - first:
-      213: 2048937818622754023
-    second: tutorialIcons_19
-  - first:
-      213: 7180128672943680388
-    second: tutorialIcons_20
-  - first:
-      213: 4803096187314216169
-    second: tutorialIcons_21
-  - first:
-      213: -4310614458119040885
-    second: tutorialIcons_22
-  - first:
-      213: -9220048214469442100
-    second: tutorialIcons_23
+      213: -1822369393231425342
+    second: East_Pressed_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -115,7 +55,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -195,13 +135,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tutorialIcons_0
+      name: East_Pressed_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 640
+        x: 551
+        y: 334
         width: 320
-        height: 320
+        height: 329
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e287589cf7473a790800000000000000
-      internalID: -7520038860587960274
+      spriteID: 642cd378fb07d2830800000000000000
+      internalID: 4048015607985979974
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tutorialIcons_1
+      name: East_Pressed_1
       rect:
         serializedVersion: 2
-        x: 320
-        y: 640
-        width: 320
-        height: 320
+        x: 832
+        y: 610
+        width: 316
+        height: 330
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -232,20 +172,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b0db899ccdf002ab0800000000000000
-      internalID: -5035006942450762485
+      spriteID: 10cca2a730e6bf4e0800000000000000
+      internalID: -1946841452694025215
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tutorialIcons_2
+      name: East_Pressed_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 320
-        width: 320
-        height: 320
+        x: 1129
+        y: 336
+        width: 309
+        height: 324
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -254,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 54bbf93501874f050800000000000000
-      internalID: 5833419428869421893
+      spriteID: b3e74801cfb6158a0800000000000000
+      internalID: -6318150071871046085
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tutorialIcons_3
+      name: East_Pressed_3
       rect:
         serializedVersion: 2
-        x: 320
-        y: 320
-        width: 320
-        height: 320
+        x: 837
+        y: 60
+        width: 324
+        height: 338
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -276,30 +216,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: de4113c2cbeb5bff0800000000000000
-      internalID: -20900907848755987
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tutorialIcons_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 320
-        height: 320
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3dc2a9e3c536a8ae0800000000000000
-      internalID: -1546314274209911597
+      spriteID: 2c095e231b4a5b6e0800000000000000
+      internalID: -1822369393231425342
       vertices: []
       indices: 
       edges: []
@@ -308,7 +226,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: b0c10f9b5611a4a899e26280fcf8bae4
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -318,11 +236,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      tutorialIcons_0: -7520038860587960274
-      tutorialIcons_1: -5035006942450762485
-      tutorialIcons_2: 5833419428869421893
-      tutorialIcons_3: -20900907848755987
-      tutorialIcons_4: -1546314274209911597
+      East_Pressed_0: 4048015607985979974
+      East_Pressed_1: -1946841452694025215
+      East_Pressed_2: -6318150071871046085
+      East_Pressed_3: -1822369393231425342
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
