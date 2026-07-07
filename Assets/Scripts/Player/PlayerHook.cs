@@ -29,7 +29,7 @@ public class PlayerHook : MonoBehaviour
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (PlayerStateManager.Instance.getState().canHook)
         {
@@ -124,7 +124,7 @@ public class PlayerHook : MonoBehaviour
 
     private IEnumerator hookCooldownCo(GameObject hook)
     {
-        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+        WaitForFixedUpdate wait = new WaitForFixedUpdate();
 
         float timer = 0;
         float totalTime = PlayerDataManager.Instance.getData().hookPointCooldown;
@@ -150,7 +150,7 @@ public class PlayerHook : MonoBehaviour
 
     private IEnumerator hookCo()
     {
-        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+        WaitForSecondsRealtime wait = new WaitForSecondsRealtime(0.02f);
 
         GameObject hook = getClosestAvailHook();
 
@@ -208,7 +208,7 @@ public class PlayerHook : MonoBehaviour
         // rb.constraints = RigidbodyConstraints2D.FreezePositionY;
         // rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
-        yield return new WaitForSecondsRealtime(0.1f);
+        yield return wait;
 
         returnCo = StartCoroutine(hookReturn(hook));
 
@@ -254,7 +254,7 @@ public class PlayerHook : MonoBehaviour
 
     private IEnumerator hookReturn(GameObject hook)
     {
-        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+        WaitForFixedUpdate wait = new WaitForFixedUpdate();
 
         Vector3 initHookPos = hook.transform.position;
 
