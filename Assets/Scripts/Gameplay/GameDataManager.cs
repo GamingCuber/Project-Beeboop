@@ -29,6 +29,7 @@ public class GameDataManager : MonoBehaviour
 
         data["Time"] = totalTime;
         data["Deaths"] = 0;
+        Application.targetFrameRate = 60;
     }
 
     //param is just level name of the scriptableobject
