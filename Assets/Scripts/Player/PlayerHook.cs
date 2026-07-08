@@ -15,6 +15,7 @@ public class PlayerHook : MonoBehaviour
     private Dictionary<GameObject, bool> hookCooldowns = new Dictionary<GameObject, bool>(); //will assign each hook an individual cooldown, so u cant spam
 
     public float hookReturnSpeed;
+    private bool isHooking;
 
     private Coroutine returnCo;
 
@@ -29,12 +30,11 @@ public class PlayerHook : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
+    private void Update()
     {
         if (PlayerStateManager.Instance.getState().canHook)
         {
             hookReaction();
-
             if (getClosestAvailHook() != null && !PlayerStateManager.Instance.getState().isDead && PlayerInputs.Instance.playerController.Player.Hook.WasPressedThisFrame())
             {
                 doHook();
@@ -150,7 +150,7 @@ public class PlayerHook : MonoBehaviour
 
     private IEnumerator hookCo()
     {
-        WaitForSecondsRealtime wait = new WaitForSecondsRealtime(0.02f);
+        WaitForFixedUpdate wait = new WaitForFixedUpdate();
 
         GameObject hook = getClosestAvailHook();
 
