@@ -20,7 +20,8 @@ public class PlayerCollectScript : MonoBehaviour
                     PlayerStateManager.Instance.getState().canDash = true;
                     AbilityCooldownManager.Instance.abilityUnlocked("dash");
 
-                    if (TutorialPopupManager.Instance != null) TutorialPopupManager.Instance.showTutorial(TutorialPopupManager.tutorialOptions.dash);
+                    if (TutorialPopupManager.Instance != null &&
+                        collision.gameObject.GetComponent<CollectibleData>().showPopup) TutorialPopupManager.Instance.showTutorial(TutorialPopupManager.tutorialOptions.dash);
 
                     if (UpgradePopupManager.Instance != null) //this is just so nothing errors out if we havent set it up yet
                     {
@@ -30,7 +31,8 @@ public class PlayerCollectScript : MonoBehaviour
                 case CollectibleData.UpgradeOptions.Hook:
                     PlayerStateManager.Instance.getState().canHook = true;
 
-                    if (TutorialPopupManager.Instance != null) TutorialPopupManager.Instance.showTutorial(TutorialPopupManager.tutorialOptions.hook);
+                    if (TutorialPopupManager.Instance != null && 
+                        collision.gameObject.GetComponent<CollectibleData>().showPopup) TutorialPopupManager.Instance.showTutorial(TutorialPopupManager.tutorialOptions.hook);
 
                     if (UpgradePopupManager.Instance != null) //this is just so nothing errors out if we havent set it up yet
                     {
@@ -41,7 +43,8 @@ public class PlayerCollectScript : MonoBehaviour
                     PlayerStateManager.Instance.getState().canDoubleJump = true;
                     PlayerDataManager.Instance.getData().jumpAmt = 2;
 
-                    if (TutorialPopupManager.Instance != null) TutorialPopupManager.Instance.showTutorial(TutorialPopupManager.tutorialOptions.doubleJump);
+                    if (TutorialPopupManager.Instance != null &&
+                        collision.gameObject.GetComponent<CollectibleData>().showPopup) TutorialPopupManager.Instance.showTutorial(TutorialPopupManager.tutorialOptions.doubleJump);
 
                     if (UpgradePopupManager.Instance != null) //this is just so nothing errors out if we havent set it up yet
                     {

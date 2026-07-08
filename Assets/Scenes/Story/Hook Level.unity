@@ -11941,7 +11941,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5985136069119890727, guid: cc7d3f64435ad400daa71b6d5fbaa64d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6870972475117133481, guid: cc7d3f64435ad400daa71b6d5fbaa64d, type: 3}
       propertyPath: m_Pivot.x
@@ -315656,7 +315656,7 @@ Tilemap:
       - {fileID: 446812144, guid: 934fe83134dc8da4b91d488db537a653, type: 3}
       - {fileID: -341560901, guid: 934fe83134dc8da4b91d488db537a653, type: 3}
       - {fileID: -897333034, guid: 934fe83134dc8da4b91d488db537a653, type: 3}
-      m_AnimationSpeed: 20
+      m_AnimationSpeed: 20.000002
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 334, y: 7, z: 0}
@@ -322743,7 +322743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgrade: 2
   time: 0
-  showPopup: 0
+  showPopup: 1
 --- !u!114 &5273792415833916158
 MonoBehaviour:
   m_ObjectHideFlags: 0

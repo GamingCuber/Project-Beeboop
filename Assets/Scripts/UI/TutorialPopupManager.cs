@@ -54,7 +54,6 @@ public class TutorialPopupManager : MonoBehaviour
         inputText = input.transform.Find("InputText2").GetComponent<TMP_Text>();
 
         hidePanel();
-        Debug.Log("hi");
     }
 
     public void showTutorial(tutorialOptions option)

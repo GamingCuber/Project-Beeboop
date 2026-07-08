@@ -15,5 +15,5 @@ MonoBehaviour:
   topText: Dash
   descriptionText: propel yourself in any direction!
   tutorialVideo: {fileID: 32900000, guid: 17de4cd48f14e4be1a41d9c1a71f7e66, type: 3}
-  inputIcon: {fileID: -20900907848755987, guid: b75cb4b9823054587a5c2b692d88e238, type: 3}
+  inputIcon: {fileID: 21300000, guid: 0f11e432c2ec94599aac49cc236286a2, type: 3}
   inputName: dash
