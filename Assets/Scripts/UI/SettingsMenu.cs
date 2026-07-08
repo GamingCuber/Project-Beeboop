@@ -27,6 +27,8 @@ public class SettingsMenu : MonoBehaviour
 
     public Toggle timerToggle;
 
+    public Toggle tutorialToggle;
+
     private EventSystem eventSystem;
 
     private Coroutine checkCo;
@@ -42,6 +44,7 @@ public class SettingsMenu : MonoBehaviour
         MusicVolObj = setting.GetChild(2).gameObject;
         SFXVolObj = setting.GetChild(3).gameObject;
         timerToggle = setting.GetChild(4).GetChild(0).GetComponent<Toggle>();
+        tutorialToggle = setting.GetChild(5).GetChild(0).GetComponent<Toggle>();
 
         eventSystem = GameObject.FindGameObjectWithTag("EventSystem").GetComponent<EventSystem>();
         eventSystem.SetSelectedGameObject(MasterVolumeVolObj.transform.GetChild(2).gameObject);
@@ -217,6 +220,11 @@ public class SettingsMenu : MonoBehaviour
         }
     }
 
+    public void updateTutorial()
+    {
+        PlayerStateManager.Instance.getState().wantsTutorial = tutorialToggle.isOn;
+    }
+
     public void hideMenu()
     {
         PauseMenu pause = this.gameObject.GetComponentInParent<PauseMenu>();
@@ -265,7 +273,10 @@ public class SettingsMenu : MonoBehaviour
         updateVolumeUI(slider, input, "SFXVolume");
 
         if (TimeTextManager.Instance != null) TimeTextManager.Instance.checkEnable();
+
+        //eventually we should move these to playerprefs so they persist if game is closed
         timerToggle.isOn = PlayerStateManager.Instance.getState().wantsTimer;
+        tutorialToggle.SetIsOnWithoutNotify(PlayerStateManager.Instance.getState().wantsTutorial);
 
         yield break;
     }

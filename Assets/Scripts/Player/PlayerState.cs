@@ -21,6 +21,7 @@ public class PlayerState : ScriptableObject
     public bool gameLost = false;
     public bool pausedGame = false;
     public bool wantsTimer = false;
+    public bool wantsTutorial = true;
     [Header("Ranking Data")]
     public int deathNumber = 0;
     public float totalTime = 0f;
