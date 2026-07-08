@@ -11175,7 +11175,7 @@ GameObject:
   - component: {fileID: 719319677}
   m_Layer: 0
   m_Name: EventSystem
-  m_TagString: Untagged
+  m_TagString: EventSystem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -315656,7 +315656,7 @@ Tilemap:
       - {fileID: 446812144, guid: 934fe83134dc8da4b91d488db537a653, type: 3}
       - {fileID: -341560901, guid: 934fe83134dc8da4b91d488db537a653, type: 3}
       - {fileID: -897333034, guid: 934fe83134dc8da4b91d488db537a653, type: 3}
-      m_AnimationSpeed: 20.000002
+      m_AnimationSpeed: 20
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 334, y: 7, z: 0}
@@ -315744,7 +315744,7 @@ Tilemap:
       - {fileID: 446812144, guid: 934fe83134dc8da4b91d488db537a653, type: 3}
       - {fileID: -341560901, guid: 934fe83134dc8da4b91d488db537a653, type: 3}
       - {fileID: -897333034, guid: 934fe83134dc8da4b91d488db537a653, type: 3}
-      m_AnimationSpeed: 20
+      m_AnimationSpeed: 20.000002
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 338, y: 7, z: 0}
