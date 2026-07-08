@@ -24,6 +24,10 @@ MonoBehaviour:
     sceneName: Dash Level
     sceneSong: Dash
     sceneTime: 0
+  - displayName: Hook!
+    sceneName: Hook Level
+    sceneSong: Hook
+    sceneTime: 0
   secondsPerRank:
   - 65
   - 105
