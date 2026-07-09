@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 44f517166f069b5ca85b2a6f145c4910, type: 3}
   m_Name: PlayerState
-  m_EditorClassIdentifier:
+  m_EditorClassIdentifier: 
   isGrounded: 1
   isMoving: 0
   isDashing: 0
@@ -27,8 +27,9 @@ MonoBehaviour:
   gameLost: 0
   pausedGame: 0
   wantsTimer: 1
-  deathNumber: 10
-  totalTime: 4.429449
+  wantsTutorial: 1
+  deathNumber: 45
+  totalTime: 4.589449
   firstLevelTime: 0
   secondLevelTime: 0
   thirdLevelTime: 859.49805
