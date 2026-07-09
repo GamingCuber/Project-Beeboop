@@ -15,6 +15,7 @@ public class SettingsOverlayManager : MonoBehaviour
 
     void Start()
     {   
+        Debug.Log("hello!");
         if (Instance == null)
         {
             Instance = this;

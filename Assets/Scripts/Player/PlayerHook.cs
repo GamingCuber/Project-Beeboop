@@ -15,6 +15,7 @@ public class PlayerHook : MonoBehaviour
     private Dictionary<GameObject, bool> hookCooldowns = new Dictionary<GameObject, bool>(); //will assign each hook an individual cooldown, so u cant spam
 
     public float hookReturnSpeed;
+    private bool isHooking;
 
     private Coroutine returnCo;
 
@@ -29,12 +30,11 @@ public class PlayerHook : MonoBehaviour
         }
     }
 
-    void Update()
+    private void Update()
     {
         if (PlayerStateManager.Instance.getState().canHook)
         {
             hookReaction();
-
             if (getClosestAvailHook() != null && !PlayerStateManager.Instance.getState().isDead && PlayerInputs.Instance.playerController.Player.Hook.WasPressedThisFrame())
             {
                 doHook();
@@ -124,7 +124,7 @@ public class PlayerHook : MonoBehaviour
 
     private IEnumerator hookCooldownCo(GameObject hook)
     {
-        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+        WaitForFixedUpdate wait = new WaitForFixedUpdate();
 
         float timer = 0;
         float totalTime = PlayerDataManager.Instance.getData().hookPointCooldown;
@@ -150,7 +150,7 @@ public class PlayerHook : MonoBehaviour
 
     private IEnumerator hookCo()
     {
-        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+        WaitForFixedUpdate wait = new WaitForFixedUpdate();
 
         GameObject hook = getClosestAvailHook();
 
@@ -208,7 +208,7 @@ public class PlayerHook : MonoBehaviour
         // rb.constraints = RigidbodyConstraints2D.FreezePositionY;
         // rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
-        yield return new WaitForSecondsRealtime(0.1f);
+        yield return wait;
 
         returnCo = StartCoroutine(hookReturn(hook));
 
@@ -254,7 +254,7 @@ public class PlayerHook : MonoBehaviour
 
     private IEnumerator hookReturn(GameObject hook)
     {
-        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+        WaitForFixedUpdate wait = new WaitForFixedUpdate();
 
         Vector3 initHookPos = hook.transform.position;
 

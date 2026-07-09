@@ -68,6 +68,18 @@ public class TimeTextManager : MonoBehaviour
         startTimer();
     }
 
+    public void hideTimer()
+    {
+        Vector3 pos = new Vector3(999f, 999f, 0f);
+        timer.transform.localPosition = pos;
+    }
+
+    public void showTimer()
+    {
+        Vector3 pos = new Vector3(-347f, -79.4f, 0f); //i got this from ingame scene
+        timer.transform.localPosition = pos;
+    }
+
     public void startTimer()
     {
         for (int i = 0; i < GameDataManager.Instance.getLevelData().scenes.Length; ++i)
@@ -91,8 +103,6 @@ public class TimeTextManager : MonoBehaviour
         if (moveAmt <= 1) moveAmt = 0;
         else if (moveAmt >= totalAmt - 2) moveAmt = totalAmt - 3;
         else moveAmt = moveAmt - 1;
-
-        Debug.Log(moveAmt);
 
         for (int i = 0; i < levelTimes.Length; ++i)
         {
