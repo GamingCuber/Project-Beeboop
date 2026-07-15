@@ -406,7 +406,7 @@ public class WinScreenManager : MonoBehaviour
 
     private string getName()
     {
-        char[] letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
+        char[] letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890".ToCharArray();
         string name = "";
 
         foreach (KeyValuePair<GameObject, int> kv in nameObjs)
@@ -502,7 +502,7 @@ public class WinScreenManager : MonoBehaviour
     {
         WaitForEndOfFrame wait = new WaitForEndOfFrame();
 
-        char[] letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
+        char[] letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890".ToCharArray();
 
         var tags = GameObject.FindGameObjectsWithTag("NameSelect");
 
@@ -588,7 +588,7 @@ public class WinScreenManager : MonoBehaviour
 
         WaitForSecondsRealtime holdWait = new WaitForSecondsRealtime(0.1f);
 
-        char[] letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
+        char[] letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890".ToCharArray();
 
         while (true)
         {

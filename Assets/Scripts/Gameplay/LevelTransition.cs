@@ -38,6 +38,10 @@ public class LevelTransition : MonoBehaviour
     {
         StartCoroutine(doTransitionCo(scene));
     }
+    public void doTransition(string scene, bool resetState)
+    {
+        StartCoroutine(doTransitionCo(scene, resetState));
+    }
 
     private IEnumerator doTransitionCo(string scene)
     {
@@ -60,14 +64,38 @@ public class LevelTransition : MonoBehaviour
         anim.clip = fadeOutAnim;
         anim.Play();
 
-        if (scene.Equals("MainScene"))
+        yield return new WaitForSecondsRealtime(anim.clip.length);
+
+        transitionObj.SetActive(false);
+
+        yield break;
+    }
+
+    private IEnumerator doTransitionCo(string scene, bool resetState)
+    {
+        transitionObj.SetActive(true);
+
+        anim.clip = fadeInAnim;
+        anim.Play();
+
+        yield return new WaitForSecondsRealtime(anim.clip.length);
+
+        SceneManager.LoadScene(scene);
+
+        if (dyingObj.activeInHierarchy)
+        {
+            dyingObj.SetActive(false);
+        }
+
+        yield return new WaitForSecondsRealtime(transitionTime);
+
+        anim.clip = fadeOutAnim;
+        anim.Play();
+
+        if (resetState)
         {
             resetStats();
             StartCoroutine(waitForTimer());
-        }
-        else if (scene.Equals("StartMenu"))
-        {
-            resetStats();
         }
 
         yield return new WaitForSecondsRealtime(anim.clip.length);

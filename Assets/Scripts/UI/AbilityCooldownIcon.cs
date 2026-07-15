@@ -21,12 +21,12 @@ public class AbilityCooldownIcon : MonoBehaviour
 
     public void showCover() 
     {
-        cover.SetActive(true);
+        if (cover != null) cover.SetActive(true);
     }
 
     public void hideCover() 
     {
-        cover.SetActive(false);
+        if (cover != null) cover.SetActive(false);
     }
 
     private IEnumerator moveIcon(Vector3 targetPos)

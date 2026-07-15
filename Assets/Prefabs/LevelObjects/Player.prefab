@@ -183,6 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 6213200475529146899}
+  bottomCollider: {fileID: 0}
 --- !u!114 &5402072288530228701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,7 +249,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c4caef131ac5a418eac101a3c00d7790, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -279,8 +280,8 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.12179184
-        value: 0.23087311
+        time: 0.13914871
+        value: 0.7571869
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -323,8 +324,8 @@ LineRenderer:
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
-    textureMode: 0
-    textureScale: {x: 0.1, y: 0.1}
+    textureMode: 3
+    textureScale: {x: 6, y: -1}
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
@@ -370,6 +371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdb0ea7385de7df4e8b4d2df652a19f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  secondsUntilDisable: 0
 --- !u!114 &3029593224830857041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -586,7 +588,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f26e545ec191468ebead9b5fd089bdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceFromPlat: 1.25
 --- !u!61 &7114716184950850453
 BoxCollider2D:
   m_ObjectHideFlags: 0
