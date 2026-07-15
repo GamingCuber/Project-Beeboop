@@ -23,6 +23,7 @@ public class PlayerMovingPlatform : MonoBehaviour
         if (collision.gameObject.CompareTag("MovingPlatform") && isAttached)
         {
             isAttached = false;
+            curPlat = null;
             transform.SetParent(null);
 
         }
