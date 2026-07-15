@@ -162,6 +162,7 @@ public class TutorialPopupManager : MonoBehaviour
 
         if (!PlayerStateManager.Instance.state.pausedGame)
         {
+            StartCoroutine(waitToHide());
             StartCoroutine(writeToPanel(". . .", dotTime));
             yield return new WaitForSecondsRealtime(dotTime + 1.5f * waitTime);
 
@@ -179,7 +180,6 @@ public class TutorialPopupManager : MonoBehaviour
             if (!upgradeVideo.enabled) upgradeVideo.enabled = true;
             upgradeVideo.Play();
 
-            StartCoroutine(waitToHide());
             yield break;
         }
         else
@@ -227,7 +227,7 @@ public class TutorialPopupManager : MonoBehaviour
     {
         if (!PlayerStateManager.Instance.state.pausedGame)
         {
-            float tutorialTime = 4f;
+            float tutorialTime = 8f;
             yield return new WaitForSecondsRealtime(tutorialTime);
 
             director.playableAsset = hide;
