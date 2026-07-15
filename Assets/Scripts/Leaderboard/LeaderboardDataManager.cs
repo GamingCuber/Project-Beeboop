@@ -39,7 +39,7 @@ public class LeaderboardDataManager : MonoBehaviour
         public List<Score> scores = new List<Score>();
     }
 
-    public levelScoreData curLevelData; 
+    public levelScoreData curLevelData;
 
     private void Start()
     {
@@ -62,7 +62,7 @@ public class LeaderboardDataManager : MonoBehaviour
         //means its a new level data entry (doesnt have a level data in our json file alrdy)
         if (curLevelData.scores.Count == 0)
         {
-            var jsonFile = File.ReadAllText(Application.persistentDataPath + "/scoredata.json");
+            var jsonFile = File.ReadAllText(Path.Combine(Application.persistentDataPath, "scoredata.json"));
 
             //this bit is just so we can maintain the scores we had before I changed how the json works
             if (jsonFile.Contains("scores") && !jsonFile.Contains("levelData"))
@@ -101,29 +101,34 @@ public class LeaderboardDataManager : MonoBehaviour
 
         curLevelData.scores.Add(new Score(name, score));
 
-        for (int i = 0; i < curWrap.levelData.Count; ++i)
+        int existingIndex = curWrap.levelData.FindIndex(x => x.levelName == curLevelData.levelName);
+
+        if (existingIndex != -1)
         {
-            if (curWrap.levelData[i].levelName == GameDataManager.Instance.curLevel.levelName)
-            {
-                curWrap.levelData[i] = curLevelData;
-                updateJSON(curWrap);
-            }
-            else if (i == curWrap.levelData.Count - 1)
-            {
-                curWrap.levelData.Add(curLevelData);
-                updateJSON(curWrap);
-            }
+            // Replace the updated entry at its current position
+            curWrap.levelData[existingIndex] = curLevelData;
         }
+        else
+        {
+            // It's completely new, add it cleanly to the end of the list
+            curWrap.levelData.Add(curLevelData);
+        }
+
+        updateJSON(curWrap);
     }
 
     private scoreWrapper readJSON()
     {
-        if (!File.Exists(Application.persistentDataPath + "/scoredata.json")) //make a new json file if one dont exist
+
+        var jsonPath = Path.Combine(Application.persistentDataPath, "scoredata.json");
+        if (!File.Exists(jsonPath)) //make a new json file if one dont exist
         {
-            File.WriteAllText(Application.persistentDataPath + "/scoredata.json", "{}");
+            File.WriteAllText(jsonPath, "{}");
         }
 
-        var json = File.ReadAllText(Application.persistentDataPath + "/scoredata.json");
+        Debug.Log(Application.persistentDataPath);
+
+        var json = File.ReadAllText(jsonPath);
 
         return (JsonUtility.FromJson<scoreWrapper>(json));
     }
@@ -131,7 +136,7 @@ public class LeaderboardDataManager : MonoBehaviour
     private void updateJSON(scoreWrapper newWrap)
     {
         var json = JsonUtility.ToJson(newWrap, true);
-        File.WriteAllText(Application.persistentDataPath + "/scoredata.json", json);
+        File.WriteAllText(Path.Combine(Application.persistentDataPath, "scoredata.json"), json);
     }
 
     public levelScoreData getCurData()
