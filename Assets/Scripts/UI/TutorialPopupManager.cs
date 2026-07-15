@@ -26,7 +26,7 @@ public class TutorialPopupManager : MonoBehaviour
     public static TutorialPopupManager Instance;
     private WaitForEndOfFrame wait = new WaitForEndOfFrame();
     public dataEnum[] dataOptions;
-    
+
     private GameObject upgradePopUp;
     private TMP_Text descriptionText;
     private VideoPlayer upgradeVideo;
@@ -43,6 +43,7 @@ public class TutorialPopupManager : MonoBehaviour
     public PlayableAsset show;
     public PlayableAsset hide;
     private TutorialData curData;
+    public bool isTutorialUIUp;
 
     void Start()
     {
@@ -58,7 +59,7 @@ public class TutorialPopupManager : MonoBehaviour
         descriptionText = tutorialBody.transform.Find("DescriptionText").GetComponent<TMP_Text>();
         upgradeVideo = upgradePopUp.transform.Find("UpgradeVideoPlayer").GetComponent<VideoPlayer>();
         panelTransform = upgradePopUp.GetComponent<RectTransform>();
-        
+
         GameObject input = tutorialBody.transform.Find("Input").gameObject;
 
         inputIcon = input.transform.Find("InputIcon").GetComponent<Image>();
@@ -69,10 +70,23 @@ public class TutorialPopupManager : MonoBehaviour
         director = upgradePopUp.GetComponent<PlayableDirector>();
 
         hidePanel();
+        isTutorialUIUp = false;
+    }
+
+    private void Update()
+    {
+        if (PlayerStateManager.Instance.state.pausedGame)
+        {
+            turnOffPanel();
+        } else
+        {
+            turnOnPanel();
+        }
     }
 
     public void showTutorial(tutorialOptions option)
     {
+        isTutorialUIUp = true;
         upgradePopUp.SetActive(true);
 
         TutorialData data = null;
@@ -101,10 +115,11 @@ public class TutorialPopupManager : MonoBehaviour
         StartCoroutine(movePanel(hiddenPosition, showingPosition));
     }
 
-    private void hidePanel()
+    public void hidePanel()
     {
         panelTransform.position = showingPosition;
         upgradePopUp.SetActive(false);
+        isTutorialUIUp = false;
     }
 
     private IEnumerator movePanel(Vector3 from, Vector3 to)
@@ -112,22 +127,31 @@ public class TutorialPopupManager : MonoBehaviour
         float timer = 0;
         float time = moveTime;
 
+
+        Vector3 pos = to;
+
         StartCoroutine(namePanelEffect());
 
         if (PlayerStateManager.Instance.getState().wantsTimer) TimeTextManager.Instance.hideTimer();
 
         while (timer < time)
         {
-            timer += Time.deltaTime;
+            if (!PlayerStateManager.Instance.state.pausedGame)
+            {
+                timer += Time.deltaTime;
 
-            float percent = Mathf.Sin(Mathf.PI/2 * timer/time);
+                float percent = Mathf.Sin(Mathf.PI / 2 * timer / time);
 
-            Vector3 pos = Vector3.Lerp(from, to, percent);
+                pos = Vector3.Lerp(from, to, percent);
 
-            panelTransform.anchoredPosition = pos;
-
+                panelTransform.anchoredPosition = pos;
+            } else
+            {
+                panelTransform.anchoredPosition = pos;
+            }
             yield return wait;
         }
+
     }
 
     private IEnumerator namePanelEffect()
@@ -135,29 +159,40 @@ public class TutorialPopupManager : MonoBehaviour
         float waitTime = 0.5f;
 
         float dotTime = 0.75f;
-        StartCoroutine(writeToPanel(". . .", dotTime));
-        yield return new WaitForSecondsRealtime(dotTime + 1.5f * waitTime);      
 
-        float sysUpdTime = 0.5f;
-        StartCoroutine(writeToPanel("SYSTEM UPDATE", sysUpdTime));
-        yield return new WaitForSecondsRealtime(sysUpdTime + waitTime);
+        if (!PlayerStateManager.Instance.state.pausedGame)
+        {
+            StartCoroutine(writeToPanel(". . .", dotTime));
+            yield return new WaitForSecondsRealtime(dotTime + 1.5f * waitTime);
 
-        float upgTime = 0.5f;
-        StartCoroutine(writeToPanel(curData.topText.ToUpper(), upgTime));
-        yield return new WaitForSecondsRealtime(upgTime + waitTime);   
+            float sysUpdTime = 0.5f;
+            StartCoroutine(writeToPanel("SYSTEM UPDATE", sysUpdTime));
+            yield return new WaitForSecondsRealtime(sysUpdTime + waitTime);
 
-        director.playableAsset = show;
-        director.Play();
-        upgradeVideo.Play();
+            float upgTime = 0.5f;
+            StartCoroutine(writeToPanel(curData.topText.ToUpper(), upgTime));
+            yield return new WaitForSecondsRealtime(upgTime + waitTime);
 
-        StartCoroutine(waitToHide());
-        yield break;
+            director.playableAsset = show;
+            director.Play();
+
+            if (!upgradeVideo.enabled) upgradeVideo.enabled = true;
+            upgradeVideo.Play();
+
+            StartCoroutine(waitToHide());
+            yield break;
+        }
+        else
+        {
+            yield return null;
+        }
+
     }
 
     private IEnumerator writeToPanel(string str, float time)
     {
         char[] cArr = str.ToCharArray();
-        float timePerChar = time/cArr.Length;
+        float timePerChar = time / cArr.Length;
 
         float timer = 0;
         int i = 0;
@@ -166,12 +201,20 @@ public class TutorialPopupManager : MonoBehaviour
 
         while (i < cArr.Length)
         {
+
             if (timer < timePerChar) timer += Time.deltaTime;
-            else 
+            else
             {
-                s += cArr[i];
-                tabText.text = s;
-                ++i;
+                if (!PlayerStateManager.Instance.state.pausedGame)
+                {
+                    s += cArr[i];
+                    tabText.text = s;
+                    ++i;
+                } else
+                {
+                    tabText.text = tabText.text;
+                }
+
 
                 timer = 0;
             }
@@ -182,15 +225,43 @@ public class TutorialPopupManager : MonoBehaviour
 
     private IEnumerator waitToHide()
     {
-        float tutorialTime = 4f;
-        yield return new WaitForSecondsRealtime(tutorialTime);
+        if (!PlayerStateManager.Instance.state.pausedGame)
+        {
+            float tutorialTime = 4f;
+            yield return new WaitForSecondsRealtime(tutorialTime);
 
-        director.playableAsset = hide;
-        director.Play();
-        
-        if (PlayerStateManager.Instance.getState().wantsTimer) TimeTextManager.Instance.showTimer();
+            director.playableAsset = hide;
+            director.Play();
 
-        yield return new WaitForSecondsRealtime(1f);
-        hidePanel();
+            if (PlayerStateManager.Instance.getState().wantsTimer) TimeTextManager.Instance.showTimer();
+
+            yield return new WaitForSecondsRealtime(1f);
+            hidePanel();
+        }
+        else
+        {
+            yield return null;
+        }
+
+
+    }
+
+    private void turnOffPanel()
+    {
+        var ParentObject = gameObject;
+
+        for (var i = 0; i < ParentObject.transform.childCount; i++)
+        {
+            ParentObject.transform.GetChild(i).localScale = new Vector3(0, 0, 0);
+        }
+    }
+
+    private void turnOnPanel()
+    {
+        var ParentObject = gameObject;
+        for (var i = 0; i < ParentObject.transform.childCount; i++)
+        {
+            ParentObject.transform.GetChild(i).localScale = new Vector3(1, 1, 1);
+        }
     }
 }

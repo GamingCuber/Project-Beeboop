@@ -79,11 +79,12 @@ public class PauseMenu : MonoBehaviour
         if (PlayerInputs.Instance.playerController.Player.Escape.WasPressedThisFrame() && !menuActive)
         {
             showMenu();
+            TimeTextManager.Instance.hideTimer();
         }
         else if (PlayerInputs.Instance.playerController.Player.Escape.WasPressedThisFrame() && menuActive)
         {
             hideMenu();
-
+            if (!TutorialPopupManager.Instance.isTutorialUIUp) TimeTextManager.Instance.showTimer();
         }
 
         if (menuActive)
