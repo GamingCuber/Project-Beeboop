@@ -24,7 +24,7 @@ public class PlayerDash : MonoBehaviour
         //need this to be dashbuttondown
         if (PlayerInputs.Instance.playerController.Player.Dash.WasPressedThisFrame() && debounce == false && PlayerStateManager.Instance.getState().canDash && !onCooldown && !PlayerStateManager.Instance.getState().isDead)
         {
-            PlayerJump.Instance.cancelJump(false);Debug.Log("Oncd");
+            PlayerJump.Instance.cancelJump(false);
             AbilityCooldownManager.Instance.onCD("dash");
             StartCoroutine(DashCoroutine());
         }
@@ -73,6 +73,14 @@ public class PlayerDash : MonoBehaviour
         {
             dashDir.x = 1;
         }
+        
+        bool hasInput = false;
+        if (dashDir == Vector2.zero)
+        {
+            hasInput = true;
+            if (PlayerDataManager.Instance.getData().playerDirection == "left") dashDir.x = -1;
+            else dashDir.x = 1; 
+        }
 
         dashDir.Normalize();
         dashDir.y *= 5f;
@@ -91,7 +99,10 @@ public class PlayerDash : MonoBehaviour
         rb.constraints = RigidbodyConstraints2D.FreezePositionY;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
-        rb.AddForce(dashDir * PlayerDataManager.Instance.getData().dashStrength, ForceMode2D.Impulse);
+        float maxDashMultIfStanding = 2f;
+        float standingMult = hasInput ? maxDashMultIfStanding : 1f;
+
+        rb.AddForce(dashDir * PlayerDataManager.Instance.getData().dashStrength * standingMult, ForceMode2D.Impulse);
 
         DashAfterimage.Instance.doAfterimage();
 
