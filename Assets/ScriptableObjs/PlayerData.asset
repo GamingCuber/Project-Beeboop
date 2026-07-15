@@ -29,7 +29,7 @@ MonoBehaviour:
   hookCancelDistance: 3
   hookDistanceLimit: 18
   hookPointCooldown: 3
-  hookSpeed: 100
+  hookSpeed: 190
   jumpAmt: 2
   jumpFallGrav: 3.5
   jumpHeight: 4
