@@ -45,14 +45,12 @@ public class AbilityCooldownManager : MonoBehaviour
     {
         AbilityCooldownIcon icon = getIcon(ability);
         icon.showCover();
-        if (ability == "dash") Debug.Log("hi");
     }
 
     public void offCD(String ability)
     {
         AbilityCooldownIcon icon = getIcon(ability);
         icon.hideCover();
-        if (ability == "dash") Debug.Log("bye");
     }
 
     private IEnumerator waitForPlayerManager()
