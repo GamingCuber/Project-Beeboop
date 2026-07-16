@@ -228,7 +228,7 @@ public class PlayerJump : MonoBehaviour
     public void resetJumps() //gives jumpsleft back
     {
         jumpsLeft = PlayerDataManager.Instance.getData().jumpAmt;
-        AbilityCooldownManager.Instance.offCD("jump");
+        if (AbilityCooldownManager.Instance != null) AbilityCooldownManager.Instance.offCD("jump");
     }
 
     public void cancelJump(bool doubleJumping) //param is IF you want the player to be able to still doublejump after you cancel
