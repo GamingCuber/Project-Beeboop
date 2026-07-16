@@ -156,21 +156,21 @@ public class TutorialPopupManager : MonoBehaviour
 
     private IEnumerator namePanelEffect()
     {
-        float waitTime = 0.5f;
+        float waitTime = 0.6f;
 
-        float dotTime = 0.75f;
+        float dotTime = 0.6f;
 
         if (!PlayerStateManager.Instance.state.pausedGame)
         {
             StartCoroutine(waitToHide());
             StartCoroutine(writeToPanel(". . .", dotTime));
-            yield return new WaitForSecondsRealtime(dotTime + 1.5f * waitTime);
+            yield return new WaitForSecondsRealtime(dotTime + 1.25f * waitTime);
 
             float sysUpdTime = 0.5f;
             StartCoroutine(writeToPanel("SYSTEM UPDATE", sysUpdTime));
             yield return new WaitForSecondsRealtime(sysUpdTime + waitTime);
 
-            float upgTime = 0.5f;
+            float upgTime = 0.40f;
             StartCoroutine(writeToPanel(curData.topText.ToUpper(), upgTime));
             yield return new WaitForSecondsRealtime(upgTime + waitTime);
 
@@ -227,7 +227,7 @@ public class TutorialPopupManager : MonoBehaviour
     {
         if (!PlayerStateManager.Instance.state.pausedGame)
         {
-            float tutorialTime = 8f;
+            float tutorialTime = 7.5f;
             yield return new WaitForSecondsRealtime(tutorialTime);
 
             director.playableAsset = hide;

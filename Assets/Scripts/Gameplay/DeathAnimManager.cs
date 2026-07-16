@@ -65,6 +65,8 @@ public class DeathAnimManager : MonoBehaviour
 
             g.transform.position = player.transform.position;
 
+            g.transform.rotation = Quaternion.Euler(new Vector3(0, 0, Random.Range(0, 360)));
+
             Rigidbody2D rb = g.GetComponent<Rigidbody2D>();
 
             rb.gravityScale = 1;
