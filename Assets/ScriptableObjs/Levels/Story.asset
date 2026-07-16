@@ -14,20 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelName: Story
   levelCover: {fileID: 0}
-  levelTotalTime: 150
+  levelTotalTime: 90
   scenes:
   - displayName: Jump!
     sceneName: MainScene
     sceneSong: DoubleJump
-    sceneTime: 61.525593
+    sceneTime: 38.764004
   - displayName: Dash!
     sceneName: Dash Level
     sceneSong: Dash
-    sceneTime: 70.031204
+    sceneTime: 72.47586
   - displayName: Hook!
     sceneName: Hook Level
     sceneSong: Hook
-    sceneTime: 87.710754
+    sceneTime: 85.50244
   secondsPerRank:
   - 105
   - 135
