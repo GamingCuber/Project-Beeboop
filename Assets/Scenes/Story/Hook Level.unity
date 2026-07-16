@@ -324547,6 +324547,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3862444682118615373, guid: fadcb034c94434174bacb1cbd19fbcb5, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4044938850619177727, guid: fadcb034c94434174bacb1cbd19fbcb5, type: 3}
       propertyPath: m_Name
       value: Player
@@ -329102,7 +329106,7 @@ Tilemap:
       - {fileID: 446812144, guid: 934fe83134dc8da4b91d488db537a653, type: 3}
       - {fileID: -341560901, guid: 934fe83134dc8da4b91d488db537a653, type: 3}
       - {fileID: -897333034, guid: 934fe83134dc8da4b91d488db537a653, type: 3}
-      m_AnimationSpeed: 20.000002
+      m_AnimationSpeed: 20
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 336, y: 7, z: 0}
