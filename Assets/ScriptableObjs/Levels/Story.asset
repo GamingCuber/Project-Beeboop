@@ -19,15 +19,15 @@ MonoBehaviour:
   - displayName: Jump!
     sceneName: MainScene
     sceneSong: DoubleJump
-    sceneTime: 38.764004
+    sceneTime: 120.00644
   - displayName: Dash!
     sceneName: Dash Level
     sceneSong: Dash
-    sceneTime: 72.47586
+    sceneTime: 0
   - displayName: Hook!
     sceneName: Hook Level
     sceneSong: Hook
-    sceneTime: 85.50244
+    sceneTime: 0
   secondsPerRank:
   - 105
   - 135
