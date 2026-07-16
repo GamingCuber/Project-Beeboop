@@ -29,10 +29,10 @@ MonoBehaviour:
     sceneSong: Hook
     sceneTime: 87.710754
   secondsPerRank:
-  - 105
-  - 135
-  - 165
-  - 185
+  - 100
+  - 115
+  - 130
+  - 150
   - 200
   - 300
   deathsPerSign: 0300000007000000
