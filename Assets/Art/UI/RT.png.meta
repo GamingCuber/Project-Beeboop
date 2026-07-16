@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 57dc6841e46294ebb8c8d49bdc470014
+guid: 0f108af0162ab4629a424d0568bb473c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4829069734932500616
-    second: RT_Sprite_0
+      213: 7004037816915843872
+    second: RT_0
   - first:
-      213: -405890419031512629
-    second: RT_Sprite_1
+      213: 3398953558418567759
+    second: RT_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -129,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RT_Sprite_0
+      name: RT_0
       rect:
         serializedVersion: 2
-        x: 724
-        y: 227
-        width: 596
-        height: 543
+        x: 622
+        y: 139
+        width: 844
+        height: 769
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,20 +144,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 87f22cd59a2bbfcb0800000000000000
-      internalID: -4829069734932500616
+      spriteID: 02bdba61947533160800000000000000
+      internalID: 7004037816915843872
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RT_Sprite_1
+      name: RT_1
       rect:
         serializedVersion: 2
-        x: 1307
-        y: 395
-        width: 18
-        height: 12
+        x: 1448
+        y: 377
+        width: 25
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bc964eb70dcfd5af0800000000000000
-      internalID: -405890419031512629
+      spriteID: f42b691c0428b2f20800000000000000
+      internalID: 3398953558418567759
       vertices: []
       indices: 
       edges: []
@@ -186,8 +186,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      RT_Sprite_0: -4829069734932500616
-      RT_Sprite_1: -405890419031512629
+      RT_0: 7004037816915843872
+      RT_1: 3398953558418567759
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

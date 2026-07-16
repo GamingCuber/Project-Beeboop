@@ -155,8 +155,7 @@ public class SoundManager: MonoBehaviour
         }
 
         expandSoundPool();
-
-        return null;
+        return getAvailSound();
     }
 
     private GameObject getAvailSound(out int index)
@@ -191,7 +190,7 @@ public class SoundManager: MonoBehaviour
             {
                 GameObject newSource = Instantiate(sourcePre, this.transform);
                 newSource.SetActive(false);
-                audioSources[i] = newSource;
+                newAudioSources[i] = newSource;
             }
         }
         
