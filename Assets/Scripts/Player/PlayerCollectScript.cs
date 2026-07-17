@@ -30,6 +30,7 @@ public class PlayerCollectScript : MonoBehaviour
                     break;
                 case CollectibleData.UpgradeOptions.Hook:
                     PlayerStateManager.Instance.getState().canHook = true;
+                    AbilityCooldownManager.Instance.abilityUnlocked("hook");
 
                     if (TutorialPopupManager.Instance != null && PlayerStateManager.Instance.getState().wantsTutorial &&
                         collision.gameObject.GetComponent<CollectibleData>().showPopup) TutorialPopupManager.Instance.showTutorial(TutorialPopupManager.tutorialOptions.hook);
@@ -42,6 +43,7 @@ public class PlayerCollectScript : MonoBehaviour
                 case CollectibleData.UpgradeOptions.DoubleJump:
                     PlayerStateManager.Instance.getState().canDoubleJump = true;
                     PlayerDataManager.Instance.getData().jumpAmt = 2;
+                    AbilityCooldownManager.Instance.abilityUnlocked("jump");
 
                     if (TutorialPopupManager.Instance != null && PlayerStateManager.Instance.getState().wantsTutorial &&
                         collision.gameObject.GetComponent<CollectibleData>().showPopup) TutorialPopupManager.Instance.showTutorial(TutorialPopupManager.tutorialOptions.doubleJump);

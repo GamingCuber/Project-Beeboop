@@ -1,19 +1,13 @@
 fileFormatVersion: 2
-guid: 474a36a2edaef44cebe5d6e9c4f3e821
+guid: 0f108af0162ab4629a424d0568bb473c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5937335127083220023
-    second: South_Pressed_0
+      213: 7004037816915843872
+    second: RT_0
   - first:
-      213: 18418496495931307
-    second: South_Pressed_1
-  - first:
-      213: -3579763567827658347
-    second: South_Pressed_2
-  - first:
-      213: 1302820135612281668
-    second: South_Pressed_3
+      213: 3398953558418567759
+    second: RT_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -61,7 +55,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 500, y: 0, z: 500, w: 0}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -135,89 +129,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: South_Pressed_0
+      name: RT_0
       rect:
         serializedVersion: 2
-        x: 554
-        y: 334
-        width: 310
-        height: 323
+        x: 622
+        y: 139
+        width: 844
+        height: 769
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 73c7e3a37d6a56250800000000000000
-      internalID: 5937335127083220023
+      spriteID: 02bdba61947533160800000000000000
+      internalID: 7004037816915843872
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: South_Pressed_1
+      name: RT_1
       rect:
         serializedVersion: 2
-        x: 832
-        y: 610
-        width: 316
-        height: 330
+        x: 1448
+        y: 377
+        width: 25
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bafcfe4668f614000800000000000000
-      internalID: 18418496495931307
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: South_Pressed_2
-      rect:
-        serializedVersion: 2
-        x: 1129
-        y: 336
-        width: 309
-        height: 324
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5995fbf5000225ec0800000000000000
-      internalID: -3579763567827658347
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: South_Pressed_3
-      rect:
-        serializedVersion: 2
-        x: 837
-        y: 60
-        width: 324
-        height: 338
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 443756db20c841210800000000000000
-      internalID: 1302820135612281668
+      spriteID: f42b691c0428b2f20800000000000000
+      internalID: 3398953558418567759
       vertices: []
       indices: 
       edges: []
@@ -227,7 +177,7 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -236,10 +186,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      South_Pressed_0: 5937335127083220023
-      South_Pressed_1: 18418496495931307
-      South_Pressed_2: -3579763567827658347
-      South_Pressed_3: 1302820135612281668
+      RT_0: 7004037816915843872
+      RT_1: 3398953558418567759
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
