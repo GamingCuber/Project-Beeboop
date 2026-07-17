@@ -30,14 +30,9 @@ public class TutorialPopupManager : MonoBehaviour
     private GameObject upgradePopUp;
     private TMP_Text descriptionText;
     private VideoPlayer upgradeVideo;
-
+    private Image inputIcon;
+    private TMP_Text inputText;
     private TMP_Text tabText;
-
-    private Image defaultInputIcon;
-    private TMP_Text defaultInputText;
-
-    private Image dashInputIcon;
-    private TMP_Text dashInputText;
 
     private RectTransform panelTransform;
     public float moveTime;
@@ -65,15 +60,10 @@ public class TutorialPopupManager : MonoBehaviour
         upgradeVideo = upgradePopUp.transform.Find("UpgradeVideoPlayer").GetComponent<VideoPlayer>();
         panelTransform = upgradePopUp.GetComponent<RectTransform>();
 
-        GameObject defaultInput = tutorialBody.transform.Find("DefaultInput").gameObject;
+        GameObject input = tutorialBody.transform.Find("Input").gameObject;
 
-        defaultInputIcon = defaultInput.transform.Find("InputIcon").GetComponent<Image>();
-        defaultInputText = defaultInput.transform.Find("InputText2").GetComponent<TMP_Text>();
-
-        GameObject dashInput = tutorialBody.transform.Find("DashInput").gameObject;
-
-        dashInputIcon = dashInput.transform.Find("InputIcon").GetComponent<Image>();
-        dashInputText = dashInput.transform.Find("InputText2").GetComponent<TMP_Text>();
+        inputIcon = input.transform.Find("InputIcon").GetComponent<Image>();
+        inputText = input.transform.Find("InputText2").GetComponent<TMP_Text>();
 
         tabText = upgradePopUp.transform.Find("TopBar").Find("System Update").GetComponent<TMP_Text>();
 
@@ -119,21 +109,8 @@ public class TutorialPopupManager : MonoBehaviour
 
         descriptionText.text = data.descriptionText;
         upgradeVideo.clip = data.tutorialVideo;
-
-        if (option == tutorialOptions.dash)
-        {
-            GameObject dashInput = dashInputIcon.transform.parent.gameObject;
-            dashInput.SetActive(true);
-            dashInputIcon.sprite = data.inputIcon;
-            dashInputText.text = "to " + data.inputName + "!";
-        }
-        else
-        {
-            GameObject defaultInput = defaultInputIcon.transform.parent.gameObject;
-            defaultInput.SetActive(true);
-            defaultInputIcon.sprite = data.inputIcon;
-            defaultInputText.text = "to " + data.inputName + "!";
-        }
+        inputIcon.sprite = data.inputIcon;
+        inputText.text = "to " + data.inputName + "!";
 
         StartCoroutine(movePanel(hiddenPosition, showingPosition));
     }

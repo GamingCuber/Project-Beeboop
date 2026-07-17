@@ -80,12 +80,6 @@ public class LevelTransition : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(anim.clip.length);
 
-        if (resetState)
-        {
-            resetStats();
-            StartCoroutine(waitForTimer());
-        }
-
         SceneManager.LoadScene(scene);
 
         if (dyingObj.activeInHierarchy)
@@ -97,6 +91,12 @@ public class LevelTransition : MonoBehaviour
 
         anim.clip = fadeOutAnim;
         anim.Play();
+
+        if (resetState)
+        {
+            resetStats();
+            StartCoroutine(waitForTimer());
+        }
 
         yield return new WaitForSecondsRealtime(anim.clip.length);
 

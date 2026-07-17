@@ -26,7 +26,7 @@ public class CheckPointScript : MonoBehaviour
 
             sr.sprite = on;
 
-            collision.transform.Find("Light").GetComponent<Light2D>().color = new Color32((byte)60, (byte)99, (byte)0, (byte)150);
+            collision.transform.GetChild(0).GetComponent<Light2D>().color = new Color32((byte)60, (byte)99, (byte)0, (byte)150);
         }
     }
 }

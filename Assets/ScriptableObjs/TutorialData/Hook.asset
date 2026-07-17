@@ -15,5 +15,5 @@ MonoBehaviour:
   topText: Hook
   descriptionText: grapple yourself towards hook points!
   tutorialVideo: {fileID: 32900000, guid: 433c8141bee7a43e3923fe9dc5b847e7, type: 3}
-  inputIcon: {fileID: 21300000, guid: 0f108af0162ab4629a424d0568bb473c, type: 3}
+  inputIcon: {fileID: 21300000, guid: 34c828cc99539423aa7391e7452a508f, type: 3}
   inputName: hook

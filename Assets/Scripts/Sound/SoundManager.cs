@@ -155,18 +155,8 @@ public class SoundManager: MonoBehaviour
         }
 
         expandSoundPool();
-        return getAvailSound();
-    }
 
-    public bool hasSound()
-    {
-        foreach(GameObject g in audioSources)
-        {
-            if (g.activeInHierarchy) return true;
-        }
-        
-        expandSoundPool();
-        return false;
+        return null;
     }
 
     private GameObject getAvailSound(out int index)
@@ -187,7 +177,6 @@ public class SoundManager: MonoBehaviour
 
     private void expandSoundPool()
     {
-        Debug.Log("expand");
         int size = audioSources.Length * 2;
 
         GameObject[] newAudioSources = new GameObject[size];
@@ -202,7 +191,7 @@ public class SoundManager: MonoBehaviour
             {
                 GameObject newSource = Instantiate(sourcePre, this.transform);
                 newSource.SetActive(false);
-                newAudioSources[i] = newSource;
+                audioSources[i] = newSource;
             }
         }
         
