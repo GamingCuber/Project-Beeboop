@@ -16,9 +16,10 @@ MonoBehaviour:
   levelCover: {fileID: 2187265878677187532, guid: 16a9b9bf622fc44b498d8306103d5ec7, type: 3}
   levelTotalTime: 500
   scenes:
-  - sceneName: RoadOfInconvenience
+  - displayName: 
+    sceneName: RoadOfInconvenience
     sceneSong: ROI
-    sceneTime: 0
+    sceneTime: 183.5605
   secondsPerRank:
   - 60
   - 80
