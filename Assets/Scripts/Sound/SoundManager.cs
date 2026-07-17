@@ -187,6 +187,7 @@ public class SoundManager: MonoBehaviour
 
     private void expandSoundPool()
     {
+        Debug.Log("expand");
         int size = audioSources.Length * 2;
 
         GameObject[] newAudioSources = new GameObject[size];
