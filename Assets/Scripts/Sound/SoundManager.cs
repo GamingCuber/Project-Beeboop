@@ -158,6 +158,17 @@ public class SoundManager: MonoBehaviour
         return getAvailSound();
     }
 
+    public bool hasSound()
+    {
+        foreach(GameObject g in audioSources)
+        {
+            if (g.activeInHierarchy) return true;
+        }
+        
+        expandSoundPool();
+        return false;
+    }
+
     private GameObject getAvailSound(out int index)
     {
         int i = 0;

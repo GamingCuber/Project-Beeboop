@@ -54,7 +54,7 @@ public class Crusher : MonoBehaviour
                 if (!isPlayingUp)
                 {
                     isPlayingUp = true;
-                    SoundManager.Instance.playLoopedSound("crusherUp", transform.position, 0, 25, 1, false, out int i);
+                    if (SoundManager.Instance.hasSound()) SoundManager.Instance.playLoopedSound("crusherUp", transform.position, 0, 25, 1, false, out int i);
                     loopInt = i;
                 }
 
