@@ -38,6 +38,7 @@ public class UpgradePopupManager : MonoBehaviour
         text.text = name + " Unlocked!";
         PU.transform.position = collision.transform.position + Vector3.up * 2;
         PU.SetActive(true);
+        SoundManager.Instance.playPlayerSound("tutorialUIPop");
         StartCoroutine(animatePopup(PU));
     }
 

@@ -55,6 +55,14 @@ public class PlayerHook : MonoBehaviour
                 var currentHookDistanceFromPlayer = Mathf.Abs(Vector2.Distance(transform.position, hookObject.transform.position));
                 var closestHookDistanceFromPlayer = Mathf.Abs(Vector2.Distance(transform.position, closestHook.transform.position));
 
+                if (PlayerDataManager.Instance.data.playerDirection.Equals("right"))
+                {
+
+                } else
+                {
+
+                }
+
                 if (currentHookDistanceFromPlayer <= closestHookDistanceFromPlayer && !checkForCD(hookObject))
                 {
                     closestHook = hookObject;

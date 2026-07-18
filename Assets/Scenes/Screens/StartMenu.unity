@@ -3754,6 +3754,18 @@ PrefabInstance:
       propertyPath: ourAudioSource
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 835163191560819617, guid: 4ad86a8c5c534425ca589bf6db95c704, type: 3}
+      propertyPath: sounds.Array.size
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 835163191560819617, guid: 4ad86a8c5c534425ca589bf6db95c704, type: 3}
+      propertyPath: sounds.Array.data[21].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 123492c1031a1987386eb8ef4aadb70d, type: 3}
+    - target: {fileID: 835163191560819617, guid: 4ad86a8c5c534425ca589bf6db95c704, type: 3}
+      propertyPath: sounds.Array.data[21].name
+      value: tutorialUIPop
+      objectReference: {fileID: 0}
     - target: {fileID: 5996641641324138639, guid: 4ad86a8c5c534425ca589bf6db95c704, type: 3}
       propertyPath: m_LocalPosition.x
       value: -37.31
