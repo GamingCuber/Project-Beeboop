@@ -162,6 +162,8 @@ public class DeathAnimManager : MonoBehaviour
         anim.SetTrigger("Back");
         anim.SetTrigger("Open");
 
+        if (CameraFollow.Instance != null) CameraFollow.Instance.teleportCameraToPlayer();
+
         yield return new WaitForSecondsRealtime(1f);
 
         anim.SetTrigger("Back");

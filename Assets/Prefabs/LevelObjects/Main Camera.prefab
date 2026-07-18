@@ -144,11 +144,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  distanceScale: 6
-  minSpeed: 4
-  maxSpeed: 50
+  minSpeed: 10
+  maxSpeed: 40
   yOffset: 3
-  xDirOffset: 4
+  xDirOffset: 5
+  maxDistance: 20
+  minDistance: 8
+  catchUpMult: 3
 --- !u!114 &3058892437869006506
 MonoBehaviour:
   m_ObjectHideFlags: 0
