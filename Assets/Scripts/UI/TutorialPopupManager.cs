@@ -119,6 +119,7 @@ public class TutorialPopupManager : MonoBehaviour
 
         descriptionText.text = data.descriptionText;
         upgradeVideo.clip = data.tutorialVideo;
+        SoundManager.Instance.playPlayerSound("tutorialUIPop");
 
         if (option == tutorialOptions.dash)
         {
