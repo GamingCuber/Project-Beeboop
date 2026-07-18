@@ -28,6 +28,7 @@ MonoBehaviour:
   dampeningPostHook: 2
   hookCancelDistance: 3
   hookDistanceLimit: 18
+  hookBiasPercent: 0.5
   hookPointCooldown: 3
   hookSpeed: 190
   jumpAmt: 2

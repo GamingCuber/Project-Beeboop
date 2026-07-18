@@ -57,10 +57,21 @@ public class PlayerHook : MonoBehaviour
 
                 if (PlayerDataManager.Instance.data.playerDirection.Equals("right"))
                 {
+                    var isHookBehind = transform.position.x >= hookObject.transform.position.x;
+                    // If hook is behind the player, bias against it
+                    if (isHookBehind)
+                    {
+                        closestHookDistanceFromPlayer *= PlayerDataManager.Instance.data.hookBiasPercent;
 
-                } else
+                    }
+                }
+                else
                 {
-
+                    var isHookBehind = transform.position.x <= hookObject.transform.position.x;
+                    if (isHookBehind)
+                    {
+                        closestHookDistanceFromPlayer *= PlayerDataManager.Instance.data.hookBiasPercent;
+                    }
                 }
 
                 if (currentHookDistanceFromPlayer <= closestHookDistanceFromPlayer && !checkForCD(hookObject))
