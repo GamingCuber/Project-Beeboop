@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.UI;
 using UnityEngine.Playables;
+using UnityEngine.InputSystem;
 
 public class TutorialPopupManager : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class TutorialPopupManager : MonoBehaviour
         dash,
         hook
     }
+    private tutorialOptions currentTutorial;
 
     public static TutorialPopupManager Instance;
     private WaitForEndOfFrame wait = new WaitForEndOfFrame();
@@ -88,7 +90,8 @@ public class TutorialPopupManager : MonoBehaviour
         if (PlayerStateManager.Instance.state.pausedGame)
         {
             turnOffPanel();
-        } else
+        }
+        else
         {
             turnOnPanel();
         }
@@ -98,6 +101,7 @@ public class TutorialPopupManager : MonoBehaviour
     {
         isTutorialUIUp = true;
         upgradePopUp.SetActive(true);
+        currentTutorial = option;
 
         TutorialData data = null;
 
@@ -169,7 +173,8 @@ public class TutorialPopupManager : MonoBehaviour
                 pos = Vector3.Lerp(from, to, percent);
 
                 panelTransform.anchoredPosition = pos;
-            } else
+            }
+            else
             {
                 panelTransform.anchoredPosition = pos;
             }
@@ -186,7 +191,7 @@ public class TutorialPopupManager : MonoBehaviour
 
         if (!PlayerStateManager.Instance.state.pausedGame)
         {
-            StartCoroutine(waitToHide());
+
             StartCoroutine(writeToPanel(". . .", dotTime));
             yield return new WaitForSecondsRealtime(dotTime + 1.25f * waitTime);
 
@@ -203,6 +208,8 @@ public class TutorialPopupManager : MonoBehaviour
 
             if (!upgradeVideo.enabled) upgradeVideo.enabled = true;
             upgradeVideo.Play();
+
+            StartCoroutine(waitToHide());
 
             yield break;
         }
@@ -234,7 +241,8 @@ public class TutorialPopupManager : MonoBehaviour
                     s += cArr[i];
                     tabText.text = s;
                     ++i;
-                } else
+                }
+                else
                 {
                     tabText.text = tabText.text;
                 }
@@ -249,11 +257,30 @@ public class TutorialPopupManager : MonoBehaviour
 
     private IEnumerator waitToHide()
     {
-        if (!PlayerStateManager.Instance.state.pausedGame)
+        var gotInput = false;
+        while (!gotInput)
         {
-            float tutorialTime = 7.5f;
-            yield return new WaitForSecondsRealtime(tutorialTime);
 
+            switch (currentTutorial)
+            {
+                case tutorialOptions.dash:
+                    if (PlayerInputs.Instance.playerController.Player.Dash.WasPressedThisFrame()) gotInput = true;
+                    yield return wait;
+                    break;
+                case tutorialOptions.hook:
+                    if (PlayerInputs.Instance.playerController.Player.Hook.WasPressedThisFrame()) gotInput = true;
+                    yield return wait;
+                    break;
+                case tutorialOptions.doubleJump:
+                    if (PlayerInputs.Instance.playerController.Player.Jump.WasPressedThisFrame()) gotInput = true;
+                    yield return wait;
+                    break;
+
+            }
+        }
+
+        if (!PlayerStateManager.Instance.state.pausedGame && gotInput)
+        {
             director.playableAsset = hide;
             director.Play();
 
