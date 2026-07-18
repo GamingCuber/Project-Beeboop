@@ -19,12 +19,12 @@ MonoBehaviour:
   - displayName: Jump!
     sceneName: MainScene
     sceneSong: DoubleJump
-    sceneTime: 0
+    sceneTime: 30.297731
   secondsPerRank:
-  - 20
-  - 100
-  - 200
-  - 300
-  - 400
-  - 500
-  deathsPerSign: 0000000003000000
+  - 28.5
+  - 30.8
+  - 45.7
+  - 60.9
+  - 80.6
+  - 120
+  deathsPerSign: 0100000003000000

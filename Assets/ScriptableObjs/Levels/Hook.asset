@@ -19,12 +19,12 @@ MonoBehaviour:
   - displayName: Hook!
     sceneName: Hook Level
     sceneSong: Hook
-    sceneTime: 0
+    sceneTime: 30.227793
   secondsPerRank:
-  - 20
-  - 100
+  - 35.2
+  - 45.9
+  - 55.4
+  - 75.8
+  - 120.5
   - 200
-  - 300
-  - 400
-  - 500
   deathsPerSign: 0000000003000000

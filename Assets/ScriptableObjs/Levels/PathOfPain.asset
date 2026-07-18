@@ -19,11 +19,11 @@ MonoBehaviour:
   - displayName: 
     sceneName: RoadOfInconvenience
     sceneSong: ROI
-    sceneTime: 183.5605
+    sceneTime: 28.576136
   secondsPerRank:
-  - 60
-  - 80
-  - 100
+  - 45
+  - 65
+  - 155
   - 200
   - 300
   - 400
