@@ -82,6 +82,13 @@ public class WinScreenManager : MonoBehaviour
 
         hideButtons();
 
+        if (GameDataManager.Instance != null)
+        {
+            secondsPerRank = GameDataManager.Instance.getLevelData().secondsPerRank;
+            deathsPerSign = GameDataManager.Instance.getLevelData().deathsPerSign;
+        }
+        else Debug.Log("Need game data for level data");
+
         Invoke(nameof(doResults), 1f);
     }
 
@@ -307,12 +314,8 @@ public class WinScreenManager : MonoBehaviour
     {
         LeaderboardDataManager.levelScoreData wrap = LeaderboardDataManager.Instance.getCurData();
 
-        Debug.Log(LeaderboardDataManager.Instance.curLevelData.scores.Count);
-
         //weird name so we know which one the person just got
         wrap.scores.Add(new LeaderboardDataManager.Score("curScore", PlayerStateManager.Instance.getState().totalTime));
-
-        Debug.Log(LeaderboardDataManager.Instance.curLevelData.scores.Count);
 
         wrap = sortWrap(wrap);
 

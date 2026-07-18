@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayerState
   m_EditorClassIdentifier: 
   isGrounded: 1
-  isMoving: 0
+  isMoving: 1
   isDashing: 0
   isHooked: 0
   isHookPulling: 0
@@ -28,8 +28,8 @@ MonoBehaviour:
   pausedGame: 0
   wantsTimer: 1
   wantsTutorial: 1
-  deathNumber: 45
-  totalTime: 4.589449
+  deathNumber: 6
+  totalTime: 221
   firstLevelTime: 0
   secondLevelTime: 0
   thirdLevelTime: 859.49805
