@@ -123,7 +123,12 @@ public class TutorialPopupManager : MonoBehaviour
 
         descriptionText.text = data.descriptionText;
         upgradeVideo.clip = data.tutorialVideo;
-        SoundManager.Instance.playPlayerSound("tutorialUIPop");
+
+        //ok sound effect a lil loud in comparison to everything else
+        //so imma play sound with the other function... its kinda scuffed
+        
+        //SoundManager.Instance.playPlayerSound("tutorialUIPop");
+        SoundManager.Instance.playSoundFX("tutorialUIPop", Vector3.zero, 0, 9999f, 0.25f, true);
 
         if (option == tutorialOptions.dash)
         {
@@ -187,11 +192,10 @@ public class TutorialPopupManager : MonoBehaviour
     {
         float waitTime = 0.6f;
 
-        float dotTime = 0.6f;
+        float dotTime = 0.5f;
 
         if (!PlayerStateManager.Instance.state.pausedGame)
         {
-
             StartCoroutine(writeToPanel(". . .", dotTime));
             yield return new WaitForSecondsRealtime(dotTime + 1.25f * waitTime);
 
@@ -208,6 +212,8 @@ public class TutorialPopupManager : MonoBehaviour
 
             if (!upgradeVideo.enabled) upgradeVideo.enabled = true;
             upgradeVideo.Play();
+
+            yield return new WaitForSecondsRealtime(1.5f);
 
             StartCoroutine(waitToHide());
 
@@ -260,7 +266,6 @@ public class TutorialPopupManager : MonoBehaviour
         var gotInput = false;
         while (!gotInput)
         {
-
             switch (currentTutorial)
             {
                 case tutorialOptions.dash:
