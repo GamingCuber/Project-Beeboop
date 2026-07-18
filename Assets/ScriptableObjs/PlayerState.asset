@@ -28,8 +28,8 @@ MonoBehaviour:
   pausedGame: 0
   wantsTimer: 1
   wantsTutorial: 1
-  deathNumber: 45
-  totalTime: 4.589449
+  deathNumber: 6
+  totalTime: 32.507294
   firstLevelTime: 0
   secondLevelTime: 0
   thirdLevelTime: 859.49805

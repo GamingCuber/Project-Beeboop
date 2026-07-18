@@ -90,3 +90,5 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 83adf21d55211450bb0e797a2f47998b, type: 3}
   - name: startSwitch
     clip: {fileID: 8300000, guid: 95849b64a78c043e4ba52108d0214f2f, type: 3}
+  - name: tutorialUIPop
+    clip: {fileID: 8300000, guid: 123492c1031a1987386eb8ef4aadb70d, type: 3}

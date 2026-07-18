@@ -28,6 +28,7 @@ public class PlayerData : ScriptableObject
     public float dampeningPostHook;
     public float hookCancelDistance; //how close player has to be to hook for their hook to be cancelled
     public float hookDistanceLimit;
+    public float hookBiasPercent; // how much the distance should be biased against from 0-1 when you're facing the wrong direction
     public float hookPointCooldown; //seconds in which each point is on cd after used
     public float hookSpeed;
     [Header("Jump")]
@@ -37,7 +38,7 @@ public class PlayerData : ScriptableObject
     public float jumpTime;
     public float minJumpTime; //minimum time of jump before cancel if u like feather the button
     [Tooltip("Time before fall gravity applies to jump")]
-    public float jumpFloatTime; 
+    public float jumpFloatTime;
 
     public GameObject currentCheckpoint;
 }
