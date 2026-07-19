@@ -264,7 +264,9 @@ public class TutorialPopupManager : MonoBehaviour
     private IEnumerator waitToHide()
     {
         var gotInput = false;
-        while (!gotInput)
+        var passedCollider = TutorialCollider.Instance == null ? true : false;
+        
+        while (!gotInput || !passedCollider)
         {
             switch (currentTutorial)
             {
@@ -280,8 +282,11 @@ public class TutorialPopupManager : MonoBehaviour
                     if (PlayerInputs.Instance.playerController.Player.Jump.WasPressedThisFrame()) gotInput = true;
                     yield return wait;
                     break;
-
             }
+
+            if (!passedCollider) passedCollider = TutorialCollider.Instance.getReachedPoint();
+
+            if (gotInput && passedCollider) break;
         }
 
         if (!PlayerStateManager.Instance.state.pausedGame && gotInput)
