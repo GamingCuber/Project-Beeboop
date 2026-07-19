@@ -27,6 +27,8 @@ public class GameTimer : MonoBehaviour
 
     private bool isDying;
 
+    private Coroutine timerCo = null;
+
     private void Start()
     {
         if (Instance == null)
@@ -39,6 +41,8 @@ public class GameTimer : MonoBehaviour
 
     private IEnumerator startTimer()
     {
+        Debug.Log("started timer");
+
         WaitForEndOfFrame wait = new WaitForEndOfFrame();
 
         while (timeLeft > 0)
@@ -220,8 +224,15 @@ public class GameTimer : MonoBehaviour
 
         if (isDying)
         {
+            if (timerCo != null)
+            {
+                StopCoroutine(timerCo);
+                timerCo = null;
+            }
+
             LevelTransition.Instance.stopDying();
-            StartCoroutine(startTimer());
+
+            timerCo = StartCoroutine(startTimer());
         }
     }
 
@@ -271,6 +282,6 @@ public class GameTimer : MonoBehaviour
         initializeList();
         StartCoroutine(IntervalChecks());
 
-        StartCoroutine(startTimer());
+        timerCo = StartCoroutine(startTimer());
     }
 }
