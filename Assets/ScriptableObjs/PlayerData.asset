@@ -31,7 +31,7 @@ MonoBehaviour:
   hookBiasPercent: 0.05
   hookPointCooldown: 3
   hookSpeed: 190
-  jumpAmt: 2
+  jumpAmt: 1
   jumpFallGrav: 3.5
   jumpHeight: 4
   jumpTime: 0.35

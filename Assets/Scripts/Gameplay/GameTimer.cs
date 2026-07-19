@@ -41,8 +41,6 @@ public class GameTimer : MonoBehaviour
 
     private IEnumerator startTimer()
     {
-        Debug.Log("started timer");
-
         WaitForEndOfFrame wait = new WaitForEndOfFrame();
 
         while (timeLeft > 0)
