@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DoubleJump
   m_EditorClassIdentifier: 
   topText: Double Jump
-  descriptionText: ability to jump midair!
+  descriptionText: ability to jump midair! hold jump to fly higher!
   tutorialVideo: {fileID: 32900000, guid: 6517bb131364d481c9b71b180729dd5a, type: 3}
   inputIcon: {fileID: 21300000, guid: 474a36a2edaef44cebe5d6e9c4f3e821, type: 3}
   inputName: jump

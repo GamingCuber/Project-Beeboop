@@ -1972,9 +1972,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'ability to jump mid air!
-
-'
+  m_text: 'test test test test test test test test test test test test '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: adaa5065b8cc14e929151db8d34cae1a, type: 2}
   m_sharedMaterial: {fileID: 3534375023969766278, guid: adaa5065b8cc14e929151db8d34cae1a, type: 2}
@@ -2008,7 +2006,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 32
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2039,7 +2037,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 11.668579, y: 53.822144, z: 13.613312, w: -12.62928}
+  m_margin: {x: 0.41967773, y: 53.822144, z: 0.6338959, w: -12.62928}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
